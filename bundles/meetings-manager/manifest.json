@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "1.0.0",
+  "bundleId": "meetings-manager",
+  "name": "Meetings Manager",
+  "version": "1.0.0",
+  "createdAt": "2026-03-18T07:00:32.755Z",
+  "minPaprworkVersion": "2.0.0",
+  "description": "AI-powered meeting manager \u2014 week view, one-click prep docs, recording, transcription, and summaries with memory-first context. macOS only.",
+  "requirements": [
+    "ANTHROPIC_API_KEY"
+  ],
+  "app": {
+    "id": "ea6d8d7c-a15e-4c02-8273-117450b498f4",
+    "name": "Meetings Manager",
+    "version": "1.0.0",
+    "entryFile": "index.html",
+    "appPath": "apps/ea6d8d7c-a15e-4c02-8273-117450b498f4",
+    "description": "AI-powered meeting manager \u2014 schedule, prep, record, transcribe, and summarize meetings with intelligent context from memory.",
+    "author": "paprwork-team",
+    "tags": [
+      "meetings",
+      "ai",
+      "productivity",
+      "notes",
+      "calendar"
+    ]
+  },
+  "jobs": [
+    {
+      "id": "8eea1893-4ca5-48ed-bfb4-187b9456fb31",
+      "name": "Meeting Summarizer",
+      "type": "agent",
+      "command": "Summarize all pending meeting transcripts and generate smart tags.\n\nStep 1: Read all pending meetings:\nsqlite3 /Users/amirkabbara/PAPR/jobs/8eea1893-4ca5-48ed-bfb4-187b9456fb31/data/data.db \"SELECT id, title, transcript, notes FROM meetings WHERE status='pending' AND transcript != ''\"\n\nStep 2: For each meeting, generate TWO things:\n\nA) A unified summary document. If the user wrote notes during the meeting, weave them INTO the summary \u2014 they represent what the user found most important. Do NOT create a separate \"Your Notes\" section.\n\nStructure:\n## Overview\nBrief 2-3 sentence summary.\n\n## Key Decisions\n- Bullet points\n\n## Action Items\n- [ ] Each as a checkbox\n\n## Follow-ups\n- What needs attention next\n\nB) A JSON array of 2-5 short topic tags that describe this meeting. Examples: [\"Product\", \"Engineering\"], [\"Sales\", \"Demo\", \"Q2\"], [\"1:1\", \"Performance\"], [\"Design\", \"Review\"]. Be specific and useful \u2014 infer from content, not just keywords. Output as valid JSON array on a single line.\n\nStep 3: Write summary AND tags back:\nsqlite3 /Users/amirkabbara/PAPR/jobs/8eea1893-4ca5-48ed-bfb4-187b9456fb31/data/data.db \"UPDATE meetings SET summary='SUMMARY_TEXT', tags='TAGS_JSON', status='summarized', updated_at=strftime('%s','now') WHERE id='MEETING_ID'\"\n\nWhere TAGS_JSON is the JSON array string e.g. '[\"Product\",\"Engineering\"]'\n\nIMPORTANT: Escape single quotes by doubling them in SQL. Write tags as a JSON array string.",
+      "dependsOn": [],
+      "env": {},
+      "outputTables": []
+    }
+  ],
+  "sqlite": [],
+  "deploymentProfiles": [
+    {
+      "id": "local-default",
+      "name": "Local Default",
+      "runtimeTarget": "local",
+      "environment": {}
+    }
+  ],
+  "sync": {
+    "preferredRoot": "~/PAPR",
+    "bundleSubpath": "bundles",
+    "cloudReady": true
+  },
+  "author": "paprwork-team",
+  "platform": "macos",
+  "optionalRequirements": [
+    "APOLLO_API_KEY",
+    "EXA_API_KEY"
+  ],
+  "tags": [
+    "meetings",
+    "ai",
+    "productivity",
+    "notes",
+    "calendar"
+  ]
+}
