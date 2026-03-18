@@ -35,7 +35,7 @@
     {
       "bundleId": "meetings-manager",
       "name": "Meetings Manager",
-      "description": "AI-powered meeting manager \u2014 auto-detects meetings from calendar & Zoom/Meet/Teams, sends native macOS notifications with Record button, records audio, transcribes with Whisper, generates AI summaries merged with your notes, and syncs to memory.",
+      "description": "Your entire meeting lifecycle in one app \u2014 calendar sync, auto-detection of Zoom/Meet/Teams calls, native notifications, recording, AI transcription + summarization, and PAPR Memory sync. All running locally on your Mac.",
       "version": "2.0.0",
       "author": "amirkabbara",
       "tags": [

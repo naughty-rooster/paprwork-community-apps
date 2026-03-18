@@ -7,8 +7,8 @@ from pathlib import Path
 from openai import OpenAI
 
 # Paths
-RECORDER_JOB_DIR = os.path.expanduser("~/PAPR/jobs/54837f40-1e64-4810-a387-f81151d014af")
-MEETINGS_DB = os.path.expanduser("~/PAPR/jobs/8eea1893-4ca5-48ed-bfb4-187b9456fb31/data/data.db")
+RECORDER_JOB_DIR = "$HOME/PAPR/jobs/54837f40-1e64-4810-a387-f81151d014af"
+MEETINGS_DB = "$HOME/PAPR/jobs/8eea1893-4ca5-48ed-bfb4-187b9456fb31/data/data.db"
 AUDIO_FILE = os.path.join(RECORDER_JOB_DIR, "data", "recording.wav")
 MAX_WHISPER_SIZE = 24 * 1024 * 1024  # 24MB to stay under 25MB limit
 
