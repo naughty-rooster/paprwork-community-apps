@@ -1,0 +1,11 @@
+[
+  {
+    "id": "8eea1893-4ca5-48ed-bfb4-187b9456fb31:Meeting Summarizer (8eea1893)",
+    "type": "sqlite",
+    "jobId": "8eea1893-4ca5-48ed-bfb4-187b9456fb31",
+    "alias": "Meeting Summarizer (8eea1893)",
+    "dbPath": "/Users/amirkabbara/PAPR/jobs/8eea1893-4ca5-48ed-bfb4-187b9456fb31/data/data.db",
+    "tables": [],
+    "linkedAt": "2026-03-16T21:24:11.157Z"
+  }
+]
