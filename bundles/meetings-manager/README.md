@@ -1,31 +1,50 @@
 # Meetings Manager
 
-AI-powered meeting manager with live recording, transcription, smart summaries, and topic tagging. Record meetings, take notes, and let AI generate structured summaries with action items.
+A complete meeting workflow app for Paprwork — schedule meetings, take live notes, record and transcribe audio, and get AI-generated summaries with smart topic tags.
 
-## Installation
+## What It Does
 
-### Option 1: Import via Paprwork Agent
-```
-Agent: "Import the bundle from /Users/amirkabbara/PAPR/bundles/meetings-manager"
-```
+**Before the meeting:**
+- Create upcoming meetings with title, date/time, and participants
+- Meetings appear in a clean dashboard sorted by date
 
-### Option 2: Import from GitHub
-1. Push this bundle to GitHub
-2. Share the URL with others
-3. They import: "Import the bundle from github.com/username/repo"
+**During the meeting:**
+- Take freeform notes directly in the app
+- Record audio with one click — transcription happens automatically via Whisper
 
-## Contents
+**After the meeting:**
+- The Meeting Summarizer job processes pending transcripts
+- Generates structured summaries: Overview, Key Decisions, Action Items, Follow-ups
+- Auto-tags meetings with 2-5 topic labels (e.g. "Product", "Engineering", "Q2 Planning")
+- Your handwritten notes are woven into the summary as high-priority context
 
-- **App**: Meetings Manager (ea6d8d7c-a15e-4c02-8273-117450b498f4)
-- **Jobs**: 1 job(s)
-  - Meeting Summarizer (agent)
+## What's Included
+
+| Component | Description |
+|-----------|-------------|
+| **Meetings Manager App** | Interactive UI — create, browse, record, and review meetings |
+| **Meeting Summarizer Job** | AI agent that processes transcripts and generates summaries + tags |
 
 ## Requirements
 
-- Paprwork v2.0.0 or later
+- **Paprwork v2.0.0+**
+- **ANTHROPIC_API_KEY** — Powers the AI summarizer (Claude)
 
+## Installation
 
+Import this bundle through Paprwork:
+- From GitHub: `Import the bundle from github.com/Papr-ai/paprwork-community-apps`
+- Or via the **Community Apps** tab in Paprwork
+
+## How It Works
+
+1. Open the Meetings Manager app and create a meeting
+2. During the meeting, take notes and/or hit Record to capture audio
+3. Audio is transcribed locally via Whisper
+4. Run the Meeting Summarizer job (or set it on a schedule)
+5. The AI agent reads pending transcripts + your notes, generates a summary, and writes it back
+6. View the complete summary and tags in the app
 
 ## Version
 
-1.0.0 - Created 2026-03-18
+1.0.0 — March 2026

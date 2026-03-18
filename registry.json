@@ -35,7 +35,7 @@
     {
       "bundleId": "meetings-manager",
       "name": "Meetings Manager",
-      "description": "AI-powered meeting manager with live recording, transcription, smart summaries, and topic tagging. Record meetings, take notes, and let AI generate structured summaries with action items.",
+      "description": "A complete meeting workflow for Paprwork \u2014 schedule meetings, take live notes, record and transcribe audio, and get AI-generated summaries with smart topic tags.",
       "version": "1.0.0",
       "author": "amirkabbara",
       "tags": [
@@ -52,10 +52,6 @@
       "icon": "<svg width=\"36\" height=\"36\" viewBox=\"0 0 36 36\" fill=\"none\"><rect x=\"4\" y=\"8\" width=\"28\" height=\"24\" rx=\"4\" stroke=\"currentColor\" stroke-width=\"1.5\"/><path d=\"M4 14h28\" stroke=\"currentColor\" stroke-width=\"1.5\"/><path d=\"M12 4v4M24 4v4\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><circle cx=\"26\" cy=\"26\" r=\"1.5\" fill=\"currentColor\"/><path d=\"M18 20h-6M18 24h-6\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"/></svg>",
       "requirements": [
         "ANTHROPIC_API_KEY"
-      ],
-      "optionalRequirements": [
-        "APOLLO_API_KEY",
-        "EXA_API_KEY"
       ]
     }
   ]
