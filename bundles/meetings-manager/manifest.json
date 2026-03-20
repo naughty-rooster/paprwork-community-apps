@@ -27,7 +27,13 @@
       "name": "Location Background Generator",
       "type": "python",
       "command": "GOOGLE_API_KEY=${GOOGLE_API_KEY} ./.venv/bin/python generate_background.py",
-      "dependsOn": [],
+      "dependsOn": [
+        {
+          "jobId": "40407339-ca0b-4650-a009-426201025e81",
+          "onStatus": "completed",
+          "autoTrigger": true
+        }
+      ],
       "env": {},
       "outputTables": []
     },
@@ -45,7 +51,13 @@
       "name": "Whisper Transcriber",
       "type": "python",
       "command": "OPENAI_API_KEY=${OPENAI_API_KEY} ./.venv/bin/python transcribe.py",
-      "dependsOn": [],
+      "dependsOn": [
+        {
+          "jobId": "5a5c47c7-46f0-430e-8b01-499bdf65de42",
+          "onStatus": "completed",
+          "autoTrigger": true
+        }
+      ],
       "env": {},
       "outputTables": []
     },
@@ -54,7 +66,13 @@
       "name": "Stop Recorder",
       "type": "bash",
       "command": "touch $HOME/PAPR/jobs/54837f40-1e64-4810-a387-f81151d014af/data/stop_signal && echo \"Stop signal sent\"",
-      "dependsOn": [],
+      "dependsOn": [
+        {
+          "jobId": "06c8e329-7e5f-45a3-82d7-af91e7ffcac1",
+          "onStatus": "completed",
+          "autoTrigger": true
+        }
+      ],
       "env": {},
       "outputTables": []
     },
@@ -63,7 +81,13 @@
       "name": "System Audio Recorder",
       "type": "bash",
       "command": "#!/bin/bash\n# Find meetings DB dynamically\nMEETINGS_DB=$(for db in ~/PAPR/jobs/*/data/data.db; do sqlite3 \"$db\" \"SELECT name FROM sqlite_master WHERE name='meetings'\" 2>/dev/null | grep -q meetings && echo \"$db\" && break; done)\nif [ -z \"$MEETINGS_DB\" ]; then echo \"ERROR: meetings DB not found\"; exit 1; fi\nMEETING_ID=$(sqlite3 \"$MEETINGS_DB\" \"SELECT id FROM meetings WHERE status='recording' ORDER BY created_at DESC LIMIT 1\")\nif [ -z \"$MEETING_ID\" ]; then\n  echo \"ERROR: No meeting with status=recording found\"\n  exit 1\nfi\necho \"$MEETING_ID\" > data/current_meeting.txt\nrm -f data/stop_signal data/recording.wav\necho \"Recording meeting: $MEETING_ID\"\n./recorder data/recording.wav data/stop_signal\nFILE_SIZE=$(stat -f%z data/recording.wav 2>/dev/null || echo \"0\")\necho \"Recording file size: $FILE_SIZE bytes\"\nif [ \"$FILE_SIZE\" -gt 1000 ]; then\n  AUDIO_PATH=\"$(pwd)/data/recording.wav\"\n  sqlite3 \"$MEETINGS_DB\" \"UPDATE meetings SET status='recorded', audio_path='$AUDIO_PATH', updated_at=strftime('%s','now') WHERE id='$MEETING_ID'\"\n  echo \"Meeting $MEETING_ID status updated to recorded\"\nelse\n  sqlite3 \"$MEETINGS_DB\" \"UPDATE meetings SET status='failed', updated_at=strftime('%s','now') WHERE id='$MEETING_ID'\"\n  echo \"ERROR: Recording failed - empty file\"\n  exit 1\nfi",
-      "dependsOn": [],
+      "dependsOn": [
+        {
+          "jobId": "06c8e329-7e5f-45a3-82d7-af91e7ffcac1",
+          "onStatus": "completed",
+          "autoTrigger": true
+        }
+      ],
       "env": {},
       "outputTables": []
     },
@@ -72,7 +96,13 @@
       "name": "Meeting Memory Sync",
       "type": "agent",
       "command": "Step 0: Find the meetings database. Run:\nfor db in ~/PAPR/jobs/*/data/data.db; do sqlite3 \"$db\" \"SELECT name FROM sqlite_master WHERE name='meetings'\" 2>/dev/null | grep -q meetings && echo \"$db\" && break; done\nStore the output path as DB_PATH. Use this path for ALL sqlite3 commands below.\n\nSync completed meetings to PAPR Memory with structured metadata. Follow these steps:\n\nSTEP 1: Find un-synced meetings\nRun: sqlite3 DB_PATH \"SELECT m.id, m.title, m.date, m.summary, m.tags, ce.attendees, ce.start_time, ce.end_time, ce.title as cal_title FROM meetings m LEFT JOIN calendar_events ce ON ce.meeting_id = m.id WHERE m.summary IS NOT NULL AND m.summary != '' AND m.status != 'synced' ORDER BY m.date DESC LIMIT 5\"\n\nIf no results, print \"No meetings to sync\" and stop.\n\nSTEP 2: For each meeting, store TWO types of memory items using add_agent_memory:\n\nA) MEETING MEMORY \u2014 store the full meeting record:\n- content: Include meeting title, date, time, all participant names and emails, the FULL summary, key decisions, action items, and follow-ups\n- category: \"fact\", role: \"assistant\"  \n- topics: extract 3-5 key topics from the summary + meeting title\n- customMetadata MUST include:\n  - memory_type: \"meeting\"\n  - meeting_title: the title\n  - meeting_date: YYYY-MM-DD format\n  - meeting_time: HH:MM format\n  - participants: comma-separated names\n  - participant_emails: comma-separated emails\n  - meeting_type: \"recurring_standup\" or \"recurring_weekly\" or \"one_off\" or \"group_session\" (infer from title)\n  - tags: from the tags column\n  - has_action_items: \"true\" or \"false\"\n\nB) PERSON MEMORIES \u2014 for each unique attendee NOT ending in @papr.ai, store a person memory:\n- content: \"Person: NAME (EMAIL) at COMPANY. Participated in MEETING_TITLE on DATE. Context from meeting: [relevant 1-2 sentences about what they discussed or contributed]\"\n- category: \"fact\", role: \"assistant\"\n- topics: person name, company name, meeting title\n- customMetadata: memory_type: \"person\", person_name, person_email, person_company (from email domain), meetings_attended\n\nSTEP 3: Mark meetings as synced\nRun: sqlite3 DB_PATH \"UPDATE meetings SET status='synced' WHERE id='MEETING_ID'\"\n\nSTEP 4: Print summary of what was synced.",
-      "dependsOn": [],
+      "dependsOn": [
+        {
+          "jobId": "8eea1893-4ca5-48ed-bfb4-187b9456fb31",
+          "onStatus": "completed",
+          "autoTrigger": true
+        }
+      ],
       "env": {},
       "outputTables": []
     },
@@ -81,7 +111,13 @@
       "name": "Meeting Summarizer",
       "type": "agent",
       "command": "Summarize all pending meeting transcripts, merge with any user notes, and generate smart tags.\n\nStep 0: Find this job's database. Run:\nfor db in ~/PAPR/jobs/*/data/data.db; do sqlite3 \"$db\" \"SELECT name FROM sqlite_master WHERE name='meetings'\" 2>/dev/null | grep -q meetings && echo \"$db\" && break; done\nStore the output path as DB_PATH. Use this path for ALL sqlite3 commands below.\n\nStep 1: Read all pending meetings:\nsqlite3 DB_PATH \"SELECT id, title, transcript, notes FROM meetings WHERE status='pending' AND transcript != ''\"\n\nStep 2: For each meeting, generate TWO things:\n\nA) A unified notes document. If the user wrote notes during the meeting (in the `notes` column), weave them INTO the summary \u2014 they represent what the user found most important. Do NOT create a separate section for user notes; integrate them naturally as highlights or emphasis points within the relevant sections.\n\nStructure:\n## Overview\nBrief 2-3 sentence summary.\n\n## Key Decisions\n- Bullet points\n\n## Action Items\n- [ ] Each as a checkbox\n\n## Follow-ups\n- What needs attention next\n\nB) A JSON array of 2-5 short topic tags that describe this meeting. Examples: [\"Product\", \"Engineering\"], [\"Sales\", \"Demo\", \"Q2\"]. Be specific and useful. Output as valid JSON array on a single line.\n\nStep 3: Write the merged notes, tags, AND summary back:\nsqlite3 DB_PATH \"UPDATE meetings SET notes='MERGED_NOTES', summary='MERGED_NOTES', tags='TAGS_JSON', status='summarized', updated_at=strftime('%s','now') WHERE id='MEETING_ID'\"\n\nSave the SAME content to both `notes` and `summary` columns. The `notes` column is what the user sees; `summary` is a backup of the AI-generated version.\n\nIMPORTANT: Escape single quotes by doubling them in SQL. Write tags as a JSON array string.",
-      "dependsOn": [],
+      "dependsOn": [
+        {
+          "jobId": "52b4abeb-0d23-4724-9a82-0559c64150c1",
+          "onStatus": "completed",
+          "autoTrigger": true
+        }
+      ],
       "env": {},
       "outputTables": []
     },
@@ -99,7 +135,13 @@
       "name": "Meeting Prep Agent",
       "type": "agent",
       "command": "Step 0: Find the meetings database. Run:\nfor db in ~/PAPR/jobs/*/data/data.db; do sqlite3 \"$db\" \"SELECT name FROM sqlite_master WHERE name='meetings'\" 2>/dev/null | grep -q meetings && echo \"$db\" && break; done\nStore the output path as DB_PATH. Use this path for ALL sqlite3 commands below.\n\nPrepare a comprehensive meeting prep document for an upcoming calendar event. Follow these steps EXACTLY:\\n\\nSTEP 1: Read the prep request from DB\\nRun: sqlite3 DB_PATH \\\"SELECT id, title, attendees, prep_doc FROM calendar_events WHERE prep_status='preparing' LIMIT 1\\\"\\nThe prep_doc column contains a JSON object with event_id, title, attendees (array of {name, email}), start_time.\\nParse the JSON to get meeting details and attendee list.\\n\\nSTEP 2: Search PAPR Memory FIRST\\nUse search_agent_memory to find context about:\\n- The meeting title and topic (e.g. \\\"Papr Daily standup meetings\\\")\\n- Each attendee by name (e.g. \\\"Rony Ferzli meetings and context\\\")\\n- The companies involved (e.g. \\\"PivotVia company context\\\")\\n- Related projects or themes (e.g. \\\"mission control dashboard project\\\")\\nDo 5-8 targeted searches. Memory contains prior meeting summaries, participant profiles, key decisions, and action items.\\n\\nSTEP 3: Search prior meeting notes from DB \u2014 WITH RELEVANCE FILTERING\\nRun: sqlite3 DB_PATH \\\"SELECT title, summary, notes, tags, created_at FROM meetings WHERE status IN ('summarized','synced') ORDER BY created_at DESC LIMIT 20\\\"\\n\\nCRITICAL: Do NOT assume every prior meeting is related to this upcoming one. You MUST evaluate relevance by checking:\\n\\n1. **Participant overlap**: Compare the attendee list of the upcoming meeting against who was mentioned in each prior meeting's summary/notes. Only meetings with at least ONE shared participant are potentially relevant.\\n\\n2. **Topic relevance**: Even with shared participants, a \\\"Product Design Review\\\" is NOT a prior instance of a \\\"Weekly 1:1\\\" just because the same person attended both. Match by meeting PURPOSE, not just people.\\n\\n3. **Recurring vs. one-off**: If the upcoming meeting title suggests it's recurring (e.g., \\\"Weekly Ops Review\\\", \\\"Papr Daily\\\", \\\"1:1\\\"), look for prior instances of THAT SAME recurring meeting. Don't conflate different recurring meetings.\\n\\n4. **Classify each prior meeting** as one of:\\n   - DIRECTLY_RELATED: Same recurring meeting or same project/topic with same core participants \u2192 include open items and context\\n   - TANGENTIALLY_RELATED: Shared participants but different meeting purpose \u2192 mention briefly only if there are cross-cutting action items\\n   - UNRELATED: Different people, different topic \u2192 ignore completely\\n\\nOnly surface open items and follow-ups from DIRECTLY_RELATED meetings. For TANGENTIALLY_RELATED, only mention if there's a specific action item that one of the upcoming meeting's attendees owns.\\n\\nSTEP 4: Search local documents\\nRun: grep -ril \\\"KEYWORD\\\" ~/PAPR/Documents/ 2>/dev/null | head -10\\nSearch for attendee names, company names, meeting keywords. Read relevant docs.\\n\\nSTEP 5: Enrich attendees \u2014 MEMORY FIRST, WEB ONLY FOR UNKNOWNS\\nFor each attendee, check if PAPR Memory already has their profile (from Step 2 results). Only use Apollo/Exa for attendees NOT found in memory.\\n\\nFor unknown external attendees (skip @papr.ai), run Apollo lookups IN PARALLEL (batch 3-4 at a time):\\ncurl -s \\\"https://api.apollo.io/api/v1/people/match\\\" -H \\\"Content-Type: application/json\\\" -H \\\"X-Api-Key: ${APOLLO_API_KEY}\\\" -d '{\\\"email\\\": \\\"EMAIL\\\"}' | python3 -c \\\"import sys,json; d=json.load(sys.stdin).get('person',{}); print(json.dumps({'name':d.get('name',''),'title':d.get('title',''),'company':d.get('organization',{}).get('name',''),'linkedin':d.get('linkedin_url',''),'bio':d.get('headline','')},indent=2))\\\"\\n\\nSTEP 6: Web search via Exa (only if needed for context gaps)\\ncurl -s \\\"https://api.exa.ai/search\\\" -H \\\"Content-Type: application/json\\\" -H \\\"x-api-key: ${EXA_API_KEY}\\\" -d '{\\\"query\\\": \\\"QUERY\\\", \\\"numResults\\\": 3, \\\"type\\\": \\\"neural\\\"}' | python3 -c \\\"import sys,json; [print(r.get('title',''),'-',r.get('url','')) for r in json.load(sys.stdin).get('results',[])]\\\" \\n\\nSTEP 7: Generate the prep document. START with a TL;DR paragraph FIRST, then the detailed sections:\\n\\n## TL;DR\\nWrite a single compelling paragraph (3-5 sentences) that captures the essence of this meeting \u2014 who's in the room, what matters most, what you should walk in knowing. This should read like a smart executive briefing that gets you ready in 30 seconds. Be specific, reference real context from DIRECTLY RELATED prior meetings only, and highlight the most important thing to pay attention to. Do NOT reference unrelated meetings or action items from different contexts.\\n\\n## Meeting Overview\\n## Attendees (Name, Title @ Company, LinkedIn, 1-line bio)\\n## Context & Background\\nOnly include context that is DIRECTLY relevant to THIS meeting's purpose and participants. Do not pad with information from unrelated meetings.\\n\\n## Open Items from Prior Meetings\\nONLY from DIRECTLY_RELATED prior meetings. If no directly related prior meetings exist, say \\\"No prior meetings found for this group/topic\\\" \u2014 do NOT fabricate follow-ups from unrelated meetings. Each item should note which prior meeting it came from and the date.\\n\\n## Suggested Talking Points (3-5 specific topics)\\nGround these in the actual context you found. If you have limited context, suggest general but useful questions rather than pretending to have specific context.\\n\\n## Recent News & Updates\\n\\nSTEP 8: Save to DB \u2014 escape single quotes by doubling them:\\nsqlite3 DB_PATH \\\"UPDATE calendar_events SET prep_doc='ESCAPED_DOC', prep_status='ready' WHERE id='EVENT_ID'\\\"\\n\\nPrint \\\"PREP_COMPLETE\\\" when done.",
-      "dependsOn": [],
+      "dependsOn": [
+        {
+          "jobId": "40407339-ca0b-4650-a009-426201025e81",
+          "onStatus": "completed",
+          "autoTrigger": true
+        }
+      ],
       "env": {},
       "outputTables": []
     },
@@ -108,7 +150,13 @@
       "name": "Meeting Monitor",
       "type": "bash",
       "command": "bash monitor.sh",
-      "dependsOn": [],
+      "dependsOn": [
+        {
+          "jobId": "40407339-ca0b-4650-a009-426201025e81",
+          "onStatus": "completed",
+          "autoTrigger": true
+        }
+      ],
       "env": {},
       "outputTables": []
     }
