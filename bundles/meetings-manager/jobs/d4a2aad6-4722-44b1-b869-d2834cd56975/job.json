@@ -1,9 +1,0 @@
-{
-  "id": "d4a2aad6-4722-44b1-b869-d2834cd56975",
-  "name": "Location Background Generator",
-  "type": "python",
-  "command": "GOOGLE_API_KEY=${GOOGLE_API_KEY} ./.venv/bin/python generate_background.py",
-  "status": "pending",
-  "createdAt": "2026-03-20T05:11:44.503Z",
-  "updatedAt": "2026-03-20T05:11:44.503Z"
-}

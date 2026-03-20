@@ -1,9 +1,0 @@
-{
-  "id": "52b4abeb-0d23-4724-9a82-0559c64150c1",
-  "name": "Whisper Transcriber",
-  "type": "python",
-  "command": "OPENAI_API_KEY=${OPENAI_API_KEY} ./.venv/bin/python transcribe.py",
-  "status": "pending",
-  "createdAt": "2026-03-20T05:11:58.626Z",
-  "updatedAt": "2026-03-20T05:11:58.626Z"
-}
