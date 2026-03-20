@@ -1,0 +1,47 @@
+[
+  {
+    "id": "06c8e329-7e5f-45a3-82d7-af91e7ffcac1:Meeting Monitor (06c8e329)",
+    "type": "sqlite",
+    "jobId": "06c8e329-7e5f-45a3-82d7-af91e7ffcac1",
+    "alias": "Meeting Monitor (06c8e329)",
+    "dbPath": "/Users/amirkabbara/PAPR/jobs/06c8e329-7e5f-45a3-82d7-af91e7ffcac1/data/data.db",
+    "tables": [],
+    "linkedAt": "2026-03-18T17:49:58.016Z"
+  },
+  {
+    "id": "4d58f7c1-40b5-4aed-805f-f983c0ac0c4c:Meeting Prep Agent (4d58f7c1)",
+    "type": "sqlite",
+    "jobId": "4d58f7c1-40b5-4aed-805f-f983c0ac0c4c",
+    "alias": "Meeting Prep Agent (4d58f7c1)",
+    "dbPath": "/Users/amirkabbara/PAPR/jobs/4d58f7c1-40b5-4aed-805f-f983c0ac0c4c/data/data.db",
+    "tables": [],
+    "linkedAt": "2026-03-18T08:18:32.009Z"
+  },
+  {
+    "id": "40407339-ca0b-4650-a009-426201025e81:Calendar Reader (40407339)",
+    "type": "sqlite",
+    "jobId": "40407339-ca0b-4650-a009-426201025e81",
+    "alias": "Calendar Reader (40407339)",
+    "dbPath": "/Users/amirkabbara/PAPR/jobs/40407339-ca0b-4650-a009-426201025e81/data/data.db",
+    "tables": [],
+    "linkedAt": "2026-03-18T08:18:25.283Z"
+  },
+  {
+    "id": "8eea1893-4ca5-48ed-bfb4-187b9456fb31:Meeting Summarizer (8eea1893)",
+    "type": "sqlite",
+    "jobId": "8eea1893-4ca5-48ed-bfb4-187b9456fb31",
+    "alias": "Meeting Summarizer (8eea1893)",
+    "dbPath": "/Users/amirkabbara/PAPR/jobs/8eea1893-4ca5-48ed-bfb4-187b9456fb31/data/data.db",
+    "tables": [],
+    "linkedAt": "2026-03-18T08:18:16.644Z"
+  },
+  {
+    "id": "f98f409f-5efb-4813-9da5-36d10eadab68:Meeting Memory Sync (f98f409f)",
+    "type": "sqlite",
+    "jobId": "f98f409f-5efb-4813-9da5-36d10eadab68",
+    "alias": "Meeting Memory Sync (f98f409f)",
+    "dbPath": "/Users/amirkabbara/PAPR/jobs/f98f409f-5efb-4813-9da5-36d10eadab68/data/data.db",
+    "tables": [],
+    "linkedAt": "2026-03-18T08:17:42.309Z"
+  }
+]
