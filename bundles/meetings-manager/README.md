@@ -1,6 +1,6 @@
-# Meetings Manager
+# undefined
 
-Auto-record, transcribe, summarize and sync meeting notes to PAPR memory. Optional AI-generated location backgrounds.
+
 
 ## Installation
 
@@ -37,4 +37,4 @@ Agent: "Import the bundle from /Users/amirkabbara/PAPR/bundles/meetings-manager"
 
 ## Version
 
-3.2.0 - Created 2026-03-20
+1.0.0 - Created 2026-03-20

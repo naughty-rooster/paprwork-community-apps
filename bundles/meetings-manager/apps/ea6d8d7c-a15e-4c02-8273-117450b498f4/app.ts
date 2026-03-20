@@ -610,20 +610,20 @@ async function loadBgImage(): Promise<void> {
 function applyBackground(): void {
   const body = document.body as HTMLBodyElement;
   const src = bgSrc();
-  if (src && showBgHero) body.style.setProperty('--bg-image', `url("${src}")`);
+  if (src) body.style.setProperty('--bg-image', `url("${src}")`);
   else body.style.removeProperty('--bg-image');
 }
 
 function renderBackgroundLayer(): string {
-  if (!showBgHero) return '<div class="app-bg app-bg--fallback"></div>';
   const src = bgSrc();
   const city = liveCity || bg?.city || '';
   if (!src) return '<div class="app-bg app-bg--fallback"></div>';
-  return `<div class="app-bg" aria-hidden="true">
+  return `<div class="app-bg${showBgHero ? '' : ' app-bg--subtle'}" aria-hidden="true">
     <img class="app-bg-img" src="${esc(src)}" alt="${esc(city + ' background')}">
     <div class="app-bg-scrim"></div>
   </div>`;
 }
+
 
 function render(): void {
   const root = document.getElementById('root')!;

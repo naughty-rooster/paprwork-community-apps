@@ -73,6 +73,21 @@ body::before {
   width: 100%; height: 100%; object-fit: cover;
   filter: saturate(1.08) contrast(1.05) brightness(0.96);
   opacity: 0.98; transform: scale(1.02);
+  transition: opacity 0.4s ease;
+}
+.app-bg--subtle .app-bg-img { opacity: 0.35; filter: saturate(0.5) brightness(0.85); }
+.app-bg--subtle .app-bg-scrim {
+  opacity: 1;
+  background:
+    radial-gradient(circle at top left, rgba(79,70,229,0.15), transparent 40%),
+    linear-gradient(135deg, rgba(232,234,240,0.88), rgba(245,246,250,0.85), rgba(229,232,240,0.88));
+}
+@media (prefers-color-scheme: dark) {
+  .app-bg--subtle .app-bg-scrim {
+    background:
+      radial-gradient(circle at top left, rgba(79,70,229,0.28), transparent 40%),
+      linear-gradient(135deg, rgba(10,12,16,0.88), rgba(18,20,28,0.85));
+  }
 }
 .app-bg-scrim {
   position: absolute; inset: 0;

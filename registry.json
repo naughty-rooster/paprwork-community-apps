@@ -35,7 +35,7 @@
     {
       "bundleId": "meetings-manager",
       "name": "Meetings Manager",
-      "description": "Auto-record, transcribe, summarize and sync meeting notes to PAPR memory. Optional AI-generated location backgrounds.",
+      "description": "AI-powered meeting manager \u2014 schedule, prep, record, transcribe, summarize, and sync to memory. Auto-generates city backgrounds from calendar locations.",
       "version": "3.2.0",
       "author": "amirkabbara",
       "tags": [
