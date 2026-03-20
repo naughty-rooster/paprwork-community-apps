@@ -228,7 +228,8 @@ def _extract_image(data):
 def call_gemini(prompt):
     key = os.environ.get('GOOGLE_API_KEY', '').strip()
     if not key:
-        raise RuntimeError('GOOGLE_API_KEY missing')
+        log("GOOGLE_API_KEY not set — skipping background generation (will use default gradient)")
+        return None
     models = [
         'nano-banana-pro-preview',
         'gemini-3.1-flash-image-preview',
@@ -289,6 +290,9 @@ def main():
         return
     save_row(con, city, reason, prompt, (existing['image_path'] if existing and existing['image_path'] else ''), today, source)
     img = call_gemini(prompt)
+    if img is None:
+        log("No image generated (missing API key). App will use gradient fallback.")
+        return
     safe = city.lower().replace(' ', '-')
     out_path = IMG_DIR / f'{safe}-{today}.png'
     out_path.write_bytes(img)

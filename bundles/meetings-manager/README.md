@@ -6,19 +6,28 @@ AI-powered meeting manager with location-aware backgrounds, calendar integration
 
 ### Option 1: Import via Paprwork Agent
 ```
-Agent: "Import the bundle from /Users/shawkatkabbara/PAPR/bundles/bundle-1773938283407"
+Agent: "Import the meetings-manager bundle from github.com/Papr-ai/paprwork-community-apps"
 ```
 
 ### Option 2: Import from GitHub
-1. Push this bundle to GitHub
-2. Share the URL with others
-3. They import: "Import the bundle from github.com/username/repo"
+1. Clone this repo
+2. Import: `"Import the bundle from bundles/meetings-manager"`
+
+## API Keys
+
+### Required
+- **OPENAI_API_KEY** — Used for Whisper audio transcription
+
+### Optional
+- **GOOGLE_API_KEY** — Enables AI-generated location-aware backgrounds via Gemini. Without it, the app uses a beautiful gradient fallback.
+- **APOLLO_API_KEY** — Enriches meeting prep with contact data
+- **EXA_API_KEY** — Enriches meeting prep with web search
 
 ## Contents
 
-- **App**: Meetings Manager (ea6d8d7c-a15e-4c02-8273-117450b498f4)
+- **App**: Meetings Manager
 - **Jobs**: 10 job(s)
-  - Location Background Generator (python)
+  - Location Background Generator (python) — *requires GOOGLE_API_KEY*
   - Check Screen Recording Permission (bash)
   - Whisper Transcriber (python)
   - Stop Recorder (bash)
@@ -32,9 +41,9 @@ Agent: "Import the bundle from /Users/shawkatkabbara/PAPR/bundles/bundle-1773938
 ## Requirements
 
 - Paprwork v2.0.0 or later
+- macOS (screen recording uses native APIs)
 - Python 3.8+ for Python jobs
-
 
 ## Version
 
-1.0.0 - Created 2026-03-19
+3.0.0 - Created 2026-03-19
