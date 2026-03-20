@@ -35,8 +35,8 @@
     {
       "bundleId": "meetings-manager",
       "name": "Meetings Manager",
-      "description": "AI meeting manager with location-aware Liquid Glass backgrounds, calendar sync, recording, transcription, and summarization. Detects your city from calendar events and generates beautiful scene backgrounds. All local on your Mac.",
-      "version": "3.0.0",
+      "description": "AI-powered meeting manager \u2014 record, transcribe, summarize meetings with calendar-aware backgrounds and intelligent memory sync.",
+      "version": "3.1.0",
       "author": "amirkabbara",
       "tags": [
         "meetings",

@@ -4,6 +4,6 @@
   "type": "bash",
   "command": "#!/bin/bash\n# Find meetings DB dynamically\nMEETINGS_DB=$(for db in ~/PAPR/jobs/*/data/data.db; do sqlite3 \"$db\" \"SELECT name FROM sqlite_master WHERE name='meetings'\" 2>/dev/null | grep -q meetings && echo \"$db\" && break; done)\nif [ -z \"$MEETINGS_DB\" ]; then echo \"ERROR: meetings DB not found\"; exit 1; fi\nMEETING_ID=$(sqlite3 \"$MEETINGS_DB\" \"SELECT id FROM meetings WHERE status='recording' ORDER BY created_at DESC LIMIT 1\")\nif [ -z \"$MEETING_ID\" ]; then\n  echo \"ERROR: No meeting with status=recording found\"\n  exit 1\nfi\necho \"$MEETING_ID\" > data/current_meeting.txt\nrm -f data/stop_signal data/recording.wav\necho \"Recording meeting: $MEETING_ID\"\n./recorder data/recording.wav data/stop_signal\nFILE_SIZE=$(stat -f%z data/recording.wav 2>/dev/null || echo \"0\")\necho \"Recording file size: $FILE_SIZE bytes\"\nif [ \"$FILE_SIZE\" -gt 1000 ]; then\n  AUDIO_PATH=\"$(pwd)/data/recording.wav\"\n  sqlite3 \"$MEETINGS_DB\" \"UPDATE meetings SET status='recorded', audio_path='$AUDIO_PATH', updated_at=strftime('%s','now') WHERE id='$MEETING_ID'\"\n  echo \"Meeting $MEETING_ID status updated to recorded\"\nelse\n  sqlite3 \"$MEETINGS_DB\" \"UPDATE meetings SET status='failed', updated_at=strftime('%s','now') WHERE id='$MEETING_ID'\"\n  echo \"ERROR: Recording failed - empty file\"\n  exit 1\nfi",
   "status": "pending",
-  "createdAt": "2026-03-19T16:38:05.201Z",
-  "updatedAt": "2026-03-19T16:38:05.201Z"
+  "createdAt": "2026-03-20T05:11:59.025Z",
+  "updatedAt": "2026-03-20T05:11:59.025Z"
 }

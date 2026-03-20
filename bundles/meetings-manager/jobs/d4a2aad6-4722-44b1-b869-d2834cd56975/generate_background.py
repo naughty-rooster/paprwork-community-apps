@@ -52,6 +52,7 @@ def ensure_schema(con):
       prompt TEXT DEFAULT '',
       image_path TEXT DEFAULT '',
       image_url TEXT DEFAULT '',
+      image_data TEXT DEFAULT '',
       generated_on TEXT DEFAULT '',
       source_events_json TEXT DEFAULT '[]',
       updated_at INTEGER DEFAULT (strftime('%s','now'))
@@ -64,6 +65,11 @@ def ensure_schema(con):
       updated_at INTEGER DEFAULT (strftime('%s','now'))
     );
     ''')
+    # Migrate: add image_data column if missing (for existing installs)
+    try:
+        con.execute("ALTER TABLE location_background ADD COLUMN image_data TEXT DEFAULT ''")
+    except Exception:
+        pass  # column already exists
     row = con.execute("SELECT id FROM background_preferences WHERE id='default'").fetchone()
     if not row:
         con.execute(
@@ -262,13 +268,18 @@ def call_gemini(prompt):
 
 def save_row(con, city, reason, prompt, image_path, generated_on, source):
     image_url = f'file://{image_path}' if image_path else ''
+    # Build base64 data URL from image file for direct embedding in app
+    image_data = ''
+    if image_path and Path(str(image_path)).exists():
+        raw = Path(str(image_path)).read_bytes()
+        image_data = f'data:image/png;base64,{base64.b64encode(raw).decode()}'
     con.execute(
-        '''INSERT INTO location_background (id, city, reason, prompt, image_path, image_url, generated_on, source_events_json, updated_at)
-           VALUES ('daily', ?, ?, ?, ?, ?, ?, ?, strftime('%s','now'))
+        '''INSERT INTO location_background (id, city, reason, prompt, image_path, image_url, image_data, generated_on, source_events_json, updated_at)
+           VALUES ('daily', ?, ?, ?, ?, ?, ?, ?, ?, strftime('%s','now'))
            ON CONFLICT(id) DO UPDATE SET city=excluded.city, reason=excluded.reason, prompt=excluded.prompt,
-           image_path=excluded.image_path, image_url=excluded.image_url, generated_on=excluded.generated_on,
+           image_path=excluded.image_path, image_url=excluded.image_url, image_data=excluded.image_data, generated_on=excluded.generated_on,
            source_events_json=excluded.source_events_json, updated_at=strftime('%s','now')''',
-        (city, reason, prompt, str(image_path), image_url, generated_on, json.dumps(source)),
+        (city, reason, prompt, str(image_path), image_url, image_data, generated_on, json.dumps(source)),
     )
     con.commit()
 
