@@ -3,14 +3,7 @@
   "name": "Location Background Generator",
   "type": "python",
   "command": "GOOGLE_API_KEY=${GOOGLE_API_KEY} ./.venv/bin/python generate_background.py",
-  "dependsOn": [
-    {
-      "jobId": "40407339-ca0b-4650-a009-426201025e81",
-      "onStatus": "completed",
-      "autoTrigger": true
-    }
-  ],
   "status": "pending",
-  "createdAt": "2026-03-27T01:37:58.287Z",
-  "updatedAt": "2026-03-27T01:37:58.287Z"
+  "createdAt": "2026-03-20T06:18:17.828Z",
+  "updatedAt": "2026-03-20T06:18:17.828Z"
 }

@@ -4,6 +4,6 @@
   "type": "bash",
   "command": "#!/bin/bash\n# Find meetings DB dynamically\nMEETINGS_DB=$(for db in ~/PAPR/jobs/*/data/data.db; do sqlite3 \"$db\" \"SELECT name FROM sqlite_master WHERE name='meetings'\" 2>/dev/null | grep -q meetings && echo \"$db\" && break; done)\nif [ -z \"$MEETINGS_DB\" ]; then echo \"ERROR: meetings DB not found\"; exit 1; fi\n# Find recorder binary dynamically\nRECORDER=$(find ~/PAPR/jobs/*/recorder -type f 2>/dev/null | head -1)\nif [ -z \"$RECORDER\" ]; then echo \"ERROR: recorder binary not found\"; exit 1; fi\nRESULT=$($RECORDER --check-permission 2>&1)\necho \"$RESULT\"\nsqlite3 \"$MEETINGS_DB\" \"DELETE FROM permission_checks; INSERT INTO permission_checks (check_time, result) VALUES (datetime('now'), '$RESULT');\"\necho \"Written to DB: $RESULT\"",
   "status": "pending",
-  "createdAt": "2026-03-27T01:37:58.799Z",
-  "updatedAt": "2026-03-27T01:37:58.799Z"
+  "createdAt": "2026-03-20T06:18:17.976Z",
+  "updatedAt": "2026-03-20T06:18:17.976Z"
 }

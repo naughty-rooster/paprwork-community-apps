@@ -1,7 +1,8 @@
 {
   "id": "f98f409f-5efb-4813-9da5-36d10eadab68",
   "name": "Meeting Memory Sync",
-  "type": "agent",
+  "type": "subagent",
+  "folder": "meetings",
   "command": "Step 0: Find the meetings database. Run:\nfor db in ~/PAPR/jobs/*/data/data.db; do sqlite3 \"$db\" \"SELECT name FROM sqlite_master WHERE name='meetings'\" 2>/dev/null | grep -q meetings && echo \"$db\" && break; done\nStore the output path as DB_PATH. Use this path for ALL sqlite3 commands below.\n\nSync completed meetings to PAPR Memory with structured metadata. Follow these steps:\n\nSTEP 1: Find un-synced meetings\nRun: sqlite3 DB_PATH \"SELECT m.id, m.title, m.date, m.summary, m.tags, ce.attendees, ce.start_time, ce.end_time, ce.title as cal_title FROM meetings m LEFT JOIN calendar_events ce ON ce.meeting_id = m.id WHERE m.summary IS NOT NULL AND m.summary != '' AND m.status != 'synced' ORDER BY m.date DESC LIMIT 5\"\n\nIf no results, print \"No meetings to sync\" and stop.\n\nSTEP 2: For each meeting, store TWO types of memory items using add_agent_memory:\n\nA) MEETING MEMORY — store the full meeting record:\n- content: Include meeting title, date, time, all participant names and emails, the FULL summary, key decisions, action items, and follow-ups\n- category: \"fact\", role: \"assistant\"  \n- topics: extract 3-5 key topics from the summary + meeting title\n- customMetadata MUST include:\n  - memory_type: \"meeting\"\n  - meeting_title: the title\n  - meeting_date: YYYY-MM-DD format\n  - meeting_time: HH:MM format\n  - participants: comma-separated names\n  - participant_emails: comma-separated emails\n  - meeting_type: \"recurring_standup\" or \"recurring_weekly\" or \"one_off\" or \"group_session\" (infer from title)\n  - tags: from the tags column\n  - has_action_items: \"true\" or \"false\"\n\nB) PERSON MEMORIES — for each unique attendee NOT ending in @papr.ai, store a person memory:\n- content: \"Person: NAME (EMAIL) at COMPANY. Participated in MEETING_TITLE on DATE. Context from meeting: [relevant 1-2 sentences about what they discussed or contributed]\"\n- category: \"fact\", role: \"assistant\"\n- topics: person name, company name, meeting title\n- customMetadata: memory_type: \"person\", person_name, person_email, person_company (from email domain), meetings_attended\n\nSTEP 3: Mark meetings as synced\nRun: sqlite3 DB_PATH \"UPDATE meetings SET status='synced' WHERE id='MEETING_ID'\"\n\nSTEP 4: Print summary of what was synced.",
   "dependsOn": [
     {
@@ -10,7 +11,18 @@
       "autoTrigger": true
     }
   ],
+  "retries": {
+    "maxAttempts": 1,
+    "backoffMs": 1000
+  },
+  "retentionDays": 14,
+  "schedule": {
+    "enabled": false
+  },
+  "subAgentId": "meeting-summarizer",
+  "outputMode": "natural",
+  "memoryPolicy": "none",
   "status": "pending",
-  "createdAt": "2026-03-27T01:38:00.620Z",
-  "updatedAt": "2026-03-27T01:38:00.620Z"
+  "createdAt": "2026-03-20T06:18:35.119Z",
+  "updatedAt": "2026-03-20T06:18:35.119Z"
 }

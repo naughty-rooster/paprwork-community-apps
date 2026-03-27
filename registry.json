@@ -35,7 +35,7 @@
     {
       "bundleId": "meetings-manager",
       "name": "Meetings Manager",
-      "description": "AI-powered meeting manager \u2014 schedule, prep, record, transcribe, and summarize meetings with macOS-style backgrounds, Liquid Glass UI, and intelligent context from memory.",
+      "description": "AI-powered meeting manager \u2014 schedule, prep, record, transcribe, summarize, and sync to memory. Features macOS-style dynamic backgrounds generated daily based on your meetings.",
       "version": "4.0.0",
       "author": "amirkabbara",
       "tags": [
@@ -49,9 +49,8 @@
       "minPaprworkVersion": "2.0.0",
       "path": "bundles/meetings-manager",
       "requirements": [
-        "ANTHROPIC_API_KEY",
-        "GOOGLE_API_KEY",
-        "OPENAI_API_KEY"
+        "OPENAI_API_KEY",
+        "GOOGLE_API_KEY"
       ],
       "platform": [
         "macos"

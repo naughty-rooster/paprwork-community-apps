@@ -93,7 +93,7 @@ async function loadAll(): Promise<void> {
       ORDER BY start_time ASC`);
   } catch { calEvents = []; }
   try {
-    const rows = await q(`SELECT city, reason, prompt, image_url, image_data, generated_on FROM location_background WHERE id='current' LIMIT 1`);
+    const rows = await q(`SELECT city, reason, prompt, image_url, image_data, generated_on FROM location_background WHERE id='daily' LIMIT 1`);
     bg = rows[0] || null;
   } catch { bg = null; }
   render();
@@ -113,118 +113,59 @@ async function checkPerm(): Promise<boolean> {
 }
 
 // Recording
-async function finalizeMeetingRecording(mid: string, durationSeconds?: number, savedNotes?: string): Promise<void> {
-  if (savedNotes !== undefined) {
-    await w("UPDATE meetings SET notes=?, updated_at=strftime('%s','now') WHERE id=?", [savedNotes, mid]);
-  }
-  if (durationSeconds !== undefined) {
-    await w("UPDATE meetings SET duration=?, updated_at=strftime('%s','now') WHERE id=?", [durationSeconds, mid]);
-  }
-  await w("UPDATE meetings SET status='stopping', updated_at=strftime('%s','now') WHERE id=? AND status IN ('recording','stopping')", [mid]);
-  // Send stop signal — retry up to 3 times
-  for (let attempt = 0; attempt < 3; attempt++) {
-    try { await runJob(STOP_JOB); break; } catch { await sleep(1000); }
-  }
-  // Wait for recorder to save audio, with fallback timeout
-  let settled = false;
-  for (let i = 0; i < 20; i++) {
-    await sleep(1500);
-    const rows = await q("SELECT status FROM meetings WHERE id=?", [mid]);
-    if (!rows.length) return;
-    const s = rows[0].status;
-    if (['recorded','transcribing','pending','summarized'].includes(s)) { settled = true; break; }
-    if (s === 'failed') return;
-  }
-  // If still stopping after 30s, force to recorded so pipeline continues
-  if (!settled) {
-    await w("UPDATE meetings SET status='recorded', updated_at=strftime('%s','now') WHERE id=? AND status='stopping'", [mid]);
-  }
-  triggerWhisperWhenReady(mid).catch(() => {});
-  startPoll(mid);
-}
-
-async function handoffActiveRecording(): Promise<void> {
-  const rows = await q("SELECT id, status FROM meetings WHERE status='recording' ORDER BY created_at DESC LIMIT 1");
-  if (!rows.length) return;
-  const activeId = rows[0].id as string;
-  if (activeId === recordingId) {
-    const editor = document.getElementById('notes-editor') as HTMLElement;
-    const notes = editor ? editor.innerHTML.trim() : '';
-    if (timerInterval) { clearInterval(timerInterval); timerInterval = null; }
-    isRecording = false;
-    await finalizeMeetingRecording(activeId, elapsedSeconds, notes || undefined);
-    recordingId = null;
-    elapsedSeconds = 0;
-  } else {
-    await finalizeMeetingRecording(activeId);
-  }
-}
-
 async function startRecording(fromCalId?: string): Promise<void> {
   if (permissionGranted !== true) {
     const ok = await checkPerm();
     if (!ok) { showPermModal = true; render(); return; }
   }
-  await handoffActiveRecording();
-
+  const id = crypto.randomUUID();
   const now = new Date().toISOString();
   let title = 'Meeting \u2014 ' + new Date().toLocaleString(undefined, {month:'short', day:'numeric', hour:'2-digit', minute:'2-digit'});
-  let id = '';
   if (fromCalId) {
     const ev = calEvents.find(e => e.id === fromCalId);
     if (ev) {
       title = ev.title;
-      // Check if a scheduled meeting already exists for this calendar event
-      const existing = await q("SELECT m.id FROM meetings m JOIN calendar_events ce ON ce.meeting_id = m.id WHERE ce.id = ? AND m.status = 'scheduled' LIMIT 1", [fromCalId]);
-      if (existing.length) {
-        id = existing[0].id;
-        await w("UPDATE meetings SET status='recording', date=?, updated_at=strftime('%s','now') WHERE id=?", [now, id]);
-      } else {
-        id = crypto.randomUUID();
-        await w("UPDATE calendar_events SET meeting_id = ? WHERE id = ?", [id, fromCalId]);
-      }
+      await w("UPDATE calendar_events SET meeting_id = ? WHERE id = ?", [id, fromCalId]);
     }
   }
-  if (!id) {
-    id = crypto.randomUUID();
-  }
-  // Insert only if we didn't reuse an existing scheduled meeting
-  const check = await q("SELECT id FROM meetings WHERE id=?", [id]);
-  if (!check.length) {
-    await w("INSERT INTO meetings (id, title, date, status) VALUES (?, ?, ?, 'recording')", [id, title, now]);
-  }
+  await w("INSERT INTO meetings (id, title, date, status) VALUES (?, ?, ?, 'recording')", [id, title, now]);
   recordingId = id; isRecording = true; elapsedSeconds = 0; selectedId = id;
   view = 'meeting';
-  render();
   timerInterval = setInterval(() => {
     elapsedSeconds++;
     const el = document.getElementById('rec-timer');
     if (el) el.textContent = fmtDur(elapsedSeconds);
   }, 1000);
-  try { await runJob(RECORDER_JOB); } catch(e) { console.error('Recorder job failed:', e); }
+  await runJob(RECORDER_JOB);
   await loadAll();
 }
 
 async function stopRecording(): Promise<void> {
   if (!recordingId) return;
   const editor = document.getElementById('notes-editor') as HTMLElement;
-  const notes = editor ? editor.innerHTML.trim() : '';
-  const sid = recordingId;
+  if (editor) {
+    const notes = editor.innerHTML.trim();
+    if (notes) await w("UPDATE meetings SET notes=?, updated_at=strftime('%s','now') WHERE id=?", [notes, recordingId]);
+  }
   isRecording = false;
   if (timerInterval) { clearInterval(timerInterval); timerInterval = null; }
-  recordingId = null;
-  await finalizeMeetingRecording(sid, elapsedSeconds, notes || undefined);
-  elapsedSeconds = 0;
+  await w("UPDATE meetings SET duration=?, updated_at=strftime('%s','now') WHERE id=?", [elapsedSeconds, recordingId]);
+  await w("UPDATE meetings SET status='stopping', updated_at=strftime('%s','now') WHERE id=?", [recordingId]);
+  await runJob(STOP_JOB);
+  const sid = recordingId;
+  recordingId = null; elapsedSeconds = 0;
   await loadAll();
+  triggerWhisperWhenReady(sid);
+  startPoll(sid);
 }
 
 async function triggerWhisperWhenReady(mid: string): Promise<void> {
-  for (let i = 0; i < 45; i++) {
+  for (let i = 0; i < 60; i++) {
     await sleep(2000);
     const rows = await q("SELECT status FROM meetings WHERE id=?", [mid]);
     if (!rows.length || rows[0].status === 'failed') return;
     if (rows[0].status === 'recorded') { await runJob(WHISPER_JOB); return; }
-    if (['transcribing', 'pending', 'summarized', 'synced'].includes(rows[0].status)) return;
+    // Keep polling through 'stopping' and 'recording' states
   }
 }
 
@@ -254,7 +195,7 @@ function flushSave(): void {
   if (activeTab === 'prep' && selectedCalId) {
     w("UPDATE calendar_events SET prep_doc=? WHERE id=?", [html, selectedCalId]);
   } else if (activeTab === 'notes') {
-    w("UPDATE meetings SET summary=?, updated_at=strftime('%s','now') WHERE id=?", [html, id]);
+    w("UPDATE meetings SET notes=?, updated_at=strftime('%s','now') WHERE id=?", [html, id]);
   }
 }
 
@@ -540,7 +481,7 @@ function fmtDayLabel(t: string): string {
 function esc(s: string): string { const d = document.createElement('div'); d.textContent = s || ''; return d.innerHTML; }
 function statusLabel(s: string): string {
   return {recording:'Recording', stopping:'Processing', recorded:'Transcribing', transcribing:'Transcribing',
-    pending:'Summarizing', summarized:'Complete', synced:'Complete', failed:'Failed', scheduled:'Scheduled'}[s] || '';
+    pending:'Summarizing', summarized:'Complete', failed:'Failed'}[s] || s;
 }
 function statusClass(s: string): string {
   return {recording:'status-recording', stopping:'status-processing', recorded:'status-processing',
@@ -733,9 +674,16 @@ function toggleBgHero(): void {
 }
 
 function renderBackgroundHero(): string {
-  return '';
+  if (!showBgHero) return '';
+  const city = liveCity || bg?.city || 'San Francisco';
+  const reason = liveLocationReason || bg?.reason || '';
+  return `
+    <section class="bg-hero">
+      <h1 class="bg-hero-city">${esc(city)}</h1>
+      ${reason ? `<p class="bg-hero-reason">${esc(reason)}</p>` : ''}
+      <button class="bg-hero-refresh" id="btn-refresh-bg">${icon('refresh', 14)} Refresh</button>
+    </section>`;
 }
-
 
 function renderHome(): string {
   const todayEvs = getTodayEvents();
@@ -950,21 +898,8 @@ function renderMeetingCard(e: CalEvent): string {
   const minsLeft = isLive ? Math.round((et.getTime() - now.getTime()) / 60000) : 0;
   const minsTill = isSoon ? Math.round((st.getTime() - now.getTime()) / 60000) : 0;
 
-  // Status — show meeting pipeline status if linked, else time-based
-  const mStatus = linked?.status === 'scheduled' ? null : linked?.status;
-  const statusBadge = mStatus === 'recording'
-    ? '<span class="mc-badge mc-badge-live"><span class="pulse-dot red"></span>Recording</span>'
-    : mStatus === 'stopping' || mStatus === 'recorded'
-    ? '<span class="mc-badge mc-badge-proc"><span class="spinner-sm"></span> Saving audio</span>'
-    : mStatus === 'transcribing'
-    ? '<span class="mc-badge mc-badge-proc"><span class="spinner-sm"></span> Transcribing</span>'
-    : mStatus === 'pending'
-    ? '<span class="mc-badge mc-badge-proc"><span class="spinner-sm"></span> Summarizing</span>'
-    : mStatus === 'summarized' || mStatus === 'synced'
-    ? '<span class="mc-badge mc-badge-done">✓ Ready</span>'
-    : mStatus === 'failed'
-    ? '<span class="mc-badge mc-badge-fail">Failed</span>'
-    : isLive
+  // Status
+  const statusBadge = isLive
     ? '<span class="mc-badge mc-badge-live"><span class="pulse-dot red"></span>Live \u00b7 ' + minsLeft + 'm left</span>'
     : isSoon
     ? '<span class="mc-badge mc-badge-soon">In ' + minsTill + 'm</span>'
@@ -991,17 +926,12 @@ function renderMeetingCard(e: CalEvent): string {
     ? '<button class="mc-btn mc-btn-warn" onclick="event.stopPropagation();triggerPrep(\'' + e.id + '\')">Retry Prep</button>'
     : '<button class="mc-btn mc-btn-glass" onclick="event.stopPropagation();triggerPrep(\'' + e.id + '\')">\u2726 Prep</button>';
 
-  const actionBtn = linked && ['summarized','synced'].includes(linked.status)
+  const actionBtn = linked
     ? '<button class="mc-btn mc-btn-primary" onclick="event.stopPropagation();openMeeting(\'' + linked.id + '\')">View Notes</button>'
-    : linked && linked.status !== 'scheduled' && linked.status === 'recording'
-    ? '<button class="mc-btn mc-btn-warn" onclick="event.stopPropagation();openMeeting(\'' + linked.id + '\')">\u23f9 Stop</button>'
-    : linked && linked.status !== 'scheduled'
-    ? '<button class="mc-btn mc-btn-glass" onclick="event.stopPropagation();openMeeting(\'' + linked.id + '\')">' + statusLabel(linked.status) + '\u2026</button>'
     : '<button class="mc-btn mc-btn-primary" onclick="event.stopPropagation();startRecording(\'' + e.id + '\')">\u25b6 Start</button>';
 
-
   const cardClass = 'mc' + (isLive ? ' mc-live' : '') + (isSoon ? ' mc-soon' : '') + (isPast ? ' mc-past' : '');
-  const clickAttr = linked && linked.status !== 'scheduled' ? ' onclick="openMeeting(\'' + linked.id + '\')"' : '';
+  const clickAttr = linked ? ' onclick="openMeeting(\'' + linked.id + '\')"' : '';
 
   return '<div class="' + cardClass + '"' + clickAttr + '>' +
     '<div class="mc-inner">' +
@@ -1273,15 +1203,20 @@ function renderDetailBody(m: Meeting | undefined): string {
     return `<div class="processing-bar failed"><span>Processing failed. <button class="inline-btn" id="btn-retry-pipeline">Retry</button></span></div>`;
   }
   const hasSummary = m.summary?.trim();
+  const hasNotes = m.notes?.trim();
 
   if (activeTab === 'notes') {
+    // Notes tab: show AI summary + user notes merged, or just user notes, or empty
+    // Detect if content is already HTML (edited & saved) vs raw markdown (from AI)
     const isHtml = (s: string) => /<[a-z][\s\S]*>/i.test(s);
     const fmt = (s: string) => isHtml(s) ? s : formatSummary(s);
-    const content = hasSummary ? fmt(m.summary) : '';
-    return `<div id="notes-editor" class="notes-editor notes-editable${!content ? ' is-empty' : ''}" contenteditable="true" spellcheck="true" data-placeholder="Add your notes\u2026">${content}</div>`;
+    let content = '';
+    if (hasSummary && hasNotes) content = fmt(m.summary) + '<hr style="margin:24px 0;opacity:.15">' + fmt(m.notes);
+    else if (hasSummary) content = fmt(m.summary);
+    else if (hasNotes) content = fmt(m.notes);
+    const empty = !hasSummary && !hasNotes;
+    return `<div id="notes-editor" class="notes-editor notes-editable${empty ? ' is-empty' : ''}" contenteditable="true" spellcheck="true" data-placeholder="Add your notes\u2026">${content}</div>`;
   }
-
-
   if (activeTab === 'prep') {
     const ev = findLinkedCalEvent(m);
     const prepDoc = ev?.prep_doc || '';
@@ -1450,20 +1385,4 @@ function attachListeners(): void {
   await recoverRecordingState();
   await recoverStuckPreps();
   detectLiveLocation().catch(() => {});
-  // Auto-refresh home view every 10s to show pipeline progress
-  setInterval(async () => {
-    if (view !== 'home') return;
-    const scrollY = document.documentElement.scrollTop || document.body.scrollTop;
-    try { meetings = await q('SELECT * FROM meetings ORDER BY created_at DESC'); } catch {}
-    try {
-      calEvents = await q(`SELECT id, title, start_time, end_time, calendar_name, meeting_id,
-        COALESCE(attendees, '[]') as attendees, COALESCE(prep_status, '') as prep_status,
-        COALESCE(prep_doc, '') as prep_doc
-        FROM calendar_events
-        WHERE NOT (start_time LIKE '%T00:00' AND end_time LIKE '%T23:59')
-        ORDER BY start_time ASC`);
-    } catch {}
-    render();
-    requestAnimationFrame(() => { window.scrollTo(0, scrollY); });
-  }, 30000);
 })();

@@ -42,22 +42,8 @@ def compress_if_needed(audio_path):
     
     print(f"File too large ({file_size // (1024*1024)}MB > 24MB), compressing to MP3...")
     mp3_path = audio_path.replace(".wav", "_compressed.mp3")
-    
-    # Adaptive bitrate based on file size to target ~15MB output
-    if file_size > 400 * 1024 * 1024:
-        bitrate = "12k"
-    elif file_size > 200 * 1024 * 1024:
-        bitrate = "16k"
-    elif file_size > 100 * 1024 * 1024:
-        bitrate = "24k"
-    elif file_size > 50 * 1024 * 1024:
-        bitrate = "48k"
-    else:
-        bitrate = "64k"
-    
-    print(f"Using {bitrate} bitrate for {file_size // (1024*1024)}MB file")
     result = subprocess.run(
-        ["ffmpeg", "-y", "-i", audio_path, "-ac", "1", "-ar", "16000", "-b:a", bitrate, mp3_path],
+        ["ffmpeg", "-y", "-i", audio_path, "-ac", "1", "-ar", "16000", "-b:a", "64k", mp3_path],
         capture_output=True, text=True
     )
     if result.returncode != 0:
@@ -66,36 +52,11 @@ def compress_if_needed(audio_path):
     
     new_size = os.path.getsize(mp3_path)
     print(f"Compressed: {file_size // (1024*1024)}MB -> {new_size // (1024*1024)}MB")
-    
-    # If still too large, retry with progressively lower bitrate
-    for retry_br in ["16k", "12k", "8k"]:
-        if new_size <= MAX_WHISPER_SIZE:
-            break
-        print(f"Still too large ({new_size // (1024*1024)}MB), retrying with {retry_br}...")
-        os.remove(mp3_path)
-        result = subprocess.run(
-            ["ffmpeg", "-y", "-i", audio_path, "-ac", "1", "-ar", "16000", "-b:a", retry_br, mp3_path],
-            capture_output=True, text=True
-        )
-        if result.returncode != 0:
-            raise RuntimeError("Failed to compress audio on retry")
-        new_size = os.path.getsize(mp3_path)
-        print(f"Retry ({retry_br}): {file_size // (1024*1024)}MB -> {new_size // (1024*1024)}MB")
-    
     return mp3_path, True
-
-def get_openai_client():
-    """Try OPENAI_PLATFORM_KEY first, then OPENAI_API_KEY"""
-    platform_key = os.environ.get("OPENAI_PLATFORM_KEY", "")
-    api_key = os.environ.get("OPENAI_API_KEY", "")
-    key = platform_key if platform_key else api_key
-    if not key:
-        raise RuntimeError("No OpenAI API key found. Set OPENAI_PLATFORM_KEY or OPENAI_API_KEY.")
-    return OpenAI(api_key=key)
 
 def transcribe_audio(audio_path):
     """Send audio to Whisper API for transcription, compressing if needed"""
-    client = get_openai_client()
+    client = OpenAI()
     
     upload_path, was_compressed = compress_if_needed(audio_path)
     file_size = os.path.getsize(upload_path)
@@ -152,78 +113,42 @@ def save_transcript(meeting_id, transcript):
     print(f"Meeting {meeting_id} status -> pending (ready for summarizer)")
     return full_text
 
-def process_meeting(meeting_id, audio_path):
-    """Process a single meeting: transcribe and save"""
-    if not os.path.exists(audio_path):
-        print(f"  SKIP: No audio file at {audio_path}")
-        return False
+def main():
+    # Check audio file exists
+    if not os.path.exists(AUDIO_FILE):
+        print(f"ERROR: No audio file at {AUDIO_FILE}")
+        return
     
-    file_size = os.path.getsize(audio_path)
+    file_size = os.path.getsize(AUDIO_FILE)
     if file_size < 1000:
-        print(f"  SKIP: Audio file too small ({file_size} bytes)")
-        return False
+        print(f"ERROR: Audio file too small ({file_size} bytes) - recording may have failed")
+        return
     
-    # Mark as transcribing
+    # Get meeting ID
+    meeting_id = get_current_meeting_id()
+    if not meeting_id:
+        print("ERROR: No current meeting ID found")
+        return
+    
+    print(f"Processing meeting: {meeting_id}")
+    
+    # Mark as transcribing so the UI shows progress
     conn = sqlite3.connect(MEETINGS_DB)
     conn.execute("UPDATE meetings SET status='transcribing', updated_at=strftime('%s','now') WHERE id=?", (meeting_id,))
     conn.commit()
     conn.close()
-    print(f"  Status -> transcribing")
+    print(f"Meeting {meeting_id} status -> transcribing")
     
     # Transcribe
-    transcript = transcribe_audio(audio_path)
+    transcript = transcribe_audio(AUDIO_FILE)
     
     # Save
     text = save_transcript(meeting_id, transcript)
-    preview = text[:300] + "..." if len(text) > 300 else text
-    print(f"  Preview: {preview}\n")
-    return True
-
-def main():
-    # First, process the current meeting from recorder (latest recording)
-    current_id = get_current_meeting_id()
     
-    # Get all meetings that need transcription
-    conn = sqlite3.connect(MEETINGS_DB)
-    rows = conn.execute(
-        "SELECT id, title, audio_path FROM meetings WHERE status IN ('recorded','transcribing') ORDER BY created_at ASC"
-    ).fetchall()
-    conn.close()
-    
-    if not rows:
-        print("No meetings to transcribe.")
-        return
-    
-    print(f"Found {len(rows)} meeting(s) to transcribe.\n")
-    success_count = 0
-    
-    for mid, title, audio_path in rows:
-        print(f"Processing: {title} ({mid})")
-        
-        # Use stored audio_path, fall back to per-meeting file, then current recording
-        per_meeting_path = os.path.join(RECORDER_JOB_DIR, "data", "recordings", f"{mid}.wav")
-        if audio_path and os.path.exists(audio_path):
-            path = audio_path
-        elif os.path.exists(per_meeting_path):
-            path = per_meeting_path
-        elif mid == current_id:
-            path = AUDIO_FILE
-        else:
-            print(f"  SKIP: No audio file found (audio_path={audio_path})")
-            continue
-        
-        try:
-            if process_meeting(mid, path):
-                success_count += 1
-        except Exception as e:
-            print(f"  ERROR: {e}")
-            # Reset status back to recorded so it can retry
-            c = sqlite3.connect(MEETINGS_DB)
-            c.execute("UPDATE meetings SET status='recorded', updated_at=strftime('%s','now') WHERE id=?", (mid,))
-            c.commit()
-            c.close()
-    
-    print(f"\nDone! Transcribed {success_count}/{len(rows)} meetings.")
+    # Preview
+    preview = text[:500] + "..." if len(text) > 500 else text
+    print(f"\nTranscript preview:\n{preview}")
+    print("\nDone! Summarizer can now process this meeting.")
 
 if __name__ == "__main__":
     main()
