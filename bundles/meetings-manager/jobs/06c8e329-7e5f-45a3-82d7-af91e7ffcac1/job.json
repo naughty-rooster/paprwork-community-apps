@@ -3,7 +3,14 @@
   "name": "Meeting Monitor",
   "type": "bash",
   "command": "bash monitor.sh",
+  "dependsOn": [
+    {
+      "jobId": "40407339-ca0b-4650-a009-426201025e81",
+      "onStatus": "completed",
+      "autoTrigger": true
+    }
+  ],
   "status": "pending",
-  "createdAt": "2026-03-20T06:18:35.650Z",
-  "updatedAt": "2026-03-20T06:18:35.650Z"
+  "createdAt": "2026-03-27T01:38:00.654Z",
+  "updatedAt": "2026-03-27T01:38:00.654Z"
 }

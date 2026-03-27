@@ -6,7 +6,7 @@
 
 ### Option 1: Import via Paprwork Agent
 ```
-Agent: "Import the bundle from /Users/amirkabbara/PAPR/bundles/meetings-manager"
+Agent: "Import the bundle from /Users/amirkabbara/PAPR/bundles/bundle-1774575477839"
 ```
 
 ### Option 2: Import from GitHub
@@ -19,13 +19,13 @@ Agent: "Import the bundle from /Users/amirkabbara/PAPR/bundles/meetings-manager"
 - **App**: Meetings Manager (ea6d8d7c-a15e-4c02-8273-117450b498f4)
 - **Jobs**: 10 job(s)
   - Location Background Generator (python)
+  - Calendar Reader (bash)
   - Check Screen Recording Permission (bash)
   - Whisper Transcriber (python)
   - Stop Recorder (bash)
   - System Audio Recorder (bash)
   - Meeting Memory Sync (agent)
   - Meeting Summarizer (agent)
-  - Calendar Reader (bash)
   - Meeting Prep Agent (agent)
   - Meeting Monitor (bash)
 
@@ -37,4 +37,4 @@ Agent: "Import the bundle from /Users/amirkabbara/PAPR/bundles/meetings-manager"
 
 ## Version
 
-1.0.0 - Created 2026-03-20
+1.0.0 - Created 2026-03-27

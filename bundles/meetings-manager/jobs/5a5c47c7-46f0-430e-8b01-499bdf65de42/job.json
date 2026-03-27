@@ -2,8 +2,9 @@
   "id": "5a5c47c7-46f0-430e-8b01-499bdf65de42",
   "name": "Stop Recorder",
   "type": "bash",
-  "command": "touch $HOME/PAPR/jobs/54837f40-1e64-4810-a387-f81151d014af/data/stop_signal && echo \"Stop signal sent\"",
+  "command": "bash stop.sh",
+  "dependsOn": [],
   "status": "pending",
-  "createdAt": "2026-03-20T06:18:34.674Z",
-  "updatedAt": "2026-03-20T06:18:34.674Z"
+  "createdAt": "2026-03-27T01:37:59.982Z",
+  "updatedAt": "2026-03-27T01:37:59.982Z"
 }

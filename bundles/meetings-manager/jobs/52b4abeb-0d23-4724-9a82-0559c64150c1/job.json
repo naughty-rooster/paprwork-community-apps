@@ -2,8 +2,15 @@
   "id": "52b4abeb-0d23-4724-9a82-0559c64150c1",
   "name": "Whisper Transcriber",
   "type": "python",
-  "command": "OPENAI_API_KEY=${OPENAI_API_KEY} ./.venv/bin/python transcribe.py",
+  "command": "OPENAI_API_KEY=${OPENAI_API_KEY} OPENAI_PLATFORM_KEY=${OPENAI_PLATFORM_KEY} ./.venv/bin/python transcribe.py",
+  "dependsOn": [
+    {
+      "jobId": "5a5c47c7-46f0-430e-8b01-499bdf65de42",
+      "onStatus": "completed",
+      "autoTrigger": true
+    }
+  ],
   "status": "pending",
-  "createdAt": "2026-03-20T06:18:34.656Z",
-  "updatedAt": "2026-03-20T06:18:34.656Z"
+  "createdAt": "2026-03-27T01:37:59.980Z",
+  "updatedAt": "2026-03-27T01:37:59.980Z"
 }

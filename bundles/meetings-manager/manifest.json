@@ -2,12 +2,17 @@
   "schemaVersion": "1.0.0",
   "bundleId": "meetings-manager",
   "name": "Meetings Manager",
-  "version": "3.2.0",
-  "createdAt": "2026-03-20T06:18:39.454Z",
+  "version": "4.0.0",
+  "createdAt": "2026-03-27T01:38:01.057Z",
   "minPaprworkVersion": "2.0.0",
   "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' fill='none'>\n  <defs>\n    <linearGradient id='bg' x1='0' y1='0' x2='512' y2='512' gradientUnits='userSpaceOnUse'>\n      <stop offset='0%' stop-color='#1e1b4b'/>\n      <stop offset='45%' stop-color='#3730a3'/>\n      <stop offset='100%' stop-color='#6d28d9'/>\n    </linearGradient>\n    <linearGradient id='shine' x1='0' y1='0' x2='200' y2='200' gradientUnits='userSpaceOnUse'>\n      <stop offset='0%' stop-color='#ffffff' stop-opacity='0.18'/>\n      <stop offset='100%' stop-color='#ffffff' stop-opacity='0'/>\n    </linearGradient>\n    <linearGradient id='card' x1='0' y1='0' x2='0' y2='300' gradientUnits='userSpaceOnUse'>\n      <stop offset='0%' stop-color='#ffffff' stop-opacity='0.97'/>\n      <stop offset='100%' stop-color='#e0e7ff' stop-opacity='0.92'/>\n    </linearGradient>\n    <filter id='glow' x='-40%' y='-40%' width='14' height='14'>\n      <feGaussianBlur in='SourceGraphic' stdDeviation='7' result='blur'/>\n      <feMerge><feMergeNode in='blur'/><feMergeNode in='SourceGraphic'/></feMerge>\n    </filter>\n    <filter id='shadow' x='-12%' y='-8%' width='124%' height='128%'>\n      <feDropShadow dx='0' dy='8' stdDeviation='14' flood-color='#1e1b4b' flood-opacity='0.4'/>\n    </filter>\n  </defs>\n\n  <!-- Background -->\n  <rect width='512' height='512' rx='114' fill='url(#bg)'/>\n  <!-- Gloss -->\n  <ellipse cx='180' cy='140' rx='210' ry='125' fill='url(#shine)'/>\n\n  <!-- Calendar card -->\n  <g filter='url(#shadow)'>\n    <rect x='96' y='144' width='276' height='236' rx='28' fill='url(#card)'/>\n  </g>\n\n  <!-- Calendar header -->\n  <rect x='96' y='144' width='276' height='62' rx='28' fill='#4338ca'/>\n  <rect x='96' y='174' width='276' height='32' fill='#4338ca'/>\n\n  <!-- Ring clips -->\n  <rect x='164' y='116' width='18' height='54' rx='9' fill='#a5b4fc'/>\n  <rect x='286' y='116' width='18' height='54' rx='9' fill='#a5b4fc'/>\n\n  <!-- Weekday dots in header -->\n  <circle cx='152' cy='176' r='5' fill='#818cf8' opacity='0.65'/>\n  <circle cx='196' cy='176' r='5' fill='#818cf8' opacity='0.65'/>\n  <circle cx='240' cy='176' r='5' fill='#818cf8' opacity='0.65'/>\n  <circle cx='284' cy='176' r='5' fill='#818cf8' opacity='0.65'/>\n  <circle cx='328' cy='176' r='5' fill='#818cf8' opacity='0.65'/>\n\n  <!-- Meeting block row 1 -->\n  <rect x='114' y='222' width='72' height='40' rx='10' fill='#6366f1' opacity='0.13'/>\n  <rect x='114' y='222' width='5' height='40' rx='3' fill='#6366f1'/>\n  <rect x='126' y='230' width='44' height='7' rx='3' fill='#312e81' opacity='0.45'/>\n  <rect x='126' y='242' width='30' height='5' rx='2' fill='#312e81' opacity='0.28'/>\n\n  <rect x='198' y='222' width='72' height='40' rx='10' fill='#ddd6fe' opacity='0.45'/>\n\n  <rect x='282' y='222' width='76' height='40' rx='10' fill='#7c3aed' opacity='0.13'/>\n  <rect x='282' y='222' width='5' height='40' rx='3' fill='#7c3aed'/>\n  <rect x='294' y='230' width='48' height='7' rx='3' fill='#3b0764' opacity='0.4'/>\n  <rect x='294' y='242' width='34' height='5' rx='2' fill='#3b0764' opacity='0.22'/>\n\n  <!-- Meeting block row 2 (wide) -->\n  <rect x='114' y='276' width='152' height='40' rx='10' fill='#0ea5e9' opacity='0.11'/>\n  <rect x='114' y='276' width='5' height='40' rx='3' fill='#0284c7'/>\n  <rect x='126' y='284' width='86' height='7' rx='3' fill='#0c4a6e' opacity='0.38'/>\n  <rect x='126' y='296' width='58' height='5' rx='2' fill='#0c4a6e' opacity='0.22'/>\n\n  <rect x='278' y='276' width='80' height='40' rx='10' fill='#e0e7ff' opacity='0.5'/>\n  <rect x='288' y='284' width='52' height='6' rx='3' fill='#6366f1' opacity='0.3'/>\n  <rect x='288' y='296' width='38' height='5' rx='2' fill='#6366f1' opacity='0.2'/>\n\n  <!-- Sparkle star (AI) top right -->\n  <g filter='url(#glow)'>\n    <path d='M390 76 L397 100 L421 107 L397 114 L390 138 L383 114 L359 107 L383 100 Z' fill='#fbbf24'/>\n    <path d='M424 52 L428 64 L440 68 L428 72 L424 84 L420 72 L408 68 L420 64 Z' fill='#fde68a' opacity='0.9'/>\n    <circle cx='408' cy='46' r='4.5' fill='#fef9c3' opacity='0.75'/>\n  </g>\n\n  <!-- Speech bubble (notes) bottom-right -->\n  <g opacity='0.93'>\n    <rect x='300' y='334' width='120' height='82' rx='20' fill='#7c3aed' filter='url(#shadow)'/>\n    <path d='M312 416 L292 442 L330 416 Z' fill='#7c3aed'/>\n    <rect x='316' y='352' width='76' height='8' rx='4' fill='#fff' opacity='0.82'/>\n    <rect x='316' y='367' width='58' height='8' rx='4' fill='#fff' opacity='0.58'/>\n    <rect x='316' y='382' width='42' height='8' rx='4' fill='#fff' opacity='0.36'/>\n  </g>\n</svg>",
   "requirements": [
-    "OPENAI_API_KEY"
+    "ANTHROPIC_API_KEY",
+    "APOLLO_API_KEY",
+    "EXA_API_KEY",
+    "GOOGLE_API_KEY",
+    "OPENAI_API_KEY",
+    "OPENAI_PLATFORM_KEY"
   ],
   "platform": [
     "macos",
@@ -16,7 +21,7 @@
   "app": {
     "id": "ea6d8d7c-a15e-4c02-8273-117450b498f4",
     "name": "Meetings Manager",
-    "version": "3.2.0",
+    "version": "1.0.0",
     "entryFile": "index.html",
     "appPath": "apps/ea6d8d7c-a15e-4c02-8273-117450b498f4",
     "description": "AI-powered meeting manager \u2014 schedule, prep, record, transcribe, and summarize meetings with intelligent context from memory."
@@ -27,13 +32,16 @@
       "name": "Location Background Generator",
       "type": "python",
       "command": "GOOGLE_API_KEY=${GOOGLE_API_KEY} ./.venv/bin/python generate_background.py",
-      "dependsOn": [
-        {
-          "jobId": "40407339-ca0b-4650-a009-426201025e81",
-          "onStatus": "completed",
-          "autoTrigger": true
-        }
-      ],
+      "dependsOn": [],
+      "env": {},
+      "outputTables": []
+    },
+    {
+      "id": "40407339-ca0b-4650-a009-426201025e81",
+      "name": "Calendar Reader",
+      "type": "bash",
+      "command": "bash run_calendar.sh",
+      "dependsOn": [],
       "env": {},
       "outputTables": []
     },
@@ -50,14 +58,8 @@
       "id": "52b4abeb-0d23-4724-9a82-0559c64150c1",
       "name": "Whisper Transcriber",
       "type": "python",
-      "command": "OPENAI_API_KEY=${OPENAI_API_KEY} ./.venv/bin/python transcribe.py",
-      "dependsOn": [
-        {
-          "jobId": "5a5c47c7-46f0-430e-8b01-499bdf65de42",
-          "onStatus": "completed",
-          "autoTrigger": true
-        }
-      ],
+      "command": "OPENAI_API_KEY=${OPENAI_API_KEY} OPENAI_PLATFORM_KEY=${OPENAI_PLATFORM_KEY} ./.venv/bin/python transcribe.py",
+      "dependsOn": [],
       "env": {},
       "outputTables": []
     },
@@ -65,14 +67,8 @@
       "id": "5a5c47c7-46f0-430e-8b01-499bdf65de42",
       "name": "Stop Recorder",
       "type": "bash",
-      "command": "touch $HOME/PAPR/jobs/54837f40-1e64-4810-a387-f81151d014af/data/stop_signal && echo \"Stop signal sent\"",
-      "dependsOn": [
-        {
-          "jobId": "06c8e329-7e5f-45a3-82d7-af91e7ffcac1",
-          "onStatus": "completed",
-          "autoTrigger": true
-        }
-      ],
+      "command": "bash stop.sh",
+      "dependsOn": [],
       "env": {},
       "outputTables": []
     },
@@ -80,14 +76,8 @@
       "id": "54837f40-1e64-4810-a387-f81151d014af",
       "name": "System Audio Recorder",
       "type": "bash",
-      "command": "#!/bin/bash\n# Find meetings DB dynamically\nMEETINGS_DB=$(for db in ~/PAPR/jobs/*/data/data.db; do sqlite3 \"$db\" \"SELECT name FROM sqlite_master WHERE name='meetings'\" 2>/dev/null | grep -q meetings && echo \"$db\" && break; done)\nif [ -z \"$MEETINGS_DB\" ]; then echo \"ERROR: meetings DB not found\"; exit 1; fi\nMEETING_ID=$(sqlite3 \"$MEETINGS_DB\" \"SELECT id FROM meetings WHERE status='recording' ORDER BY created_at DESC LIMIT 1\")\nif [ -z \"$MEETING_ID\" ]; then\n  echo \"ERROR: No meeting with status=recording found\"\n  exit 1\nfi\necho \"$MEETING_ID\" > data/current_meeting.txt\nrm -f data/stop_signal data/recording.wav\necho \"Recording meeting: $MEETING_ID\"\n./recorder data/recording.wav data/stop_signal\nFILE_SIZE=$(stat -f%z data/recording.wav 2>/dev/null || echo \"0\")\necho \"Recording file size: $FILE_SIZE bytes\"\nif [ \"$FILE_SIZE\" -gt 1000 ]; then\n  AUDIO_PATH=\"$(pwd)/data/recording.wav\"\n  sqlite3 \"$MEETINGS_DB\" \"UPDATE meetings SET status='recorded', audio_path='$AUDIO_PATH', updated_at=strftime('%s','now') WHERE id='$MEETING_ID'\"\n  echo \"Meeting $MEETING_ID status updated to recorded\"\nelse\n  sqlite3 \"$MEETINGS_DB\" \"UPDATE meetings SET status='failed', updated_at=strftime('%s','now') WHERE id='$MEETING_ID'\"\n  echo \"ERROR: Recording failed - empty file\"\n  exit 1\nfi",
-      "dependsOn": [
-        {
-          "jobId": "06c8e329-7e5f-45a3-82d7-af91e7ffcac1",
-          "onStatus": "completed",
-          "autoTrigger": true
-        }
-      ],
+      "command": "#!/bin/bash\n# Find meetings DB dynamically\nMEETINGS_DB=$(for db in ~/PAPR/jobs/*/data/data.db; do sqlite3 \"$db\" \"SELECT name FROM sqlite_master WHERE name='meetings'\" 2>/dev/null | grep -q meetings && echo \"$db\" && break; done)\nif [ -z \"$MEETINGS_DB\" ]; then echo \"ERROR: meetings DB not found\"; exit 1; fi\nMEETING_ID=$(sqlite3 \"$MEETINGS_DB\" \"SELECT id FROM meetings WHERE status='recording' ORDER BY created_at DESC LIMIT 1\")\nif [ -z \"$MEETING_ID\" ]; then\n  echo \"ERROR: No meeting with status=recording found\"\n  exit 1\nfi\necho \"$MEETING_ID\" > data/current_meeting.txt\nmkdir -p data/recordings\nAUDIO_FILE=\"data/recordings/${MEETING_ID}.wav\"\nrm -f data/stop_signal\necho \"Recording meeting: $MEETING_ID -> $AUDIO_FILE\"\n./recorder \"$AUDIO_FILE\" data/stop_signal\nFILE_SIZE=$(stat -f%z \"$AUDIO_FILE\" 2>/dev/null || echo \"0\")\necho \"Recording file size: $FILE_SIZE bytes\"\nif [ \"$FILE_SIZE\" -gt 1000 ]; then\n  AUDIO_PATH=\"$(pwd)/$AUDIO_FILE\"\n  sqlite3 \"$MEETINGS_DB\" \"UPDATE meetings SET status='recorded', audio_path='$AUDIO_PATH', updated_at=strftime('%s','now') WHERE id='$MEETING_ID'\"\n  echo \"Meeting $MEETING_ID status updated to recorded\"\nelse\n  sqlite3 \"$MEETINGS_DB\" \"UPDATE meetings SET status='failed', updated_at=strftime('%s','now') WHERE id='$MEETING_ID'\"\n  echo \"ERROR: Recording failed - empty file\"\n  exit 1\nfi",
+      "dependsOn": [],
       "env": {},
       "outputTables": []
     },
@@ -96,13 +86,7 @@
       "name": "Meeting Memory Sync",
       "type": "agent",
       "command": "Step 0: Find the meetings database. Run:\nfor db in ~/PAPR/jobs/*/data/data.db; do sqlite3 \"$db\" \"SELECT name FROM sqlite_master WHERE name='meetings'\" 2>/dev/null | grep -q meetings && echo \"$db\" && break; done\nStore the output path as DB_PATH. Use this path for ALL sqlite3 commands below.\n\nSync completed meetings to PAPR Memory with structured metadata. Follow these steps:\n\nSTEP 1: Find un-synced meetings\nRun: sqlite3 DB_PATH \"SELECT m.id, m.title, m.date, m.summary, m.tags, ce.attendees, ce.start_time, ce.end_time, ce.title as cal_title FROM meetings m LEFT JOIN calendar_events ce ON ce.meeting_id = m.id WHERE m.summary IS NOT NULL AND m.summary != '' AND m.status != 'synced' ORDER BY m.date DESC LIMIT 5\"\n\nIf no results, print \"No meetings to sync\" and stop.\n\nSTEP 2: For each meeting, store TWO types of memory items using add_agent_memory:\n\nA) MEETING MEMORY \u2014 store the full meeting record:\n- content: Include meeting title, date, time, all participant names and emails, the FULL summary, key decisions, action items, and follow-ups\n- category: \"fact\", role: \"assistant\"  \n- topics: extract 3-5 key topics from the summary + meeting title\n- customMetadata MUST include:\n  - memory_type: \"meeting\"\n  - meeting_title: the title\n  - meeting_date: YYYY-MM-DD format\n  - meeting_time: HH:MM format\n  - participants: comma-separated names\n  - participant_emails: comma-separated emails\n  - meeting_type: \"recurring_standup\" or \"recurring_weekly\" or \"one_off\" or \"group_session\" (infer from title)\n  - tags: from the tags column\n  - has_action_items: \"true\" or \"false\"\n\nB) PERSON MEMORIES \u2014 for each unique attendee NOT ending in @papr.ai, store a person memory:\n- content: \"Person: NAME (EMAIL) at COMPANY. Participated in MEETING_TITLE on DATE. Context from meeting: [relevant 1-2 sentences about what they discussed or contributed]\"\n- category: \"fact\", role: \"assistant\"\n- topics: person name, company name, meeting title\n- customMetadata: memory_type: \"person\", person_name, person_email, person_company (from email domain), meetings_attended\n\nSTEP 3: Mark meetings as synced\nRun: sqlite3 DB_PATH \"UPDATE meetings SET status='synced' WHERE id='MEETING_ID'\"\n\nSTEP 4: Print summary of what was synced.",
-      "dependsOn": [
-        {
-          "jobId": "8eea1893-4ca5-48ed-bfb4-187b9456fb31",
-          "onStatus": "completed",
-          "autoTrigger": true
-        }
-      ],
+      "dependsOn": [],
       "env": {},
       "outputTables": []
     },
@@ -111,21 +95,6 @@
       "name": "Meeting Summarizer",
       "type": "agent",
       "command": "Summarize all pending meeting transcripts, merge with any user notes, and generate smart tags.\n\nStep 0: Find this job's database. Run:\nfor db in ~/PAPR/jobs/*/data/data.db; do sqlite3 \"$db\" \"SELECT name FROM sqlite_master WHERE name='meetings'\" 2>/dev/null | grep -q meetings && echo \"$db\" && break; done\nStore the output path as DB_PATH. Use this path for ALL sqlite3 commands below.\n\nStep 1: Read all pending meetings:\nsqlite3 DB_PATH \"SELECT id, title, transcript, notes FROM meetings WHERE status='pending' AND transcript != ''\"\n\nStep 2: For each meeting, generate TWO things:\n\nA) A unified notes document. If the user wrote notes during the meeting (in the `notes` column), weave them INTO the summary \u2014 they represent what the user found most important. Do NOT create a separate section for user notes; integrate them naturally as highlights or emphasis points within the relevant sections.\n\nStructure:\n## Overview\nBrief 2-3 sentence summary.\n\n## Key Decisions\n- Bullet points\n\n## Action Items\n- [ ] Each as a checkbox\n\n## Follow-ups\n- What needs attention next\n\nB) A JSON array of 2-5 short topic tags that describe this meeting. Examples: [\"Product\", \"Engineering\"], [\"Sales\", \"Demo\", \"Q2\"]. Be specific and useful. Output as valid JSON array on a single line.\n\nStep 3: Write the merged notes, tags, AND summary back:\nsqlite3 DB_PATH \"UPDATE meetings SET notes='MERGED_NOTES', summary='MERGED_NOTES', tags='TAGS_JSON', status='summarized', updated_at=strftime('%s','now') WHERE id='MEETING_ID'\"\n\nSave the SAME content to both `notes` and `summary` columns. The `notes` column is what the user sees; `summary` is a backup of the AI-generated version.\n\nIMPORTANT: Escape single quotes by doubling them in SQL. Write tags as a JSON array string.",
-      "dependsOn": [
-        {
-          "jobId": "52b4abeb-0d23-4724-9a82-0559c64150c1",
-          "onStatus": "completed",
-          "autoTrigger": true
-        }
-      ],
-      "env": {},
-      "outputTables": []
-    },
-    {
-      "id": "40407339-ca0b-4650-a009-426201025e81",
-      "name": "Calendar Reader",
-      "type": "bash",
-      "command": "bash run_calendar.sh",
       "dependsOn": [],
       "env": {},
       "outputTables": []
@@ -135,13 +104,7 @@
       "name": "Meeting Prep Agent",
       "type": "agent",
       "command": "Step 0: Find the meetings database. Run:\nfor db in ~/PAPR/jobs/*/data/data.db; do sqlite3 \"$db\" \"SELECT name FROM sqlite_master WHERE name='meetings'\" 2>/dev/null | grep -q meetings && echo \"$db\" && break; done\nStore the output path as DB_PATH. Use this path for ALL sqlite3 commands below.\n\nPrepare a comprehensive meeting prep document for an upcoming calendar event. Follow these steps EXACTLY:\\n\\nSTEP 1: Read the prep request from DB\\nRun: sqlite3 DB_PATH \\\"SELECT id, title, attendees, prep_doc FROM calendar_events WHERE prep_status='preparing' LIMIT 1\\\"\\nThe prep_doc column contains a JSON object with event_id, title, attendees (array of {name, email}), start_time.\\nParse the JSON to get meeting details and attendee list.\\n\\nSTEP 2: Search PAPR Memory FIRST\\nUse search_agent_memory to find context about:\\n- The meeting title and topic (e.g. \\\"Papr Daily standup meetings\\\")\\n- Each attendee by name (e.g. \\\"Rony Ferzli meetings and context\\\")\\n- The companies involved (e.g. \\\"PivotVia company context\\\")\\n- Related projects or themes (e.g. \\\"mission control dashboard project\\\")\\nDo 5-8 targeted searches. Memory contains prior meeting summaries, participant profiles, key decisions, and action items.\\n\\nSTEP 3: Search prior meeting notes from DB \u2014 WITH RELEVANCE FILTERING\\nRun: sqlite3 DB_PATH \\\"SELECT title, summary, notes, tags, created_at FROM meetings WHERE status IN ('summarized','synced') ORDER BY created_at DESC LIMIT 20\\\"\\n\\nCRITICAL: Do NOT assume every prior meeting is related to this upcoming one. You MUST evaluate relevance by checking:\\n\\n1. **Participant overlap**: Compare the attendee list of the upcoming meeting against who was mentioned in each prior meeting's summary/notes. Only meetings with at least ONE shared participant are potentially relevant.\\n\\n2. **Topic relevance**: Even with shared participants, a \\\"Product Design Review\\\" is NOT a prior instance of a \\\"Weekly 1:1\\\" just because the same person attended both. Match by meeting PURPOSE, not just people.\\n\\n3. **Recurring vs. one-off**: If the upcoming meeting title suggests it's recurring (e.g., \\\"Weekly Ops Review\\\", \\\"Papr Daily\\\", \\\"1:1\\\"), look for prior instances of THAT SAME recurring meeting. Don't conflate different recurring meetings.\\n\\n4. **Classify each prior meeting** as one of:\\n   - DIRECTLY_RELATED: Same recurring meeting or same project/topic with same core participants \u2192 include open items and context\\n   - TANGENTIALLY_RELATED: Shared participants but different meeting purpose \u2192 mention briefly only if there are cross-cutting action items\\n   - UNRELATED: Different people, different topic \u2192 ignore completely\\n\\nOnly surface open items and follow-ups from DIRECTLY_RELATED meetings. For TANGENTIALLY_RELATED, only mention if there's a specific action item that one of the upcoming meeting's attendees owns.\\n\\nSTEP 4: Search local documents\\nRun: grep -ril \\\"KEYWORD\\\" ~/PAPR/Documents/ 2>/dev/null | head -10\\nSearch for attendee names, company names, meeting keywords. Read relevant docs.\\n\\nSTEP 5: Enrich attendees \u2014 MEMORY FIRST, WEB ONLY FOR UNKNOWNS\\nFor each attendee, check if PAPR Memory already has their profile (from Step 2 results). Only use Apollo/Exa for attendees NOT found in memory.\\n\\nFor unknown external attendees (skip @papr.ai), run Apollo lookups IN PARALLEL (batch 3-4 at a time):\\ncurl -s \\\"https://api.apollo.io/api/v1/people/match\\\" -H \\\"Content-Type: application/json\\\" -H \\\"X-Api-Key: ${APOLLO_API_KEY}\\\" -d '{\\\"email\\\": \\\"EMAIL\\\"}' | python3 -c \\\"import sys,json; d=json.load(sys.stdin).get('person',{}); print(json.dumps({'name':d.get('name',''),'title':d.get('title',''),'company':d.get('organization',{}).get('name',''),'linkedin':d.get('linkedin_url',''),'bio':d.get('headline','')},indent=2))\\\"\\n\\nSTEP 6: Web search via Exa (only if needed for context gaps)\\ncurl -s \\\"https://api.exa.ai/search\\\" -H \\\"Content-Type: application/json\\\" -H \\\"x-api-key: ${EXA_API_KEY}\\\" -d '{\\\"query\\\": \\\"QUERY\\\", \\\"numResults\\\": 3, \\\"type\\\": \\\"neural\\\"}' | python3 -c \\\"import sys,json; [print(r.get('title',''),'-',r.get('url','')) for r in json.load(sys.stdin).get('results',[])]\\\" \\n\\nSTEP 7: Generate the prep document. START with a TL;DR paragraph FIRST, then the detailed sections:\\n\\n## TL;DR\\nWrite a single compelling paragraph (3-5 sentences) that captures the essence of this meeting \u2014 who's in the room, what matters most, what you should walk in knowing. This should read like a smart executive briefing that gets you ready in 30 seconds. Be specific, reference real context from DIRECTLY RELATED prior meetings only, and highlight the most important thing to pay attention to. Do NOT reference unrelated meetings or action items from different contexts.\\n\\n## Meeting Overview\\n## Attendees (Name, Title @ Company, LinkedIn, 1-line bio)\\n## Context & Background\\nOnly include context that is DIRECTLY relevant to THIS meeting's purpose and participants. Do not pad with information from unrelated meetings.\\n\\n## Open Items from Prior Meetings\\nONLY from DIRECTLY_RELATED prior meetings. If no directly related prior meetings exist, say \\\"No prior meetings found for this group/topic\\\" \u2014 do NOT fabricate follow-ups from unrelated meetings. Each item should note which prior meeting it came from and the date.\\n\\n## Suggested Talking Points (3-5 specific topics)\\nGround these in the actual context you found. If you have limited context, suggest general but useful questions rather than pretending to have specific context.\\n\\n## Recent News & Updates\\n\\nSTEP 8: Save to DB \u2014 escape single quotes by doubling them:\\nsqlite3 DB_PATH \\\"UPDATE calendar_events SET prep_doc='ESCAPED_DOC', prep_status='ready' WHERE id='EVENT_ID'\\\"\\n\\nPrint \\\"PREP_COMPLETE\\\" when done.",
-      "dependsOn": [
-        {
-          "jobId": "40407339-ca0b-4650-a009-426201025e81",
-          "onStatus": "completed",
-          "autoTrigger": true
-        }
-      ],
+      "dependsOn": [],
       "env": {},
       "outputTables": []
     },
@@ -150,13 +113,7 @@
       "name": "Meeting Monitor",
       "type": "bash",
       "command": "bash monitor.sh",
-      "dependsOn": [
-        {
-          "jobId": "40407339-ca0b-4650-a009-426201025e81",
-          "onStatus": "completed",
-          "autoTrigger": true
-        }
-      ],
+      "dependsOn": [],
       "env": {},
       "outputTables": []
     }
@@ -174,5 +131,6 @@
     "preferredRoot": "~/PAPR",
     "bundleSubpath": "bundles",
     "cloudReady": true
-  }
+  },
+  "description": "AI-powered meeting manager \u2014 schedule, prep, record, transcribe, and summarize meetings with macOS-style backgrounds, Liquid Glass UI, and intelligent context from memory."
 }
