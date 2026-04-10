@@ -1,0 +1,22 @@
+{
+  "id": "b768c137-c0e1-4f56-ad5b-c6d4b035065c",
+  "name": "X Action Engine Scorer",
+  "type": "python",
+  "folder": "x-action-engine",
+  "command": "python3 code/main.py --anthropic-key ${ANTHROPIC_API_KEY} --anthropic-direct-key ${ANTHROPIC_DIRECT_KEY} --openai-key ${OPENAI_PLATFORM_KEY} --papr-key ${PAPR_API_KEY} --google-key ${GOOGLE_API_KEY}",
+  "requirements": [
+    "anthropic",
+    "requests"
+  ],
+  "dependsOn": [],
+  "retries": {
+    "maxAttempts": 1,
+    "backoffMs": 1000
+  },
+  "retentionDays": 14,
+  "outputMode": "natural",
+  "memoryPolicy": "none",
+  "status": "pending",
+  "createdAt": "2026-04-10T19:10:14.030Z",
+  "updatedAt": "2026-04-10T19:10:14.030Z"
+}
