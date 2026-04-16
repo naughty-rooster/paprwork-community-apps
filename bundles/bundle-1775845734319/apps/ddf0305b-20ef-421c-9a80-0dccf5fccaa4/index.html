@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parabola Lab</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="learn-chat.css">
+</head>
+<body>
+  <div class="bg-image"></div>
+  <div id="app">
+    <header class="header glass">
+      <div class="logo"><svg viewBox="0 0 48 48" width="38" height="38" fill="none">
+        <path d="M6 38 C6 38 24 -6 42 38" stroke="url(#lg)" stroke-width="4" stroke-linecap="round"/>
+        <circle cx="24" cy="4" r="4" fill="#e91e8a"/>
+        <circle cx="24" cy="4" r="2" fill="#fff" opacity=".7"/>
+        <path d="M18 20 Q24 14 30 20" stroke="#c026d3" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+        <defs><linearGradient id="lg" x1="6" y1="38" x2="42" y2="38" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#e91e8a"/><stop offset="1" stop-color="#c026d3"/>
+        </linearGradient></defs>
+      </svg></div>
+      <h1>Parabola Lab <span class="lab-badge">✦</span></h1>
+      <nav class="tabs">
+        <button class="tab" data-tab="learn">Learn</button>
+        <button class="tab active" data-tab="explore">Explore</button>
+        <button class="tab" data-tab="practice">Practice</button>
+      </nav>
+    </header>
+    <main class="main">
+      <section class="card glass" id="graph-card">
+        <canvas id="graph"></canvas>
+        <div class="eq-row">
+          <div id="eq-standard" class="equation">y = x²</div>
+          <div id="eq-vertex" class="equation eq-alt">y = (x − 0)² + 0</div>
+        </div>
+      </section>
+      <section class="card glass" id="controls">
+        <div id="sliders"></div>
+        <div id="practice-area" class="hidden"></div>
+      </section>
+      <section class="card glass hidden" id="learn-section">
+        <div id="learn-area"></div>
+        <div id="chat-area"></div>
+      </section>
+    </main>
+  </div>
+  <script type="module" src="app.ts"></script>
+</body>
+</html>

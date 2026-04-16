@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "1.0.0",
+  "bundleId": "bundle-1775845734319",
+  "name": "Parabola Lab",
+  "version": "1.0.0",
+  "createdAt": "2026-04-10T18:28:54.389Z",
+  "minPaprworkVersion": "2.0.0",
+  "description": "An interactive parabola explorer with Learn, Explore, and Practice modes. Features a glassmorphism UI with a Dublin, CA landscape background, real-time graph manipulation with sliders, AI tutor chat, and challenge mode to test your skills.",
+  "requirements": [],
+  "platform": [
+    "macos",
+    "windows",
+    "linux"
+  ],
+  "app": {
+    "id": "ddf0305b-20ef-421c-9a80-0dccf5fccaa4",
+    "name": "Parabola Lab",
+    "version": "1.0.0",
+    "entryFile": "index.html",
+    "appPath": "apps/ddf0305b-20ef-421c-9a80-0dccf5fccaa4",
+    "description": "Interactive math learning with challenges, chat, and graph visualization"
+  },
+  "jobs": [],
+  "sqlite": [],
+  "deploymentProfiles": [
+    {
+      "id": "local-default",
+      "name": "Local Default",
+      "runtimeTarget": "local",
+      "environment": {}
+    }
+  ],
+  "sync": {
+    "preferredRoot": "~/PAPR",
+    "bundleSubpath": "bundles",
+    "cloudReady": true
+  }
+}

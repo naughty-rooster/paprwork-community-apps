@@ -58,6 +58,25 @@
       ]
     },
     {
+      "bundleId": "bundle-1775845734319",
+      "name": "Parabola Lab",
+      "description": "An interactive parabola explorer with Learn, Explore, and Practice modes. Features a glassmorphism UI with a Dublin, CA landscape background, real-time graph manipulation with sliders, AI tutor chat, and challenge mode to test your skills.",
+      "version": "1.0.0",
+      "author": "shawkatkabbara",
+      "tags": [
+        "math",
+        "education",
+        "interactive",
+        "graphing",
+        "parabola"
+      ],
+      "minPaprworkVersion": "2.0.0",
+      "path": "bundles/bundle-1775845734319",
+      "requirements": [],
+      "platform": [
+        "macos",
+        "windows",
+        "linux"
       "bundleId": "bundle-1775848212950",
       "name": "X Action Engine",
       "description": "AI-powered X/Twitter engagement engine. Fetches your feed, scores tweets with Papr Memory context and 80/20 prioritization, generates draft replies and quote tweets in your voice, and opens X with pre-filled text.",
