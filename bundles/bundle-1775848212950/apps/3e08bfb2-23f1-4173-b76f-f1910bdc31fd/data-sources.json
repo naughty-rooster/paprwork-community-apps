@@ -1,0 +1,14 @@
+[
+  {
+    "id": "a6e3bf40-3d06-44a2-84ca-93ead97a10a9:feed",
+    "type": "sqlite",
+    "jobId": "a6e3bf40-3d06-44a2-84ca-93ead97a10a9",
+    "alias": "feed",
+    "dbPath": "",
+    "tables": [
+      "tweets",
+      "mentions"
+    ],
+    "linkedAt": "2026-02-22T15:42:09.285Z"
+  }
+]

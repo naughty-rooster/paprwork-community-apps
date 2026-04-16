@@ -1,0 +1,28 @@
+# Databases (contain user data)
+**/*.db
+**/*.db-shm
+**/*.db-wal
+**/*.sqlite
+**/*.sqlite3
+
+# Logs (may contain private info)
+**/*.log
+**/logs/
+
+# Python virtual environments
+**/.venv/
+**/venv/
+**/__pycache__/
+
+# Node modules
+**/node_modules/
+
+# Version history
+**/.versions/
+
+# Data directories
+**/data/
+
+# OS files
+.DS_Store
+Thumbs.db

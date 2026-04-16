@@ -1,0 +1,23 @@
+{
+  "id": "a6e3bf40-3d06-44a2-84ca-93ead97a10a9",
+  "name": "X Feed Fetcher",
+  "type": "python",
+  "folder": "x-action-engine",
+  "command": "X_AUTH_TOKEN=${X_AUTH_TOKEN} X_CT0=${X_CT0} python3 code/main.py",
+  "requirements": [],
+  "dependsOn": [],
+  "retries": {
+    "maxAttempts": 1,
+    "backoffMs": 1000
+  },
+  "retentionDays": 14,
+  "schedule": {
+    "enabled": true,
+    "cron": "0 */4 * * *"
+  },
+  "outputMode": "natural",
+  "memoryPolicy": "none",
+  "status": "pending",
+  "createdAt": "2026-04-10T19:10:14.419Z",
+  "updatedAt": "2026-04-10T19:10:14.419Z"
+}

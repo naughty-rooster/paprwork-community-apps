@@ -77,6 +77,26 @@
         "macos",
         "windows",
         "linux"
+      "bundleId": "bundle-1775848212950",
+      "name": "X Action Engine",
+      "description": "AI-powered X/Twitter engagement engine. Fetches your feed, scores tweets with Papr Memory context and 80/20 prioritization, generates draft replies and quote tweets in your voice, and opens X with pre-filled text.",
+      "version": "1.0.0",
+      "author": "shawkatkabbara",
+      "tags": [
+        "twitter",
+        "x",
+        "social-media",
+        "ai",
+        "engagement",
+        "automation"
+      ],
+      "minPaprworkVersion": "2.0.0",
+      "path": "bundles/bundle-1775848212950",
+      "requirements": [
+        "ANTHROPIC_API_KEY"
+      ],
+      "platform": [
+        "macos"
       ]
     }
   ]
