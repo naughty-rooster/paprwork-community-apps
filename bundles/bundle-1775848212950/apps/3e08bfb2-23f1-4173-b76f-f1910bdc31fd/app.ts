@@ -147,6 +147,24 @@ function esc(s: string): string {
   return d.innerHTML;
 }
 
+function decodeHTMLEntities(s: string): string {
+  return (s || '')
+    .replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&#x27;/g, "'")
+    .replace(/&nbsp;/g, ' ');
+}
+
+function escTweet(s: string): string {
+  // Decode X API entities first, then safe-escape for HTML
+  const decoded = decodeHTMLEntities(s);
+  // Escape < and & for XSS safety, but keep > readable
+  const safe = decoded
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+    .replace(/"/g, '&quot;');
+  // Format: newlines → <br>, @mentions linkable
+  return safe.replace(/\n/g, '<br>');
+}
+
 function initials(name: string): string {
   return (name || '?').split(' ').map((w: string) => w[0]).join('').slice(0, 2).toUpperCase();
 }
@@ -296,7 +314,7 @@ function openCompose(newMode: 'reply' | 'quote') {
   const t = getCurrentTweet();
   if (!t) return;
   mode = newMode;
-  composeText = newMode === 'reply' ? (t.draft_reply || '') : (t.draft_quote || '');
+  composeText = decodeHTMLEntities(newMode === 'reply' ? (t.draft_reply || '') : (t.draft_quote || ''));
   composeSeedText = composeText;
 
   if (!composeText.trim()) {
@@ -381,6 +399,11 @@ function renderTopbar(): string {
           : ''}
       </div>
       <div class="topbar-right">
+        <button class="icon-btn" onclick="openSettings()" title="Search topics">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+          </svg>
+        </button>
         <button class="icon-btn ${refreshing ? 'spinning' : ''}" onclick="W.refresh()" title="Refresh + score with Papr memory" ${refreshing ? 'disabled' : ''}>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M23 4v6h-6"/><path d="M1 20v-6h6"/>
@@ -451,7 +474,7 @@ function renderTweetContent(t: Tweet): string {
       </div>
     </div>
 
-    <div class="tweet-text" onclick="W.openX()" title="Open on X">${esc(t.text || '')}</div>
+    <div class="tweet-text" onclick="W.openX()" title="Open on X">${escTweet(t.text || '')}</div>
 
     ${t.media_url ? `
       <div class="tweet-media" onclick="W.openX()">
@@ -517,7 +540,7 @@ function renderCompose(t: Tweet): string {
             <div class="compose-original-handle">@${esc(t.author_username)}</div>
           </div>
         </div>
-        <div class="compose-original-text">${esc(t.text || '')}</div>
+        <div class="compose-original-text">${escTweet(t.text || '')}</div>
       </div>
 
       <!-- Reply/Quote label -->

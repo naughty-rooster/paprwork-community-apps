@@ -20,9 +20,24 @@ DB_PATH = JOB_DIR / "data" / "data.db"
 
 AUTH_TOKEN = os.environ.get('X_AUTH_TOKEN', '')
 CT0 = os.environ.get('X_CT0', '')
-YOUR_USERNAME = os.environ.get('X_USERNAME', 'your_x_handle')
 
-SEARCH_TOPICS = [
+def detect_x_username():
+    """Auto-detect X handle via bird whoami."""
+    import re
+    try:
+        result = subprocess.run(['bird', 'whoami'], capture_output=True, text=True, timeout=15)
+        for line in result.stdout.splitlines():
+            m = re.search(r'@(\w+)', line)
+            if m:
+                return m.group(1)
+    except Exception as e:
+        log.warning(f'bird whoami failed: {e}')
+    return os.environ.get('X_USERNAME', 'amirkabbara')
+
+YOUR_USERNAME = detect_x_username()
+log.info(f'Detected X username: @{YOUR_USERNAME}')
+
+DEFAULT_TOPICS = [
     "AI agents memory", "LLM memory RAG", "agent infrastructure",
     "AI developer tools", "open source AI", "building AI startup",
     "developer PLG growth", "AI agents 2025", "LLM application",
@@ -65,12 +80,32 @@ def setup_database():
             created_at TEXT, fetched_at TEXT DEFAULT (datetime('now')),
             quoted_tweet_text TEXT, in_reply_to_text TEXT
         );
+        CREATE TABLE IF NOT EXISTS settings (
+            key TEXT PRIMARY KEY,
+            value TEXT NOT NULL,
+            updated_at TEXT DEFAULT (datetime('now'))
+        );
         CREATE INDEX IF NOT EXISTS idx_tweets_status ON tweets(status);
         CREATE INDEX IF NOT EXISTS idx_tweets_score ON tweets(score DESC);
         CREATE INDEX IF NOT EXISTS idx_style_eng ON my_style_tweets(engagement DESC);
     """)
+    # Seed default topics if none exist
+    existing = conn.execute("SELECT value FROM settings WHERE key='topics'").fetchone()
+    if not existing:
+        conn.execute("INSERT INTO settings (key, value) VALUES ('topics', ?)",
+                     (json.dumps(DEFAULT_TOPICS),))
     conn.commit()
     return conn
+
+def load_topics(conn):
+    """Load search topics from settings table, fallback to defaults."""
+    row = conn.execute("SELECT value FROM settings WHERE key='topics'").fetchone()
+    if row:
+        try:
+            return json.loads(row[0])
+        except json.JSONDecodeError:
+            pass
+    return DEFAULT_TOPICS
 
 def run_bird(args):
     cmd = ["bird"] + args + ["--json"]
@@ -233,9 +268,11 @@ def main():
         log.error("X_AUTH_TOKEN and X_CT0 required"); sys.exit(1)
     conn = setup_database()
     total = 0
+    topics = load_topics(conn)
+    log.info(f'Using {len(topics)} search topics')
     fetch_my_style_tweets(conn, count=40)
     total += fetch_home(conn, count=20)
-    for topic in SEARCH_TOPICS:
+    for topic in topics:
         total += fetch_search(conn, topic)
     fetch_mentions(conn)
     cleanup_old(conn, days=3)

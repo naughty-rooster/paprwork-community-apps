@@ -2,19 +2,18 @@
   "schemaVersion": "1.0.0",
   "bundleId": "bundle-1775848212950",
   "name": "X Action Engine",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "createdAt": "2026-04-10T19:10:14.625Z",
   "minPaprworkVersion": "2.0.0",
-  "description": "AI-powered X/Twitter engagement engine. Fetches your feed, scores tweets with Papr Memory context and 80/20 prioritization, generates draft replies and quote tweets in your voice, and opens X with pre-filled text. Focus on the 20% of tweets that drive 80% of your engagement value.",
+  "description": "AI-powered X/Twitter engagement engine. Fetches your timeline, scores tweets with Papr Memory context, generates draft replies and quote tweets in your voice, and learns from your edits over time. Configurable topics and company context. Uses Bird CLI for X authentication (no API keys needed for X access).",
   "requirements": [
     "ANTHROPIC_API_KEY",
-    "ANTHROPIC_DIRECT_KEY",
-    "GOOGLE_API_KEY",
     "OPENAI_PLATFORM_KEY",
     "PAPR_API_KEY",
     "X_AUTH_TOKEN",
     "anthropic",
-    "requests"
+    "requests",
+    "X_CT0"
   ],
   "platform": [
     "macos",
@@ -33,7 +32,7 @@
       "id": "b768c137-c0e1-4f56-ad5b-c6d4b035065c",
       "name": "X Action Engine Scorer",
       "type": "python",
-      "command": "python3 code/main.py --anthropic-key ${ANTHROPIC_API_KEY} --anthropic-direct-key ${ANTHROPIC_DIRECT_KEY} --openai-key ${OPENAI_PLATFORM_KEY} --papr-key ${PAPR_API_KEY} --google-key ${GOOGLE_API_KEY}",
+      "command": "python3 code/main.py --anthropic-key ${ANTHROPIC_API_KEY} --openai-key ${OPENAI_PLATFORM_KEY} --papr-key ${PAPR_API_KEY}",
       "dependsOn": [],
       "env": {},
       "outputTables": []
@@ -61,5 +60,6 @@
     "preferredRoot": "~/PAPR",
     "bundleSubpath": "bundles",
     "cloudReady": true
-  }
+  },
+  "icon": "<svg width=\"36\" height=\"36\" viewBox=\"0 0 24 24\" fill=\"none\"><path d=\"M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z\" fill=\"currentColor\"/></svg>"
 }

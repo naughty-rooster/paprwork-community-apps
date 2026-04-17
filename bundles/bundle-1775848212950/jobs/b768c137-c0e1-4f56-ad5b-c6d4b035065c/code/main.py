@@ -3,6 +3,21 @@ import argparse, json, logging, os, sqlite3, urllib.request
 from pathlib import Path
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s [%(levelname)s] %(message)s')
+
+def detect_x_username():
+    """Auto-detect X handle via bird whoami."""
+    import re, subprocess
+    try:
+        result = subprocess.run(["bird", "whoami"], capture_output=True, text=True, timeout=15)
+        for line in result.stdout.splitlines():
+            m = re.search(r"@(\w+)", line)
+            if m:
+                return m.group(1)
+    except Exception as e:
+        log.warning(f"bird whoami failed: {e}")
+    return os.environ.get("X_USERNAME", "your_handle")
+
+X_USERNAME = detect_x_username()
 log = logging.getLogger(__name__)
 FEED_JOB_ID = os.environ.get('FEED_JOB_ID', 'a6e3bf40-3d06-44a2-84ca-93ead97a10a9')
 DB_PATH = Path(os.path.expanduser(f'~/PAPR/jobs/{FEED_JOB_ID}/data/data.db'))
@@ -155,7 +170,7 @@ def build_prompt(tweets, papr_context, style_examples, feedback_examples):
         'hours_old': round(t.get('hours_old', 999), 1),
     } for t in tweets]
     return f"""
-You are choosing the best 10 tweets for @YOUR_USERNAME to engage with right now and writing the actual drafts.
+You are choosing the best 10 tweets for @{X_USERNAME} to engage with right now and writing the actual drafts.
 
 Primary goal:
 - grow reach by winning early reply slots on high-signal tweets
@@ -202,38 +217,37 @@ Return JSON array only:
 """.strip()
 
 
-def call_anthropic(prompt: str, api_key: str):
-    import requests
+def call_anthropic(prompt: str, api_key: str, max_retries: int = 3):
+    import anthropic
     model = 'claude-sonnet-4-20250514'
-    log.info(f'Trying Anthropic model: {model} (key prefix: {api_key[:12]}...)')
-    resp = requests.post(
-        'https://api.anthropic.com/v1/messages',
-        headers={
-            'x-api-key': api_key,
-            'anthropic-version': '2023-06-01',
-            'content-type': 'application/json',
-        },
-        json={
-            'model': model,
-            'max_tokens': 2200,
-            'messages': [{'role': 'user', 'content': prompt}],
-        },
-        timeout=60,
-    )
-    if not resp.ok:
-        log.warning(f'Anthropic error body: {resp.text[:500]}')
-    resp.raise_for_status()
-    text = resp.json()['content'][0]['text'].strip()
-    if text.startswith('```'):
-        text = text.split('```')[1]
-        if text.startswith('json'):
-            text = text[4:]
-    return json.loads(text.strip())
+    log.info(f'Trying Anthropic via SDK: {model} (key prefix: {api_key[:12]}...)')
+    client = anthropic.Anthropic(api_key=api_key, max_retries=0)
+    for attempt in range(max_retries):
+        try:
+            message = client.messages.create(
+                model=model,
+                max_tokens=2200,
+                messages=[{'role': 'user', 'content': prompt}],
+            )
+            text = message.content[0].text.strip()
+            if text.startswith('```'):
+                text = text.split('```')[1]
+                if text.startswith('json'):
+                    text = text[4:]
+            return json.loads(text.strip())
+        except anthropic.RateLimitError:
+            wait = min(2 ** attempt * 10, 60)
+            log.warning(f'Rate limited, retrying in {wait}s (attempt {attempt+1}/{max_retries})')
+            import time; time.sleep(wait)
+        except anthropic.APIError as e:
+            log.warning(f'Anthropic API error: {e}')
+            raise
+    raise RuntimeError(f'Anthropic rate limited after {max_retries} retries')
 
 
 def call_openai(prompt: str, api_key: str):
     payload = {
-        'model': 'gpt-4o-mini',
+        'model': 'gpt-5.4',
         'temperature': 0.35,
         'response_format': {'type': 'json_object'},
         'messages': [
@@ -368,10 +382,8 @@ def normalize_results(results):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--anthropic-key', default='')
-    parser.add_argument('--anthropic-direct-key', default='')
     parser.add_argument('--openai-key', default='')
     parser.add_argument('--papr-key', default='')
-    parser.add_argument('--google-key', default='')
     args = parser.parse_args()
 
     conn = get_db()
@@ -400,19 +412,12 @@ def main():
     prompt = build_prompt(tweets, papr_context, style_examples, feedback_examples)
 
     results = None
-    best_anthropic_key = args.anthropic_direct_key or args.anthropic_key
-    if best_anthropic_key:
+    if args.anthropic_key:
         try:
-            results = call_anthropic(prompt, best_anthropic_key)
+            results = call_anthropic(prompt, args.anthropic_key)
             log.info('Scoring/drafting succeeded via Anthropic claude-sonnet-4-20250514')
         except Exception as e:
             log.warning(f'Anthropic claude-sonnet-4-20250514 failed: {e}')
-    if results is None and args.google_key:
-        try:
-            results = call_gemini(prompt, args.google_key)
-            log.info('Scoring/drafting succeeded via Gemini (fallback)')
-        except Exception as e:
-            log.warning(f'Gemini fallback failed: {e}')
     if results is None and args.openai_key:
         try:
             results = call_openai(prompt, args.openai_key)

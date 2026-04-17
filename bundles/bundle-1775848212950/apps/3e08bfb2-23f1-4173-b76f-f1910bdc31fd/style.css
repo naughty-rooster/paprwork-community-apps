@@ -675,3 +675,46 @@ html, body {
 ::-webkit-scrollbar { width: 3px; height: 3px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 99px; }
+
+/* ── Settings Panel ── */
+#settings-overlay { position: fixed; inset: 0; z-index: 100; }
+.settings-backdrop { position: absolute; inset: 0; background: rgba(0,0,0,0.5); backdrop-filter: blur(4px); }
+.settings-panel {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: 90%; max-width: 480px; max-height: 80vh;
+  background: var(--bg-2); border: 1px solid var(--glass-border);
+  border-radius: var(--r-lg); box-shadow: var(--shadow);
+  display: flex; flex-direction: column; overflow: hidden;
+}
+.settings-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px 24px 0;
+}
+.settings-header h3 { font-size: var(--lg); font-weight: 700; }
+.settings-section { padding: 0 24px; margin-top: 16px; }
+.settings-section h4 { margin: 0 0 4px; font-size: 13px; color: var(--text); font-weight: 600; }
+.settings-desc { font-size: var(--sm); color: var(--muted); margin: 4px 0 12px; line-height: 1.4; }
+.topics-list { flex: 1; overflow-y: auto; max-height: 50vh; }
+.topic-row {
+  display: flex; align-items: center; gap: 8px; margin-bottom: 8px;
+}
+.topic-input {
+  flex: 1; padding: 10px 14px; border-radius: var(--r-sm);
+  border: 1px solid var(--border); background: var(--bg-3);
+  color: var(--text); font-family: var(--font); font-size: var(--sm);
+  outline: none; transition: border-color var(--dur);
+  box-sizing: border-box; width: 100%;
+}
+.topic-input:focus { border-color: var(--accent); }
+.topic-remove {
+  width: 30px; height: 30px; border-radius: 50%; border: 1px solid var(--border);
+  background: transparent; color: var(--muted); cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all var(--dur);
+}
+.topic-remove:hover { color: #f44; border-color: #f44; }
+.settings-actions {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 24px; border-top: 1px solid var(--border);
+}
+.settings-actions .action-btn-main { padding: 0 24px; }

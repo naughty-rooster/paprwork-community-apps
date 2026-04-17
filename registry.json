@@ -82,24 +82,30 @@
     {
       "bundleId": "bundle-1775848212950",
       "name": "X Action Engine",
-      "description": "AI-powered X/Twitter engagement engine. Fetches your feed, scores tweets with Papr Memory context and 80/20 prioritization, generates draft replies and quote tweets in your voice, and opens X with pre-filled text.",
-      "version": "1.0.0",
-      "author": "shawkatkabbara",
+      "description": "AI-powered X/Twitter engagement engine. Fetches your timeline, scores tweets with Papr Memory context, generates draft replies and quote tweets in your voice, and learns from your edits over time.",
+      "version": "1.1.0",
+      "author": "amirkabbara",
       "tags": [
         "twitter",
         "x",
         "social-media",
-        "ai",
         "engagement",
-        "automation"
+        "ai-agent",
+        "content-creation"
       ],
       "minPaprworkVersion": "2.0.0",
       "path": "bundles/bundle-1775848212950",
+      "icon": "<svg width=\"36\" height=\"36\" viewBox=\"0 0 24 24\" fill=\"none\"><path d=\"M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z\" fill=\"currentColor\"/></svg>",
       "requirements": [
-        "ANTHROPIC_API_KEY"
+        "ANTHROPIC_API_KEY",
+        "OPENAI_PLATFORM_KEY",
+        "PAPR_API_KEY",
+        "X_AUTH_TOKEN",
+        "X_CT0"
       ],
       "platform": [
-        "macos"
+        "macos",
+        "windows"
       ]
     }
   ]

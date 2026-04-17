@@ -3,7 +3,7 @@
   "name": "X Action Engine Scorer",
   "type": "python",
   "folder": "x-action-engine",
-  "command": "python3 code/main.py --anthropic-key ${ANTHROPIC_API_KEY} --anthropic-direct-key ${ANTHROPIC_DIRECT_KEY} --openai-key ${OPENAI_PLATFORM_KEY} --papr-key ${PAPR_API_KEY} --google-key ${GOOGLE_API_KEY}",
+  "command": "python3 code/main.py --anthropic-key ${ANTHROPIC_API_KEY} --openai-key ${OPENAI_PLATFORM_KEY} --papr-key ${PAPR_API_KEY}",
   "requirements": [
     "anthropic",
     "requests"
