@@ -1,0 +1,37 @@
+const app = document.getElementById('app');
+
+if (app) {
+  app.innerHTML = `
+    <main class="shell">
+      <section class="hero">
+        <span class="badge"><span class="dot"></span>Google Workspace</span>
+        <div>
+          <p class="status">Connector not configured</p>
+          <h1>Connect Google Accounts to Papr Work.</h1>
+        </div>
+        <p class="lead">
+          Use this connector to authorize Google accounts for Gmail, Calendar, Drive,
+          and other Google services inside Papr Work.
+        </p>
+        <div class="actions">
+          <button class="primary" id="connect-google">Connect Google account</button>
+          <button class="secondary" id="setup-guide">View setup guide</button>
+        </div>
+      </section>
+      <section class="grid">
+        <article class="card"><strong>OAuth</strong><p>Secure Google sign-in flow for Papr Work integrations.</p></article>
+        <article class="card"><strong>Scopes</strong><p>Review and approve exactly which Google permissions are requested.</p></article>
+        <article class="card"><strong>Status</strong><p>See whether a workspace is ready to sync mail, files, and events.</p></article>
+      </section>
+      <p class="footer">This is the starter connector UI. Wire it to OAuth credentials and jobs when you're ready.</p>
+    </main>
+  `;
+
+  const showMessage = (message: string) => window.alert(message);
+  document.getElementById('connect-google')?.addEventListener('click', () => {
+    showMessage('Next step: connect this app to your Google OAuth client and auth callback flow.');
+  });
+  document.getElementById('setup-guide')?.addEventListener('click', () => {
+    showMessage('Recommended: add OAuth credentials, define scopes, then store tokens through a Papr Work job.');
+  });
+}

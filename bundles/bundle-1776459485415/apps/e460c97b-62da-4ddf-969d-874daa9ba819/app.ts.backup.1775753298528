@@ -1,0 +1,59 @@
+const APP_ID = 'e460c97b-62da-4ddf-969d-874daa9ba819';
+const JOB_ID = 'abd8058e-7d56-4e1f-9f92-368462832c91';
+const storeKey = 'google-connector-settings';
+const defaults = { clientId: '', redirectUri: '', scopes: 'openid email profile' };
+const app = document.getElementById('app')!;
+const api = (window as any).paprAPI;
+const esc = (v = '') => v.replace(/[&<>"']/g, (m) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m]!));
+const loadSettings = () => ({ ...defaults, ...JSON.parse(localStorage.getItem(storeKey) || '{}') });
+const saveSettings = () => localStorage.setItem(storeKey, JSON.stringify(readForm()));
+const readForm = () => ({
+  clientId: (document.getElementById('clientId') as HTMLInputElement)?.value.trim(),
+  redirectUri: (document.getElementById('redirectUri') as HTMLInputElement)?.value.trim(),
+  scopes: (document.getElementById('scopes') as HTMLInputElement)?.value.trim() || defaults.scopes,
+  authCode: (document.getElementById('authCode') as HTMLTextAreaElement)?.value.trim(),
+});
+const setMsg = (msg: string, ok = true) => { const el = document.getElementById('msg')!; el.textContent = msg; el.className = ok ? 'msg ok' : 'msg bad'; };
+
+async function query(sql: string, params: any[] = []) {
+  const res = await fetch('/api/db/query', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ appId: APP_ID, sql, params }) });
+  const data = await res.json(); if (!res.ok) throw new Error(data.error || 'Query failed'); return data.rows || [];
+}
+async function write(sql: string, params: any[] = []) {
+  const res = await fetch('/api/db/write', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ appId: APP_ID, sql, params }) });
+  const data = await res.json(); if (!res.ok) throw new Error(data.error || 'Write failed'); return data;
+}
+async function runJob() {
+  const res = await fetch('/api/jobs/run', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ jobId: JOB_ID }) });
+  const data = await res.json(); if (!res.ok) throw new Error(data.error || 'Job failed'); return data;
+}
+function authUrl() {
+  const { clientId, redirectUri, scopes } = readForm();
+  if (!clientId || !redirectUri) throw new Error('Add client ID and redirect URI first.');
+  const url = new URL('https://accounts.google.com/o/oauth2/v2/auth');
+  [['client_id', clientId], ['redirect_uri', redirectUri], ['response_type', 'code'], ['scope', scopes], ['access_type', 'offline'], ['prompt', 'consent']].forEach(([k, v]) => url.searchParams.set(k, v));
+  return url.toString();
+}
+async function render() {
+  const s = loadSettings(); let conn: any = null; let req: any = null;
+  try { [conn] = await query('SELECT email,name,picture,scopes,expires_at,connected_at FROM google_connections ORDER BY updated_at DESC LIMIT 1'); } catch {}
+  try { [req] = await query('SELECT status,exchange_error,updated_at FROM google_auth_requests ORDER BY id DESC LIMIT 1'); } catch {}
+  app.innerHTML = `<main class="shell"><section class="hero"><span class="badge">Google Connector v1</span><h1>Connect one Google account to Papr Work.</h1><p class="lead">This version uses a manual auth-code handoff: open Google consent, copy the returned <code>code</code>, then let the backend job exchange it securely.</p><div id="msg" class="msg">Ready.</div></section><section class="panel stack"><label>Google OAuth Client ID<input id="clientId" value="${esc(s.clientId)}" placeholder="123.apps.googleusercontent.com"></label><label>Redirect URI<input id="redirectUri" value="${esc(s.redirectUri)}" placeholder="https://your-redirect.example/callback"></label><label>Scopes<input id="scopes" value="${esc(s.scopes)}"></label><div class="row"><button data-act="save" class="secondary">Save settings</button><button data-act="cloud" class="secondary">Open Google Cloud Console</button><button data-act="auth" class="primary">Open Google consent</button></div></section><section class="grid"><article class="panel"><h2>Finish connection</h2><textarea id="authCode" placeholder="Paste the code= value from the redirect URL here"></textarea><div class="row"><button data-act="exchange" class="primary">Exchange code</button><button data-act="refresh" class="secondary">Refresh status</button></div><p class="hint">Add <strong>GOOGLE_CLIENT_SECRET</strong> in Papr Work settings before exchanging. <strong>GOOGLE_CLIENT_ID</strong> is optional if you fill the field above.</p></article><article class="panel"><h2>Current status</h2>${conn ? `<div class="account"><img src="${esc(conn.picture || '')}" alt=""><div><strong>${esc(conn.email)}</strong><p>${esc(conn.name || 'Connected')}</p><p>${esc(conn.scopes || '')}</p></div></div><p class="hint">Connected ${esc(conn.connected_at || '')}${conn.expires_at ? ` · token expires ${esc(conn.expires_at)}` : ''}</p>` : '<p class="hint">No Google account connected yet.</p>'}${req ? `<div class="state ${req.status === 'failed' ? 'bad' : 'ok'}">Latest exchange: ${esc(req.status)}</div><p class="hint">${esc(req.exchange_error || req.updated_at || '')}</p>` : ''}</article></section><section class="panel steps"><h2>What to do</h2><ol><li>Create a Google OAuth app with the redirect URI above.</li><li>Use scopes <code>openid email profile</code> for v1.</li><li>Open consent, sign in, copy the authorization code, then click Exchange code.</li></ol></section></main>`;
+}
+app.addEventListener('click', async (e) => {
+  const act = (e.target as HTMLElement).getAttribute('data-act'); if (!act) return;
+  try {
+    if (act === 'save') { saveSettings(); setMsg('Settings saved.'); }
+    if (act === 'cloud') await api.invoke('shell.openExternal', 'https://console.cloud.google.com/apis/credentials');
+    if (act === 'auth') { saveSettings(); await api.invoke('shell.openExternal', authUrl()); setMsg('Google consent opened in your browser.'); }
+    if (act === 'exchange') {
+      saveSettings(); const { clientId, redirectUri, scopes, authCode } = readForm();
+      if (!redirectUri || !authCode) throw new Error('Add redirect URI and pasted auth code first.');
+      await write('INSERT INTO google_auth_requests (client_id, redirect_uri, scopes, auth_code) VALUES (?, ?, ?, ?)', [clientId, redirectUri, scopes, authCode]);
+      await runJob(); setMsg('Exchange job started. Refresh in a moment.');
+    }
+    if (act === 'refresh') setMsg('Refreshing...');
+  } catch (err: any) { setMsg(err.message || 'Something went wrong.', false); }
+  await render();
+});
+render();

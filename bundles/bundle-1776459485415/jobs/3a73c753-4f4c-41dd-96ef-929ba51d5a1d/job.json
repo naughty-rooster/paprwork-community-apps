@@ -1,0 +1,21 @@
+{
+  "id": "3a73c753-4f4c-41dd-96ef-929ba51d5a1d",
+  "name": "Google Connector Exchange",
+  "type": "python",
+  "folder": "integrations",
+  "command": "GOOGLE_CLIENT_ID=${GOOGLE_CLIENT_ID} GOOGLE_CLIENT_SECRET=${GOOGLE_CLIENT_SECRET} python3 google_connector_exchange.py",
+  "requirements": [
+    "requests"
+  ],
+  "dependsOn": [],
+  "retries": {
+    "maxAttempts": 3,
+    "backoffMs": 2000
+  },
+  "retentionDays": 14,
+  "outputMode": "natural",
+  "memoryPolicy": "none",
+  "status": "pending",
+  "createdAt": "2026-04-17T20:58:05.703Z",
+  "updatedAt": "2026-04-17T20:58:05.703Z"
+}

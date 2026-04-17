@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "1.0.0",
+  "bundleId": "bundle-1776459485415",
+  "name": "Google Connector",
+  "version": "1.0.0",
+  "createdAt": "2026-04-17T20:58:06.274Z",
+  "minPaprworkVersion": "2.0.0",
+  "icon": "plug",
+  "requirements": [
+    "GOOGLE_CLIENT_SECRET"
+  ],
+  "platform": [
+    "macos",
+    "windows",
+    "linux"
+  ],
+  "app": {
+    "id": "e460c97b-62da-4ddf-969d-874daa9ba819",
+    "name": "Google Connector",
+    "version": "1.0.0",
+    "entryFile": "index.html",
+    "appPath": "apps/e460c97b-62da-4ddf-969d-874daa9ba819",
+    "description": "Connect your Google accounts to Paprwork. Manages OAuth tokens for Gmail, Calendar, and Drive, with a built-in setup guide for creating your Google Cloud credentials."
+  },
+  "jobs": [
+    {
+      "id": "3a73c753-4f4c-41dd-96ef-929ba51d5a1d",
+      "name": "Google Connector Exchange",
+      "type": "python",
+      "command": "GOOGLE_CLIENT_ID=${GOOGLE_CLIENT_ID} GOOGLE_CLIENT_SECRET=${GOOGLE_CLIENT_SECRET} python3 google_connector_exchange.py",
+      "dependsOn": [],
+      "env": {},
+      "outputTables": []
+    },
+    {
+      "id": "29ae68fd-7ad8-441f-80a9-bde03b7a8d75",
+      "name": "relationship_ops_schema",
+      "type": "python",
+      "command": "python3 relationship_ops_schema.py",
+      "dependsOn": [],
+      "env": {},
+      "outputTables": []
+    },
+    {
+      "id": "abd8058e-7d56-4e1f-9f92-368462832c91",
+      "name": "relationship_ops_google_auth",
+      "type": "python",
+      "command": "RELATIONSHIP_OPS_DB_PATH=${HOME}/Papr/jobs/29ae68fd-7ad8-441f-80a9-bde03b7a8d75/data/data.db GOOGLE_CLIENT_ID=${GOOGLE_CLIENT_ID} GOOGLE_CLIENT_SECRET=${GOOGLE_CLIENT_SECRET} python3 relationship_ops_google_auth.py",
+      "dependsOn": [],
+      "env": {},
+      "outputTables": []
+    }
+  ],
+  "sqlite": [],
+  "deploymentProfiles": [
+    {
+      "id": "local-default",
+      "name": "Local Default",
+      "runtimeTarget": "local",
+      "environment": {}
+    }
+  ],
+  "sync": {
+    "preferredRoot": "~/Papr",
+    "bundleSubpath": "bundles",
+    "cloudReady": true
+  }
+}

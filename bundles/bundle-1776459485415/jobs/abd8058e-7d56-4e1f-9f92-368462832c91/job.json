@@ -1,0 +1,21 @@
+{
+  "id": "abd8058e-7d56-4e1f-9f92-368462832c91",
+  "name": "relationship_ops_google_auth",
+  "type": "python",
+  "folder": "relationship-ops",
+  "command": "RELATIONSHIP_OPS_DB_PATH=${HOME}/Papr/jobs/29ae68fd-7ad8-441f-80a9-bde03b7a8d75/data/data.db GOOGLE_CLIENT_ID=${GOOGLE_CLIENT_ID} GOOGLE_CLIENT_SECRET=${GOOGLE_CLIENT_SECRET} python3 relationship_ops_google_auth.py",
+  "requirements": [
+    "requests"
+  ],
+  "dependsOn": [],
+  "retries": {
+    "maxAttempts": 2,
+    "backoffMs": 2000
+  },
+  "retentionDays": 14,
+  "outputMode": "natural",
+  "memoryPolicy": "none",
+  "status": "pending",
+  "createdAt": "2026-04-17T20:58:06.175Z",
+  "updatedAt": "2026-04-17T20:58:06.175Z"
+}

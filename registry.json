@@ -107,6 +107,29 @@
         "macos",
         "windows"
       ]
+    },
+    {
+      "bundleId": "bundle-1776459485415",
+      "name": "Google Connector",
+      "description": "Connect your Google accounts to Paprwork. Manages OAuth tokens for Gmail, Calendar, and Drive, with a built-in setup guide for creating your Google Cloud credentials.",
+      "version": "1.0.0",
+      "author": "naughty-rooster",
+      "tags": [
+        "google",
+        "oauth",
+        "gmail",
+        "calendar",
+        "drive",
+        "authentication"
+      ],
+      "minPaprworkVersion": "2.0.0",
+      "path": "bundles/bundle-1776459485415",
+      "requirements": [
+        "GOOGLE_CLIENT_SECRET"
+      ],
+      "platform": [
+        "macos"
+      ]
     }
   ]
 }

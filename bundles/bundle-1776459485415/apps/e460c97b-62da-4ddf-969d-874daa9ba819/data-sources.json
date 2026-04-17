@@ -1,0 +1,29 @@
+[
+  {
+    "id": "abd8058e-7d56-4e1f-9f92-368462832c91:auto-discovered",
+    "type": "sqlite",
+    "jobId": "abd8058e-7d56-4e1f-9f92-368462832c91",
+    "alias": "relationship_ops_google_auth",
+    "dbPath": "",
+    "tables": [],
+    "linkedAt": "2026-04-09T18:54:25.790Z"
+  },
+  {
+    "id": "29ae68fd-7ad8-441f-80a9-bde03b7a8d75:relationship_ops_schema (29ae68fd)",
+    "type": "sqlite",
+    "jobId": "29ae68fd-7ad8-441f-80a9-bde03b7a8d75",
+    "alias": "relationship_ops_schema (29ae68fd)",
+    "dbPath": "",
+    "tables": [],
+    "linkedAt": "2026-04-09T16:46:40.857Z"
+  },
+  {
+    "id": "3a73c753-4f4c-41dd-96ef-929ba51d5a1d:Google Connector Exchange (3a73c753)",
+    "type": "sqlite",
+    "jobId": "3a73c753-4f4c-41dd-96ef-929ba51d5a1d",
+    "alias": "Google Connector Exchange (3a73c753)",
+    "dbPath": "",
+    "tables": [],
+    "linkedAt": "2026-04-08T22:44:57.859Z"
+  }
+]

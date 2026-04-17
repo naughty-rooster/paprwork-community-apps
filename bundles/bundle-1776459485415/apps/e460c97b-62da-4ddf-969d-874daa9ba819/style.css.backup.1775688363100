@@ -1,0 +1,88 @@
+:root {
+  color-scheme: light dark;
+  --bg: #f4f7fb;
+  --panel: rgba(255,255,255,.72);
+  --text: #172033;
+  --muted: #5f6b85;
+  --line: rgba(23,32,51,.12);
+  --shadow: 0 18px 50px rgba(31,41,55,.12);
+  --google-blue: #4285f4;
+  --google-green: #34a853;
+  --google-yellow: #fbbc05;
+  --google-red: #ea4335;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0a1020;
+    --panel: rgba(15,23,42,.72);
+    --text: #f3f6ff;
+    --muted: #a7b0c5;
+    --line: rgba(255,255,255,.1);
+    --shadow: none;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  font: 15px/1.5 Inter, system-ui, sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at top, rgba(66,133,244,.18), transparent 35%), var(--bg);
+}
+#app { padding: 32px; }
+.shell {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background: var(--panel);
+  backdrop-filter: blur(18px);
+  box-shadow: var(--shadow);
+}
+.hero { display: grid; gap: 18px; }
+.badge, .status {
+  width: fit-content;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  font-size: 12px;
+  font-weight: 700;
+}
+.badge { letter-spacing: .08em; text-transform: uppercase; }
+.status { color: var(--google-yellow); background: rgba(251,188,5,.12); }
+h1 { margin: 0; font-size: clamp(32px, 6vw, 52px); line-height: 1.04; }
+.lead, li { color: var(--muted); }
+.actions, .grid { display: grid; gap: 14px; }
+.actions { grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); }
+button {
+  padding: 14px 18px;
+  border: 0;
+  border-radius: 16px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+.primary { color: white; background: linear-gradient(135deg, var(--google-blue), var(--google-green)); }
+.secondary { color: var(--text); background: transparent; border: 1px solid var(--line); }
+.card {
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: rgba(255,255,255,.3);
+}
+.grid { margin-top: 22px; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
+.card strong { display: block; margin-bottom: 8px; }
+.footer { margin-top: 18px; font-size: 13px; color: var(--muted); }
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 8px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--google-blue), var(--google-red), var(--google-yellow), var(--google-green));
+}
+@media (max-width: 640px) {
+  #app { padding: 18px; }
+  .shell { padding: 20px; border-radius: 22px; }
+}
