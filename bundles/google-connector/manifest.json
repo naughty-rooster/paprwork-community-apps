@@ -1,12 +1,13 @@
 {
   "schemaVersion": "1.0.0",
-  "bundleId": "bundle-1776459485415",
+  "bundleId": "google-connector",
   "name": "Google Connector",
   "version": "1.0.0",
   "createdAt": "2026-04-17T20:58:06.274Z",
   "minPaprworkVersion": "2.0.0",
   "icon": "plug",
   "requirements": [
+    "GOOGLE_CLIENT_ID",
     "GOOGLE_CLIENT_SECRET"
   ],
   "platform": [
