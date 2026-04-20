@@ -1,0 +1,6 @@
+import type { RecurringTemplate } from '../types.ts';
+import { esc, formatDue, pLabel } from '../utils/helpers.ts';
+const cadence=(r:RecurringTemplate)=>`Every ${r.interval_n} ${r.frequency}${r.interval_n>1?'s':''}`;
+const row=(r:RecurringTemplate)=>{ const due=formatDue(r.next_due_date), on=r.status==='active';
+  return `<div class="task-card template"><div class="task-content"><div class="task-title">${esc(r.title)}</div><div class="task-meta"><span class="task-badge badge-manual">↺ ${on?'Active':'Paused'}</span><span class="task-date">${esc(cadence(r))}</span><span class="task-date">${pLabel(r.priority)}</span>${due.text?`<span class="task-due ${due.cls}">📅 ${due.text}</span>`:''}</div></div><div class="task-actions"><button class="icon-btn" onclick="editRecurring(${r.id})">✏️</button><button class="icon-btn" onclick="toggleRecurring(${r.id})">${on?'⏸':'▶'}</button><button class="icon-btn" onclick="deleteRecurring(${r.id})">🗑️</button></div></div>`; };
+export const renderRecurring=(rows:RecurringTemplate[])=>rows.length?`<div class="section"><div class="section-header"><div class="section-title">↺ Recurring<span class="section-count">${rows.length}</span></div><button class="btn-secondary" onclick="openRecurring()">+ New</button></div><div class="task-list">${rows.map(row).join('')}</div></div>`:'';

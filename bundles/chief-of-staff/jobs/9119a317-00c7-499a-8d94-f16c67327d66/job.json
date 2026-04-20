@@ -1,0 +1,25 @@
+{
+  "id": "9119a317-00c7-499a-8d94-f16c67327d66",
+  "name": "admin_messages_calendar_writer",
+  "type": "python",
+  "folder": "personal-admin",
+  "command": "GOOGLE_CLIENT_SECRET=${GOOGLE_CLIENT_SECRET} python3 code/main.py",
+  "requirements": [
+    "requests"
+  ],
+  "dependsOn": [],
+  "retries": {
+    "maxAttempts": 2,
+    "backoffMs": 3000
+  },
+  "retentionDays": 14,
+  "schedule": {
+    "enabled": true,
+    "cron": "15 * * * *"
+  },
+  "outputMode": "natural",
+  "memoryPolicy": "none",
+  "status": "pending",
+  "createdAt": "2026-04-20T17:26:54.300Z",
+  "updatedAt": "2026-04-20T17:26:54.300Z"
+}

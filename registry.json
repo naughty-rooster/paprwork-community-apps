@@ -134,6 +134,38 @@
       "platform": [
         "macos"
       ]
+    },
+    {
+      "bundleId": "chief-of-staff",
+      "name": "Chief of Staff",
+      "description": "Your personal chief of staff \u2014 triages Gmail, iMessages, and Google Calendar into a daily brief, surfaces what matters, and keeps your week on track. Scans for real action items, writes appointments to calendar, and generates a morning brief with ranked priorities.",
+      "version": "1.0.0",
+      "author": "naughty-rooster",
+      "tags": [
+        "productivity",
+        "tasks",
+        "gmail",
+        "calendar",
+        "imessage",
+        "daily-brief",
+        "personal-admin"
+      ],
+      "minPaprworkVersion": "2.0.0",
+      "path": "bundles/chief-of-staff",
+      "icon": "\ud83c\udfaf",
+      "requirements": [
+        {
+          "key": "ANTHROPIC_API_KEY",
+          "description": "Required for AI agent jobs (Gmail scanner, reconciler, daily digest, project planner)"
+        },
+        {
+          "key": "GOOGLE_CLIENT_SECRET",
+          "description": "Required for Gmail and Google Calendar access"
+        }
+      ],
+      "platform": [
+        "macos"
+      ]
     }
   ]
 }

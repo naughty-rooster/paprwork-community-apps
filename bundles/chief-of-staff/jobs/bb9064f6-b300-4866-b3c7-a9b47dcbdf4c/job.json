@@ -1,0 +1,25 @@
+{
+  "id": "bb9064f6-b300-4866-b3c7-a9b47dcbdf4c",
+  "name": "admin_calendar_sync",
+  "type": "python",
+  "folder": "personal-admin",
+  "command": "GOOGLE_CLIENT_SECRET=${GOOGLE_CLIENT_SECRET} python3 code/main.py",
+  "requirements": [
+    "requests"
+  ],
+  "dependsOn": [],
+  "retries": {
+    "maxAttempts": 1,
+    "backoffMs": 1000
+  },
+  "retentionDays": 14,
+  "schedule": {
+    "enabled": true,
+    "cron": "30 6 * * *"
+  },
+  "outputMode": "natural",
+  "memoryPolicy": "none",
+  "status": "pending",
+  "createdAt": "2026-04-20T17:26:50.018Z",
+  "updatedAt": "2026-04-20T17:26:50.018Z"
+}

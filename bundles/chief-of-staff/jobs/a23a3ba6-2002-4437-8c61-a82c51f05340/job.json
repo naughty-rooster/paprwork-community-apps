@@ -1,0 +1,18 @@
+{
+  "id": "a23a3ba6-2002-4437-8c61-a82c51f05340",
+  "name": "admin_db_setup",
+  "type": "python",
+  "folder": "personal-admin",
+  "command": "python3 code/main.py",
+  "dependsOn": [],
+  "retries": {
+    "maxAttempts": 1,
+    "backoffMs": 1000
+  },
+  "retentionDays": 14,
+  "outputMode": "natural",
+  "memoryPolicy": "none",
+  "status": "pending",
+  "createdAt": "2026-04-20T17:26:48.878Z",
+  "updatedAt": "2026-04-20T17:26:48.878Z"
+}

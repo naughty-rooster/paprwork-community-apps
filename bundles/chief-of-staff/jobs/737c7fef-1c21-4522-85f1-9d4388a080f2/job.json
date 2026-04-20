@@ -1,0 +1,25 @@
+{
+  "id": "737c7fef-1c21-4522-85f1-9d4388a080f2",
+  "name": "admin_email_to_task",
+  "type": "python",
+  "folder": "personal-admin",
+  "command": "GOOGLE_CLIENT_SECRET=${GOOGLE_CLIENT_SECRET} python3 code/main.py",
+  "requirements": [
+    "requests"
+  ],
+  "dependsOn": [],
+  "retries": {
+    "maxAttempts": 2,
+    "backoffMs": 3000
+  },
+  "retentionDays": 14,
+  "schedule": {
+    "enabled": true,
+    "cron": "*/15 * * * *"
+  },
+  "outputMode": "natural",
+  "memoryPolicy": "none",
+  "status": "pending",
+  "createdAt": "2026-04-20T17:26:50.569Z",
+  "updatedAt": "2026-04-20T17:26:50.569Z"
+}
