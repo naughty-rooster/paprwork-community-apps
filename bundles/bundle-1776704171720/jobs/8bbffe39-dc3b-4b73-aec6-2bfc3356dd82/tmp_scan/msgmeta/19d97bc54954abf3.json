@@ -1,0 +1,38 @@
+{
+  "id": "19d97bc54954abf3",
+  "threadId": "19d97bc54954abf3",
+  "labelIds": [
+    "UNREAD",
+    "CATEGORY_UPDATES",
+    "INBOX"
+  ],
+  "snippet": "Thank you for your purchase! Quicken Hi Corey, Welcome to Quicken! We can&#39;t wait for you to get started! Your subscription: 7 day free trial to Quicken Simplifi - autorenews 4/23/2026 at then",
+  "payload": {
+    "mimeType": "multipart/alternative",
+    "headers": [
+      {
+        "name": "Date",
+        "value": "Thu, 16 Apr 2026 19:19:53 +0000 (UTC)"
+      },
+      {
+        "name": "From",
+        "value": "Quicken \u003cnoreply@quicken.com\u003e"
+      },
+      {
+        "name": "Message-ID",
+        "value": "\u003cyZJBRuwERMmI-jNpDOYvig@geopod-ismtpd-1\u003e"
+      },
+      {
+        "name": "Subject",
+        "value": "Quicken Order Confirmation"
+      },
+      {
+        "name": "To",
+        "value": "Corey Badcock \u003ccbadcock@gmail.com\u003e"
+      }
+    ]
+  },
+  "sizeEstimate": 43486,
+  "historyId": "16880914",
+  "internalDate": "1776367193000"
+}

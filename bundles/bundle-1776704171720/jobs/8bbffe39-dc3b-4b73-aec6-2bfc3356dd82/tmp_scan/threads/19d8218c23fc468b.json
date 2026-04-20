@@ -1,0 +1,300 @@
+{
+  "id": "19d8218c23fc468b",
+  "historyId": "16884396",
+  "messages": [
+    {
+      "id": "19d82423b4ebb9e1",
+      "threadId": "19d8218c23fc468b",
+      "labelIds": [
+        "SENT"
+      ],
+      "snippet": "Hi Andrea, Do you have some time this week to talk about Dane? Some details below… Dane&#39;s behavior at home is getting increasingly difficult to manage. He is getting more aggressive about food. In",
+      "payload": {
+        "mimeType": "multipart/alternative",
+        "headers": [
+          {
+            "name": "Date",
+            "value": "Sun, 12 Apr 2026 08:11:33 -0700"
+          },
+          {
+            "name": "Subject",
+            "value": "Dane"
+          },
+          {
+            "name": "From",
+            "value": "Corey Badcock \u003ccbadcock@gmail.com\u003e"
+          },
+          {
+            "name": "To",
+            "value": "Andrea Valdez \u003candreavaldez@mindfultherapygroup.com\u003e"
+          }
+        ]
+      },
+      "sizeEstimate": 9996,
+      "historyId": "16878168",
+      "internalDate": "1776006693000"
+    },
+    {
+      "id": "19d888561704b322",
+      "threadId": "19d8218c23fc468b",
+      "labelIds": [
+        "IMPORTANT",
+        "CATEGORY_PERSONAL",
+        "INBOX"
+      ],
+      "snippet": "Hi Corey, I can meet with you this Thursday to discuss. 8:30 or 10am—please let me know what works. We can go through medication options that may help. I want to discuss either working to lower his",
+      "payload": {
+        "mimeType": "multipart/alternative",
+        "headers": [
+          {
+            "name": "From",
+            "value": "Andrea Valdez \u003candreavaldez@mindfultherapygroup.com\u003e"
+          },
+          {
+            "name": "Subject",
+            "value": "Re: Dane"
+          },
+          {
+            "name": "Date",
+            "value": "Mon, 13 Apr 2026 13:25:23 -0700"
+          },
+          {
+            "name": "To",
+            "value": "Corey Badcock \u003ccbadcock@gmail.com\u003e"
+          }
+        ]
+      },
+      "sizeEstimate": 18946,
+      "historyId": "16878168",
+      "internalDate": "1776111923000"
+    },
+    {
+      "id": "19d888ae73bee037",
+      "threadId": "19d8218c23fc468b",
+      "labelIds": [
+        "SENT"
+      ],
+      "snippet": "Thu 830am works. Good call on DDA. He no longer has a case worker since that got cut, but I have a supervisor I&#39;ve been in contact with, so I&#39;ll email him. Corey On Mon, Apr 13, 2026 at 1:25 PM",
+      "payload": {
+        "mimeType": "multipart/alternative",
+        "headers": [
+          {
+            "name": "Date",
+            "value": "Mon, 13 Apr 2026 13:31:37 -0700"
+          },
+          {
+            "name": "Subject",
+            "value": "Re: Dane"
+          },
+          {
+            "name": "From",
+            "value": "Corey Badcock \u003ccbadcock@gmail.com\u003e"
+          },
+          {
+            "name": "To",
+            "value": "Andrea Valdez \u003candreavaldez@mindfultherapygroup.com\u003e"
+          }
+        ]
+      },
+      "sizeEstimate": 14996,
+      "historyId": "16878168",
+      "internalDate": "1776112297000"
+    },
+    {
+      "id": "19d888c7a3ca7c77",
+      "threadId": "19d8218c23fc468b",
+      "labelIds": [
+        "IMPORTANT",
+        "CATEGORY_PERSONAL",
+        "INBOX"
+      ],
+      "snippet": "Okay he&#39;s scheduled for 4/16 at 8:30am Andrea Valdez, MN, ARNP (she/her) Psychiatric Nurse Practitioner MINDFUL THERAPY GROUP 206-453-5707 x129 / Fax 206-453-5816 CURRENT PATIENTS I am in clinic on",
+      "payload": {
+        "mimeType": "multipart/alternative",
+        "headers": [
+          {
+            "name": "From",
+            "value": "Andrea Valdez \u003candreavaldez@mindfultherapygroup.com\u003e"
+          },
+          {
+            "name": "Subject",
+            "value": "Re: Dane"
+          },
+          {
+            "name": "Date",
+            "value": "Mon, 13 Apr 2026 13:33:09 -0700"
+          },
+          {
+            "name": "To",
+            "value": "Corey Badcock \u003ccbadcock@gmail.com\u003e"
+          }
+        ]
+      },
+      "sizeEstimate": 22584,
+      "historyId": "16878168",
+      "internalDate": "1776112389000"
+    },
+    {
+      "id": "19d936600cc453ec",
+      "threadId": "19d8218c23fc468b",
+      "labelIds": [
+        "SENT"
+      ],
+      "snippet": "Hi Aaron/Katelyn, We corresponded previously about my adult son, Dane, and his eligibility for DDA. Not sure who to send this to, but I would like the email below added to his file. Dane&#39;s behavior",
+      "payload": {
+        "mimeType": "multipart/alternative",
+        "headers": [
+          {
+            "name": "Date",
+            "value": "Wed, 15 Apr 2026 16:07:08 -0700"
+          },
+          {
+            "name": "Subject",
+            "value": "Fwd: Dane"
+          },
+          {
+            "name": "From",
+            "value": "Corey Badcock \u003ccbadcock@gmail.com\u003e"
+          },
+          {
+            "name": "To",
+            "value": "\"Peterson, Aaron N (DSHS/HCLA/DDCS)\" \u003caaron.peterson@dshs.wa.gov\u003e, \"Johnson, Katelyn M (DSHS/HCLA/DDCS)\" \u003ckatelyn.warenski@dshs.wa.gov\u003e"
+          }
+        ]
+      },
+      "sizeEstimate": 12461,
+      "historyId": "16878168",
+      "internalDate": "1776294428000"
+    },
+    {
+      "id": "19d938a24f8796c5",
+      "threadId": "19d8218c23fc468b",
+      "labelIds": [
+        "IMPORTANT",
+        "CATEGORY_PERSONAL",
+        "INBOX"
+      ],
+      "snippet": "Hi Corey, I wanted to let you know that I received this email. I&#39;m not the right person. You don&#39;t currently have a services case manager – so I need to conduct my review before you can apply",
+      "payload": {
+        "mimeType": "multipart/related",
+        "headers": [
+          {
+            "name": "From",
+            "value": "\"Johnson, Katelyn M (DSHS/HCLA/DDCS)\" \u003ckatelyn.warenski@dshs.wa.gov\u003e"
+          },
+          {
+            "name": "To",
+            "value": "Corey Badcock \u003ccbadcock@gmail.com\u003e, \"Peterson, Aaron N (DSHS/HCLA/DDCS)\" \u003caaron.peterson@dshs.wa.gov\u003e"
+          },
+          {
+            "name": "Subject",
+            "value": "RE: Dane"
+          },
+          {
+            "name": "Date",
+            "value": "Wed, 15 Apr 2026 23:46:34 +0000"
+          }
+        ]
+      },
+      "sizeEstimate": 87717,
+      "historyId": "16878168",
+      "internalDate": "1776296794000"
+    },
+    {
+      "id": "19d944aabe343393",
+      "threadId": "19d8218c23fc468b",
+      "labelIds": [
+        "SENT"
+      ],
+      "snippet": "---------- Forwarded message --------- From: Johnson, Katelyn M (DSHS/HCLA/DDCS) &lt;katelyn.warenski@dshs.wa.gov&gt; Date: Wed, Apr 15, 2026 at 4:46 PM Subject: RE: Dane To: Corey Badcock &lt;cbadcock",
+      "payload": {
+        "mimeType": "multipart/related",
+        "headers": [
+          {
+            "name": "Date",
+            "value": "Wed, 15 Apr 2026 20:16:54 -0700"
+          },
+          {
+            "name": "Subject",
+            "value": "Fwd: Dane"
+          },
+          {
+            "name": "From",
+            "value": "Corey Badcock \u003ccbadcock@gmail.com\u003e"
+          },
+          {
+            "name": "To",
+            "value": "Rena Giannoulakis \u003crgiannoul@gmail.com\u003e"
+          }
+        ]
+      },
+      "sizeEstimate": 67081,
+      "historyId": "16884396",
+      "internalDate": "1776309414000"
+    },
+    {
+      "id": "19d9453eaf0fabea",
+      "threadId": "19d8218c23fc468b",
+      "labelIds": [
+        "SENT"
+      ],
+      "snippet": "Hi Katelyn, Thank you so much for this message. If you can do his review, that is really helpful. I know there&#39;s a process and budget issues. At min I just want to start documenting some of this as",
+      "payload": {
+        "mimeType": "multipart/related",
+        "headers": [
+          {
+            "name": "Date",
+            "value": "Wed, 15 Apr 2026 20:27:00 -0700"
+          },
+          {
+            "name": "Subject",
+            "value": "Re: Dane"
+          },
+          {
+            "name": "From",
+            "value": "Corey Badcock \u003ccbadcock@gmail.com\u003e"
+          },
+          {
+            "name": "To",
+            "value": "\"Johnson, Katelyn M (DSHS/HCLA/DDCS)\" \u003ckatelyn.warenski@dshs.wa.gov\u003e"
+          }
+        ]
+      },
+      "sizeEstimate": 70644,
+      "historyId": "16884396",
+      "internalDate": "1776310020000"
+    },
+    {
+      "id": "19d9700ea4c67b2d",
+      "threadId": "19d8218c23fc468b",
+      "labelIds": [
+        "SENT"
+      ],
+      "snippet": "---------- Forwarded message --------- From: Corey Badcock &lt;cbadcock@gmail.com&gt; Date: Wed, Apr 15, 2026 at 8:27 PM Subject: Re: Dane To: Johnson, Katelyn M (DSHS/HCLA/DDCS) &lt;katelyn.warenski@",
+      "payload": {
+        "mimeType": "multipart/related",
+        "headers": [
+          {
+            "name": "Date",
+            "value": "Thu, 16 Apr 2026 08:55:12 -0700"
+          },
+          {
+            "name": "Subject",
+            "value": "Fwd: Dane"
+          },
+          {
+            "name": "From",
+            "value": "Corey Badcock \u003ccbadcock@gmail.com\u003e"
+          },
+          {
+            "name": "To",
+            "value": "Andrea Valdez \u003candreavaldez@mindfultherapygroup.com\u003e"
+          }
+        ]
+      },
+      "sizeEstimate": 71582,
+      "historyId": "16884396",
+      "internalDate": "1776354912000"
+    }
+  ]
+}

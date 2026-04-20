@@ -1,0 +1,42 @@
+{
+  "id": "19d8738dbfd36b5d",
+  "threadId": "19d8738dbfd36b5d",
+  "labelIds": [
+    "UNREAD",
+    "CATEGORY_UPDATES",
+    "INBOX"
+  ],
+  "snippet": "Fountain TRT Corey Badcock , your video visit starts in 4 hours Your video visit with a Fountain doctor is happening soon. That&#39;s why we wanted to send you this reminder. Remember, we will text you",
+  "payload": {
+    "mimeType": "text/html",
+    "headers": [
+      {
+        "name": "From",
+        "value": "Michele Foster \u003cmailer@oncehub.com\u003e"
+      },
+      {
+        "name": "Reply-To",
+        "value": "\u003cmichele.foster@fountain.net\u003e"
+      },
+      {
+        "name": "To",
+        "value": "cbadcock@gmail.com"
+      },
+      {
+        "name": "Subject",
+        "value": "Your Fountain video visit starts in approximately 4 hours"
+      },
+      {
+        "name": "Message-ID",
+        "value": "\u003c0100019d8738d9ca-d5413534-0ff9-4892-b2f7-7fd1cb6ac749-000000@email.amazonses.com\u003e"
+      },
+      {
+        "name": "Date",
+        "value": "Mon, 13 Apr 2026 14:22:23 +0000"
+      }
+    ]
+  },
+  "sizeEstimate": 13270,
+  "historyId": "16870351",
+  "internalDate": "1776090143000"
+}

@@ -1,0 +1,41 @@
+{
+  "id": "19d96e9cf9cb77ce",
+  "threadId": "19d96e9cf9cb77ce",
+  "labelIds": [
+    "CATEGORY_UPDATES",
+    "INBOX"
+  ],
+  "snippet": "Verification Code This email was sent automatically by MINDFUL THERAPY GROUP WASHINGTON in response to your request to verify your identity for a Telehealth Appointment Check-In. Please use the",
+  "payload": {
+    "mimeType": "text/html",
+    "headers": [
+      {
+        "name": "Date",
+        "value": "Thu, 16 Apr 2026 15:29:58 +0000 (UTC)"
+      },
+      {
+        "name": "From",
+        "value": "MINDFUL THERAPY GROUP WASHINGTON \u003cnoreply@advancedmd.com\u003e"
+      },
+      {
+        "name": "Message-ID",
+        "value": "\u003cCyI4wEnDQcizyeZjy00wDw@geopod-ismtpd-8\u003e"
+      },
+      {
+        "name": "Subject",
+        "value": "Telehealth verification code: 373296"
+      },
+      {
+        "name": "Reply-To",
+        "value": "frontdesk@mindfultherapygroup.com"
+      },
+      {
+        "name": "To",
+        "value": "CBADCOCK@gmail.com"
+      }
+    ]
+  },
+  "sizeEstimate": 8814,
+  "historyId": "16877790",
+  "internalDate": "1776353398000"
+}

@@ -1,0 +1,38 @@
+{
+  "id": "19d980aa77b12404",
+  "threadId": "19d980aa77b12404",
+  "labelIds": [
+    "UNREAD",
+    "CATEGORY_UPDATES",
+    "INBOX"
+  ],
+  "snippet": "Prime Video Peacock Premium Plus | Manage your subscription Hello Corey Badcock, At your request, we&#39;ve canceled your subscription to Peacock Premium Plus on Prime Video. Re-subscribe to Peacock",
+  "payload": {
+    "mimeType": "multipart/alternative",
+    "headers": [
+      {
+        "name": "Date",
+        "value": "Thu, 16 Apr 2026 20:45:27 +0000"
+      },
+      {
+        "name": "From",
+        "value": "Prime Video \u003cno-reply@primevideo.com\u003e"
+      },
+      {
+        "name": "To",
+        "value": "cbadcock@gmail.com"
+      },
+      {
+        "name": "Message-ID",
+        "value": "\u003c0100019d980aa5c9-722bef6b-e5ac-412e-b9ff-895ffa976771-000000@email.amazonses.com\u003e"
+      },
+      {
+        "name": "Subject",
+        "value": "Your Peacock Premium Plus Subscription Cancellation"
+      }
+    ]
+  },
+  "sizeEstimate": 19156,
+  "historyId": "16880928",
+  "internalDate": "1776372327000"
+}

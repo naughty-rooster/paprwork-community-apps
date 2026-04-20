@@ -1,0 +1,38 @@
+{
+  "id": "19d980757f2b00ab",
+  "threadId": "19d980757f2b00ab",
+  "labelIds": [
+    "UNREAD",
+    "CATEGORY_UPDATES",
+    "INBOX"
+  ],
+  "snippet": "Amazon Amazon Hi Corey Badcock, Your subscription has been cancelled. Replacements are suggested below. Subscription Cancelled BulkSupplements.com N-Acetyl L-Cysteine ... BulkSupplements.com N-Acetyl L",
+  "payload": {
+    "mimeType": "multipart/alternative",
+    "headers": [
+      {
+        "name": "Date",
+        "value": "Thu, 16 Apr 2026 20:41:50 +0000"
+      },
+      {
+        "name": "From",
+        "value": "\"Amazon Subscribe & Save\" \u003cno-reply@amazon.com\u003e"
+      },
+      {
+        "name": "To",
+        "value": "cbadcock@gmail.com"
+      },
+      {
+        "name": "Message-ID",
+        "value": "\u003c0100019d980753df-cd038248-86f3-4678-bb07-04941973f277-000000@email.amazonses.com\u003e"
+      },
+      {
+        "name": "Subject",
+        "value": "Subscription cancelled. Other options are suggested for you."
+      }
+    ]
+  },
+  "sizeEstimate": 95630,
+  "historyId": "16880924",
+  "internalDate": "1776372110000"
+}

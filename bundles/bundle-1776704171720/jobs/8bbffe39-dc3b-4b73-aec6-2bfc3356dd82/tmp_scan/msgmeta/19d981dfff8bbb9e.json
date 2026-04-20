@@ -1,0 +1,42 @@
+{
+  "id": "19d981dfff8bbb9e",
+  "threadId": "19d981dfff8bbb9e",
+  "labelIds": [
+    "UNREAD",
+    "CATEGORY_PERSONAL",
+    "INBOX"
+  ],
+  "snippet": "We want to make sure that this was you. Experian header logo Experian header logo Unread notifications Sign in Decorative Image Decorative Image A new device signed in to your account This device hasn",
+  "payload": {
+    "mimeType": "multipart/alternative",
+    "headers": [
+      {
+        "name": "From",
+        "value": "Experian \u003csupport@s.usa.experian.com\u003e"
+      },
+      {
+        "name": "To",
+        "value": "\u003ccbadcock@gmail.com\u003e"
+      },
+      {
+        "name": "Subject",
+        "value": "Sign in from a new device"
+      },
+      {
+        "name": "Date",
+        "value": "Thu, 16 Apr 2026 15:06:32 -0600"
+      },
+      {
+        "name": "Reply-To",
+        "value": "Experian \u003creply-UXLD5W3YIYUUVISELFT572CHUQ.70252@e.usa.experian.com\u003e"
+      },
+      {
+        "name": "Message-ID",
+        "value": "\u003c4edff60e-5fe6-4019-90f0-e0ce4ec24016@atl1s07mta3209.xt.local\u003e"
+      }
+    ]
+  },
+  "sizeEstimate": 53818,
+  "historyId": "16880932",
+  "internalDate": "1776373592000"
+}

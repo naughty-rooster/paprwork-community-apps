@@ -1,0 +1,38 @@
+{
+  "id": "19d97be866e420f1",
+  "threadId": "19d97be8af6c557c",
+  "labelIds": [
+    "UNREAD",
+    "CATEGORY_UPDATES",
+    "INBOX"
+  ],
+  "snippet": "Quicken Simplifi spotted a large deposit in one of your accounts Quicken Simplifi Logo Hi Corey! Quicken Simplifi spotted a large deposit in one of your accounts. Fedwire Credit Via: Citibank Na/ B/o:",
+  "payload": {
+    "mimeType": "multipart/alternative",
+    "headers": [
+      {
+        "name": "Date",
+        "value": "Thu, 16 Apr 2026 19:22:18 +0000 (UTC)"
+      },
+      {
+        "name": "From",
+        "value": "Quicken Simplifi \u003cnoreply@quicken.com\u003e"
+      },
+      {
+        "name": "Message-ID",
+        "value": "\u003cJQZN6RgXTlK52yIx55JeCw@geopod-ismtpd-canary-0\u003e"
+      },
+      {
+        "name": "Subject",
+        "value": "Big deposit incoming! 🤑🤑"
+      },
+      {
+        "name": "To",
+        "value": "cbadcock@gmail.com"
+      }
+    ]
+  },
+  "sizeEstimate": 47046,
+  "historyId": "16880920",
+  "internalDate": "1776367338000"
+}

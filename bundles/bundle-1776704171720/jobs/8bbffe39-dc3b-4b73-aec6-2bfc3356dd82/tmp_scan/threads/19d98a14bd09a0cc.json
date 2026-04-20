@@ -1,0 +1,41 @@
+{
+  "id": "19d98a14bd09a0cc",
+  "historyId": "16883789",
+  "messages": [
+    {
+      "id": "19d98a14bd09a0cc",
+      "threadId": "19d98a14bd09a0cc",
+      "labelIds": [
+        "UNREAD",
+        "IMPORTANT",
+        "CATEGORY_PERSONAL",
+        "INBOX"
+      ],
+      "snippet": "Rena &amp; Corey Personal Training You have been invited by Laura Su to attend an event named Rena &amp; Corey Personal Training on Thursday Apr 23, 2026 ⋅ 5:30pm – 6:30pm (Pacific Time - Los Angeles).",
+      "payload": {
+        "mimeType": "multipart/mixed",
+        "headers": [
+          {
+            "name": "Date",
+            "value": "Thu, 16 Apr 2026 23:30:00 +0000"
+          },
+          {
+            "name": "Subject",
+            "value": "Invitation: Rena & Corey Personal Training @ Thu Apr 23, 2026 5:30pm - 6:30pm (PDT) (cbadcock@gmail.com)"
+          },
+          {
+            "name": "From",
+            "value": "Laura Su \u003claura@liberatestrength.com\u003e"
+          },
+          {
+            "name": "To",
+            "value": "cbadcock@gmail.com, rgiannoul@gmail.com"
+          }
+        ]
+      },
+      "sizeEstimate": 40895,
+      "historyId": "16883789",
+      "internalDate": "1776382200000"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "scanned": 40,
+  "inserted": 0,
+  "inserted_rows": [],
+  "skipped": {
+    "duplicate gmail_message_id": 26,
+    "no explicit ask or obligation": 2,
+    "later self reply resolved thread": 2,
+    "receipt/confirmation/cancellation": 1,
+    "marketing/recruiting": 2,
+    "generic alert/notification": 6,
+    "later inbound resolved/status-only thread": 1
+  }
+}

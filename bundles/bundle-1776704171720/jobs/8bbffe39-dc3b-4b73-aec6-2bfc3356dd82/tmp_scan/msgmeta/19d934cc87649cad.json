@@ -1,0 +1,38 @@
+{
+  "id": "19d934cc87649cad",
+  "threadId": "19d934cc87649cad",
+  "labelIds": [
+    "UNREAD",
+    "CATEGORY_UPDATES",
+    "INBOX"
+  ],
+  "snippet": "Dear Families, The first week of May (May 4-8th) is Teacher Appreciation Week-- a wonderful opportunity to show our teachers how much we value all that they do! In the years past, families have helped",
+  "payload": {
+    "mimeType": "multipart/alternative",
+    "headers": [
+      {
+        "name": "From",
+        "value": "Broadview ELDC \u003cbroadview@eldc.org\u003e"
+      },
+      {
+        "name": "Date",
+        "value": "Wed, 15 Apr 2026 15:31:31 -0700"
+      },
+      {
+        "name": "Message-ID",
+        "value": "\u003cCANW7oiZ17Dp2T3b4AgO5zAbUrgQp0SrztnJKyZotjU-WVih4vQ@mail.gmail.com\u003e"
+      },
+      {
+        "name": "Subject",
+        "value": "Teacher Appreciation Week 2026"
+      },
+      {
+        "name": "To",
+        "value": "undisclosed-recipients:;"
+      }
+    ]
+  },
+  "sizeEstimate": 9190,
+  "historyId": "16870147",
+  "internalDate": "1776292291000"
+}

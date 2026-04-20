@@ -1,0 +1,38 @@
+{
+  "id": "19d932a12f64718b",
+  "threadId": "19d932a12f64718b",
+  "labelIds": [
+    "UNREAD",
+    "CATEGORY_UPDATES",
+    "INBOX"
+  ],
+  "snippet": "Authentication code Código de autorización multifactorial 8866-028291",
+  "payload": {
+    "mimeType": "text/plain",
+    "headers": [
+      {
+        "name": "Date",
+        "value": "Wed, 15 Apr 2026 15:01:40 -0700 (PDT)"
+      },
+      {
+        "name": "From",
+        "value": "help@secureaccess.wa.gov"
+      },
+      {
+        "name": "To",
+        "value": "cbadcock@gmail.com"
+      },
+      {
+        "name": "Message-ID",
+        "value": "\u003c767916750.111768.1776290500529@saprac03\u003e"
+      },
+      {
+        "name": "Subject",
+        "value": "SAW MFA Code"
+      }
+    ]
+  },
+  "sizeEstimate": 5153,
+  "historyId": "16870143",
+  "internalDate": "1776290500000"
+}

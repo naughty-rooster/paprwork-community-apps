@@ -1,0 +1,38 @@
+{
+  "id": "19d8dec384727961",
+  "threadId": "19d8dec384727961",
+  "labelIds": [
+    "IMPORTANT",
+    "CATEGORY_UPDATES",
+    "INBOX"
+  ],
+  "snippet": "Date: 04/14/2026 Case Number: 18-3-73995-4 SEA Case Title: ANTHONY-BADCOCK NKA VS BADCOCK New order(s) have been filed into this case. Attached you can find a courtesy copy of the order(s) signed by a",
+  "payload": {
+    "mimeType": "multipart/alternative",
+    "headers": [
+      {
+        "name": "Date",
+        "value": "Tue, 14 Apr 2026 14:35:56 -0700"
+      },
+      {
+        "name": "From",
+        "value": "\u003cdonotreplyScript@kingcounty.gov\u003e"
+      },
+      {
+        "name": "To",
+        "value": "\u003capril@demaarlaw.com\u003e, \u003cnatalie@demaarlaw.com\u003e, \u003claura@colberglaw.com\u003e, \u003ccbadcock@gmail.com\u003e, \u003cLMARTIN@skellengerbender.com\u003e, \u003clgilmore@skellengerbender.com\u003e, \u003cfamilylawstaffseattle@kingcounty.gov\u003e"
+      },
+      {
+        "name": "Message-ID",
+        "value": "\u003c1419151223.153987.1776202556045@DJA-PRD-ECAPCB2.ct.er.lcl\u003e"
+      },
+      {
+        "name": "Subject",
+        "value": "New Orders Filed to Case 18-3-73995-4"
+      }
+    ]
+  },
+  "sizeEstimate": 949424,
+  "historyId": "16884464",
+  "internalDate": "1776202556000"
+}

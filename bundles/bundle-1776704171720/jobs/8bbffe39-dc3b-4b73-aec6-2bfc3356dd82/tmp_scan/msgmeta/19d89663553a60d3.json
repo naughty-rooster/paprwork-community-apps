@@ -1,0 +1,38 @@
+{
+  "id": "19d89663553a60d3",
+  "threadId": "19d89663553a60d3",
+  "labelIds": [
+    "UNREAD",
+    "CATEGORY_UPDATES",
+    "INBOX"
+  ],
+  "snippet": "Delivered: &quot;Sumind 6 Pcs Rainbow Ribbon...&quot; and 1 more item͏ \u200c ͏ \u200c ͏ \u200c ͏ \u200c ͏ \u200c ͏ \u200c ͏ \u200c ͏ \u200c ͏ \u200c ͏ \u200c ͏ \u200c ͏ \u200c ͏ \u200c ͏ \u200c ͏ \u200c ͏ \u200c ͏ \u200c ͏ \u200c ͏ \u200c ͏ \u200c ͏ \u200c ͏ \u200c ͏ \u200c ͏ \u200c ͏ \u200c ͏ \u200c ͏ \u200c ͏ \u200c ͏ \u200c ͏ \u200c ͏ \u200c ͏ \u200c ͏ \u200c",
+  "payload": {
+    "mimeType": "multipart/alternative",
+    "headers": [
+      {
+        "name": "Date",
+        "value": "Tue, 14 Apr 2026 00:31:09 +0000"
+      },
+      {
+        "name": "From",
+        "value": "\"Amazon.com\" \u003corder-update@amazon.com\u003e"
+      },
+      {
+        "name": "To",
+        "value": "cbadcock@gmail.com"
+      },
+      {
+        "name": "Message-ID",
+        "value": "\u003c0100019d89663331-8017a8dc-348f-4f82-a2fb-ec6c7f65c75f-000000@email.amazonses.com\u003e"
+      },
+      {
+        "name": "Subject",
+        "value": "Delivered: \"Sumind 6 Pcs Rainbow Ribbon...\" and 1 more item"
+      }
+    ]
+  },
+  "sizeEstimate": 124125,
+  "historyId": "16870196",
+  "internalDate": "1776126669000"
+}

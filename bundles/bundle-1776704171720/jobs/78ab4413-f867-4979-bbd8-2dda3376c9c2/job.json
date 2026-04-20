@@ -1,0 +1,24 @@
+{
+  "id": "78ab4413-f867-4979-bbd8-2dda3376c9c2",
+  "name": "admin_sms_scanner",
+  "type": "python",
+  "folder": "personal-admin",
+  "command": "TWILIO_ACCOUNT_SID=${TWILIO_ACCOUNT_SID} TWILIO_AUTH_TOKEN=${TWILIO_AUTH_TOKEN} TWILIO_PHONE_NUMBER=${TWILIO_PHONE_NUMBER} python3 code/main.py",
+  "requirements": [
+    "requests"
+  ],
+  "dependsOn": [],
+  "retries": {
+    "maxAttempts": 2,
+    "backoffMs": 3000
+  },
+  "retentionDays": 14,
+  "schedule": {
+    "enabled": false
+  },
+  "outputMode": "natural",
+  "memoryPolicy": "none",
+  "status": "pending",
+  "createdAt": "2026-04-20T16:56:14.372Z",
+  "updatedAt": "2026-04-20T16:56:14.372Z"
+}

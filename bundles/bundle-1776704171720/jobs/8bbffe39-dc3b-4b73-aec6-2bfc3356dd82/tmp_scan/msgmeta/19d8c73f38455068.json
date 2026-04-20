@@ -1,0 +1,42 @@
+{
+  "id": "19d8c73f38455068",
+  "threadId": "19d8c73f38455068",
+  "labelIds": [
+    "UNREAD",
+    "CATEGORY_UPDATES",
+    "INBOX"
+  ],
+  "snippet": "As an investor in this security, you have the right to vote on important matters. This is your opportunity to make a direct impact on your investment. Your vote counts! ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏",
+  "payload": {
+    "mimeType": "text/html",
+    "headers": [
+      {
+        "name": "Message-ID",
+        "value": "\u003cD0.48.27077.DE25ED96@awue1pbrcctsmtm-43\u003e"
+      },
+      {
+        "name": "Reply-To",
+        "value": "MORGAN STANLEY \u003cregistrar@proxyvote.com\u003e"
+      },
+      {
+        "name": "From",
+        "value": "MORGAN STANLEY \u003cid@proxyvote.com\u003e"
+      },
+      {
+        "name": "To",
+        "value": "cbadcock@gmail.com"
+      },
+      {
+        "name": "Date",
+        "value": "Tue, 14 Apr 2026 10:45:01 -0400"
+      },
+      {
+        "name": "Subject",
+        "value": "Vote now! AMAZON.COM, INC. Annual Meeting"
+      }
+    ]
+  },
+  "sizeEstimate": 76166,
+  "historyId": "16870220",
+  "internalDate": "1776177901000"
+}

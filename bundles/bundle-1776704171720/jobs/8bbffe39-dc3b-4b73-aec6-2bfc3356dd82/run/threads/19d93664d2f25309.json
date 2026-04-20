@@ -1,0 +1,281 @@
+{
+  "id": "19d93664d2f25309",
+  "historyId": "16870152",
+  "messages": [
+    {
+      "id": "19d93664d2f25309",
+      "threadId": "19d93664d2f25309",
+      "labelIds": [
+        "UNREAD",
+        "CATEGORY_PERSONAL",
+        "INBOX"
+      ],
+      "snippet": "Hello, Thank you for reaching out. I am on leave 4/15-4/17. For immediate concerns, please reach out to your case resource manager. If you need escalation, they can refer you to a covering supervisor.",
+      "payload": {
+        "partId": "",
+        "mimeType": "multipart/alternative",
+        "filename": "",
+        "headers": [
+          {
+            "name": "Delivered-To",
+            "value": "cbadcock@gmail.com"
+          },
+          {
+            "name": "Received",
+            "value": "by 2002:a05:6200:91b:b0:644:ce73:f2a1 with SMTP id cj27csp577659qnb;        Wed, 15 Apr 2026 16:07:28 -0700 (PDT)"
+          },
+          {
+            "name": "X-Received",
+            "value": "by 2002:a05:6a20:6a2c:b0:39c:235:c5d7 with SMTP id adf61e73a8af0-39fe3f1ce69mr25241121637.39.1776294448180;        Wed, 15 Apr 2026 16:07:28 -0700 (PDT)"
+          },
+          {
+            "name": "ARC-Seal",
+            "value": "i=2; a=rsa-sha256; t=1776294448; cv=pass;        d=google.com; s=arc-20240605;        b=Mzt0EeXM2TK30SLh/lpsqF82lJkj6FBuAYyuAouAD5wa+LqHuvaj5SfxzKZiQAbCOQ         CzEthtOqWU7Jju/9juudXcr9zYXEMiadQZn26GU6DdGlAs6xlFHHUkWlhat2cf4zfPIe         eUHGHOyjTKNS9/zQznDXqcYJcft5Wd2Ce7GdkPqXlCWTdsDqrMEUAOhzWGANoCDdtgvU         GDge5mnLXCarUvmHVCNHwwUbwL78KbvxUpvngZKzLMs+1PdsvOnQcE/5A+W1TruD7m9+         mxjL2GVV9ZJWpC/rmQS6miQDueppc3bIqzU8rz9mGMEma07LZSyWVz05dvPBnpi0nWq0         VcpQ=="
+          },
+          {
+            "name": "ARC-Message-Signature",
+            "value": "i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;        h=mime-version:auto-submitted:in-reply-to:references:message-id:date         :thread-index:thread-topic:subject:to:from:dkim-signature;        bh=Y7d6+DJR0DZIKt/NCXQ2+Vt1v4svWmbatORDwvXSJ94=;        fh=daF+3aatXO4z4NWnlbWI3NdVfVzdkVjHPkSD6zJIbk8=;        b=TaceG3pPm0LlDIigMfwljTbiup+caCDNG1xf7BNUunb2zKOf4ultds1n+H70iSIH7T         imWOlmnp/tIJBLMV5GlX2YVk3zSZdpwrPO6Al2ocu80X3riXa7KesmPJvjt32nOGgq07         xvD0SeSFWUCg8QKrPyvwfh0JHhMrh0kxs6KxOGYUnVpi+7+1zSheOlo8jC+XRS/r/lSy         aWvprtySvhhXw5I+t/jI+FWsXZkujIRe4bXZKqn7BziBJb5NzXQAd2q+sxkH17uMYgDZ         fbLJDEWmaWrG4txjl4St653B6/4QegI6UxbVS2Nb12nC2tVdVnF+FrNL23t7Gr/QjbZr         F6PQ==;        dara=google.com"
+          },
+          {
+            "name": "ARC-Authentication-Results",
+            "value": "i=2; mx.google.com;       dkim=pass header.i=@dshs.wa.gov header.s=selector1 header.b=Rsj+P29S;       arc=pass (i=1 dkim=pass dkdomain=dshs.wa.gov dmarc=pass fromdomain=dshs.wa.gov);       spf=pass (google.com: domain of postmaster@by5pr09cu001.outbound.protection.outlook.com designates 2a01:111:f403:d801:: as permitted sender) smtp.helo=BY5PR09CU001.outbound.protection.outlook.com;       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=dshs.wa.gov"
+          },
+          {
+            "name": "Return-Path",
+            "value": "\u003c\u003e"
+          },
+          {
+            "name": "Received",
+            "value": "from BY5PR09CU001.outbound.protection.outlook.com (mail-westusazhn150110000.outbound.protection.outlook.com. [2a01:111:f403:d801::])        by mx.google.com with ESMTPS id 41be03b00d2f7-c79585910c0si5077470a12.407.2026.04.15.16.07.27        for \u003ccbadcock@gmail.com\u003e        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);        Wed, 15 Apr 2026 16:07:28 -0700 (PDT)"
+          },
+          {
+            "name": "Received-SPF",
+            "value": "pass (google.com: domain of postmaster@by5pr09cu001.outbound.protection.outlook.com designates 2a01:111:f403:d801:: as permitted sender) client-ip=2a01:111:f403:d801::;"
+          },
+          {
+            "name": "Authentication-Results",
+            "value": "mx.google.com;       dkim=pass header.i=@dshs.wa.gov header.s=selector1 header.b=Rsj+P29S;       arc=pass (i=1 dkim=pass dkdomain=dshs.wa.gov dmarc=pass fromdomain=dshs.wa.gov);       spf=pass (google.com: domain of postmaster@by5pr09cu001.outbound.protection.outlook.com designates 2a01:111:f403:d801:: as permitted sender) smtp.helo=BY5PR09CU001.outbound.protection.outlook.com;       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=dshs.wa.gov"
+          },
+          {
+            "name": "ARC-Seal",
+            "value": "i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none; b=JAP+nDLDkvAf3gQBUOAyUnJNK3m7+c7qWybf4HQ299ruQ049zJCXrSeM1jQbhRwW47DWp50Q0uNwcaQceMX3bhCuY/TShO9t29WSJ1Y6bbvM3cCTX5c/z1aGIfRJm8r6UuTCy6ckAVl5VEwrX8ii7O8XUEiEuddRNrJRz2lReLvDIIuxZNgtkuWUAzd2qLNnY0UqhvJGKbnL3dHRWJWuizegTOFz0H2fsSxHg7THxz9RXjDzlJvXsiaLXdOV+BdM5ECylcaPROiMdDJ3HFmarqkCOCcJtVl+rnlHE4fYJlDuGZW5xYrkgbOpAEhMoVtmumDU6apjtPRANOrTO+CePw=="
+          },
+          {
+            "name": "ARC-Message-Signature",
+            "value": "i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; s=arcselector10001; h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1; bh=Y7d6+DJR0DZIKt/NCXQ2+Vt1v4svWmbatORDwvXSJ94=; b=d8OAhAL+o39RdyRk3nrQHc1kiDoiOD00qTJM6QutQuN+udKbd/KdOO1sLJQuFj1DCzR3nkwVHxgOlFdqXz8kzxo+39QnfHi2xr8qyUGFVP1tjXQFojUn7j7xh7JipTCW0v+vlUsfQs1e78Ud2SAFgwPkEPYmmg9MF//YopdH/w7t2dNOmhzRsTsh39vyk1Mj0YMolFQ2ecytDqzs6kFgckB+bGGnQD2MU/IpqckobHzCztxtncNTsDIkOkiQY31xSInGfUwjFtm5GBXy5W/Hy1QVfd5kKFhsjVWk8DWEtk3Q9kCirY/+HzPTLshGW8phMTZVUGedRjsMxQNMm+2+TQ=="
+          },
+          {
+            "name": "ARC-Authentication-Results",
+            "value": "i=1; mx.microsoft.com 1; spf=none; dmarc=pass action=none header.from=dshs.wa.gov; dkim=pass header.d=dshs.wa.gov; arc=none"
+          },
+          {
+            "name": "DKIM-Signature",
+            "value": "v=1; a=rsa-sha256; c=relaxed/relaxed; d=dshs.wa.gov; s=selector1; h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck; bh=Y7d6+DJR0DZIKt/NCXQ2+Vt1v4svWmbatORDwvXSJ94=; b=Rsj+P29SM8gUj0wytsUBiZjCb+NF77/n62DUvV1lgoiM4Yl8/KFVURc1txBzVmFToQhTqhYWz0YO2KF4mOFssxbPZU1Y28l3IdGYWQe+nxgNRwNEog0kye4vPc3oyxJpMwa9hjbwuhGKRB8EvHwm854KlovVyy2Av33ey8KOkPZPD2fXYJKSgrJL0aQkYKBi7Bbk/XPV3Il4XxsFtsiyvAd7hWiGMNUIFSjPBmdkJiHmqAzA6ebxSgyFLLIGqmz5HYTw2Pm8b5sJ4YSYN0XtiP7nYvtS+KaWuoD6zFH9NudRS2GacdgDye3P1JBKw5f2riq1jXmDZ7pveKUR0yTiCA=="
+          },
+          {
+            "name": "Received",
+            "value": "from SA0PR09MB7337.namprd09.prod.outlook.com (2603:10b6:806:76::12) by DS0PR09MB10945.namprd09.prod.outlook.com (2603:10b6:8:178::8) with Microsoft SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9769.49; Wed, 15 Apr 2026 23:07:26 +0000"
+          },
+          {
+            "name": "Received",
+            "value": "from SA0PR09MB7337.namprd09.prod.outlook.com ([::1]) by SA0PR09MB7337.namprd09.prod.outlook.com ([fe80::b54c:6761:14ab:27ce%3]) with Microsoft SMTP Server id 15.20.9818.017; Wed, 15 Apr 2026 23:07:26 +0000"
+          },
+          {
+            "name": "From",
+            "value": "\"Peterson, Aaron N (DSHS/HCLA/DDCS)\" \u003caaron.peterson@dshs.wa.gov\u003e"
+          },
+          {
+            "name": "To",
+            "value": "Corey Badcock \u003ccbadcock@gmail.com\u003e"
+          },
+          {
+            "name": "Subject",
+            "value": "Automatic reply: Dane"
+          },
+          {
+            "name": "Thread-Topic",
+            "value": "Dane"
+          },
+          {
+            "name": "Thread-Index",
+            "value": "AQHczSyfj3LcrtDy+0GUK6eyy1PEFrXgvudh"
+          },
+          {
+            "name": "Date",
+            "value": "Wed, 15 Apr 2026 23:07:26 +0000"
+          },
+          {
+            "name": "Message-ID",
+            "value": "\u003c7c8fe88168f44a5185edd03ab42985bd@SA0PR09MB7337.namprd09.prod.outlook.com\u003e"
+          },
+          {
+            "name": "References",
+            "value": "\u003cCAN_sR64fY_2vYAbiHgkh8dTvic-LvNCw+TdzJmJNWjFgocC0YQ@mail.gmail.com\u003e \u003cCAN_sR66ko-sBNJTZjvvafaqBDZTtA=4Rm7uk7-ZsznxBFYUbcA@mail.gmail.com\u003e"
+          },
+          {
+            "name": "In-Reply-To",
+            "value": "\u003cCAN_sR66ko-sBNJTZjvvafaqBDZTtA=4Rm7uk7-ZsznxBFYUbcA@mail.gmail.com\u003e"
+          },
+          {
+            "name": "X-MS-Has-Attach",
+            "value": ""
+          },
+          {
+            "name": "X-Auto-Response-Suppress",
+            "value": "All"
+          },
+          {
+            "name": "X-MS-Exchange-Inbox-Rules-Loop",
+            "value": "aaron.peterson@dshs.wa.gov"
+          },
+          {
+            "name": "X-MS-TNEF-Correlator",
+            "value": ""
+          },
+          {
+            "name": "authentication-results",
+            "value": "dkim=none (message not signed) header.d=none;dmarc=none action=none header.from=dshs.wa.gov;"
+          },
+          {
+            "name": "x-ms-exchange-parent-message-id",
+            "value": "\u003cCAN_sR66ko-sBNJTZjvvafaqBDZTtA=4Rm7uk7-ZsznxBFYUbcA@mail.gmail.com\u003e"
+          },
+          {
+            "name": "auto-submitted",
+            "value": "auto-generated"
+          },
+          {
+            "name": "x-ms-exchange-generated-message-source",
+            "value": "Mailbox Rules Agent"
+          },
+          {
+            "name": "x-ms-publictraffictype",
+            "value": "Email"
+          },
+          {
+            "name": "x-ms-traffictypediagnostic",
+            "value": "SA0PR09MB7337:EE_|DS0PR09MB10945:EE_"
+          },
+          {
+            "name": "x-ms-office365-filtering-correlation-id",
+            "value": "4a5487b9-0484-4d43-0853-08de9b43c2a0"
+          },
+          {
+            "name": "x-ms-exchange-senderadcheck",
+            "value": "1"
+          },
+          {
+            "name": "x-ms-exchange-antispam-relay",
+            "value": "0"
+          },
+          {
+            "name": "x-microsoft-antispam",
+            "value": "BCL:0;ARA:13230040|50650200027|19092799006|10070799003|366016|1800799024|22082099003|56012099003|18002099003|8096899003|80100003;"
+          },
+          {
+            "name": "x-microsoft-antispam-message-info",
+            "value": "M5bOSce+4FAfeMlQGIdrdgsSZUBxHYkDxW+ti9C5SNoCxJTvhdsFe9ESEC87VvkzGLJ5VIAV1vX67SBVkW+lGIpbwGWPclVssn5YI8cylSWpV+IESZlwIOtr1rKCXIlSwF6Ap9iCSRsmlDTF3lVqcoBwrmeXVV0EFHwlViUS9aBn1QJWijTG4EHcScrIyg+wgejlHAFX0rjXhSrZBOJv1vk/AvW2N9S3Tu1wiQzumf9Jm9MFyYtzMv/8wxihuWeENmb4CC38T5cGL43QxdRJnPixZ9GeTzPi2x7dtCHjuKXVKPBdzS2dbEb3DTmlFyPzB4Y2vW18qwYMb80HnXojRrvYdu/LP/8ilankdUtNy8fWQe1lSJHAgSiuEGx0pRgvQ8rWbgxJSrrf4CIaPJS88MH8pO1mzIueeC6G60D6zYv5jFxkSxcc3YWXa8kDdc3IvF1VwaNyi6qdB76zhoSqqQTqDlEeNi2yCZlWB2Z/FB/rdJsXuTkvBzHwnpUqjoe1OTmRvy6TOA4IroGoQvH+G5tjORheJrt9P7bzwaqUGjTdxPzZfigvCpStIU+FxWe4x+XES46qnsxnF0mH3Muh2dUyI+Rcqj4cdTaZH/i1+o156ALH+mOD60LdKd8JQIOGYbW+m0R2NyiF/DsZ9GRxegGUwQWoDf9L0XEzg2d2MXwaePUXM+8h1GJaqxSXpCvh7RNGdijACHysHn8tH8/thVbGCq74gDxac0RYKhB6FKg="
+          },
+          {
+            "name": "x-forefront-antispam-report",
+            "value": "CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:SA0PR09MB7337.namprd09.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(50650200027)(19092799006)(10070799003)(366016)(1800799024)(22082099003)(56012099003)(18002099003)(8096899003)(80100003);DIR:OUT;SFP:1501;"
+          },
+          {
+            "name": "x-ms-exchange-antispam-messagedata-chunkcount",
+            "value": "1"
+          },
+          {
+            "name": "x-ms-exchange-antispam-messagedata-0",
+            "value": "eRs+nA+Uf+iySYGHwuVFkxmuxLd6cUrbnfFveVmH/+Omu9FfmyjhLCSqRaene7JU9cRUvtzarLZuxY2OVUJ1y9HlStH2MAK3n73C2dIK0QhGI47xVO3fT6wk1w3f/o8gSHrQ0+mrQFMn/KoSzU5xFBOEr/1ms8J95jvshePdxsWyVft4wXrGQlT9tMORKVQL5rk6Q32UmIVitmeS+cDtfZVBdIJ5F2g7QrwoKefLO6U4bJus9a55x3javGqkPOE9+6LGTVHIVQcMqVclVoAdQ3IxfV7yYW59FX+d944l9siM+x84evhtKLDvv5ajjMSdHHerUKTF1Bgo+TIYGvDmpfaovGeOJK12a8CW/FmEshf/9Iy1RtI7ujS/8FhXPfML0g7afpWc1mKu1DpzVXWNvg0Jc2iO/aUU/B2PqHX+fGF42hhRLnQI22sXRErZpvoe"
+          },
+          {
+            "name": "Content-Type",
+            "value": "multipart/alternative; boundary=\"_000_7c8fe88168f44a5185edd03ab42985bdSA0PR09MB7337namprd09pr_\""
+          },
+          {
+            "name": "MIME-Version",
+            "value": "1.0"
+          },
+          {
+            "name": "X-OriginatorOrg",
+            "value": "dshs.wa.gov"
+          },
+          {
+            "name": "X-MS-Exchange-CrossTenant-AuthAs",
+            "value": "Internal"
+          },
+          {
+            "name": "X-MS-Exchange-CrossTenant-AuthSource",
+            "value": "SA0PR09MB7337.namprd09.prod.outlook.com"
+          },
+          {
+            "name": "X-MS-Exchange-CrossTenant-Network-Message-Id",
+            "value": "4a5487b9-0484-4d43-0853-08de9b43c2a0"
+          },
+          {
+            "name": "X-MS-Exchange-CrossTenant-originalarrivaltime",
+            "value": "15 Apr 2026 23:07:26.3269 (UTC)"
+          },
+          {
+            "name": "X-MS-Exchange-CrossTenant-fromentityheader",
+            "value": "Hosted"
+          },
+          {
+            "name": "X-MS-Exchange-CrossTenant-id",
+            "value": "11d0e217-264e-400a-8ba0-57dcc127d72d"
+          },
+          {
+            "name": "X-MS-Exchange-Transport-CrossTenantHeadersStamped",
+            "value": "DS0PR09MB10945"
+          }
+        ],
+        "body": {
+          "size": 0
+        },
+        "parts": [
+          {
+            "partId": "0",
+            "mimeType": "text/plain",
+            "filename": "",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "text/plain; charset=\"us-ascii\""
+              },
+              {
+                "name": "Content-Transfer-Encoding",
+                "value": "quoted-printable"
+              }
+            ],
+            "body": {
+              "size": 336,
+              "data": "SGVsbG8sDQoNClRoYW5rIHlvdSBmb3IgcmVhY2hpbmcgb3V0Lg0KDQpJIGFtIG9uIGxlYXZlIDQvMTUtNC8xNy4NCg0KRm9yIGltbWVkaWF0ZSBjb25jZXJucywgcGxlYXNlIHJlYWNoIG91dCB0byB5b3VyIGNhc2UgcmVzb3VyY2UgbWFuYWdlci4gSWYgeW91IG5lZWQgZXNjYWxhdGlvbiwgdGhleSBjYW4gcmVmZXIgeW91IHRvIGEgY292ZXJpbmcgc3VwZXJ2aXNvci4NCg0KSWYgeW91IGFyZSBzZWVraW5nIGFuIHVwZGF0ZSBvbiB0aGUgYXNzZXNzbWVudCB3YWl0bGlzdCwgSSB3aWxsIHJlc3BvbmQgd2hlbiBJIHJldHVybi4NCg0KDQpUaGFuayB5b3UgZm9yIHlvdXIgcGF0aWVuY2UNCg0K"
+            }
+          },
+          {
+            "partId": "1",
+            "mimeType": "text/html",
+            "filename": "",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "text/html; charset=\"us-ascii\""
+              },
+              {
+                "name": "Content-Transfer-Encoding",
+                "value": "quoted-printable"
+              }
+            ],
+            "body": {
+              "size": 3431,
+              "data": "PGh0bWwgeG1sbnM6bz0idXJuOnNjaGVtYXMtbWljcm9zb2Z0LWNvbTpvZmZpY2U6b2ZmaWNlIiB4bWxuczp3PSJ1cm46c2NoZW1hcy1taWNyb3NvZnQtY29tOm9mZmljZTp3b3JkIiB4bWxuczptPSJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL29mZmljZS8yMDA0LzEyL29tbWwiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy9UUi9SRUMtaHRtbDQwIj4NCjxoZWFkPg0KPG1ldGEgaHR0cC1lcXVpdj0iQ29udGVudC1UeXBlIiBjb250ZW50PSJ0ZXh0L2h0bWw7IGNoYXJzZXQ9dXMtYXNjaWkiPg0KPG1ldGEgbmFtZT0iR2VuZXJhdG9yIiBjb250ZW50PSJNaWNyb3NvZnQgV29yZCAxNSAoZmlsdGVyZWQgbWVkaXVtKSI-DQo8c3R5bGU-PCEtLQ0KLyogRm9udCBEZWZpbml0aW9ucyAqLw0KQGZvbnQtZmFjZQ0KCXtmb250LWZhbWlseToiQ2FtYnJpYSBNYXRoIjsNCglwYW5vc2UtMToyIDQgNSAzIDUgNCA2IDMgMiA0O30NCkBmb250LWZhY2UNCgl7Zm9udC1mYW1pbHk6QXB0b3M7fQ0KQGZvbnQtZmFjZQ0KCXtmb250LWZhbWlseToiU2Vnb2UgVUkiOw0KCXBhbm9zZS0xOjIgMTEgNSAyIDQgMiA0IDIgMiAzO30NCi8qIFN0eWxlIERlZmluaXRpb25zICovDQpwLk1zb05vcm1hbCwgbGkuTXNvTm9ybWFsLCBkaXYuTXNvTm9ybWFsDQoJe21hcmdpbjowaW47DQoJZm9udC1zaXplOjEyLjBwdDsNCglmb250LWZhbWlseToiQXB0b3MiLHNhbnMtc2VyaWY7DQoJbXNvLWxpZ2F0dXJlczpzdGFuZGFyZGNvbnRleHR1YWw7fQ0Kc3Bhbi5FbWFpbFN0eWxlMTcNCgl7bXNvLXN0eWxlLXR5cGU6cGVyc29uYWwtY29tcG9zZTsNCglmb250LWZhbWlseToiU2Vnb2UgVUkiLHNhbnMtc2VyaWY7fQ0KLk1zb0NocERlZmF1bHQNCgl7bXNvLXN0eWxlLXR5cGU6ZXhwb3J0LW9ubHk7fQ0KQHBhZ2UgV29yZFNlY3Rpb24xDQoJe3NpemU6OC41aW4gMTEuMGluOw0KCW1hcmdpbjoxLjBpbiAxLjBpbiAxLjBpbiAxLjBpbjt9DQpkaXYuV29yZFNlY3Rpb24xDQoJe3BhZ2U6V29yZFNlY3Rpb24xO30NCi0tPjwvc3R5bGU-DQo8L2hlYWQ-DQo8Ym9keSBsYW5nPSJFTi1VUyIgbGluaz0iIzQ2Nzg4NiIgdmxpbms9IiM5NjYwN0QiIHN0eWxlPSJ3b3JkLXdyYXA6YnJlYWstd29yZCI-DQo8ZGl2IGNsYXNzPSJXb3JkU2VjdGlvbjEiPg0KPHAgY2xhc3M9Ik1zb05vcm1hbCIgc3R5bGU9InRleHQtYXV0b3NwYWNlOm5vbmUiPjxzcGFuIHN0eWxlPSJmb250LXNpemU6OC41cHQ7Zm9udC1mYW1pbHk6JnF1b3Q7U2Vnb2UgVUkmcXVvdDssc2Fucy1zZXJpZiI-SGVsbG8sPG86cD48L286cD48L3NwYW4-PC9wPg0KPHAgY2xhc3M9Ik1zb05vcm1hbCIgc3R5bGU9InRleHQtYXV0b3NwYWNlOm5vbmUiPjxzcGFuIHN0eWxlPSJmb250LXNpemU6OC41cHQ7Zm9udC1mYW1pbHk6JnF1b3Q7U2Vnb2UgVUkmcXVvdDssc2Fucy1zZXJpZiI-PG86cD4mbmJzcDs8L286cD48L3NwYW4-PC9wPg0KPHAgY2xhc3M9Ik1zb05vcm1hbCIgc3R5bGU9InRleHQtYXV0b3NwYWNlOm5vbmUiPjxzcGFuIHN0eWxlPSJmb250LXNpemU6OC41cHQ7Zm9udC1mYW1pbHk6JnF1b3Q7U2Vnb2UgVUkmcXVvdDssc2Fucy1zZXJpZiI-VGhhbmsgeW91IGZvciByZWFjaGluZyBvdXQuDQo8bzpwPjwvbzpwPjwvc3Bhbj48L3A-DQo8cCBjbGFzcz0iTXNvTm9ybWFsIiBzdHlsZT0idGV4dC1hdXRvc3BhY2U6bm9uZSI-PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZTo4LjVwdDtmb250LWZhbWlseTomcXVvdDtTZWdvZSBVSSZxdW90OyxzYW5zLXNlcmlmIj48bzpwPiZuYnNwOzwvbzpwPjwvc3Bhbj48L3A-DQo8cCBjbGFzcz0iTXNvTm9ybWFsIiBzdHlsZT0idGV4dC1hdXRvc3BhY2U6bm9uZSI-PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZTo4LjVwdDtmb250LWZhbWlseTomcXVvdDtTZWdvZSBVSSZxdW90OyxzYW5zLXNlcmlmIj5JIGFtIG9uIGxlYXZlIDQvMTUtNC8xNy48bzpwPjwvbzpwPjwvc3Bhbj48L3A-DQo8cCBjbGFzcz0iTXNvTm9ybWFsIiBzdHlsZT0idGV4dC1hdXRvc3BhY2U6bm9uZSI-PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZTo4LjVwdDtmb250LWZhbWlseTomcXVvdDtTZWdvZSBVSSZxdW90OyxzYW5zLXNlcmlmIj48bzpwPiZuYnNwOzwvbzpwPjwvc3Bhbj48L3A-DQo8cCBjbGFzcz0iTXNvTm9ybWFsIiBzdHlsZT0idGV4dC1hdXRvc3BhY2U6bm9uZSI-PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZTo4LjVwdDtmb250LWZhbWlseTomcXVvdDtTZWdvZSBVSSZxdW90OyxzYW5zLXNlcmlmIj5Gb3IgaW1tZWRpYXRlIGNvbmNlcm5zLCBwbGVhc2UgcmVhY2ggb3V0IHRvIHlvdXIgY2FzZSByZXNvdXJjZSBtYW5hZ2VyLiBJZiB5b3UgbmVlZCBlc2NhbGF0aW9uLCB0aGV5IGNhbiByZWZlciB5b3UgdG8gYSBjb3ZlcmluZyBzdXBlcnZpc29yLjxvOnA-PC9vOnA-PC9zcGFuPjwvcD4NCjxwIGNsYXNzPSJNc29Ob3JtYWwiIHN0eWxlPSJ0ZXh0LWF1dG9zcGFjZTpub25lIj48c3BhbiBzdHlsZT0iZm9udC1zaXplOjguNXB0O2ZvbnQtZmFtaWx5OiZxdW90O1NlZ29lIFVJJnF1b3Q7LHNhbnMtc2VyaWYiPjxvOnA-Jm5ic3A7PC9vOnA-PC9zcGFuPjwvcD4NCjxwIGNsYXNzPSJNc29Ob3JtYWwiIHN0eWxlPSJ0ZXh0LWF1dG9zcGFjZTpub25lIj48c3BhbiBzdHlsZT0iZm9udC1zaXplOjguNXB0O2ZvbnQtZmFtaWx5OiZxdW90O1NlZ29lIFVJJnF1b3Q7LHNhbnMtc2VyaWYiPklmIHlvdSBhcmUgc2Vla2luZyBhbiB1cGRhdGUgb24gdGhlIGFzc2Vzc21lbnQgd2FpdGxpc3QsIEkgd2lsbCByZXNwb25kIHdoZW4gSSByZXR1cm4uPG86cD48L286cD48L3NwYW4-PC9wPg0KPHAgY2xhc3M9Ik1zb05vcm1hbCIgc3R5bGU9InRleHQtYXV0b3NwYWNlOm5vbmUiPjxzcGFuIHN0eWxlPSJmb250LXNpemU6OC41cHQ7Zm9udC1mYW1pbHk6JnF1b3Q7U2Vnb2UgVUkmcXVvdDssc2Fucy1zZXJpZiI-PG86cD4mbmJzcDs8L286cD48L3NwYW4-PC9wPg0KPHAgY2xhc3M9Ik1zb05vcm1hbCIgc3R5bGU9InRleHQtYXV0b3NwYWNlOm5vbmUiPjxzcGFuIHN0eWxlPSJmb250LXNpemU6OC41cHQ7Zm9udC1mYW1pbHk6JnF1b3Q7U2Vnb2UgVUkmcXVvdDssc2Fucy1zZXJpZiI-PG86cD4mbmJzcDs8L286cD48L3NwYW4-PC9wPg0KPHAgY2xhc3M9Ik1zb05vcm1hbCIgc3R5bGU9InRleHQtYXV0b3NwYWNlOm5vbmUiPjxzcGFuIHN0eWxlPSJmb250LXNpemU6OC41cHQ7Zm9udC1mYW1pbHk6JnF1b3Q7U2Vnb2UgVUkmcXVvdDssc2Fucy1zZXJpZiI-VGhhbmsgeW91IGZvciB5b3VyIHBhdGllbmNlPG86cD48L286cD48L3NwYW4-PC9wPg0KPHAgY2xhc3M9Ik1zb05vcm1hbCIgc3R5bGU9InRleHQtYXV0b3NwYWNlOm5vbmUiPjxzcGFuIHN0eWxlPSJmb250LXNpemU6OC41cHQ7Zm9udC1mYW1pbHk6JnF1b3Q7U2Vnb2UgVUkmcXVvdDssc2Fucy1zZXJpZiI-PG86cD4mbmJzcDs8L286cD48L3NwYW4-PC9wPg0KPC9kaXY-DQo8L2JvZHk-DQo8L2h0bWw-DQo="
+            }
+          }
+        ]
+      },
+      "sizeEstimate": 13604,
+      "historyId": "16870152",
+      "internalDate": "1776294446000"
+    }
+  ]
+}

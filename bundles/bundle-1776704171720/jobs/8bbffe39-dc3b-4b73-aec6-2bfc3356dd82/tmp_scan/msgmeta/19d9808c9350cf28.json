@@ -1,0 +1,42 @@
+{
+  "id": "19d9808c9350cf28",
+  "threadId": "19d9808c9350cf28",
+  "labelIds": [
+    "UNREAD",
+    "CATEGORY_UPDATES",
+    "INBOX"
+  ],
+  "snippet": "Your membership was successfully cancelled You&#39;ll still be a member until the end of your current billing cycle on April 24, 2026. Sincerely, The Medium team Need help? Visit our Help Center. Sent",
+  "payload": {
+    "mimeType": "multipart/alternative",
+    "headers": [
+      {
+        "name": "Date",
+        "value": "Thu, 16 Apr 2026 20:43:25 +0000 (UTC)"
+      },
+      {
+        "name": "From",
+        "value": "Medium Membership \u003cmembers@medium.com\u003e"
+      },
+      {
+        "name": "Message-ID",
+        "value": "\u003c4Tp1fdMBTyCkvZUM3Qf5oA@geopod-ismtpd-114\u003e"
+      },
+      {
+        "name": "Subject",
+        "value": "Your membership was successfully cancelled"
+      },
+      {
+        "name": "Reply-To",
+        "value": "members@medium.com"
+      },
+      {
+        "name": "To",
+        "value": "cbadcock@gmail.com"
+      }
+    ]
+  },
+  "sizeEstimate": 23931,
+  "historyId": "16880926",
+  "internalDate": "1776372205000"
+}

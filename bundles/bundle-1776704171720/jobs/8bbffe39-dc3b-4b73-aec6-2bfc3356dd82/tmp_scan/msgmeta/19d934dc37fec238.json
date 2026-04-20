@@ -1,0 +1,41 @@
+{
+  "id": "19d934dc37fec238",
+  "threadId": "19d934dc37fec238",
+  "labelIds": [
+    "CATEGORY_UPDATES",
+    "INBOX"
+  ],
+  "snippet": "Document from Seattle Therapy - Skills for Life You&#39;ve received a document from S. Beth Horton with the following message: Hi Corey and Rena, Here is Reid&#39;s latest progress note. Please take a",
+  "payload": {
+    "mimeType": "text/html",
+    "headers": [
+      {
+        "name": "Subject",
+        "value": "Document from Seattle Therapy - Skills for Life"
+      },
+      {
+        "name": "Date",
+        "value": "Wed, 15 Apr 2026 22:40:40 +0000"
+      },
+      {
+        "name": "From",
+        "value": "Ensora Health Automated Email \u003cnotifications@mg.fusionwebclinic.com\u003e"
+      },
+      {
+        "name": "To",
+        "value": "cbadcock@gmail.com"
+      },
+      {
+        "name": "Reply-To",
+        "value": "beth@seattlethera.com"
+      },
+      {
+        "name": "Message-Id",
+        "value": "\u003c20260415224040.0d786e4d6304c32b@mg.fusionwebclinic.com\u003e"
+      }
+    ]
+  },
+  "sizeEstimate": 17351,
+  "historyId": "16881947",
+  "internalDate": "1776292840000"
+}

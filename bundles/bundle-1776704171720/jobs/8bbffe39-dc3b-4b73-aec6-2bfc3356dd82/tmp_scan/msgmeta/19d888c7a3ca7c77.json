@@ -1,0 +1,38 @@
+{
+  "id": "19d888c7a3ca7c77",
+  "threadId": "19d8218c23fc468b",
+  "labelIds": [
+    "IMPORTANT",
+    "CATEGORY_PERSONAL",
+    "INBOX"
+  ],
+  "snippet": "Okay he&#39;s scheduled for 4/16 at 8:30am Andrea Valdez, MN, ARNP (she/her) Psychiatric Nurse Practitioner MINDFUL THERAPY GROUP 206-453-5707 x129 / Fax 206-453-5816 CURRENT PATIENTS I am in clinic on",
+  "payload": {
+    "mimeType": "multipart/alternative",
+    "headers": [
+      {
+        "name": "From",
+        "value": "Andrea Valdez \u003candreavaldez@mindfultherapygroup.com\u003e"
+      },
+      {
+        "name": "Subject",
+        "value": "Re: Dane"
+      },
+      {
+        "name": "Date",
+        "value": "Mon, 13 Apr 2026 13:33:09 -0700"
+      },
+      {
+        "name": "To",
+        "value": "Corey Badcock \u003ccbadcock@gmail.com\u003e"
+      },
+      {
+        "name": "Message-Id",
+        "value": "\u003c8A7D9B4A-5134-48EE-8E58-45AD2867AA50@mindfultherapygroup.com\u003e"
+      }
+    ]
+  },
+  "sizeEstimate": 22584,
+  "historyId": "16878168",
+  "internalDate": "1776112389000"
+}

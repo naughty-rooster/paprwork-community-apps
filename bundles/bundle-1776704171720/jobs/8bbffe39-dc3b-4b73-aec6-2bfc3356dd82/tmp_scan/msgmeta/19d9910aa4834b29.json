@@ -1,0 +1,38 @@
+{
+  "id": "19d9910aa4834b29",
+  "threadId": "19d8dec384727961",
+  "labelIds": [
+    "IMPORTANT",
+    "CATEGORY_PERSONAL",
+    "INBOX"
+  ],
+  "snippet": "Hi Corey, I do not see that we ever received Chase account x9617. When did you send it? Can you resend it? We would need from origin to current. Attached are the orders that we were required to draft.",
+  "payload": {
+    "mimeType": "multipart/mixed",
+    "headers": [
+      {
+        "name": "From",
+        "value": "\"Lisa M. Gilmore\" \u003cLGilmore@skellengerbender.com\u003e"
+      },
+      {
+        "name": "To",
+        "value": "Corey Badcock \u003ccbadcock@gmail.com\u003e"
+      },
+      {
+        "name": "Subject",
+        "value": "RE: FW: New Orders Filed to Case 18-3-73995-4"
+      },
+      {
+        "name": "Date",
+        "value": "Fri, 17 Apr 2026 01:31:06 +0000"
+      },
+      {
+        "name": "Message-ID",
+        "value": "\u003cDM6PR13MB2906AE479D575803753A243EB2202@DM6PR13MB2906.namprd13.prod.outlook.com\u003e"
+      }
+    ]
+  },
+  "sizeEstimate": 379715,
+  "historyId": "16885206",
+  "internalDate": "1776389466000"
+}

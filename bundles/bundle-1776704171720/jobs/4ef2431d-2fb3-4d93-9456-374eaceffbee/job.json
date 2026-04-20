@@ -1,0 +1,22 @@
+{
+  "id": "4ef2431d-2fb3-4d93-9456-374eaceffbee",
+  "name": "admin_recurring_tasks",
+  "type": "python",
+  "folder": "personal-admin",
+  "command": "python3 code/main.py",
+  "dependsOn": [],
+  "retries": {
+    "maxAttempts": 2,
+    "backoffMs": 3000
+  },
+  "retentionDays": 14,
+  "schedule": {
+    "enabled": true,
+    "cron": "5 6 * * *"
+  },
+  "outputMode": "natural",
+  "memoryPolicy": "none",
+  "status": "pending",
+  "createdAt": "2026-04-20T16:56:13.550Z",
+  "updatedAt": "2026-04-20T16:56:13.550Z"
+}

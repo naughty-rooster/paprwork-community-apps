@@ -1,0 +1,38 @@
+{
+  "id": "19d8df98d1afcae8",
+  "threadId": "19d8df98d1afcae8",
+  "labelIds": [
+    "IMPORTANT",
+    "CATEGORY_PERSONAL",
+    "INBOX"
+  ],
+  "snippet": "To chat about later... Sending you this note so you can review it before we chat. I&#39;m at a breaking point with these credit card balances and I will do something about it. Mostly because I can&#39;",
+  "payload": {
+    "mimeType": "multipart/alternative",
+    "headers": [
+      {
+        "name": "From",
+        "value": "Rena Giannoulakis \u003crgiannoul@gmail.com\u003e"
+      },
+      {
+        "name": "Date",
+        "value": "Tue, 14 Apr 2026 14:50:22 -0700"
+      },
+      {
+        "name": "Message-ID",
+        "value": "\u003cCACO2_3DB4C=m67HKk7sf3H=2o7TEBdA5nRw6udbbeKKV+o7qqQ@mail.gmail.com\u003e"
+      },
+      {
+        "name": "Subject",
+        "value": "Finance update"
+      },
+      {
+        "name": "To",
+        "value": "Corey Badcock \u003ccbadcock@gmail.com\u003e"
+      }
+    ]
+  },
+  "sizeEstimate": 18150,
+  "historyId": "16870257",
+  "internalDate": "1776203422000"
+}

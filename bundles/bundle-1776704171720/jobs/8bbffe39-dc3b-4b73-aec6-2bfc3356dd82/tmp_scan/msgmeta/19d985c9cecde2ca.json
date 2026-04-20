@@ -1,0 +1,38 @@
+{
+  "id": "19d985c9cecde2ca",
+  "threadId": "19d985c9cecde2ca",
+  "labelIds": [
+    "IMPORTANT",
+    "CATEGORY_PERSONAL",
+    "INBOX"
+  ],
+  "snippet": "Hi Corey, I wanted to check in with you about Reid and how we can best support him for camp this summer. We&#39;ve noticed this week that he&#39;s been walking away from the group more often and going",
+  "payload": {
+    "mimeType": "multipart/related",
+    "headers": [
+      {
+        "name": "From",
+        "value": "Brittany Farrell \u003cbrittanyf@outdoorsforall.org\u003e"
+      },
+      {
+        "name": "To",
+        "value": "Corey Badcock \u003ccbadcock@gmail.com\u003e"
+      },
+      {
+        "name": "Subject",
+        "value": "Summer Camp Planning for Reid"
+      },
+      {
+        "name": "Date",
+        "value": "Thu, 16 Apr 2026 22:14:55 +0000"
+      },
+      {
+        "name": "Message-ID",
+        "value": "\u003cSN7PR20MB36454ACD1511C7FB2AAFA9EED6232@SN7PR20MB3645.namprd20.prod.outlook.com\u003e"
+      }
+    ]
+  },
+  "sizeEstimate": 57773,
+  "historyId": "16884465",
+  "internalDate": "1776377695000"
+}

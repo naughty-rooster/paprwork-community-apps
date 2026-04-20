@@ -1,0 +1,38 @@
+{
+  "id": "19d8bdf125427e26",
+  "threadId": "19d8bdf125427e26",
+  "labelIds": [
+    "UNREAD",
+    "CATEGORY_UPDATES",
+    "INBOX"
+  ],
+  "snippet": "Account alert Your account is overdrawn Account ending in (...9822) As of Apr 14, 2026 at 8:02 AM ET Available balance $-68.73 Since the time of this alert, the overdraft may have been covered by",
+  "payload": {
+    "mimeType": "text/html",
+    "headers": [
+      {
+        "name": "Date",
+        "value": "Tue, 14 Apr 2026 12:02:24 +0000 (UTC)"
+      },
+      {
+        "name": "From",
+        "value": "Chase \u003cno.reply.alerts@chase.com\u003e"
+      },
+      {
+        "name": "To",
+        "value": "cbadcock@gmail.com"
+      },
+      {
+        "name": "Message-ID",
+        "value": "\u003c620193378.1758726.1776168144165.JavaMail.webuser@iaasn00692073\u003e"
+      },
+      {
+        "name": "Subject",
+        "value": "Your account ending in (...9822) is overdrawn"
+      }
+    ]
+  },
+  "sizeEstimate": 19903,
+  "historyId": "16870208",
+  "internalDate": "1776168144000"
+}

@@ -1,0 +1,306 @@
+{
+  "id": "19d8dec384727961",
+  "historyId": "16885251",
+  "messages": [
+    {
+      "id": "19d8dec384727961",
+      "threadId": "19d8dec384727961",
+      "labelIds": [
+        "IMPORTANT",
+        "CATEGORY_UPDATES",
+        "INBOX"
+      ],
+      "snippet": "Date: 04/14/2026 Case Number: 18-3-73995-4 SEA Case Title: ANTHONY-BADCOCK NKA VS BADCOCK New order(s) have been filed into this case. Attached you can find a courtesy copy of the order(s) signed by a",
+      "payload": {
+        "mimeType": "multipart/alternative",
+        "headers": [
+          {
+            "name": "Date",
+            "value": "Tue, 14 Apr 2026 14:35:56 -0700"
+          },
+          {
+            "name": "From",
+            "value": "\u003cdonotreplyScript@kingcounty.gov\u003e"
+          },
+          {
+            "name": "To",
+            "value": "\u003capril@demaarlaw.com\u003e, \u003cnatalie@demaarlaw.com\u003e, \u003claura@colberglaw.com\u003e, \u003ccbadcock@gmail.com\u003e, \u003cLMARTIN@skellengerbender.com\u003e, \u003clgilmore@skellengerbender.com\u003e, \u003cfamilylawstaffseattle@kingcounty.gov\u003e"
+          },
+          {
+            "name": "Subject",
+            "value": "New Orders Filed to Case 18-3-73995-4"
+          }
+        ]
+      },
+      "sizeEstimate": 949424,
+      "historyId": "16884464",
+      "internalDate": "1776202556000"
+    },
+    {
+      "id": "19d8df19ba5434dc",
+      "threadId": "19d8dec384727961",
+      "labelIds": [
+        "IMPORTANT",
+        "CATEGORY_PERSONAL",
+        "INBOX"
+      ],
+      "snippet": "Please advise when we will be receiving the actual Order of Child Support that should go along with these 2 documents? April Beck Paralegal de Maar Law april@demaarlaw.com Phone: 425.462.6580 Bellevue,",
+      "payload": {
+        "mimeType": "multipart/related",
+        "headers": [
+          {
+            "name": "From",
+            "value": "April Beck \u003capril@demaarlaw.com\u003e"
+          },
+          {
+            "name": "To",
+            "value": "\"donotreplyScript@kingcounty.gov\" \u003cdonotreplyScript@kingcounty.gov\u003e, April Beck \u003capril@demaarlaw.com\u003e, Natalie de Maar \u003cnatalie@demaarlaw.com\u003e, \"laura@colberglaw.com\" \u003claura@colberglaw.com\u003e, \"cbadcock@gmail.com\" \u003ccbadcock@gmail.com\u003e, \"LMARTIN@SKELLENGERBENDER.COM\" \u003cLMARTIN@skellengerbender.com\u003e, \"lgilmore@skellengerbender.com\" \u003clgilmore@skellengerbender.com\u003e, \"familylawstaffseattle@kingcounty.gov\" \u003cfamilylawstaffseattle@kingcounty.gov\u003e"
+          },
+          {
+            "name": "Subject",
+            "value": "RE: New Orders Filed to Case 18-3-73995-4"
+          },
+          {
+            "name": "Date",
+            "value": "Tue, 14 Apr 2026 21:41:50 +0000"
+          }
+        ]
+      },
+      "sizeEstimate": 22594,
+      "historyId": "16884464",
+      "internalDate": "1776202910000"
+    },
+    {
+      "id": "19d8e452eebdd098",
+      "threadId": "19d8dec384727961",
+      "labelIds": [
+        "IMPORTANT",
+        "CATEGORY_PERSONAL",
+        "INBOX"
+      ],
+      "snippet": "Hi Corey, I need to digest this – it looks like his written findings made things worse. Sincerely, Lisa M. Gilmore PRINCIPAL FAMILY LAW PRACTICE GROUP Family law | collaborative law Skellenger Bender,",
+      "payload": {
+        "mimeType": "multipart/mixed",
+        "headers": [
+          {
+            "name": "From",
+            "value": "\"Lisa M. Gilmore\" \u003cLGilmore@skellengerbender.com\u003e"
+          },
+          {
+            "name": "To",
+            "value": "Corey Badcock \u003ccbadcock@gmail.com\u003e"
+          },
+          {
+            "name": "Subject",
+            "value": "FW: New Orders Filed to Case 18-3-73995-4"
+          },
+          {
+            "name": "Date",
+            "value": "Tue, 14 Apr 2026 23:12:46 +0000"
+          }
+        ]
+      },
+      "sizeEstimate": 964877,
+      "historyId": "16884464",
+      "internalDate": "1776208366000"
+    },
+    {
+      "id": "19d91b8325a23f36",
+      "threadId": "19d8dec384727961",
+      "labelIds": [
+        "IMPORTANT",
+        "CATEGORY_PERSONAL",
+        "INBOX"
+      ],
+      "snippet": "Forgive my last email after further review of the order I now see that Respondent&#39;s counsel is directed to prepare a final order for support and final order and findings and send those to the Court",
+      "payload": {
+        "mimeType": "multipart/related",
+        "headers": [
+          {
+            "name": "From",
+            "value": "April Beck \u003capril@demaarlaw.com\u003e"
+          },
+          {
+            "name": "To",
+            "value": "\"familylawstaffseattle@kingcounty.gov\" \u003cfamilylawstaffseattle@kingcounty.gov\u003e"
+          },
+          {
+            "name": "Subject",
+            "value": "RE: New Orders Filed to Case 18-3-73995-4"
+          },
+          {
+            "name": "Date",
+            "value": "Wed, 15 Apr 2026 15:17:36 +0000"
+          }
+        ]
+      },
+      "sizeEstimate": 28635,
+      "historyId": "16884464",
+      "internalDate": "1776266256000"
+    },
+    {
+      "id": "19d983bf0d805039",
+      "threadId": "19d8dec384727961",
+      "labelIds": [
+        "SENT"
+      ],
+      "snippet": "Following up on this. What are your thoughts? When is the order due? If I wanted to file for reconsideration what is the deadline for that? On Tue, Apr 14, 2026 at 4:13 PM Lisa M. Gilmore &lt;LGilmore@",
+      "payload": {
+        "mimeType": "multipart/related",
+        "headers": [
+          {
+            "name": "Date",
+            "value": "Thu, 16 Apr 2026 14:35:58 -0700"
+          },
+          {
+            "name": "Subject",
+            "value": "Re: FW: New Orders Filed to Case 18-3-73995-4"
+          },
+          {
+            "name": "From",
+            "value": "Corey Badcock \u003ccbadcock@gmail.com\u003e"
+          },
+          {
+            "name": "To",
+            "value": "\"Lisa M. Gilmore\" \u003cLGilmore@skellengerbender.com\u003e"
+          }
+        ]
+      },
+      "sizeEstimate": 17537,
+      "historyId": "16884464",
+      "internalDate": "1776375358000"
+    },
+    {
+      "id": "19d98a4cad96fa38",
+      "threadId": "19d8dec384727961",
+      "labelIds": [
+        "IMPORTANT",
+        "CATEGORY_PERSONAL",
+        "INBOX"
+      ],
+      "snippet": "Hi Corey, I think it is worth doing a motion for reconsideration, but I do not know that he will change his mind. We do not have your business account records, other than your profit and loss",
+      "payload": {
+        "mimeType": "multipart/related",
+        "headers": [
+          {
+            "name": "From",
+            "value": "\"Lisa M. Gilmore\" \u003cLGilmore@skellengerbender.com\u003e"
+          },
+          {
+            "name": "To",
+            "value": "Corey Badcock \u003ccbadcock@gmail.com\u003e"
+          },
+          {
+            "name": "Subject",
+            "value": "RE: FW: New Orders Filed to Case 18-3-73995-4"
+          },
+          {
+            "name": "Date",
+            "value": "Thu, 16 Apr 2026 23:33:38 +0000"
+          }
+        ]
+      },
+      "sizeEstimate": 55163,
+      "historyId": "16884464",
+      "internalDate": "1776382418000"
+    },
+    {
+      "id": "19d98b1dcd97065c",
+      "threadId": "19d8dec384727961",
+      "labelIds": [
+        "SENT"
+      ],
+      "snippet": "I provided my business bank account statements - it&#39;s the chase account ending in 9617. I guess that only matters if we decide to file something. It seems like you&#39;re advising not to take any",
+      "payload": {
+        "mimeType": "multipart/related",
+        "headers": [
+          {
+            "name": "Date",
+            "value": "Thu, 16 Apr 2026 16:48:06 -0700"
+          },
+          {
+            "name": "Subject",
+            "value": "Re: FW: New Orders Filed to Case 18-3-73995-4"
+          },
+          {
+            "name": "From",
+            "value": "Corey Badcock \u003ccbadcock@gmail.com\u003e"
+          },
+          {
+            "name": "To",
+            "value": "\"Lisa M. Gilmore\" \u003cLGilmore@skellengerbender.com\u003e"
+          }
+        ]
+      },
+      "sizeEstimate": 32589,
+      "historyId": "16884522",
+      "internalDate": "1776383286000"
+    },
+    {
+      "id": "19d9910aa4834b29",
+      "threadId": "19d8dec384727961",
+      "labelIds": [
+        "IMPORTANT",
+        "CATEGORY_PERSONAL",
+        "INBOX"
+      ],
+      "snippet": "Hi Corey, I do not see that we ever received Chase account x9617. When did you send it? Can you resend it? We would need from origin to current. Attached are the orders that we were required to draft.",
+      "payload": {
+        "mimeType": "multipart/mixed",
+        "headers": [
+          {
+            "name": "From",
+            "value": "\"Lisa M. Gilmore\" \u003cLGilmore@skellengerbender.com\u003e"
+          },
+          {
+            "name": "To",
+            "value": "Corey Badcock \u003ccbadcock@gmail.com\u003e"
+          },
+          {
+            "name": "Subject",
+            "value": "RE: FW: New Orders Filed to Case 18-3-73995-4"
+          },
+          {
+            "name": "Date",
+            "value": "Fri, 17 Apr 2026 01:31:06 +0000"
+          }
+        ]
+      },
+      "sizeEstimate": 379715,
+      "historyId": "16885206",
+      "internalDate": "1776389466000"
+    },
+    {
+      "id": "19d99688d7633e39",
+      "threadId": "19d8dec384727961",
+      "labelIds": [
+        "SENT"
+      ],
+      "snippet": "What a joke this process is. I&#39;ve spent over $20K and 7 months trying to get some support for my kids, and it will take probably 5 years for me to recover that investment. This entire process seems",
+      "payload": {
+        "mimeType": "multipart/related",
+        "headers": [
+          {
+            "name": "Date",
+            "value": "Thu, 16 Apr 2026 20:07:38 -0700"
+          },
+          {
+            "name": "Subject",
+            "value": "Re: FW: New Orders Filed to Case 18-3-73995-4"
+          },
+          {
+            "name": "From",
+            "value": "Corey Badcock \u003ccbadcock@gmail.com\u003e"
+          },
+          {
+            "name": "To",
+            "value": "\"Lisa M. Gilmore\" \u003cLGilmore@skellengerbender.com\u003e"
+          }
+        ]
+      },
+      "sizeEstimate": 44269,
+      "historyId": "16885251",
+      "internalDate": "1776395258000"
+    }
+  ]
+}

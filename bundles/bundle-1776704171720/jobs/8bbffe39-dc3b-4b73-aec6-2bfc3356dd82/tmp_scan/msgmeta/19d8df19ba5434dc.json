@@ -1,0 +1,38 @@
+{
+  "id": "19d8df19ba5434dc",
+  "threadId": "19d8dec384727961",
+  "labelIds": [
+    "IMPORTANT",
+    "CATEGORY_PERSONAL",
+    "INBOX"
+  ],
+  "snippet": "Please advise when we will be receiving the actual Order of Child Support that should go along with these 2 documents? April Beck Paralegal de Maar Law april@demaarlaw.com Phone: 425.462.6580 Bellevue,",
+  "payload": {
+    "mimeType": "multipart/related",
+    "headers": [
+      {
+        "name": "From",
+        "value": "April Beck \u003capril@demaarlaw.com\u003e"
+      },
+      {
+        "name": "To",
+        "value": "\"donotreplyScript@kingcounty.gov\" \u003cdonotreplyScript@kingcounty.gov\u003e, April Beck \u003capril@demaarlaw.com\u003e, Natalie de Maar \u003cnatalie@demaarlaw.com\u003e, \"laura@colberglaw.com\" \u003claura@colberglaw.com\u003e, \"cbadcock@gmail.com\" \u003ccbadcock@gmail.com\u003e, \"LMARTIN@SKELLENGERBENDER.COM\" \u003cLMARTIN@skellengerbender.com\u003e, \"lgilmore@skellengerbender.com\" \u003clgilmore@skellengerbender.com\u003e, \"familylawstaffseattle@kingcounty.gov\" \u003cfamilylawstaffseattle@kingcounty.gov\u003e"
+      },
+      {
+        "name": "Subject",
+        "value": "RE: New Orders Filed to Case 18-3-73995-4"
+      },
+      {
+        "name": "Date",
+        "value": "Tue, 14 Apr 2026 21:41:50 +0000"
+      },
+      {
+        "name": "Message-ID",
+        "value": "\u003cSA1PR14MB47874F77B36D0058063DCBC6B7252@SA1PR14MB4787.namprd14.prod.outlook.com\u003e"
+      }
+    ]
+  },
+  "sizeEstimate": 22594,
+  "historyId": "16884464",
+  "internalDate": "1776202910000"
+}

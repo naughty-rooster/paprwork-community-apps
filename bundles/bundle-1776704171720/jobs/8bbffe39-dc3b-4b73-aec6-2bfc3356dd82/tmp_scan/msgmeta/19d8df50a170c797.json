@@ -1,0 +1,38 @@
+{
+  "id": "19d8df50a170c797",
+  "threadId": "19d8df4d865b7167",
+  "labelIds": [
+    "IMPORTANT",
+    "SENT",
+    "INBOX"
+  ],
+  "snippet": "",
+  "payload": {
+    "mimeType": "multipart/alternative",
+    "headers": [
+      {
+        "name": "Date",
+        "value": "Tue, 14 Apr 2026 14:45:39 -0700"
+      },
+      {
+        "name": "Message-ID",
+        "value": "\u003cCAN_sR641eBhMdj5DT304CyR4tS_xB_PHzaR34SQo57zTRu6L3A@mail.gmail.com\u003e"
+      },
+      {
+        "name": "Subject",
+        "value": "Task: Talk to Lisa about filing for reconsideration"
+      },
+      {
+        "name": "From",
+        "value": "Corey Badcock \u003ccbadcock@gmail.com\u003e"
+      },
+      {
+        "name": "To",
+        "value": "Corey Badcock \u003ccbadcock@gmail.com\u003e"
+      }
+    ]
+  },
+  "sizeEstimate": 558,
+  "historyId": "16858660",
+  "internalDate": "1776203139000"
+}

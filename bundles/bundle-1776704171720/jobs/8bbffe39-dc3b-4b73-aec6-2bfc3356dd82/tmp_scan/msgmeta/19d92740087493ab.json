@@ -1,0 +1,37 @@
+{
+  "id": "19d92740087493ab",
+  "threadId": "19d92740087493ab",
+  "labelIds": [
+    "CATEGORY_PERSONAL",
+    "INBOX"
+  ],
+  "snippet": "Good morning, I&#39;ve reached out to the judicial officer regarding the order in question and will provide an update as soon as one is available. Thank you for your follow up and patience! Best, Mary",
+  "payload": {
+    "mimeType": "multipart/related",
+    "headers": [
+      {
+        "name": "From",
+        "value": "Family Law Staff Seattle \u003cfamilylawstaffseattle@kingcounty.gov\u003e"
+      },
+      {
+        "name": "To",
+        "value": "April Beck \u003capril@demaarlaw.com\u003e, \"donotreplyScript@kingcounty.gov\" \u003cdonotreplyScript@kingcounty.gov\u003e, Natalie de Maar \u003cnatalie@demaarlaw.com\u003e, \"laura@colberglaw.com\" \u003claura@colberglaw.com\u003e, \"cbadcock@gmail.com\" \u003ccbadcock@gmail.com\u003e, \"LMARTIN@SKELLENGERBENDER.COM\" \u003cLMARTIN@skellengerbender.com\u003e, \"lgilmore@skellengerbender.com\" \u003clgilmore@skellengerbender.com\u003e, Family Law Staff Seattle \u003cfamilylawstaffseattle@kingcounty.gov\u003e"
+      },
+      {
+        "name": "Subject",
+        "value": "TBA | 18-3-73995-4 SEA | ANTHONY-BADCOCK VS BADCOCK"
+      },
+      {
+        "name": "Date",
+        "value": "Wed, 15 Apr 2026 18:42:45 +0000"
+      },
+      {
+        "name": "Message-ID",
+        "value": "\u003cSJ0PR09MB70724E6ACBBAAEE40D7B9239D1222@SJ0PR09MB7072.namprd09.prod.outlook.com\u003e"
+      }
+    ]
+  },
+  "sizeEstimate": 59797,
+  "historyId": "16862773",
+  "internalDate": "1776278565000"
+}

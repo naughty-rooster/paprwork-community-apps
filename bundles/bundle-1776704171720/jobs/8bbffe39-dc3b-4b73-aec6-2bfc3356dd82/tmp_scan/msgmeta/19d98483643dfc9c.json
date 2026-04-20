@@ -1,0 +1,42 @@
+{
+  "id": "19d98483643dfc9c",
+  "threadId": "19d98483643dfc9c",
+  "labelIds": [
+    "UNREAD",
+    "CATEGORY_UPDATES",
+    "INBOX"
+  ],
+  "snippet": "Trans ID 2035756741 Order ID 3876567 Trans Type Purchase Clerk ID #PT_PORTAL Date/Time 04/16/2026 14:52:32 Card Type VISA Card Number XXXXXXXXXXXX9915 Card Holder Corey C Badcock Entry Method Manual",
+  "payload": {
+    "mimeType": "multipart/alternative",
+    "headers": [
+      {
+        "name": "Date",
+        "value": "Thu, 16 Apr 2026 21:52:40 +0000 (UTC)"
+      },
+      {
+        "name": "From",
+        "value": "noreplyadvancedmdcom \u003cnoreply@advancedmd.com\u003e"
+      },
+      {
+        "name": "Message-ID",
+        "value": "\u003cysT5v8BFSS-kUNFiZqPFZA@geopod-ismtpd-5\u003e"
+      },
+      {
+        "name": "Subject",
+        "value": "Payment Receipt"
+      },
+      {
+        "name": "Reply-To",
+        "value": "\"noreply@advancedmd.com\" \u003cNOREPLY@advancedmd.com\u003e"
+      },
+      {
+        "name": "To",
+        "value": "Badcock Corey \u003cCBADCOCK@gmail.com\u003e"
+      }
+    ]
+  },
+  "sizeEstimate": 8021,
+  "historyId": "16881818",
+  "internalDate": "1776376360000"
+}

@@ -1,0 +1,38 @@
+{
+  "id": "19d97be8af6c557c",
+  "threadId": "19d97be8af6c557c",
+  "labelIds": [
+    "UNREAD",
+    "CATEGORY_UPDATES",
+    "INBOX"
+  ],
+  "snippet": "Quicken Simplifi spotted a large deposit in one of your accounts Quicken Simplifi Logo Hi Corey! Quicken Simplifi spotted a large deposit in one of your accounts. Atm Check Deposit 04/14 8555 15th Ave",
+  "payload": {
+    "mimeType": "multipart/alternative",
+    "headers": [
+      {
+        "name": "Date",
+        "value": "Thu, 16 Apr 2026 19:22:18 +0000 (UTC)"
+      },
+      {
+        "name": "From",
+        "value": "Quicken Simplifi \u003cnoreply@quicken.com\u003e"
+      },
+      {
+        "name": "Message-ID",
+        "value": "\u003cqximY2NISq6TLkr64HxwyQ@geopod-ismtpd-4\u003e"
+      },
+      {
+        "name": "Subject",
+        "value": "Big deposit incoming! 🤑🤑"
+      },
+      {
+        "name": "To",
+        "value": "cbadcock@gmail.com"
+      }
+    ]
+  },
+  "sizeEstimate": 46939,
+  "historyId": "16880920",
+  "internalDate": "1776367338000"
+}

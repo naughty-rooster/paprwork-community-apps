@@ -107,6 +107,33 @@
         "macos",
         "windows"
       ]
+    },
+    {
+      "bundleId": "bundle-1776704171720",
+      "name": "Chief of Staff",
+      "description": "Your AI chief of staff \u2014 triages email, texts, and calendar, surfaces daily priorities, and briefs you each morning on what matters most.",
+      "version": "1.0.0",
+      "author": "naughty-rooster",
+      "tags": [
+        "productivity",
+        "tasks",
+        "email",
+        "calendar",
+        "personal-admin",
+        "focus",
+        "ai-agent"
+      ],
+      "minPaprworkVersion": "2.0.0",
+      "path": "bundles/bundle-1776704171720",
+      "icon": "\ud83c\udfaf",
+      "requirements": [
+        "ANTHROPIC_API_KEY",
+        "GOOGLE_CLIENT_SECRET",
+        "TWILIO_AUTH_TOKEN"
+      ],
+      "platform": [
+        "macos"
+      ]
     }
   ]
 }

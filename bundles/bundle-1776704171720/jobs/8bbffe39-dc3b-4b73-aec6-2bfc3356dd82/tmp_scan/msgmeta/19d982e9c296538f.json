@@ -1,0 +1,37 @@
+{
+  "id": "19d982e9c296538f",
+  "threadId": "19d982e9c296538f",
+  "labelIds": [
+    "CATEGORY_UPDATES",
+    "INBOX"
+  ],
+  "snippet": "\u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c WeWork YOUR BUILDING GUIDE FAQs",
+  "payload": {
+    "mimeType": "multipart/alternative",
+    "headers": [
+      {
+        "name": "Date",
+        "value": "Thu, 16 Apr 2026 21:24:44 +0000 (GMT)"
+      },
+      {
+        "name": "From",
+        "value": "WeWork Support \u003csupportrequests@wework.com\u003e"
+      },
+      {
+        "name": "To",
+        "value": "\"cbadcock@gmail.com\" \u003ccbadcock@gmail.com\u003e"
+      },
+      {
+        "name": "Message-ID",
+        "value": "\u003cVMkK_fvrQQGIWJV5273-eg.P-eyNfYtAS66PIx8askPdTk@sfdc.net\u003e"
+      },
+      {
+        "name": "Subject",
+        "value": "We’re happy to help: 11783192 Membership & Billing - Cancel membership"
+      }
+    ]
+  },
+  "sizeEstimate": 23449,
+  "historyId": "16881944",
+  "internalDate": "1776374684000"
+}

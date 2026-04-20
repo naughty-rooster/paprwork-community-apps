@@ -1,0 +1,42 @@
+{
+  "id": "19d931d5968804bc",
+  "threadId": "19d931d5968804bc",
+  "labelIds": [
+    "UNREAD",
+    "CATEGORY_UPDATES",
+    "INBOX"
+  ],
+  "snippet": "Included with your service Xfinity Logo START STREAMING INSTANTLY Activate your streaming subscriptions If you already have subscriptions, you still need to activate to link your accounts. Activate now",
+  "payload": {
+    "mimeType": "multipart/alternative",
+    "headers": [
+      {
+        "name": "From",
+        "value": "Xfinity \u003cxfinity@updates.xfinity.com\u003e"
+      },
+      {
+        "name": "Subject",
+        "value": "Activate your streaming subscriptions"
+      },
+      {
+        "name": "Date",
+        "value": "Wed, 15 Apr 2026 17:47:21 -0400"
+      },
+      {
+        "name": "To",
+        "value": "\u003ccbadcock@gmail.com\u003e"
+      },
+      {
+        "name": "Reply-To",
+        "value": "Xfinity \u003cdonotreply@updates.xfinity.com\u003e"
+      },
+      {
+        "name": "Message-ID",
+        "value": "\u003cNMFFDAa04a1124-57b0-4ce7-9991-8b3df1570ce209DCE4B1comcastdotcom_mid_prod2@updates.xfinity.com\u003e"
+      }
+    ]
+  },
+  "sizeEstimate": 81959,
+  "historyId": "16870141",
+  "internalDate": "1776289641000"
+}

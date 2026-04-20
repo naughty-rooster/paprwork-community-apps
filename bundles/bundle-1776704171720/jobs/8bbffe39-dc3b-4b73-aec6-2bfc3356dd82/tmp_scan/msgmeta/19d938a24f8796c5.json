@@ -1,0 +1,38 @@
+{
+  "id": "19d938a24f8796c5",
+  "threadId": "19d8218c23fc468b",
+  "labelIds": [
+    "IMPORTANT",
+    "CATEGORY_PERSONAL",
+    "INBOX"
+  ],
+  "snippet": "Hi Corey, I wanted to let you know that I received this email. I&#39;m not the right person. You don&#39;t currently have a services case manager – so I need to conduct my review before you can apply",
+  "payload": {
+    "mimeType": "multipart/related",
+    "headers": [
+      {
+        "name": "From",
+        "value": "\"Johnson, Katelyn M (DSHS/HCLA/DDCS)\" \u003ckatelyn.warenski@dshs.wa.gov\u003e"
+      },
+      {
+        "name": "To",
+        "value": "Corey Badcock \u003ccbadcock@gmail.com\u003e, \"Peterson, Aaron N (DSHS/HCLA/DDCS)\" \u003caaron.peterson@dshs.wa.gov\u003e"
+      },
+      {
+        "name": "Subject",
+        "value": "RE: Dane"
+      },
+      {
+        "name": "Date",
+        "value": "Wed, 15 Apr 2026 23:46:34 +0000"
+      },
+      {
+        "name": "Message-ID",
+        "value": "\u003cSA9PR09MB5134E3EBDA3F6CB8CED1CDC9CE222@SA9PR09MB5134.namprd09.prod.outlook.com\u003e"
+      }
+    ]
+  },
+  "sizeEstimate": 87717,
+  "historyId": "16878168",
+  "internalDate": "1776296794000"
+}

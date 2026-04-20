@@ -1,0 +1,42 @@
+{
+  "id": "19d8e2c973b56bec",
+  "threadId": "19d8e2c973b56bec",
+  "labelIds": [
+    "UNREAD",
+    "CATEGORY_PERSONAL",
+    "INBOX"
+  ],
+  "snippet": "Wasn&#39;t you? Update your account password. Xfinity Logo Your account Did you sign in from a new device? Your Xfinity ID was used to sign in to your Xfinity account. Date: April 14, 2026, 6:46 PM EST",
+  "payload": {
+    "mimeType": "text/html",
+    "headers": [
+      {
+        "name": "From",
+        "value": "Xfinity \u003cxfinity@account.xfinity.com\u003e"
+      },
+      {
+        "name": "Subject",
+        "value": "New Xfinity sign in"
+      },
+      {
+        "name": "Date",
+        "value": "Tue, 14 Apr 2026 18:46:19 -0400"
+      },
+      {
+        "name": "To",
+        "value": "\u003ccbadcock@gmail.com\u003e"
+      },
+      {
+        "name": "Reply-To",
+        "value": "Xfinity \u003cdonotreply@account.xfinity.com\u003e"
+      },
+      {
+        "name": "Message-ID",
+        "value": "\u003cNM609FED4E10184B1B4comcastdotcom_rt_prod5@account.xfinity.com\u003e"
+      }
+    ]
+  },
+  "sizeEstimate": 58201,
+  "historyId": "16870068",
+  "internalDate": "1776206779000"
+}

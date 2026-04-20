@@ -1,0 +1,185 @@
+{
+  "id": "19d934cc87649cad",
+  "historyId": "16870147",
+  "messages": [
+    {
+      "id": "19d934cc87649cad",
+      "threadId": "19d934cc87649cad",
+      "labelIds": [
+        "UNREAD",
+        "CATEGORY_UPDATES",
+        "INBOX"
+      ],
+      "snippet": "Dear Families, The first week of May (May 4-8th) is Teacher Appreciation Week-- a wonderful opportunity to show our teachers how much we value all that they do! In the years past, families have helped",
+      "payload": {
+        "partId": "",
+        "mimeType": "multipart/alternative",
+        "filename": "",
+        "headers": [
+          {
+            "name": "Delivered-To",
+            "value": "cbadcock@gmail.com"
+          },
+          {
+            "name": "Received",
+            "value": "by 2002:a05:612c:6c91:b0:586:4f72:df7f with SMTP id 17csp993343vqk;        Wed, 15 Apr 2026 15:39:36 -0700 (PDT)"
+          },
+          {
+            "name": "X-Forwarded-Encrypted",
+            "value": "i=3; AFNElJ+QC+fRcOoNy5dHPSJk9tvR482wBF94pBXxUAenPzYyvt5rJtjzbhbu5q0vguy9waowp2P4J2+fKg==@gmail.com"
+          },
+          {
+            "name": "X-Received",
+            "value": "by 2002:a05:6512:61a2:b0:5a4:978:954b with SMTP id 2adb3069b0e04-5a40978a127mr1652546e87.26.1776292776111;        Wed, 15 Apr 2026 15:39:36 -0700 (PDT)"
+          },
+          {
+            "name": "ARC-Seal",
+            "value": "i=2; a=rsa-sha256; t=1776292776; cv=pass;        d=google.com; s=arc-20240605;        b=ABYCJjoR5yBzn2higKmj5yrTLlf0thbX3a64UKBBLG/doEUc0s1TwX+Nb1X9lMgE9W         FPwUsVYg1uI75X1oE9tya2/+VCmMcH9qplsFCLKK8hEChlz7l3dM4BHctGR+inF69ZSV         c7QsS75dWlFoUTGNOYCe+Iqk0sR/dM3XTVlPp0NC78NHQNGDkeIamujIq9Nc4o6ZVEzH         yHTt8Gc0a2i8LaKfesWegliQ87V1bzNF1fdsA4nJbrWEg3HXqsVGwE+M4TlsCfe92afa         bPJaZgdTyAjniZNhZujU0WfiLy5vJ0IaHntkPT4aI52iVdpp131WfkOdGn65S6/5lkhy         S3NA=="
+          },
+          {
+            "name": "ARC-Message-Signature",
+            "value": "i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;        h=to:subject:message-id:date:from:mime-version:dkim-signature;        bh=xbMiqdnr1/6nDy8p1+po/WlbaBv7mKxJriZwkByb+r4=;        fh=snsnymp63o2LOKEH/Nr8aT3/uyTdUfTbydHDqElmYZI=;        b=PiYL72mV7zGq4veqI8ldYWFDlWuTO61LFPtAcPa4dC3fQN0eQCKRyZyo8HqkiPd2eX         nZfSaNDOrgM5VXA0UZ4x4vt2MKZnuz34e6MPjDaQ2j7UAaZXGQ6rvvJ0Fe35y/haFD6z         wtqCAsRWXTC7KW+H5gj3N4f8swifvjBIuEWy0sEpM07/kCJi2XpmCnyBvUKqi0lJcMkR         g314ZUMZI6c99hoR/XbPHLsjW0kxAFipVqIIg7nFW2IvsLvjf+YK5rgq+f4MXU4a/Oyw         QKpnu59/uaFGC7L1NxMiLW5NaqbksPc9CIuyUdzWJIV7InJ8aulAnSs49pRvM5/xSc0z         blKw==;        dara=google.com"
+          },
+          {
+            "name": "ARC-Authentication-Results",
+            "value": "i=2; mx.google.com;       dkim=pass header.i=@eldc-org.20251104.gappssmtp.com header.s=20251104 header.b=\"AYOj9R/N\";       arc=pass (i=1);       spf=pass (google.com: domain of eldc.org.broadview@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=eldc.org.broadview@gmail.com;       dmarc=fail (p=NONE sp=NONE dis=NONE) header.from=eldc.org;       dara=pass header.i=@gmail.com"
+          },
+          {
+            "name": "Return-Path",
+            "value": "\u003celdc.org.broadview@gmail.com\u003e"
+          },
+          {
+            "name": "Received",
+            "value": "from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])        by mx.google.com with SMTPS id 38308e7fff4ca-38e9e885035sor5667131fa.0.2026.04.15.15.39.35        for \u003ccbadcock@gmail.com\u003e        (Google Transport Security);        Wed, 15 Apr 2026 15:39:36 -0700 (PDT)"
+          },
+          {
+            "name": "Received-SPF",
+            "value": "pass (google.com: domain of eldc.org.broadview@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;"
+          },
+          {
+            "name": "Authentication-Results",
+            "value": "mx.google.com;       dkim=pass header.i=@eldc-org.20251104.gappssmtp.com header.s=20251104 header.b=\"AYOj9R/N\";       arc=pass (i=1);       spf=pass (google.com: domain of eldc.org.broadview@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=eldc.org.broadview@gmail.com;       dmarc=fail (p=NONE sp=NONE dis=NONE) header.from=eldc.org;       dara=pass header.i=@gmail.com"
+          },
+          {
+            "name": "ARC-Seal",
+            "value": "i=1; a=rsa-sha256; t=1776292775; cv=none;        d=google.com; s=arc-20240605;        b=ktSULFptZPdqW1GlpBbDgFEwb3mynhX0p+9H3ckhcv/L/TVj/8cq8St7SINZhuWWLK         D4DUrvjQoa5ZFqc2ZyUH4WHLTMQ0Z1NVHlOvNQYXU4+pJEmtQ6yKuhr2Bf0960PCAQBn         bjEL0Lg4VxG9uRaJDTeuJOu4/9qn83GTf9hOgw++xGv11ZL3KuLa5PYaPV7iNTYbu8E1         FOf7o0GfCMphjdpL+fl223NImDRyYT1maGonOONudUexCdZ3S040xKGkBlMIBSCG75Ak         6FFk8lTbnYU3ZNuXz/xvUvNHbN4++ZzwOLxPjbL6HEWuVOA5ie4oPqrtv19nXf0Kh788         nZjw=="
+          },
+          {
+            "name": "ARC-Message-Signature",
+            "value": "i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;        h=to:subject:message-id:date:from:mime-version:dkim-signature;        bh=xbMiqdnr1/6nDy8p1+po/WlbaBv7mKxJriZwkByb+r4=;        fh=snsnymp63o2LOKEH/Nr8aT3/uyTdUfTbydHDqElmYZI=;        b=hom+0Ew8nIy9R/GULTgRM8LdI8WrrF7PkcMNXwvW/A1P2KNCahZiaAf5pMxOaU6UfR         hjPJLrwhRB3HahjJQthHJYpFJPVjo2MndqSQxASzJYj0jAlwmD3wVmr5Ai/UgTma5/3F         YHqNXsh7EDOX7N1PjpxAMoaR124DC0vLeYXNxykms0VTKsqyEVzWIQtNe2vwAv8QAVXH         M6+iVZJ9XkWAuSJn4dB2usG2DTG22Bn+ZhAyaDcJRTiNdvskiE9R12tSHLmJPfiU72Uq         6HQSacm8r/5yVQ7/3T+xgMn8rYqA48bBgfewJSpib35ozYHZHOrXyxjYtv74XQofHlCU         57xg==;        dara=google.com"
+          },
+          {
+            "name": "ARC-Authentication-Results",
+            "value": "i=1; mx.google.com; arc=none"
+          },
+          {
+            "name": "DKIM-Signature",
+            "value": "v=1; a=rsa-sha256; c=relaxed/relaxed;        d=eldc-org.20251104.gappssmtp.com; s=20251104; t=1776292775; x=1776897575; dara=google.com;        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject         :date:message-id:reply-to;        bh=xbMiqdnr1/6nDy8p1+po/WlbaBv7mKxJriZwkByb+r4=;        b=AYOj9R/NSAVFCOi5in8+S8BoaZzRvL4zWH6t0AJZ+NTKmBfvIJ/nS54cm9aQ/3fUnF         cWqwyu9tQum9SSis4q4Lb4vU6k4Kuk7B1Rn0A1t9rGHA+Zi5w875z2DkmwkmWJEUgLEw         1WCxB1ZUeIWnhjZpDz+H4xLwQWouYXqxjEczdtMYtmt0x9VON/8Ogu6CI/4cZ4eBYvnp         BxYhW3BinqgU7xLLNAXEQn4v/cwnUWvENMAxS77VyEccOOxuCW77qtlHvVHSXxogJ6KA         +DmntEHVwIZEFBY2ZHhUquuzzwbfdhhnTHbZmU5cSpNi+2FDUnZaLnUI1M3t1kDQZB2y         jI1A=="
+          },
+          {
+            "name": "X-Google-DKIM-Signature",
+            "value": "v=1; a=rsa-sha256; c=relaxed/relaxed;        d=1e100.net; s=20251104; t=1776292775; x=1776897575;        h=to:subject:message-id:date:from:mime-version:x-gm-gg         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;        bh=xbMiqdnr1/6nDy8p1+po/WlbaBv7mKxJriZwkByb+r4=;        b=HgEhyh8zyTVGdl7vY9FyeYgTvPcM2uYp9+tiucPrqHpYk8Mpwq7zsd6mfdAT0sO7nl         73ZitLMmUAiP2lC9xmm3qYTyXlQRFNYT0OYqxsLoySACT9QtOygGHMu5oFAcWCh//Fow         apuN+0zN1wgD3U5DNpJYJrYUmy/dYis6mZ12ixFIlkqPwVMILz4CXT1t9lzvIePHm0M7         q4OBWxwO3RB7JlGjyqzndQ2BXzJcGhRXjjYNj+tM7vRGLq1XzakSWPVKi8ly31QA9iFe         IDmD9i1jCbLdeqVL8x932xrFSGBehdn8guurs+xKYCOgyS2UF23PuLkrsjW5cjKsDGJY         hIrg=="
+          },
+          {
+            "name": "X-Forwarded-Encrypted",
+            "value": "i=1; AFNElJ+hqeWtjTjzFapnyNcMX+EA3Kgk+YUPwqSLojv1uKRkS+k1KeviZvc74pEGtS5F4oPCez3b8DLWEQ==@gmail.com"
+          },
+          {
+            "name": "X-Gm-Message-State",
+            "value": "AOJu0YyieBg4u/Kzp5P60KVJS3CTE5OpJw9PZDNQaFlAkwuH6WT72SIF DgBZNx/F76iC+i+ie+WqZHxGrVOUOJjoL+2M4dv/nH0xoCFLNqiVSeUKWSkS5PBEF0abGcfz8xA jnurrno4YE6HA3DZ1UbonkIBLwhAsjCM="
+          },
+          {
+            "name": "X-Gm-Gg",
+            "value": "AeBDiesECEh+/7Y994rpn8bJ8/B3Aa41C223+NvASnGs932xILulfZH0aZgZDUJ/rBg tZIjqMNClFDu8orKjTdLwTUsJg4dflSQN8UUbEQIMO4SyzqE6ITh+TFGfCW/a7kjjmyUaH8Hbqw XZjMD5++Hb1PlZSEGHUEc6qBYwwrT/nPOUgdG2rOUjrKE10EmpSwk3Yan261uywCJl+/8PG5q1m LKhIPwZ3aU49HNmFZ5iKeLqp83QaW9ON4SdpDYCFg6UFyGtaOzqBYlT9c3PyaAjcscdgxiJHkfC 1Ic9Ado="
+          },
+          {
+            "name": "X-Received",
+            "value": "by 2002:a05:6402:a2cf:10b0:670:8b4e:c767 with SMTP id 4fb4d7f45d1cf-6708b4ec96bmr9183964a12.1.1776292301964; Wed, 15 Apr 2026 15:31:41 -0700 (PDT)"
+          },
+          {
+            "name": "MIME-Version",
+            "value": "1.0"
+          },
+          {
+            "name": "From",
+            "value": "Broadview ELDC \u003cbroadview@eldc.org\u003e"
+          },
+          {
+            "name": "Date",
+            "value": "Wed, 15 Apr 2026 15:31:31 -0700"
+          },
+          {
+            "name": "X-Gm-Features",
+            "value": "AQROBzD4PpHoB2Ut3db-wBG7F216Xrrwg3-2gcAuLLxwkqIbaxSkjdDSRjGYPB4"
+          },
+          {
+            "name": "Message-ID",
+            "value": "\u003cCANW7oiZ17Dp2T3b4AgO5zAbUrgQp0SrztnJKyZotjU-WVih4vQ@mail.gmail.com\u003e"
+          },
+          {
+            "name": "Subject",
+            "value": "Teacher Appreciation Week 2026"
+          },
+          {
+            "name": "To",
+            "value": "undisclosed-recipients:;"
+          },
+          {
+            "name": "Content-Type",
+            "value": "multipart/alternative; boundary=\"000000000000ad0775064f87474a\""
+          },
+          {
+            "name": "Bcc",
+            "value": "cbadcock@gmail.com"
+          }
+        ],
+        "body": {
+          "size": 0
+        },
+        "parts": [
+          {
+            "partId": "0",
+            "mimeType": "text/plain",
+            "filename": "",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "text/plain; charset=\"UTF-8\""
+              },
+              {
+                "name": "Content-Transfer-Encoding",
+                "value": "quoted-printable"
+              }
+            ],
+            "body": {
+              "size": 767,
+              "data": "RGVhciBGYW1pbGllcywNCg0KVGhlIGZpcnN0IHdlZWsgb2YgTWF5IChNYXkgNC04dGgpIGlzIFRlYWNoZXIgQXBwcmVjaWF0aW9uIFdlZWstLSBhDQp3b25kZXJmdWwgb3Bwb3J0dW5pdHkgdG8gc2hvdyBvdXIgdGVhY2hlcnMgaG93IG11Y2ggd2UgdmFsdWUgYWxsIHRoYXQgdGhleQ0KZG8hDQoNCiBJbiB0aGUgeWVhcnMgcGFzdCwgZmFtaWxpZXMgaGF2ZSBoZWxwZWQgY2VsZWJyYXRlIGJ5IHByb3ZpZGluZyBicmVha2Zhc3QNCmFuZCBsdW5jaCBmb3IgdGhlIHN0YWZmLCBicmluZ2luZyBpbiB0cmVhdHMsIGdpZnQgY2FyZHMsIGV0Yy4gV2Ugd2lsbCBoYXZlDQp0aGUgdGVhY2hlcnMgZmlsbCBvdXQgYSBsaXN0IG9mIHRoZWlyIGZhdm9yaXRlIHRoaW5ncywgd2hpY2ggd2lsbCBiZSBwb3N0ZWQNCmF0IHRoZSBmcm9udCBvZiB0aGUgYnVpbGRpbmcgZm9yIHlvdXIgcmVmZXJlbmNlLg0KDQpCZWxvdyBpcyBhIGxpbmsgdG8gc2lnbiB1cCB0byBicmluZyBpbiBmb29kIGl0ZW1zIGFuZCBzbmFja3MuIElmIHlvdSBoYXZlDQphbnkgcXVlc3Rpb25zLCBwbGVhc2UgZG9uJ3QgaGVzaXRhdGUgdG8gcmVhY2ggb3V0LiBBcyBhbHdheXMsIHRoYW5rIHlvdSBzbw0KbXVjaCBmb3IgeW91ciBjb250aW51ZWQgc3VwcG9ydCEg4p2k77iPDQoNCmh0dHBzOi8vZG9jcy5nb29nbGUuY29tL3NwcmVhZHNoZWV0cy9kLzE3MFNyZHF6aE1MSnRGM0hrZ01zenNEaGE1eHVERnd6c2lRR3lxdUd3c1V3L2VkaXQ_dXNwPXNoYXJpbmcNCg0KTGluZHNheSBhbmQgQXVicmllDQo="
+            }
+          },
+          {
+            "partId": "1",
+            "mimeType": "text/html",
+            "filename": "",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "text/html; charset=\"UTF-8\""
+              },
+              {
+                "name": "Content-Transfer-Encoding",
+                "value": "quoted-printable"
+              }
+            ],
+            "body": {
+              "size": 1020,
+              "data": "PGRpdiBkaXI9Imx0ciI-RGVhciBGYW1pbGllcyzCoDxkaXY-PGJyPjxkaXY-VGhlIGZpcnN0IHdlZWsgb2YgTWF5IChNYXkgNC04dGgpIGlzIFRlYWNoZXIgQXBwcmVjaWF0aW9uIFdlZWstLSBhIHdvbmRlcmZ1bCBvcHBvcnR1bml0eSB0byBzaG93IG91ciB0ZWFjaGVycyBob3cgbXVjaCB3ZSB2YWx1ZSBhbGwgdGhhdCB0aGV5IGRvIcKgPC9kaXY-PGRpdj48YnI-PC9kaXY-PGRpdj7CoEluIHRoZSB5ZWFycyBwYXN0LCBmYW1pbGllcyBoYXZlIGhlbHBlZCBjZWxlYnJhdGUgYnkgcHJvdmlkaW5nIGJyZWFrZmFzdCBhbmQgbHVuY2jCoGZvciB0aGUgc3RhZmYsIGJyaW5naW5nIGluIHRyZWF0cywgZ2lmdCBjYXJkcywgZXRjLiBXZSB3aWxsIGhhdmUgdGhlIHRlYWNoZXJzIGZpbGwgb3V0IGEgbGlzdCBvZiB0aGVpciBmYXZvcml0ZSB0aGluZ3MsIHdoaWNoIHdpbGwgYmUgcG9zdGVkIGF0IHRoZSBmcm9udCBvZiB0aGUgYnVpbGRpbmcgZm9yIHlvdXIgcmVmZXJlbmNlLsKgPC9kaXY-PGRpdj48YnI-PC9kaXY-PGRpdj5CZWxvdyBpcyBhIGxpbmsgdG8gc2lnbiB1cCB0byBicmluZyBpbiBmb29kIGl0ZW1zIGFuZCBzbmFja3MuIElmIHlvdSBoYXZlIGFueSBxdWVzdGlvbnMsIHBsZWFzZSBkb24mIzM5O3QgaGVzaXRhdGUgdG8gcmVhY2ggb3V0LiBBcyBhbHdheXMsIHRoYW5rIHlvdSBzbyBtdWNoIGZvciB5b3VyIGNvbnRpbnVlZMKgc3VwcG9ydCHCoOKdpO-4jzwvZGl2PjxkaXY-PGJyPjwvZGl2PjxkaXY-PGEgaHJlZj0iaHR0cHM6Ly9kb2NzLmdvb2dsZS5jb20vc3ByZWFkc2hlZXRzL2QvMTcwU3JkcXpoTUxKdEYzSGtnTXN6c0RoYTV4dURGd3pzaVFHeXF1R3dzVXcvZWRpdD91c3A9c2hhcmluZyI-aHR0cHM6Ly9kb2NzLmdvb2dsZS5jb20vc3ByZWFkc2hlZXRzL2QvMTcwU3JkcXpoTUxKdEYzSGtnTXN6c0RoYTV4dURGd3pzaVFHeXF1R3dzVXcvZWRpdD91c3A9c2hhcmluZzwvYT48L2Rpdj48ZGl2Pjxicj48L2Rpdj48ZGl2PkxpbmRzYXkgYW5kIEF1YnJpZTwvZGl2PjwvZGl2PjwvZGl2Pg0K"
+            }
+          }
+        ]
+      },
+      "sizeEstimate": 9190,
+      "historyId": "16870147",
+      "internalDate": "1776292291000"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "id": "19d97c863ac0cfad",
+  "threadId": "19d97c863ac0cfad",
+  "labelIds": [
+    "UNREAD",
+    "CATEGORY_UPDATES",
+    "INBOX"
+  ],
+  "snippet": "Dear Corey, We&#39;re reaching out from the Executive Recruiting team at LinkedIn. We&#39;re delighted to connect with you to introduce an exciting opportunity to join our leadership team as a Digital",
+  "payload": {
+    "mimeType": "multipart/alternative",
+    "headers": [
+      {
+        "name": "Date",
+        "value": "Thu, 16 Apr 2026 12:33:04 -0700"
+      },
+      {
+        "name": "Reply-To",
+        "value": "careerpath@linkedincareersuccess.com"
+      },
+      {
+        "name": "Message-ID",
+        "value": "\u003cxFMyxHsnJNt_Vp6EfjcWtw@notifications.google.com\u003e"
+      },
+      {
+        "name": "Subject",
+        "value": "LinkedIn: Where talent meets opportunity: Welcome Digital Marketing Professionals"
+      },
+      {
+        "name": "From",
+        "value": "\"LinkedIn  Cаrееrs\" \u003cnoreply@appsheet.com\u003e"
+      },
+      {
+        "name": "To",
+        "value": "cbadcock@gmail.com"
+      }
+    ]
+  },
+  "sizeEstimate": 12290,
+  "historyId": "16880922",
+  "internalDate": "1776367984000"
+}

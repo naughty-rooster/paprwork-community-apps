@@ -1,0 +1,23 @@
+import type { Task } from '../types.ts';
+import { esc, formatDue, pLabel, srcBadge, emailStamp, tagLabel, getFocusTasks } from '../utils/helpers.ts';
+const desc=(t:Task)=>t.description?`<div class="task-description">${esc(t.description.slice(0,110))}</div>`:'';
+const extra=(t:Task)=>`${emailStamp(t)?`<span class="task-date">✉ ${emailStamp(t)}</span>`:''}${tagLabel(t)?`<span class="task-date">📁 ${esc(tagLabel(t))}</span>`:''}`;
+export function renderCard(t:Task){ const due=formatDue(t.due_date), done=t.status==='done';
+  return `<div class="task-card ${done?'done':''}"><button class="check-btn ${done?'checked':''}" onclick="toggleDone(${t.id})">${done?'✓':''}</button>
+    <div class="task-content"><div class="task-title">${esc(t.title)}</div>${desc(t)}
+      <div class="task-meta">${srcBadge(t.source)}${due.text?`<span class="task-due ${due.cls}">📅 ${due.text}</span>`:''}<span class="task-date">${pLabel(t.priority)}</span>${extra(t)}</div></div>
+    <div class="task-actions"><button class="icon-btn" onclick="editTask(${t.id})">✏️</button><button class="icon-btn" onclick="deleteTask(${t.id})">🗑️</button></div></div>`; }
+export function renderToday(tasks:Task[]){ const rows=getFocusTasks(tasks), u=rows.filter(t=>t.priority===1), h=rows.filter(t=>t.priority===2), w=rows.filter(t=>t.priority>=3);
+  const stats=`<div class="stats-row"><div class="stat-card"><div class="stat-num" style="color:var(--urgent)">${tasks.filter(t=>t.status==='open'&&t.priority===1).length}</div><div class="stat-label">Urgent</div></div>
+  <div class="stat-card"><div class="stat-num" style="color:var(--high)">${tasks.filter(t=>t.status==='open'&&t.priority===2).length}</div><div class="stat-label">High</div></div>
+  <div class="stat-card"><div class="stat-num" style="color:var(--medium)">${tasks.filter(t=>t.status==='open').length}</div><div class="stat-label">Open</div></div>
+  <div class="stat-card"><div class="stat-num" style="color:var(--low)">${tasks.filter(t=>t.status==='done').length}</div><div class="stat-label">Done</div></div></div>`;
+  const sec=(title:string,items:Task[])=>items.length?`<div class="section"><div class="section-header"><div class="section-title">${title}<span class="section-count">${items.length}</span></div></div><div class="task-list">${items.map(renderCard).join('')}</div></div>`:'';
+  return stats+(rows.length?sec('🔴 Critical',u)+sec('🟠 High Priority',h)+sec('🟡 This Week',w):'<div class="empty-state"><div class="empty-icon">✅</div><div class="empty-title">All clear</div></div>'); }
+export function renderAll(tasks:Task[],filterStatus:string,search:string){ let f=tasks;
+  if(filterStatus==='gmail') f=f.filter(t=>t.source==='gmail'); else if(filterStatus==='email_in') f=f.filter(t=>t.source==='email_in'); else if(filterStatus!=='all') f=f.filter(t=>t.status===filterStatus);
+  if(search){ const q=search.toLowerCase(); f=f.filter(t=>t.title.toLowerCase().includes(q)||(t.description||'').toLowerCase().includes(q)||(t.tags||'').toLowerCase().includes(q)); }
+  f=[...f].sort((a,b)=>a.priority-b.priority||(a.due_date||'z').localeCompare(b.due_date||'z'));
+  const fs=(v:string,l:string)=>`<button class="filter-btn ${filterStatus===v?'active':''}" onclick="setFilter('${v}')">${l}</button>`;
+  return `<div class="search-box"><span class="search-icon">🔍</span><input class="search-input" placeholder="Search tasks..." value="${esc(search)}" oninput="onSearch(this.value)"></div>
+  <div class="filter-row">${fs('open','Open')}${fs('done','Done')}${fs('all','All')}${fs('gmail','Gmail')}${fs('email_in','📱 Email-in')}</div>${f.length?`<div class="task-list">${f.map(renderCard).join('')}</div>`:'<div class="empty-state"><div class="empty-icon">📭</div><div class="empty-title">No tasks</div></div>'}`; }

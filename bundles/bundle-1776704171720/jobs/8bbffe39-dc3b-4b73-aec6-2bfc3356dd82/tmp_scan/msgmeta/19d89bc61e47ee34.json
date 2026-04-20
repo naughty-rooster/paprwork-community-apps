@@ -1,0 +1,42 @@
+{
+  "id": "19d89bc61e47ee34",
+  "threadId": "19d89bc61e47ee34",
+  "labelIds": [
+    "UNREAD",
+    "CATEGORY_UPDATES",
+    "INBOX"
+  ],
+  "snippet": "You have 3 new alerts. Experian header logo Experian header logo Unread notifications Sign in Your weekly alerts Check out your financial alerts for the week of 04/05 - 04/11. Alerts Large expense",
+  "payload": {
+    "mimeType": "multipart/alternative",
+    "headers": [
+      {
+        "name": "From",
+        "value": "Experian \u003csupport@s.usa.experian.com\u003e"
+      },
+      {
+        "name": "To",
+        "value": "\u003ccbadcock@gmail.com\u003e"
+      },
+      {
+        "name": "Subject",
+        "value": "Corey, review your weekly financial alerts"
+      },
+      {
+        "name": "Date",
+        "value": "Mon, 13 Apr 2026 20:05:14 -0600"
+      },
+      {
+        "name": "Reply-To",
+        "value": "Experian \u003creply-GSLCKLK7V5GUJM6UYXQZXJNW2I.70251@e.usa.experian.com\u003e"
+      },
+      {
+        "name": "Message-ID",
+        "value": "\u003cbc449acd-e130-44dc-8ebb-1f00ca51ef7c@atl1s07mta3210.xt.local\u003e"
+      }
+    ]
+  },
+  "sizeEstimate": 59725,
+  "historyId": "16870198",
+  "internalDate": "1776132314000"
+}

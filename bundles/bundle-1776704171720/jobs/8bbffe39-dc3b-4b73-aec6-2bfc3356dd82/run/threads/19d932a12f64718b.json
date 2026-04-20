@@ -1,0 +1,130 @@
+{
+  "id": "19d932a12f64718b",
+  "historyId": "16870143",
+  "messages": [
+    {
+      "id": "19d932a12f64718b",
+      "threadId": "19d932a12f64718b",
+      "labelIds": [
+        "UNREAD",
+        "CATEGORY_UPDATES",
+        "INBOX"
+      ],
+      "snippet": "Authentication code Código de autorización multifactorial 8866-028291",
+      "payload": {
+        "partId": "",
+        "mimeType": "text/plain",
+        "filename": "",
+        "headers": [
+          {
+            "name": "Delivered-To",
+            "value": "cbadcock@gmail.com"
+          },
+          {
+            "name": "Received",
+            "value": "by 2002:a05:612c:6c91:b0:586:4f72:df7f with SMTP id 17csp980168vqk;        Wed, 15 Apr 2026 15:01:41 -0700 (PDT)"
+          },
+          {
+            "name": "X-Received",
+            "value": "by 2002:a05:690c:e6f9:b0:79a:6fa2:8129 with SMTP id 00721157ae682-7af6f227decmr191322077b3.6.1776290501468;        Wed, 15 Apr 2026 15:01:41 -0700 (PDT)"
+          },
+          {
+            "name": "ARC-Seal",
+            "value": "i=1; a=rsa-sha256; t=1776290501; cv=none;        d=google.com; s=arc-20240605;        b=idPUaEu1ss/nzoGd6EIwgT2JTSwR7C1o5s0DIIcXoaMc3ZhDfbvPwSyM98Of4gsuop         QJU8/4xaCt36/OP9XmbCTL1PHE4zWfiFyFeFiOv6aTL95BZOKmhMSvG6zUnZ5/HIhko3         +rOx7OHKiDbIHTHOHqRA62jnBxqf2Kp9iMeVgv9TpKx+l7Olzv//ECglijKzCP/G4vBp         F6ez3VyIkuxED2LEcG47KcO5P3ulU1eR9EAEiFZzJppWIr1GGl9scsOLi67QXLcL+B89         ZQQhMR7HSRylojbQXFZrlezwYpL1iynQBSDJ+5zslGsrdxEXKnKAuvc525EbvqE6w0Le         pOOQ=="
+          },
+          {
+            "name": "ARC-Message-Signature",
+            "value": "i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;        h=list-id:list-unsubscribe-post:list-unsubscribe         :content-transfer-encoding:mime-version:subject:message-id:to:from         :date:dkim-signature;        bh=30H57rhbSWRI4I8u3DlSE2inzpW6E6numzgn60mpMAQ=;        fh=AWIksMtMhGXgkBLVmjRN2+wEgvu3lwNQ2YkXxr5OiZ8=;        b=PDqtqr2owi9FQ7oMZlV0Yu+uhJSLvHyVx9ZqVHU7VxFXg5cBb2bjSf8B/G0dp5Cfw5         7GjVntF0s/Z4p96vk2xaw/9jCqzoBAALqAQjfzjrPnUaH9GWEZIFc8lKbPWELYeqPJ4n         tk2QV0riNm25Et/f6E1/oFTtY2ZwHOm0Y/QqeROfH+VvhvcotwvZiWN40O/h5VhI+EZB         xDdtpq9oeOtizbb7SxJtPpQJP/JLcaE2dstZDVEvo+ZAACmqE2IVlBvqxHdmWgf+S0RE         OFLwCSwp8SCHDw3Zz8tDb4STfs3I1/87cn1goZ6aaiZSWau8dUfxldIQ6VQvL0k644lf         bn4g==;        dara=google.com"
+          },
+          {
+            "name": "ARC-Authentication-Results",
+            "value": "i=1; mx.google.com;       dkim=pass header.i=@secureaccess.wa.gov header.s=scph0318 header.b=JMzzXdf8;       spf=pass (google.com: domain of msprvs1=20565mhqzuv9j=bounces-210890@mail.secureaccess.wa.gov designates 156.70.53.117 as permitted sender) smtp.mailfrom=\"msprvs1=20565mhqZuV9j=bounces-210890@mail.secureaccess.wa.gov\";       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=wa.gov"
+          },
+          {
+            "name": "Return-Path",
+            "value": "\u003cmsprvs1=20565mhqZuV9j=bounces-210890@mail.secureaccess.wa.gov\u003e"
+          },
+          {
+            "name": "Received",
+            "value": "from mta-70-53-117.sparkpostmail.com (mta-70-53-117.sparkpostmail.com. [156.70.53.117])        by mx.google.com with ESMTPS id 00721157ae682-7b804c034f2si17460527b3.11.2026.04.15.15.01.41        for \u003ccbadcock@gmail.com\u003e        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);        Wed, 15 Apr 2026 15:01:41 -0700 (PDT)"
+          },
+          {
+            "name": "Received-SPF",
+            "value": "pass (google.com: domain of msprvs1=20565mhqzuv9j=bounces-210890@mail.secureaccess.wa.gov designates 156.70.53.117 as permitted sender) client-ip=156.70.53.117;"
+          },
+          {
+            "name": "Authentication-Results",
+            "value": "mx.google.com;       dkim=pass header.i=@secureaccess.wa.gov header.s=scph0318 header.b=JMzzXdf8;       spf=pass (google.com: domain of msprvs1=20565mhqzuv9j=bounces-210890@mail.secureaccess.wa.gov designates 156.70.53.117 as permitted sender) smtp.mailfrom=\"msprvs1=20565mhqZuV9j=bounces-210890@mail.secureaccess.wa.gov\";       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=wa.gov"
+          },
+          {
+            "name": "X-MSFBL",
+            "value": "JCsPdKwv/5+pzTmReeYdTwAM3qIwiNApron3Gcx6w34=|eyJzdWJhY2NvdW50X2l kIjoiMCIsInIiOiJjYmFkY29ja0BnbWFpbC5jb20iLCJtZXNzYWdlX2lkIjoiNjl kZmM0MGFlMDY5Y2MwMzc3YjUiLCJ0ZW5hbnRfaWQiOiJzcGMiLCJjdXN0b21lcl9 pZCI6IjIxMDg5MCJ9"
+          },
+          {
+            "name": "DKIM-Signature",
+            "value": "v=1; a=rsa-sha256; c=relaxed/relaxed; d=secureaccess.wa.gov; s=scph0318; t=1776290500; i=@secureaccess.wa.gov; bh=30H57rhbSWRI4I8u3DlSE2inzpW6E6numzgn60mpMAQ=; h=Date:From:To:Message-ID:Subject:Content-Type:List-Unsubscribe:\t List-Unsubscribe-Post:From:To:Cc:Subject; b=JMzzXdf82O3B6DaP3uJswzzB+IHPEiKEg8bJx708RuajPFTGJ8KZyJ7YVjbrlYPJ+\t O4gcm3RGLs2/bYfKUyEgvRz0im93tPVN6GcoGVQuwYARgYQXdlAcz8fOhXTb+Nza2R\t /RytcW8D66ik4NY9cW6R68QGViKZV/16cTwcwzsg="
+          },
+          {
+            "name": "Authentication-Results",
+            "value": "i-0772f59041dba983e.mta1vsmtp.sd.prd.sparkpost smtp.user=\u003chidden\u003e; auth=pass (LOGIN)"
+          },
+          {
+            "name": "Received",
+            "value": "from [198.239.105.88] ([198.239.105.88:36448] helo=saprac03) by i-0772f59041dba983e.mta1vsmtp.sd.prd.sparkpost (envelope-from \u003chelp@secureaccess.wa.gov\u003e) (ecelerity 5.2.0.75575 r(msys-ecelerity:tags/5.2.0.17)) with ESMTPA id 5B/77-12050-4CA00E96; Wed, 15 Apr 2026 22:01:40 +0000"
+          },
+          {
+            "name": "Date",
+            "value": "Wed, 15 Apr 2026 15:01:40 -0700 (PDT)"
+          },
+          {
+            "name": "From",
+            "value": "help@secureaccess.wa.gov"
+          },
+          {
+            "name": "To",
+            "value": "cbadcock@gmail.com"
+          },
+          {
+            "name": "Message-ID",
+            "value": "\u003c767916750.111768.1776290500529@saprac03\u003e"
+          },
+          {
+            "name": "Subject",
+            "value": "SAW MFA Code"
+          },
+          {
+            "name": "MIME-Version",
+            "value": "1.0"
+          },
+          {
+            "name": "Content-Type",
+            "value": "text/plain; charset=utf-8"
+          },
+          {
+            "name": "Content-Transfer-Encoding",
+            "value": "quoted-printable"
+          },
+          {
+            "name": "List-Unsubscribe",
+            "value": "\u003cmailto:unsubscribe@unsub.spmta.com?subject=unsubscribe:WxibZfTQfUEjZpwEoBa0cc_E_CWie53bZ7b9VenUFEc~|eyAicmNwdF90byI6ICJjYmFkY29ja0BnbWFpbC5jb20iLCAidGVuYW50X2lkIjogInNwYyIsICJjdXN0b21lcl9pZCI6ICIyMTA4OTAiLCAic3ViYWNjb3VudF9pZCI6ICIwIiwgIm1lc3NhZ2VfaWQiOiAiNjlkZmM0MGFlMDY5Y2MwMzc3YjUiIH0~\u003e,\u003chttps://unsubscribe.spmta.com/u/KzU8fffZ6I2FjHz8kvH4-g~~/AAM3yhA~/2DsuC48O7U-cLAdQ5287V3RQ_E6l9V8e9-uOpSTiaGQMQVQ0z_A2pi-EmwNDcZhuZb_14Y0OtqOoDJ2i_o2qSg~~\u003e"
+          },
+          {
+            "name": "List-Unsubscribe-Post",
+            "value": "List-Unsubscribe=One-Click"
+          },
+          {
+            "name": "List-Id",
+            "value": "\u003cspc.210890.0.sparkpostmail.com\u003e"
+          }
+        ],
+        "body": {
+          "size": 81,
+          "data": "DQpBdXRoZW50aWNhdGlvbiBjb2RlDQpDw7NkaWdvIGRlIGF1dG9yaXphY2nDs24gbXVsdGlmYWN0b3JpYWwNCjg4NjYtMDI4MjkxDQogIA0K"
+        }
+      },
+      "sizeEstimate": 5153,
+      "historyId": "16870143",
+      "internalDate": "1776290500000"
+    }
+  ]
+}

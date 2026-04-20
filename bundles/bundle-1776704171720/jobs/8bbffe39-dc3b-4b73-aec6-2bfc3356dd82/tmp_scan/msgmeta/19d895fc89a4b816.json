@@ -1,0 +1,42 @@
+{
+  "id": "19d895fc89a4b816",
+  "threadId": "19d895fc89a4b816",
+  "labelIds": [
+    "UNREAD",
+    "CATEGORY_UPDATES",
+    "INBOX"
+  ],
+  "snippet": "Learn how to review and manage your privacy and security settings ͏ \u200c \ufeff ͏ \u200c \ufeff ͏ \u200c \ufeff ͏ \u200c \ufeff ͏ \u200c \ufeff ͏ \u200c \ufeff ͏ \u200c \ufeff ͏ \u200c \ufeff ͏ \u200c \ufeff ͏ \u200c \ufeff ͏ \u200c \ufeff ͏ \u200c \ufeff ͏ \u200c \ufeff ͏ \u200c \ufeff ͏ \u200c \ufeff ͏ \u200c \ufeff ͏ \u200c \ufeff ͏ \u200c \ufeff ͏ \u200c \ufeff ͏ \u200c \ufeff ͏ \u200c \ufeff ͏ \u200c \ufeff ͏ \u200c",
+  "payload": {
+    "mimeType": "multipart/alternative",
+    "headers": [
+      {
+        "name": "Date",
+        "value": "Tue, 14 Apr 2026 00:24:08 +0000 (UTC)"
+      },
+      {
+        "name": "From",
+        "value": "Venmo \u003cvenmo@email.venmo.com\u003e"
+      },
+      {
+        "name": "Message-ID",
+        "value": "\u003cEtWGew5hRmqMY16HTlxQHA@geopod-ismtpd-41\u003e"
+      },
+      {
+        "name": "Subject",
+        "value": "A guide to privacy and safety on Venmo"
+      },
+      {
+        "name": "Reply-To",
+        "value": "no-reply@venmo.com"
+      },
+      {
+        "name": "To",
+        "value": "cbadcock@gmail.com"
+      }
+    ]
+  },
+  "sizeEstimate": 87280,
+  "historyId": "16870195",
+  "internalDate": "1776126248000"
+}

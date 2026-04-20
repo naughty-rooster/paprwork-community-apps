@@ -1,0 +1,42 @@
+{
+  "id": "19d88f8aa19ef87d",
+  "threadId": "19d88f8aa19ef87d",
+  "labelIds": [
+    "UNREAD",
+    "CATEGORY_UPDATES",
+    "INBOX"
+  ],
+  "snippet": "Plus, the last artisans making Champagne sparkle \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c",
+  "payload": {
+    "mimeType": "multipart/alternative",
+    "headers": [
+      {
+        "name": "Message-ID",
+        "value": "\u003cHP2v630000019d88f8a6bcbafbfafffea4947f061@em.nationalgeographic.com\u003e"
+      },
+      {
+        "name": "Reply-To",
+        "value": "\"ng@em.nationalgeographic.com\" \u003cng@em.nationalgeographic.com\u003e"
+      },
+      {
+        "name": "Subject",
+        "value": "Who was the real Pontius Pilate?; the shipwreck that changed WWI; what happened to the Ark of the Covenant?"
+      },
+      {
+        "name": "From",
+        "value": "National Geographic \u003cng@em.nationalgeographic.com\u003e"
+      },
+      {
+        "name": "To",
+        "value": "CBADCOCK@gmail.com"
+      },
+      {
+        "name": "Date",
+        "value": "Mon, 13 Apr 2026 22:31:31 +0000"
+      }
+    ]
+  },
+  "sizeEstimate": 104544,
+  "historyId": "16870191",
+  "internalDate": "1776119491000"
+}

@@ -1,0 +1,38 @@
+{
+  "id": "19d9871050f444f4",
+  "threadId": "19d9871050f444f4",
+  "labelIds": [
+    "IMPORTANT",
+    "CATEGORY_PERSONAL",
+    "INBOX"
+  ],
+  "snippet": "WeWork Your support request 11783192 has been updated. Please see below. Simply reply to this email to update the support request. Hi Corey, Thank you for contacting WeWork. My name is Simerte, from",
+  "payload": {
+    "mimeType": "multipart/alternative",
+    "headers": [
+      {
+        "name": "Date",
+        "value": "Thu, 16 Apr 2026 22:37:16 +0000 (GMT)"
+      },
+      {
+        "name": "From",
+        "value": "WeWork Support \u003csupportrequests@wework.com\u003e"
+      },
+      {
+        "name": "To",
+        "value": "\"cbadcock@gmail.com\" \u003ccbadcock@gmail.com\u003e"
+      },
+      {
+        "name": "Message-ID",
+        "value": "\u003ccGDIZ000000000000000000000000000000000000000000000TDLYU200cxJLeG_aSzWoev9ECQcJ6A@sfdc.net\u003e"
+      },
+      {
+        "name": "Subject",
+        "value": "Request# 11783192 Membership & Billing - Cancel membership    [ ref:!00D2E013KTm.!500Uz011nYCL:ref ]"
+      }
+    ]
+  },
+  "sizeEstimate": 10449,
+  "historyId": "16883866",
+  "internalDate": "1776379036000"
+}

@@ -1,0 +1,177 @@
+{
+  "id": "19d98483643dfc9c",
+  "historyId": "16881818",
+  "messages": [
+    {
+      "id": "19d98483643dfc9c",
+      "threadId": "19d98483643dfc9c",
+      "labelIds": [
+        "UNREAD",
+        "CATEGORY_UPDATES",
+        "INBOX"
+      ],
+      "snippet": "Trans ID 2035756741 Order ID 3876567 Trans Type Purchase Clerk ID #PT_PORTAL Date/Time 04/16/2026 14:52:32 Card Type VISA Card Number XXXXXXXXXXXX9915 Card Holder Corey C Badcock Entry Method Manual",
+      "payload": {
+        "partId": "",
+        "mimeType": "multipart/alternative",
+        "filename": "",
+        "headers": [
+          {
+            "name": "Delivered-To",
+            "value": "cbadcock@gmail.com"
+          },
+          {
+            "name": "Received",
+            "value": "by 2002:a05:6200:1156:b0:644:ce73:f2a1 with SMTP id p22csp35192qns;        Thu, 16 Apr 2026 14:52:42 -0700 (PDT)"
+          },
+          {
+            "name": "X-Received",
+            "value": "by 2002:a05:6214:4e14:b0:89c:eabb:f58d with SMTP id 6a1803df08f44-8b02813b256mr4574846d6.47.1776376362634;        Thu, 16 Apr 2026 14:52:42 -0700 (PDT)"
+          },
+          {
+            "name": "ARC-Seal",
+            "value": "i=1; a=rsa-sha256; t=1776376362; cv=none;        d=google.com; s=arc-20240605;        b=i395mc88714ROyXUP73Nc7tqA9iIuAxFgveQawfMj8KKS8d2qqWT2Y0pWrPumCgk6U         jqpDbXiYxQyzlWH4owQZFKDY6M6foaVJLz9+qF/08Cl9kAsl8Bj/Wj/7dQeNHIIV4udI         WvXyFWJrqPDfiH08/eAgrGbSMXw/YVV6R3Xv52qumiX9UAKDNDHK+R6+br4nFJiKu7kp         tOX8OQ04E/Qt361EhqmkeESHMvFNxWc9dRy+y9YoVyjkwkqs0iSYCORCrVU0Kb/rOQZX         tdCySgYP+GKPAuRdCnwhq0AG70b6aTAK+XcILf/sYXrGYbcCvdNGWYbnpWq4lAHFiE84         MzxA=="
+          },
+          {
+            "name": "ARC-Message-Signature",
+            "value": "i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;        h=to:reply-to:subject:message-id:mime-version:from:date         :dkim-signature:dkim-signature;        bh=2mQ51FvhebFdj8mh5UYvLX4BJ3IsecIK1q86LPvTl9o=;        fh=wKvjTshU+VlbUv8/pVbJvbp8UR3TPL8znNViEEDZRq4=;        b=FtibImkPthvJ7QwdoIrHixH+PJt0KJYD3xtgh2bN9Vzm8DhliTK7vZIiOKReh9EzMD         /RB6D47ABDgoQKq+Q9sN3W+gxDJ0k6bh0Wcfn28LMc54NaZ7opc+Q/HYk+uuGwWMXxtl         RRgplr7Ei1TfAaU/zztnZLsl+l3kXnpo7cOVOqrXUimXgVnpqFs/Gn5WmelPGRC+TUMr         nc1SnHWC8OGeXfudCZMnqBj+3nc04JeexmzA1NainT/+/EWuebSyU/wtBPQAX/9X37n0         iMyfKygJvMGO/iqZA/y8hEOi94Zvh3LKbhCSRTPPWWeMVPMcW+wd93WfN8yVztZxgkZ0         VQ8g==;        dara=google.com"
+          },
+          {
+            "name": "ARC-Authentication-Results",
+            "value": "i=1; mx.google.com;       dkim=pass header.i=@advancedmd.com header.s=s1 header.b=AXg7hhyF;       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=wwU7wBBg;       spf=pass (google.com: domain of bounces+14209785-f5d1-cbadcock=gmail.com@em3002.advancedmd.com designates 149.72.169.142 as permitted sender) smtp.mailfrom=\"bounces+14209785-f5d1-cbadcock=gmail.com@em3002.advancedmd.com\";       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=advancedmd.com"
+          },
+          {
+            "name": "Return-Path",
+            "value": "\u003cbounces+14209785-f5d1-cbadcock=gmail.com@em3002.advancedmd.com\u003e"
+          },
+          {
+            "name": "Received",
+            "value": "from o1.sg.advancedmd.com (o1.sg.advancedmd.com. [149.72.169.142])        by mx.google.com with ESMTPS id 6a1803df08f44-8ae6cbae43bsi72795586d6.206.2026.04.16.14.52.41        for \u003ccbadcock@gmail.com\u003e        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);        Thu, 16 Apr 2026 14:52:42 -0700 (PDT)"
+          },
+          {
+            "name": "Received-SPF",
+            "value": "pass (google.com: domain of bounces+14209785-f5d1-cbadcock=gmail.com@em3002.advancedmd.com designates 149.72.169.142 as permitted sender) client-ip=149.72.169.142;"
+          },
+          {
+            "name": "Authentication-Results",
+            "value": "mx.google.com;       dkim=pass header.i=@advancedmd.com header.s=s1 header.b=AXg7hhyF;       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=wwU7wBBg;       spf=pass (google.com: domain of bounces+14209785-f5d1-cbadcock=gmail.com@em3002.advancedmd.com designates 149.72.169.142 as permitted sender) smtp.mailfrom=\"bounces+14209785-f5d1-cbadcock=gmail.com@em3002.advancedmd.com\";       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=advancedmd.com"
+          },
+          {
+            "name": "DKIM-Signature",
+            "value": "v=1; a=rsa-sha256; c=relaxed/relaxed; d=advancedmd.com; h=content-type:date:from:mime-version:subject:reply-to:to:cc: content-type:date:feedback-id:from:subject:to; s=s1; t=1776376360; bh=2mQ51FvhebFdj8mh5UYvLX4BJ3IsecIK1q86LPvTl9o=; b=AXg7hhyFSB9UvwTqt5TfftshygrNuIxPfE4wxdej+61432dJGciP5RDFsIPV2gnWLEyS tIBruJeS8M9FTACvrFVnSa6DwfW+WVHgqghbgoqHxwLSDnKANV9nPqFI0EcGKb93eS/c0E 1/5bjw3Qzhc2s9iXh9fBm69BkPZ/+nrtWI0MMyaxB/w+li/YFAarO+x9DSekBNMabctZq8 7sq1PD6Ss2tFxBe7HOuOaCDnlmAInKRUhnROk2KRA4kyH2bOPZ2r1eQ8lOZ9SJO2XXMUcL l9NKYF69kgvwkxP+8DZcmk1oIzgosTr1+IqGyLwvKxk5IjF9KzzYlhNObv1bGzVw=="
+          },
+          {
+            "name": "DKIM-Signature",
+            "value": "v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info; h=content-type:date:from:mime-version:subject:reply-to:to:cc: content-type:date:feedback-id:from:subject:to; s=smtpapi; t=1776376360; bh=2mQ51FvhebFdj8mh5UYvLX4BJ3IsecIK1q86LPvTl9o=; b=wwU7wBBgq2vDKF3In4g1VGD/sA6KRoG5L2jFeVdhAObPeYRz0zoj2hNqVukrF7hzikbQ 3fN5vKMtJbBiKB83EqpSe3EuFfUJEoz+uGZXusPIIYi3W+wo0sV7up6ABp8X9bHY77bYkS 47iOkFZ6gzPvptn06qt/7/gfwtV2gQyDw="
+          },
+          {
+            "name": "Received",
+            "value": "by recvd-canary-55d67c68cf-jmvtd with SMTP id recvd-canary-55d67c68cf-jmvtd-1-69E15A28-5A 2026-04-16 21:52:40.618022115 +0000 UTC m=+535777.290647859"
+          },
+          {
+            "name": "Received",
+            "value": "from MTQyMDk3ODU (unknown) by geopod-ismtpd-5 (SG) with HTTP id ysT5v8BFSS-kUNFiZqPFZA Thu, 16 Apr 2026 21:52:40.573 +0000 (UTC)"
+          },
+          {
+            "name": "Content-Type",
+            "value": "multipart/alternative; boundary=788fcd6da19bf4ea33c8009d9c3bb29b38d4b0dfb8947d8a339b7a745ed3"
+          },
+          {
+            "name": "Date",
+            "value": "Thu, 16 Apr 2026 21:52:40 +0000 (UTC)"
+          },
+          {
+            "name": "From",
+            "value": "noreplyadvancedmdcom \u003cnoreply@advancedmd.com\u003e"
+          },
+          {
+            "name": "Mime-Version",
+            "value": "1.0"
+          },
+          {
+            "name": "Message-ID",
+            "value": "\u003cysT5v8BFSS-kUNFiZqPFZA@geopod-ismtpd-5\u003e"
+          },
+          {
+            "name": "Subject",
+            "value": "Payment Receipt"
+          },
+          {
+            "name": "Reply-To",
+            "value": "\"noreply@advancedmd.com\" \u003cNOREPLY@advancedmd.com\u003e"
+          },
+          {
+            "name": "X-SG-EID",
+            "value": "u001.uYXYedraW/JDt7DPbp5GmL28TpMT8ZbRXqO+szwIKnQGaRjnp1nAdO91E5J+thhtMUhoRxqc8m/Eg+UA7u6SSS8GHQsD0TC65OFQCJ8x1tkLBnScY6oIiZITwlxQw7caIBXOyJgdA0SEeByffT1ujS2uof79dxIfuePyLl/soRM3f4YNtdIBPjZk1wLeoSCSFgEcXZq8vvFz5s9FyrPyDJRIJBAM8RkgEopQ6dDRN9/h79sMDsXVPag/l1z09BI9/vfPSEysRzxlio93Jg18+Q=="
+          },
+          {
+            "name": "X-SG-ID",
+            "value": "u001.SdBcvi+Evd/bQef8eZF3BpH7/gvR7W+v6Tf4i8ADUpx5uCLBdZpBWsEoFVbcPFrJoqZTkBXL05nM4Oe2wGfDD9tTyY+yNGoBpH4quFrCyOc="
+          },
+          {
+            "name": "To",
+            "value": "Badcock Corey \u003cCBADCOCK@gmail.com\u003e"
+          },
+          {
+            "name": "X-Entity-ID",
+            "value": "u001.kEgNL6+zHVMFkSG6WadKeQ=="
+          }
+        ],
+        "body": {
+          "size": 0
+        },
+        "parts": [
+          {
+            "partId": "0",
+            "mimeType": "text/plain",
+            "filename": "",
+            "headers": [
+              {
+                "name": "Content-Transfer-Encoding",
+                "value": "quoted-printable"
+              },
+              {
+                "name": "Content-Type",
+                "value": "text/plain; charset=us-ascii"
+              },
+              {
+                "name": "Mime-Version",
+                "value": "1.0"
+              }
+            ],
+            "body": {
+              "size": 594,
+              "data": "DQpUcmFucyBJRCAgICAgICAgICAgIDIwMzU3NTY3NDENCk9yZGVyIElEICAgICAgICAgICAgMzg3NjU2Nw0KVHJhbnMgVHlwZSAgICAgICAgICBQdXJjaGFzZQ0KQ2xlcmsgSUQgICAgICAgICAgICAjUFRfUE9SVEFMDQpEYXRlL1RpbWUgICAgICAgICAgIDA0LzE2LzIwMjYgMTQ6NTI6MzINCkNhcmQgVHlwZSAgICAgICAgICAgVklTQQ0KQ2FyZCBOdW1iZXIgICAgICAgICBYWFhYWFhYWFhYWFg5OTE1DQpDYXJkIEhvbGRlciAgICAgICAgIENvcmV5IEMgQmFkY29jaw0KRW50cnkgTWV0aG9kICAgICAgICBNYW51YWwNCkF1dGggQ29kZSAgICAgICAgICAgMDcwMDdEDQoNClRvdGFsIEFtb3VudCAgICAgICAgVVNEJDI4MC4wMA0KDQogICAgICAgICAgQXBwcm92ZWQgLSBUaGFuayBZb3UNCg0KIFhfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18NCiAgICAgICAgICBDYXJkaG9sZGVyIFNpZ25hdHVyZQ0KDQpCdXllciBhZ3JlZXMgdG8gcGF5IHRvdGFsIGFtb3VudCBhYm92ZQ0KYWNjb3JkaW5nIHRvIGNhcmRob2xkZXIncyBhZ3JlZW1lbnQgd2l0aA0KaXNzdWVyLg0KDQogICAgICAgICAqKioqQ3VzdG9tZXIgQ29weSoqKioNCg0K"
+            }
+          },
+          {
+            "partId": "1",
+            "mimeType": "text/html",
+            "filename": "",
+            "headers": [
+              {
+                "name": "Content-Transfer-Encoding",
+                "value": "quoted-printable"
+              },
+              {
+                "name": "Content-Type",
+                "value": "text/html; charset=us-ascii"
+              },
+              {
+                "name": "Mime-Version",
+                "value": "1.0"
+              }
+            ],
+            "body": {
+              "size": 1350,
+              "data": "DQo8aHRtbD4NCjxib2R5Pg0KPHByZT4NClRyYW5zIElEICAgICAgICAgICAgMjAzNTc1Njc0MQ0KT3JkZXIgSUQgICAgICAgICAgICAzODc2NTY3DQpUcmFucyBUeXBlICAgICAgICAgIFB1cmNoYXNlDQpDbGVyayBJRCAgICAgICAgICAgICNQVF9QT1JUQUwNCkRhdGUvVGltZSAgICAgICAgICAgMDQvMTYvMjAyNiAxNDo1MjozMg0KQ2FyZCBUeXBlICAgICAgICAgICBWSVNBDQpDYXJkIE51bWJlciAgICAgICAgIFhYWFhYWFhYWFhYWDk5MTUNCkNhcmQgSG9sZGVyICAgICAgICAgQ29yZXkgQyBCYWRjb2NrDQpFbnRyeSBNZXRob2QgICAgICAgIE1hbnVhbA0KQXV0aCBDb2RlICAgICAgICAgICAwNzAwN0QNCg0KVG90YWwgQW1vdW50ICAgICAgICBVU0QkMjgwLjAwDQoNCiAgICAgICAgICBBcHByb3ZlZCAtIFRoYW5rIFlvdQ0KDQogWF9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXw0KICAgICAgICAgIENhcmRob2xkZXIgU2lnbmF0dXJlDQoNCkJ1eWVyIGFncmVlcyB0byBwYXkgdG90YWwgYW1vdW50IGFib3ZlDQphY2NvcmRpbmcgdG8gY2FyZGhvbGRlcidzIGFncmVlbWVudCB3aXRoDQppc3N1ZXIuDQoNCiAgICAgICAgICoqKipDdXN0b21lciBDb3B5KioqKg0KDQo8L3ByZT4NCjxpbWcgc3JjPSJodHRwczovL3UxNDIwOTc4NS5jdC5zZW5kZ3JpZC5uZXQvd2Yvb3Blbj91cG49dTAwMS44LTJCWmdaeG9IWHVrTmY1QUp4ZzMwdzl5d3lMbFhnZ2Z2aVB5OFIwZXVOUkRkZ21pbGZwLTJGbndOek1SU2VrQ1BOMlp5bmxST2VsZjk4UTIwbXgtMkJuY1lGMmtxRTlEQ3Y0cW9CLTJGWEVMNlk4NHpZWFNaejRWODBKQ21JdXBVS2M1cUpvY1liNXB6SE40UUFxTXN2bUFkUEZtbkh6MDJHd01QRHd4djJpTnZzMVZHdzhVZjZzQy0yQmZjS2lQeWdoeFlrVGYzbG5OOUlCcXY3VmJXUjUxT0twc1lwUEZ0MmQxOHdFRFo4MmFUNHhESmktMkZKczZreUN3OWlwby0yRkZYWHN6c3E5YjZwSkdRUVNIbDNIODVYYi0yQmhOMEVQLTJGZ0FyR2psYTVndWFBSGNsNk51QUh6dy0zRCIgYWx0PSIiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGJvcmRlcj0iMCIgc3R5bGU9ImhlaWdodDoxcHggIWltcG9ydGFudDt3aWR0aDoxcHggIWltcG9ydGFudDtib3JkZXItd2lkdGg6MCAhaW1wb3J0YW50O21hcmdpbi10b3A6MCAhaW1wb3J0YW50O21hcmdpbi1ib3R0b206MCAhaW1wb3J0YW50O21hcmdpbi1yaWdodDowICFpbXBvcnRhbnQ7bWFyZ2luLWxlZnQ6MCAhaW1wb3J0YW50O3BhZGRpbmctdG9wOjAgIWltcG9ydGFudDtwYWRkaW5nLWJvdHRvbTowICFpbXBvcnRhbnQ7cGFkZGluZy1yaWdodDowICFpbXBvcnRhbnQ7cGFkZGluZy1sZWZ0OjAgIWltcG9ydGFudDsiLz48L2JvZHk-DQo8L2h0bWw-"
+            }
+          }
+        ]
+      },
+      "sizeEstimate": 8021,
+      "historyId": "16881818",
+      "internalDate": "1776376360000"
+    }
+  ]
+}

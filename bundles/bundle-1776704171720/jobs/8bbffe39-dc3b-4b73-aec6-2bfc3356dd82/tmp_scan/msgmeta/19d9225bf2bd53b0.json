@@ -1,0 +1,42 @@
+{
+  "id": "19d9225bf2bd53b0",
+  "threadId": "19d9225bf2bd53b0",
+  "labelIds": [
+    "UNREAD",
+    "CATEGORY_UPDATES",
+    "INBOX"
+  ],
+  "snippet": "Google Play Thank you Your subscription from Google LLC on Google Play continues and you&#39;ve been charged. Manage your subscriptions Order number: SOP.3379-0194-3651-53345..39 Order date: Apr 15,",
+  "payload": {
+    "mimeType": "multipart/alternative",
+    "headers": [
+      {
+        "name": "Date",
+        "value": "Wed, 15 Apr 2026 10:17:20 -0700"
+      },
+      {
+        "name": "Reply-To",
+        "value": "Google Play \u003cgoogleplay-noreply@google.com\u003e"
+      },
+      {
+        "name": "Message-ID",
+        "value": "\u003cd65f8cc369c7a124fc3e23b4027e53b30d76e757-10044049-110294243@google.com\u003e"
+      },
+      {
+        "name": "Subject",
+        "value": "Your Google Play Order Receipt from Apr 15, 2026"
+      },
+      {
+        "name": "From",
+        "value": "Google Play \u003cgoogleplay-noreply@google.com\u003e"
+      },
+      {
+        "name": "To",
+        "value": "cbadcock@gmail.com"
+      }
+    ]
+  },
+  "sizeEstimate": 16805,
+  "historyId": "16870116",
+  "internalDate": "1776273440000"
+}

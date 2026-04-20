@@ -1,0 +1,8 @@
+import type { Project, Task } from '../types.ts';
+import { esc, parsePlan } from '../utils/helpers.ts';
+export function renderProjects(projects:Project[],tasks:Task[]){
+  const cards=projects.map(p=>{ const linked=tasks.filter(t=>(t.tags||'').includes(`project:${p.name}`)&&t.status==='open');
+    const plan=parsePlan(p.plan_json).map(x=>`<li>${esc(x)}</li>`).join('');
+    return `<div class="project-card"><div class="project-head"><div><div class="project-title">${esc(p.name)}</div><div class="project-objective">${esc(p.objective||'')}</div></div><div class="section-count">${linked.length} open</div></div>
+      <ul class="project-plan">${plan}</ul>${linked.length?`<div class="project-linked"><div class="mini-label">Current linked tasks</div>${linked.slice(0,4).map(t=>`<div class="mini-task">• ${esc(t.title)}</div>`).join('')}</div>`:'<div class="project-linked"><div class="mini-label">No linked tasks yet</div><div class="mini-task">Use + Add Task and include the project in notes/tags if you want tighter tracking.</div></div>'}</div>`; }).join('');
+  return `<div class="section"><div class="section-header"><div class="section-title">📁 Ongoing Projects</div></div>${cards}</div>`; }

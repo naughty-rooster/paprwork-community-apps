@@ -1,0 +1,284 @@
+{
+  "id": "19d98c8e05d243b7",
+  "historyId": "16884331",
+  "messages": [
+    {
+      "id": "19d98c8e05d243b7",
+      "threadId": "19d98c8e05d243b7",
+      "labelIds": [
+        "CATEGORY_PERSONAL",
+        "INBOX"
+      ],
+      "snippet": "Happy Thursday! Reminder: NO practice tomorrow, 4/17. Here are a few reminders for our games this Saturday: The games are at Kent Meridian High School. The address is: 10020 SE 256 th Street, Kent WA",
+      "payload": {
+        "partId": "",
+        "mimeType": "multipart/alternative",
+        "filename": "",
+        "headers": [
+          {
+            "name": "Delivered-To",
+            "value": "cbadcock@gmail.com"
+          },
+          {
+            "name": "Received",
+            "value": "by 2002:a05:6200:1156:b0:644:ce73:f2a1 with SMTP id p22csp102397qns;        Thu, 16 Apr 2026 17:13:15 -0700 (PDT)"
+          },
+          {
+            "name": "X-Forwarded-Encrypted",
+            "value": "i=3; AFNElJ/ywFC1ZGIQ0M1pjhLUE4+ZMex9uToYlGMH4WoXE4os5JQz42oJrNe3N9FGAKS2vmrTjgtrN9gj/g==@gmail.com"
+          },
+          {
+            "name": "X-Received",
+            "value": "by 2002:a17:903:1cb:b0:2b4:5dad:2523 with SMTP id d9443c01a7336-2b5fa003d32mr4751815ad.35.1776384795107;        Thu, 16 Apr 2026 17:13:15 -0700 (PDT)"
+          },
+          {
+            "name": "ARC-Seal",
+            "value": "i=2; a=rsa-sha256; t=1776384795; cv=pass;        d=google.com; s=arc-20240605;        b=JGyaTnrDXrNYh+Vn1zqmC1XN9GMZ7a2Zssmt0TEcNx1Qq6pGNKZr7yn+hdAaXFofP2         nMPixzL72X6x9J84IRtYFDHZQ59mYBlq6P2OctT560bLNK91s24o2PY8WWVSuEuke6wh         prsEetmD3/u2eLcWjxdo9VoPWHFUk1fmS0u7JC4GaA8gsUDCr8gR2L8BIuHSVFHKxyOa         x7XqQG/WXlo3kYishG+vEXuQrI1PjJtjj5AUVsm8IDUEfThD3pTtiVjYgHsjtgyqcU1i         vI59gFTsayeZSKqme5iN1LezhJwwH3G1OYdIQsiM8kTISYydjCPqa6wfLqq8eK4CNVzj         7dZg=="
+          },
+          {
+            "name": "ARC-Message-Signature",
+            "value": "i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;        h=mime-version:msip_labels:content-language:accept-language         :message-id:date:thread-index:thread-topic:subject:cc:to:from         :dkim-signature;        bh=clyjhv2OwbQx6PTS+oofrQQ1lVQbOWpHdwPEe21TcHI=;        fh=wVVwaqBoRZ1TxOTYTmpNW2fy60z2SPV8mrZwtrQXSxE=;        b=Ns3eZvKRG3EMm2p2AF01833zMFF7Z+dvrWcp3/j9jctrhObpTuT1/ycDoA3a6LgFqk         IO4nDnwycJruhZ5vTdBTV62H9c1XhCGgKaunDe/E31ipY42vdmdZ9+LX5M1rpcS8m7Ex         5GCb737WTrGHgJrfGCfIPMvHOZKytGP/COEwzm2+UadTHczfGfPIvZ40NkOmJ1P5hR1l         juU8KZVGdhkx7dLgVgP8xEdqW6knYf8IJHq9VBUOwXNKyH3A3c9c1UNctYwWcX1Be85g         WCZjXHrUH8ghNhfVHP8oYlXtrfT7Pr3VnxjUFV4oqBtt+N05jDxVCuOL2QnArPw/HRE8         YP4w==;        dara=google.com"
+          },
+          {
+            "name": "ARC-Authentication-Results",
+            "value": "i=2; mx.google.com;       dkim=pass header.i=@seattleschools.org header.s=selector1 header.b=N1e7byrA;       arc=pass (i=1 spf=pass spfdomain=seattleschools.org dkim=pass dkdomain=seattleschools.org dmarc=pass fromdomain=seattleschools.org);       spf=pass (google.com: domain of mebushore@seattleschools.org designates 2a01:111:f403:c10d::3 as permitted sender) smtp.mailfrom=mebushore@seattleschools.org;       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=seattleschools.org"
+          },
+          {
+            "name": "Return-Path",
+            "value": "\u003cmebushore@seattleschools.org\u003e"
+          },
+          {
+            "name": "Received",
+            "value": "from SN4PR0501CU005.outbound.protection.outlook.com (mail-southcentralusazlp170110003.outbound.protection.outlook.com. [2a01:111:f403:c10d::3])        by mx.google.com with ESMTPS id d9443c01a7336-2b5fab92e12si1739625ad.156.2026.04.16.17.13.14        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);        Thu, 16 Apr 2026 17:13:15 -0700 (PDT)"
+          },
+          {
+            "name": "Received-SPF",
+            "value": "pass (google.com: domain of mebushore@seattleschools.org designates 2a01:111:f403:c10d::3 as permitted sender) client-ip=2a01:111:f403:c10d::3;"
+          },
+          {
+            "name": "Authentication-Results",
+            "value": "mx.google.com;       dkim=pass header.i=@seattleschools.org header.s=selector1 header.b=N1e7byrA;       arc=pass (i=1 spf=pass spfdomain=seattleschools.org dkim=pass dkdomain=seattleschools.org dmarc=pass fromdomain=seattleschools.org);       spf=pass (google.com: domain of mebushore@seattleschools.org designates 2a01:111:f403:c10d::3 as permitted sender) smtp.mailfrom=mebushore@seattleschools.org;       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=seattleschools.org"
+          },
+          {
+            "name": "ARC-Seal",
+            "value": "i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none; b=RFLPURGRhk8Gr9NCC/iZU/bM30Y6iDo2IIxnRR//WE+FpEFpkhBRSGgJmcBwGQyNwGgvhewYSb41fNJueepCV0SMa6t7FwPQZOabMRtnIGbo2dR1y4oDAUnWtQRlWzyjS9kLtYcy/RlMVDIlzv9YktNv1FwsP+3QSv29ZT8vNgTeK9SUQ2bxxDLu0quzyyIg66T7PyG6MJJn8/jLZs1lXyMnlzGCGfqpX6ZO+spDk3+WQxuAWE0EXY8sgrC0+XTAw8My6XUrbA3L8lYoxpyydK0jLvnN/dcjYpKDOQzim9qaHpX1wvOnn58KXM2G78yZ9XpyllVGq0Yuemlsk8ZCpg=="
+          },
+          {
+            "name": "ARC-Message-Signature",
+            "value": "i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; s=arcselector10001; h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1; bh=clyjhv2OwbQx6PTS+oofrQQ1lVQbOWpHdwPEe21TcHI=; b=SIW5j9vXJS0Iw31uAyXCqgAKm1JBzaH+sAFpQjmGwcFJ6tvPxaXYl+EHaXRgDlbJRzE6NxvHhUHs+o5nN7+XBX6XjBcq70M6rQak955BDjpwpeBGsGBLMUPRh2zqqSLdizdzunBBO0o+MaOYV3ToswwEoCX/JCavO89bVJxJrKCbPmtkdCHXzmf3e3ETp453Nt+KrFwiNheg003Va/6EfKLzy7k7tm5iAqx8bTOdYePGUtWMn3Da7nnpUgHSBoi4GHtQ6QIFgwNLR711X2pcraJA26KKQzG00IHfSu7HSddL1Nu0TiQIMwWd1k8NpdvToa806Ro/SVDbZ6EYJCw/ng=="
+          },
+          {
+            "name": "ARC-Authentication-Results",
+            "value": "i=1; mx.microsoft.com 1; spf=pass smtp.mailfrom=seattleschools.org; dmarc=pass action=none header.from=seattleschools.org; dkim=pass header.d=seattleschools.org; arc=none"
+          },
+          {
+            "name": "DKIM-Signature",
+            "value": "v=1; a=rsa-sha256; c=relaxed/relaxed; d=seattleschools.org; s=selector1; h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck; bh=clyjhv2OwbQx6PTS+oofrQQ1lVQbOWpHdwPEe21TcHI=; b=N1e7byrAraz5ipv8Dy+/rrf7HAWXopVvlQ3vwm7hPeYrpY2mDsJdT9yZ5rDN5Ec973lw2knxGm8W1pChb8jnmKvwQVHcQLdVhQ7Sd57LDV4T6knyJBUL+Vbyrr33gXNtS2NHBHwodWjKlXAqlTpb2CzpMR2JyFyRfNur0GO6wu/1It6hupQW4qCg7RqDiszQUH5QxM7TCC3ad5HvEMbRyQTKNdZNxrnU19tDYmo7NuhueHXQJHvfTam4N22In5ndnurSbO3Mg1/SH+92j+5mkrMJ04yU3zYUwhR1GgSP3sixRME5ldcF/D47zzfT7+NXunWZkL/llt3lfpmusHC6RQ=="
+          },
+          {
+            "name": "Received",
+            "value": "from DM6PR04MB4057.namprd04.prod.outlook.com (2603:10b6:5:ac::19) by MN2PR04MB6720.namprd04.prod.outlook.com (2603:10b6:208:1e3::17) with Microsoft SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9818.21; Fri, 17 Apr 2026 00:12:50 +0000"
+          },
+          {
+            "name": "Received",
+            "value": "from DM6PR04MB4057.namprd04.prod.outlook.com ([fe80::559:7145:9932:6d7e]) by DM6PR04MB4057.namprd04.prod.outlook.com ([fe80::559:7145:9932:6d7e%6]) with mapi id 15.20.9818.023; Fri, 17 Apr 2026 00:11:59 +0000"
+          },
+          {
+            "name": "From",
+            "value": "\"Bushore, Miya E\" \u003cmebushore@seattleschools.org\u003e"
+          },
+          {
+            "name": "To",
+            "value": "\"Leyton, Heidi\" \u003chjleyton@seattleschools.org\u003e"
+          },
+          {
+            "name": "CC",
+            "value": "\"carranzay443@gmail.com\" \u003ccarranzay443@gmail.com\u003e, \"redpandapaw@gmail.com\" \u003credpandapaw@gmail.com\u003e, \"Martin, Alexis O - ING 10 000\" \u003c1aomartin@seattleschools.org\u003e, \"Petersen, Benjamin R - ING 12 000\" \u003c1brpetersen@seattleschools.org\u003e, Karla Petersen \u003cpetersenkr@hotmail.com\u003e, \"benjaminp1625@gmail.com\" \u003cbenjaminp1625@gmail.com\u003e, \"bp567895632@gmail.com\" \u003cbp567895632@gmail.com\u003e, \"Whiteysix1616@gmail.com\" \u003cWhiteysix1616@gmail.com\u003e, \"Ethridge, Breionna S - ING 12 000\" \u003c1bsethridge@seattleschools.org\u003e, \"Lam, Catherine T - BRG 12 000\" \u003c1ctlam@seattleschools.org\u003e, \"thanhphat2003@gmail.com\" \u003cthanhphat2003@gmail.com\u003e, \"Cbadcock@gmail.com\" \u003cCbadcock@gmail.com\u003e, \"badcockdane@gmail.com\" \u003cbadcockdane@gmail.com\u003e, \"rgiannoul@gmail.com\" \u003crgiannoul@gmail.com\u003e, \"elliegrow@gmail.com\" \u003celliegrow@gmail.com\u003e, \"Grow, Ellie M - ING 11 000\" \u003c1emgrow@seattleschools.org\u003e, \"Hart, James H - BRG 12 000\" \u003c1jhhart1@seattleschools.org\u003e, \"medora10@icloud.com\" \u003cmedora10@icloud.com\u003e, \"Dovey, JJ - ING 11 000\" \u003c1jodovey@seattleschools.org\u003e, \"j2starbar@gmail.com\" \u003cj2starbar@gmail.com\u003e, \"dovey.j.2@gmail.com\" \u003cdovey.j.2@gmail.com\u003e, \"scninneman@gmail.com\" \u003cscninneman@gmail.com\u003e, \"valerie.garza@kingcounty.gov\" \u003cvalerie.garza@kingcounty.gov\u003e, \"Ninneman, Joaquin E - ING 09 000\" \u003c1jeninneman@seattleschools.org\u003e, \"Sabban, Justine H - ING 11 000\" \u003c1jhsabban@seattleschools.org\u003e, \"tinimoon9@gmail.com\" \u003ctinimoon9@gmail.com\u003e, \"dsabban@kw.com\" \u003cdsabban@kw.com\u003e, \"Killian, Macey M - BRG 12 000\" \u003c1lmkillian@seattleschools.org\u003e, \"killian4@me.com\" \u003ckillian4@me.com\u003e, \"logan.killian@icloud.com\" \u003clogan.killian@icloud.com\u003e, \"djmgarrick@gmail.com\" \u003cdjmgarrick@gmail.com\u003e, \"brianna@sayres.com\" \u003cbrianna@sayres.com\u003e, cherylynne \u003ccherylynne@gmail.com\u003e, \"davecrowther@hotmail.com\" \u003cdavecrowther@hotmail.com\u003e, \"marzena.sturgeon@gmail.com\" \u003cmarzena.sturgeon@gmail.com\u003e, \"Sturgeon, Mikus - ING 12 000\" \u003c1nasturgeon@seattleschools.org\u003e, \"Whalen, Sofia R - BRG 12 000\" \u003c1srwhalen@seattleschools.org\u003e, \"sofiawhalen07@gmail.com\" \u003csofiawhalen07@gmail.com\u003e, \"Jason@osaddict.com\" \u003cJason@osaddict.com\u003e, \"Sturgeon, Sophia N - ING 10 000\" \u003c1snsturgeon@seattleschools.org\u003e, \"Boeing, Harald\" \u003chboeing@snopud.com\u003e, \"Boeing, Theo V - ING 10 000\" \u003c1tvboeing@seattleschools.org\u003e, \"Vadivu.Boeing@philips.com\" \u003cVadivu.Boeing@philips.com\u003e, \"Hale-Wolcott, Veronica R - ING 11 000\" \u003c1vrhalewolcott@seattleschools.org\u003e, \"Donna.Hale-Wolcott@Seattlecolleges.edu\" \u003cDonna.Hale-Wolcott@seattlecolleges.edu\u003e, \"sdardakan@gmail.com\" \u003csdardakan@gmail.com\u003e, \"Allen, Xavier A - BRG 12 000\" \u003c1xaallen@seattleschools.org\u003e, \"elirit@gmail.com\" \u003celirit@gmail.com\u003e, \"Shechtman, Yonatan - BRG 12 000\" \u003c1yoshechtman@seattleschools.org\u003e, \"Kadiry0077@gmail.com\" \u003cKadiry0077@gmail.com\u003e, \"Dathe, Yusuf U - BRG 12 000\" \u003c1yudathe@seattleschools.org\u003e, \"Rodriguez, Avani M - ING 10 000\" \u003c1amrodriguez@seattleschools.org\u003e, \"Avani.spud@gmail.com\" \u003cAvani.spud@gmail.com\u003e, Steve Rodriguez \u003csarodrig@yahoo.com\u003e, \"Van Dyck, Beckett P - ING 12 000\" \u003c1bpvandyck@seattleschools.org\u003e, \"beckettvandyck@icloud.com\" \u003cbeckettvandyck@icloud.com\u003e, \"Becampbell111@icloud.com\" \u003cBecampbell111@icloud.com\u003e, \"Campbell, Bree E - ING 10 000\" \u003c1becampbell@seattleschools.org\u003e, \"Andrew/Cara Campbell/Davidson\" \u003ccptcanuck@hotmail.com\u003e, \"Haas, Carlena T - LIN 12 000\" \u003c1cthaas@seattleschools.org\u003e, \"helenah35@hotmail.com\" \u003chelenah35@hotmail.com\u003e, \"haasdoug@gmail.com\" \u003chaasdoug@gmail.com\u003e, \"cooperdm@gmail.com\" \u003ccooperdm@gmail.com\u003e, \"kylelion307@gmail.com\" \u003ckylelion307@gmail.com\u003e, \"Wilson Ethridge, Delando K - ING 09 000\" \u003c1dkwilsonethridge@seattleschools.org\u003e, \"desmondsavo@gmail.com\" \u003cdesmondsavo@gmail.com\u003e, \"Savo, Desmond - ING 11 000\" \u003c1desavo@seattleschools.org\u003e, \"emelinemichalsen@gmail.com\" \u003cemelinemichalsen@gmail.com\u003e, \"Michalsen, Emeline M - ING 11 000\" \u003c1emmichalsen@seattleschools.org\u003e, \"Keegan, Esmee S - ING 10 000\" \u003c1eskeegan@seattleschools.org\u003e, \"esmeesk@icloud.com\" \u003cesmeesk@icloud.com\u003e, \"seattlestella1@gmail.com\" \u003cseattlestella1@gmail.com\u003e, \"Starr, Fina C - LIN 12 000\" \u003c1fcstarr@seattleschools.org\u003e, \"hleyton@comcast.net\" \u003chleyton@comcast.net\u003e, \"mrbobburt@gmail.com\" \u003cmrbobburt@gmail.com\u003e, \"Burt, Francesca C - ING 11 000\" \u003c1fcburt@seattleschools.org\u003e, \"frankieclover19@gmail.com\" \u003cfrankieclover19@gmail.com\u003e, Carri Kaplan \u003cbendtomend@gmail.com\u003e, \"Morris, Hattie E - ING 11 000\" \u003c1hemorris@seattleschools.org\u003e, \"misshatts09@gmail.com\" \u003cmisshatts09@gmail.com\u003e, \"lynne.paulusfam@gmail.com\" \u003clynne.paulusfam@gmail.com\u003e, \"I.paulus@outlook.com\" \u003cI.paulus@outlook.com\u003e, \"Paulus, Isla - ING 10 000\" \u003c1ispaulus@seattleschools.org\u003e, \"Hardy, Ivy M - ING 12 000\" \u003c1imhardy@seattleschools.org\u003e, \"iloveivi1@gmail.com\" \u003ciloveivi1@gmail.com\u003e, \"ivymae1000@icloud.com\" \u003civymae1000@icloud.com\u003e, \"bethmhardy@comcast.net\" \u003cbethmhardy@comcast.net\u003e, \"Sethanandha, Jerald - ING 12 000\" \u003c1jesethanandha@seattleschools.org\u003e, \"jeraldtul@gmail.com\" \u003cjeraldtul@gmail.com\u003e, \"jiranida@gmail.com\" \u003cjiranida@gmail.com\u003e, \"Ballnik, Jesse C - ING 11 000\" \u003c1jcballnik@seattleschools.org\u003e, \"jesseballnik@icloud.com\" \u003cjesseballnik@icloud.com\u003e, Katie Nega \u003ckkosanda@hotmail.com\u003e, \"Bransky, Jojo J - ING 09 000\" \u003c1jjbransky@seattleschools.org\u003e, \"Ball, Keely M - ING 10 000\" \u003c1kmball@seattleschools.org\u003e, \"McQuillan, Keira R - ING 10 000\" \u003c1krmcquillan@seattleschools.org\u003e, \"kristimcquillan@yahoo.com\" \u003ckristimcquillan@yahoo.com\u003e, \"keirakikirose@gmail.com\" \u003ckeirakikirose@gmail.com\u003e, \"Sheets, Lillian S - ING 10 000\" \u003c1lssheets@seattleschools.org\u003e, \"lillian.s.sheets@gmail.com\" \u003clillian.s.sheets@gmail.com\u003e, \"Geibel, Madison M - LIN 12 000\" \u003c1mmgeibel@seattleschools.org\u003e, \"madison.geibel@yahoo.com\" \u003cmadison.geibel@yahoo.com\u003e, \"natashalarsen8@gmail.com\" \u003cnatashalarsen8@gmail.com\u003e, \"Larsen, Madeline M - ING 09 000\" \u003c1mmlarsen@seattleschools.org\u003e, \"mmmaddie10@gmail.com\" \u003cmmmaddie10@gmail.com\u003e, \"DeMartini, Malina R - ING 10 000\" \u003c1mrdemartini@seattleschools.org\u003e, \"bdemartini@seanrt.com\" \u003cbdemartini@seanrt.com\u003e, \"kristadiaz@gmail.com\" \u003ckristadiaz@gmail.com\u003e, \"Diaz, Max - ING 10 000\" \u003c1madiaz2@seattleschools.org\u003e, \"Vance, Maren R - ING 09 000\" \u003c1mrvance@seattleschools.org\u003e, \"maren.vance@icloud.com\" \u003cmaren.vance@icloud.com\u003e, \"Basilio, Mia K - ING 09 000\" \u003c1mkbasilio@seattleschools.org\u003e, \"miakaylab@gmail.com\" \u003cmiakaylab@gmail.com\u003e, \"LeBlanc, Mia S - ING 10 000\" \u003c1asleblanc@seattleschools.org\u003e, \"amelieshannonleblanc@gmail.com\" \u003camelieshannonleblanc@gmail.com\u003e, \"mandywrightleblanc@gmail.com\" \u003cmandywrightleblanc@gmail.com\u003e, \"Dally, Mizen S - ING 10 000\" \u003c1msdally@seattleschools.org\u003e, \"mizen.s.dally@gmail.com\" \u003cmizen.s.dally@gmail.com\u003e, \"barb_dally@yahoo.com\" \u003cbarb_dally@yahoo.com\u003e, \"Cheung, Margaret A\" \u003cmacheung@seattleschools.org\u003e, \"Cheung, Molly E - ING 12 000\" \u003c1mecheung@seattleschools.org\u003e, \"maggieacheung@gmail.com\" \u003cmaggieacheung@gmail.com\u003e, \"Pierce, Ozzy - ING 09 000\" \u003c1eipierce@seattleschools.org\u003e, \"opierce206@gmail.com\" \u003copierce206@gmail.com\u003e, \"monsaasphoebe@gmail.com\" \u003cmonsaasphoebe@gmail.com\u003e, \"Monsaas, Phoebe M - ING 12 000\" \u003c1pmmonsaas@seattleschools.org\u003e, \"Howell, Penelope - LIN 12 000\" \u003c1pehowell@seattleschools.org\u003e, \"jcivjan@gmail.com\" \u003cjcivjan@gmail.com\u003e, \"pcivjan@outlook.com\" \u003cpcivjan@outlook.com\u003e, \"Civjan, Porter L - ING 09 000\" \u003c1plcivjan@seattleschools.org\u003e, \"Gilge, Rory B - ING 10 000\" \u003c1rbgilge@seattleschools.org\u003e, \"mykcal@gmail.com\" \u003cmykcal@gmail.com\u003e, \"rorygilge@gmail.com\" \u003crorygilge@gmail.com\u003e, \"hbaillie@gmail.com\" \u003chbaillie@gmail.com\u003e, \"greggbaillie@gmail.com\" \u003cgreggbaillie@gmail.com\u003e, \"Groebner, Teddy F - ING 12 000\" \u003c1tfgroebner@seattleschools.org\u003e, \"teddygroebner@gmail.com\" \u003cteddygroebner@gmail.com\u003e, \"triciagroebner@gmail.com\" \u003ctriciagroebner@gmail.com\u003e, \"Benjamin.groebner@gmail.com\" \u003cBenjamin.groebner@gmail.com\u003e, \"Maxwell, Vivian A - ING 10 000\" \u003c1vamaxwell@seattleschools.org\u003e, \"vivimax0317@gmail.com\" \u003cvivimax0317@gmail.com\u003e, \"Faw, Waverly M - ING 09 000\" \u003c1wmfaw@seattleschools.org\u003e, \"waverlymfaw16@gmail.com\" \u003cwaverlymfaw16@gmail.com\u003e, \"Herbeck, Zadie L - ING 11 000\" \u003c1zlherbeck@seattleschools.org\u003e, \"zadieherbeck@gmail.com\" \u003czadieherbeck@gmail.com\u003e, \"jensenerin2002@yahoo.com\" \u003cjensenerin2002@yahoo.com\u003e, \"thezoeylola@gmail.com\" \u003cthezoeylola@gmail.com\u003e, \"Springer, Zoey L - ING 09 000\" \u003c1zlspringer@seattleschools.org\u003e, \"cxwysocki@icloud.com\" \u003ccxwysocki@icloud.com\u003e, \"Wysocki, Charlotte X - ING 11 000\" \u003c1cxwysocki@seattleschools.org\u003e, \"wysocki.diane@gmail.com\" \u003cwysocki.diane@gmail.com\u003e, \"Shirazi Ardestani, Hamed\" \u003chashiraziard@seattleschools.org\u003e, \"Behr, Peter\" \u003cpabehr@seattleschools.org\u003e, \"Carter, Shawn R\" \u003csrcarter@seattleschools.org\u003e, \"Lewis, Micah s\" \u003cmslewis@seattleschools.org\u003e, \"Chevalier, Katie L\" \u003cklchevalier@seattleschools.org\u003e, \"Nelson, Patricia J\" \u003cpjnelson@seattleschools.org\u003e, \"Gillispie, Ryan M\" \u003crmgillispie@seattleschools.org\u003e, \"Parker, Alexander J\" \u003cajparker2@seattleschools.org\u003e, \"mebby27@gmail.com\" \u003cmebby27@gmail.com\u003e, \"Wilhelm, Jack L\" \u003cjlwilhelm@seattleschools.org\u003e, \"Kellington, Allie M\" \u003camblakleyyou@seattleschools.org\u003e, \"West, Madeline P\" \u003cmpwest@seattleschools.org\u003e, \"Klehm, Erin E\" \u003ceeklehm@seattleschools.org\u003e, \"Olmsted, Patrick A\" \u003cpaolmsted@seattleschools.org\u003e, \"Whitby, Nathan M\" \u003cnmwhitby@seattleschools.org\u003e, \"Lee, Michelle K\" \u003cmklee1@seattleschools.org\u003e, porter Jaureguy \u003cporterjaureguy@outlook.com\u003e, \"tim.jaureguy@gmail.com\" \u003ctim.jaureguy@gmail.com\u003e, \"Sengider, Resmin\" \u003cresengider@seattleschools.org\u003e, \"mauisea33@q.com\" \u003cmauisea33@q.com\u003e, \"beth.shanaman@nwkidney.org\" \u003cbeth.shanaman@nwkidney.org\u003e, \"sam.shanaman@outlook.com\" \u003csam.shanaman@outlook.com\u003e, Susan Foley \u003csusanf@ucds.org\u003e, \"claylasvegas@hotmail.com\" \u003cclaylasvegas@hotmail.com\u003e, \"kaorutanno72@gmail.com\" \u003ckaorutanno72@gmail.com\u003e"
+          },
+          {
+            "name": "Subject",
+            "value": "Games this Saturday (4/18)"
+          },
+          {
+            "name": "Thread-Topic",
+            "value": "Games this Saturday (4/18)"
+          },
+          {
+            "name": "Thread-Index",
+            "value": "AQHczfyNYk51xNxl3USLXnoCdQZiIw=="
+          },
+          {
+            "name": "Date",
+            "value": "Fri, 17 Apr 2026 00:11:58 +0000"
+          },
+          {
+            "name": "Message-ID",
+            "value": "\u003cDM6PR04MB40574C5A3D353E9E2702435DCB232@DM6PR04MB4057.namprd04.prod.outlook.com\u003e"
+          },
+          {
+            "name": "Accept-Language",
+            "value": "en-US"
+          },
+          {
+            "name": "Content-Language",
+            "value": "en-US"
+          },
+          {
+            "name": "X-MS-Has-Attach",
+            "value": ""
+          },
+          {
+            "name": "X-MS-TNEF-Correlator",
+            "value": ""
+          },
+          {
+            "name": "msip_labels",
+            "value": ""
+          },
+          {
+            "name": "authentication-results",
+            "value": "dkim=none (message not signed) header.d=none;dmarc=none action=none header.from=seattleschools.org;"
+          },
+          {
+            "name": "x-ms-publictraffictype",
+            "value": "Email"
+          },
+          {
+            "name": "x-ms-traffictypediagnostic",
+            "value": "DM6PR04MB4057:EE_|MN2PR04MB6720:EE_"
+          },
+          {
+            "name": "x-ms-office365-filtering-correlation-id",
+            "value": "47a3c242-38ce-4527-7e1a-08de9c15f144"
+          },
+          {
+            "name": "x-ld-processed",
+            "value": "d431d158-6074-4832-8783-51ea6f6dd227,ExtAddr"
+          },
+          {
+            "name": "x-ms-exchange-senderadcheck",
+            "value": "1"
+          },
+          {
+            "name": "x-ms-exchange-antispam-relay",
+            "value": "0"
+          },
+          {
+            "name": "x-microsoft-antispam",
+            "value": "BCL:0;ARA:13230040|1800799024|786006|376014|7416014|366016|38070700021|8096899003|18002099003|56012099003;"
+          },
+          {
+            "name": "x-microsoft-antispam-message-info",
+            "value": "WKuLi/Jvvw3fVHVC+vhX6FCnFmWYxEElcruCJ+R+c/odWCdkZLYybWkC39+ZelM0bEaIRwUXcvmFmgdBK6uvdirh31RA1gZR4ZqpDz+IlahxtUsxaATkfvJZiVWFRC+1aV2YpFMKx1RTlpTgrYxzo0x4VKnfRHjPRgSXzLF008eqYTwNWaaKWGOPYEAV7chEBtqcpjR84Dh80ru7sZlZNKMa+yZ9BSxjcuKvWY3a7V/qWX3K66ZsbSUutWlovb9Iq7Ypcy/obudEaOm3LSJqjyK/t0ChaExHHH0EXeGjKDKve3cYEAY9QODly4XquM1KyXpuSE2u7wmzbjtgsgGns8aPjTeBoJ9ZER33WGX3BRTCpqDGs3SPz/ICjioZDV2USAUpUuMgZpT4s1P8P0tnTbal4m/xHRsBHclKe1bPYPy8qG7r7tfORrUk6unMmapBGjAaE8NTIhW02q9OUOnPjyY81nP3fNoAPmxqrv4WZXcu6PE4679+TdEppaHUOAANyE3vFWh3590wWWBYseBIUvP24pHY0kkLGlSK4E2ye2EjYvUhs1QBFUOM7Ol2rmSyoFyY5E56YPw4mXEoewxo85u5AhZ7YDLg72qCmL1pBFc2F4/ws23XgMuDC9R6uDrfgjH0OHmDRKjk31/Ihhz6oMg14tfYm6bR74reyZyDFRfj8hTY9vgPaqVVWolEFFzrzF0/A5HHbG7XYkadzjm20SXcrnEsS/Ipjj6KC2ZjMQxJKEd5KSJVzCJLU43k190BQjsv8nyxbPOdMFpuzbtzPSo7LfCp4DCN0YJcfUsAdDM="
+          },
+          {
+            "name": "x-forefront-antispam-report",
+            "value": "CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DM6PR04MB4057.namprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(786006)(376014)(7416014)(366016)(38070700021)(8096899003)(18002099003)(56012099003);DIR:OUT;SFP:1102;"
+          },
+          {
+            "name": "x-ms-exchange-antispam-messagedata-chunkcount",
+            "value": "1"
+          },
+          {
+            "name": "x-ms-exchange-antispam-messagedata-0",
+            "value": "hVP/nBOobOWbvPor26VWWW4xv+qlNzFMf6JCHAAVcArsIB1IXx01iz8/1FM5SqdzWFwhayohP4744cQQyyclnrMzIUTZFdDgCBrKWtB9+8eirFjfCQbZvrzqvHtwT0npe9CvBiQ5TuezOYiBedV839hsnW02hpFQx/eOmq4sEp7DVIVKzfbtTeYu2Gtdcv/ap6ModTnHRCH6abYNFVT76v/M6Yvo0m66YzQfnPo+Pj+szvAKAAz4S6iI9Yf2brtiHvAdvlXkjhWRNk28AY9x0VGa+0ZnNdiFURPt1N3bU6KYj+VVSSbdCfgb1aPWe27ltmSA/8ELrEh7b3fezO80h4DW03f7SM1GxOr08531cB6frWinP7Ez1mfN+0WOq0c2wkQfZnVR85zAPWB4JmeyWDkuGG4ndRdm2pHgGYHagxgGHdJPzp6zHhTf9qkvkYj3SO4is9RV8kO6hWd/2MS7WmV9POA1Bz/8wFiowv9Rz2OzzipG7ZzewE/lBym+71x476Im6ik4j3HvxhmY3XcygVhgpJApg4yLuwzs7Gx72ir+rSWdX1H3en5k4/ns7BVadDeJe9/1XfPzxV6t8ZK01wTPl6r7MrolX0dzaIxoDPLz6+XNi+/MvK3PZfVnRqG9hNhEFoAXVHdDS2qP+FfAyPj8mlpbC3/y5qzLN9fbrJsqvVtAnWG/RxyA4HDVWgqF0wbnY3CiOa4EsKC35ea9Hd2zPZSIfNwPhkqea4AF3VaI9fv0Itkj40U9xg00LoMfV5PWDOj/OD/s+GTpob9menpekk8bGeVrAYEltA6qErh1BU4FFustjlmJaHfJ9oHMtRU4093s1uuNvRLUiFE99HGxtakvYloEOvL9nnIhVJRJYyjgj4q/rjy7reuRw26fZUVJAuEA5aZ6mRleU0WzuqM3chcw1C0BJ8cqAyyG9LcsaR422tUbKwgqWytuRXGEClGztarVk8ZSrbz4y0p78MKbHyg6gsXV8a+NlC6OU4dqd13o5h+6MW7UchGgCAgpfqMqjD5Gy+Fstv9Gqh4XBsPWwTepKjpEfc/1eHCyfAVNA4Bo1LageMMgZYf2oREdEG8bIcQ8ot0wH+HrleoU6yPf0mHOTVawFSLV+XXO/BgTDIdann2zRHFMEqKfBW2hHXcTTnl08AaP/fqvPRwc8TCmIHdIe0EcDrSrEkmxalsN09ecPaR8jzq5ASpZRutBHG9Zx3VfRLJcOB2jNi4rBQqSj5OVF1yVJEX1Ovb/z8DeetO2XzLV02dGfdNejLLdUi4yRHhbPLE4AVTgCWxKSm9b1JaIIE0cJ01SM0dC3izvlQ1+rjkB40SEeCPaoBD/J43BQ5qCnjRaVGfCj1qgE7cjOsJ5uVVw2vzYehkM0XDdsykWWFkpN2jXDXYnHcsiiDBBsg9EXVWjeFwadyiigmNqyALfipEAVdKYoKKlZoscZ2BMDaAxcvgGNLC9jTChDA3L0nVsWY1S5n7iYItcN6yBnbI5jJvR0AnGI/DiXBaDf8U3y53ogIsT8UBt7iXKausMpNPegAxssuv9uynZRWXMV1N+XG4tHXK0KaBJdzqiv9UFqnLdzwmXwWw6+Tbxcw8tCOBfTgLHhPkbW+7fIeZoMfh2PmLrmiHkGkpHM2tZwjSK4bWjEq+mLEU4bNuyB2JB7ceFFjqcSV6tZtLh480pGz2T7HD8z6BIVeR11PkqByNv+f9Lr8otNqrhma6LKTH52ORbUegczMaLlT1sYQ=="
+          },
+          {
+            "name": "Content-Type",
+            "value": "multipart/alternative; boundary=\"_000_DM6PR04MB40574C5A3D353E9E2702435DCB232DM6PR04MB4057namp_\""
+          },
+          {
+            "name": "MIME-Version",
+            "value": "1.0"
+          },
+          {
+            "name": "X-OriginatorOrg",
+            "value": "seattleschools.org"
+          },
+          {
+            "name": "X-MS-Exchange-CrossTenant-AuthAs",
+            "value": "Internal"
+          },
+          {
+            "name": "X-MS-Exchange-CrossTenant-AuthSource",
+            "value": "DM6PR04MB4057.namprd04.prod.outlook.com"
+          },
+          {
+            "name": "X-MS-Exchange-CrossTenant-Network-Message-Id",
+            "value": "47a3c242-38ce-4527-7e1a-08de9c15f144"
+          },
+          {
+            "name": "X-MS-Exchange-CrossTenant-originalarrivaltime",
+            "value": "17 Apr 2026 00:11:58.9124 (UTC)"
+          },
+          {
+            "name": "X-MS-Exchange-CrossTenant-fromentityheader",
+            "value": "Hosted"
+          },
+          {
+            "name": "X-MS-Exchange-CrossTenant-id",
+            "value": "d431d158-6074-4832-8783-51ea6f6dd227"
+          },
+          {
+            "name": "X-MS-Exchange-CrossTenant-mailboxtype",
+            "value": "HOSTED"
+          },
+          {
+            "name": "X-MS-Exchange-CrossTenant-userprincipalname",
+            "value": "C3Dix5muvjgV0llNklk2HOE6R+5rq9JuXaD+KpzgkUR8g1ZZtXIC5maU7t297puPAgs2Xd4OKBH3z+4Lno2xoOf3Pcij2c11XuhyR3QTxho="
+          },
+          {
+            "name": "X-MS-Exchange-Transport-CrossTenantHeadersStamped",
+            "value": "MN2PR04MB6720"
+          }
+        ],
+        "body": {
+          "size": 0
+        },
+        "parts": [
+          {
+            "partId": "0",
+            "mimeType": "text/plain",
+            "filename": "",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "text/plain; charset=\"iso-8859-1\""
+              },
+              {
+                "name": "Content-Transfer-Encoding",
+                "value": "quoted-printable"
+              }
+            ],
+            "body": {
+              "size": 859,
+              "data": "SGFwcHkgVGh1cnNkYXkhDQoNClJlbWluZGVyOiBOTyBwcmFjdGljZSB0b21vcnJvdywgNC8xNy4NCg0KSGVyZSBhcmUgYSBmZXcgcmVtaW5kZXJzIGZvciBvdXIgZ2FtZXMgdGhpcyBTYXR1cmRheToNCg0KICAqDQpUaGUgZ2FtZXMgYXJlIGF0IEtlbnQgTWVyaWRpYW4gSGlnaCBTY2hvb2wuIFRoZSBhZGRyZXNzIGlzOiAxMDAyMCBTRSAyNTZ0aCBTdHJlZXQsIEtlbnQgV0ENCiAgKg0KUGxlYXNlIGJyaW5nIHNoaW4gZ3VhcmRzIGFuZCBsb25nIHNvY2tzOyB0aGV5IGFyZSByZXF1aXJlZCB0byBwbGF5Lg0KICAqDQpXZSBkbyBoYXZlIGV4dHJhIHNvY2tzIGFuZCBzaGluIGd1YXJkcyBpZiBuZWVkZWQuDQogICoNClBsZWFzZSByZW1vdmUgYWxsIGpld2VscnkgYmVmb3JlIHlvdXIgZ2FtZS4NCiAgKg0KUGxlYXNlIGJlIG9uIHRpbWUgZm9yIHRoZSBidXMhIFRoZSBidXMgbGVhdmVzIGF0IDc6NDVhbSwgc28gcGxlYXNlIGFycml2ZSBiZWZvcmUgdGhlbiEgWW91IGNhbiByZWFjaCBtZSBhdCAyMDYtNDE5LTQ0NDAgaWYgeW91IGFyZSBydW5uaW5nIGEgZmV3IG1pbnV0ZXMgbGF0ZS4NCiAgKg0KQnJpbmcgYSBzbmFjay9sdW5jaCBhbmQgYSBmdWxsIHdhdGVyIGJvdHRsZSENCg0KVGhlIHNjaGVkdWxlIGlzIGJlbG93Og0KU2tpbGxzOiA4OjMwYW0NClZhcnNpdHk6IDlhbSBvbiBGaWVsZCAxIHZzIEF1YnVybg0KSlY6IDExYW0gb24gRmllbGQgMiB2cyBCYWxsYXJkDQpKVkM6IDEwYW0gb24gRmllbGQgMyB2cyBSb29zZXZlbHQNCg0KTG9va2luZyBmb3J3YXJkIHRvIHNlZWluZyB5b3UgYWxsIHNvb24hDQoNCkJlc3QsDQpNaXlhIEJ1c2hvcmUNCg0KDQoNCk1peWEgQnVzaG9yZSAoc2hlL2hlci9oZXJzKQ0KDQoNCg=="
+            }
+          },
+          {
+            "partId": "1",
+            "mimeType": "text/html",
+            "filename": "",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "text/html; charset=\"iso-8859-1\""
+              },
+              {
+                "name": "Content-Transfer-Encoding",
+                "value": "quoted-printable"
+              }
+            ],
+            "body": {
+              "size": 6462,
+              "data": "PGh0bWw-DQo8aGVhZD4NCjxtZXRhIGh0dHAtZXF1aXY9IkNvbnRlbnQtVHlwZSIgY29udGVudD0idGV4dC9odG1sOyBjaGFyc2V0PWlzby04ODU5LTEiPg0KPHN0eWxlIHR5cGU9InRleHQvY3NzIiBzdHlsZT0iZGlzcGxheTpub25lOyI-IFAge21hcmdpbi10b3A6MDttYXJnaW4tYm90dG9tOjA7fSA8L3N0eWxlPg0KPC9oZWFkPg0KPGJvZHkgZGlyPSJsdHIiPg0KPGRpdiBjbGFzcz0iZWxlbWVudFRvUHJvb2YiIHN0eWxlPSJmb250LWZhbWlseTogQXB0b3MsIEFwdG9zX0VtYmVkZGVkRm9udCwgQXB0b3NfTVNGb250U2VydmljZSwgQ2FsaWJyaSwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmOyBmb250LXNpemU6IDEycHQ7IGNvbG9yOiByZ2IoMCwgMCwgMCk7Ij4NCkhhcHB5IFRodXJzZGF5ITwvZGl2Pg0KPGRpdiBjbGFzcz0iZWxlbWVudFRvUHJvb2YiIHN0eWxlPSJmb250LWZhbWlseTogQXB0b3MsIEFwdG9zX0VtYmVkZGVkRm9udCwgQXB0b3NfTVNGb250U2VydmljZSwgQ2FsaWJyaSwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmOyBmb250LXNpemU6IDEycHQ7IGNvbG9yOiByZ2IoMCwgMCwgMCk7Ij4NCjxicj4NCjwvZGl2Pg0KPGRpdiBjbGFzcz0iZWxlbWVudFRvUHJvb2YiIHN0eWxlPSJmb250LWZhbWlseTogQXB0b3MsIEFwdG9zX0VtYmVkZGVkRm9udCwgQXB0b3NfTVNGb250U2VydmljZSwgQ2FsaWJyaSwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmOyBmb250LXNpemU6IDEycHQ7IGNvbG9yOiByZ2IoMCwgMCwgMCk7Ij4NClJlbWluZGVyOiBOTyBwcmFjdGljZSB0b21vcnJvdywgNC8xNy4mbmJzcDs8L2Rpdj4NCjxkaXYgY2xhc3M9ImVsZW1lbnRUb1Byb29mIiBzdHlsZT0iZm9udC1mYW1pbHk6IEFwdG9zLCBBcHRvc19FbWJlZGRlZEZvbnQsIEFwdG9zX01TRm9udFNlcnZpY2UsIENhbGlicmksIEhlbHZldGljYSwgc2Fucy1zZXJpZjsgZm9udC1zaXplOiAxMnB0OyBjb2xvcjogcmdiKDAsIDAsIDApOyI-DQo8YnI-DQo8L2Rpdj4NCjxkaXYgY2xhc3M9ImVsZW1lbnRUb1Byb29mIiBzdHlsZT0iZm9udC1mYW1pbHk6IEFwdG9zLCBBcHRvc19FbWJlZGRlZEZvbnQsIEFwdG9zX01TRm9udFNlcnZpY2UsIENhbGlicmksIEhlbHZldGljYSwgc2Fucy1zZXJpZjsgZm9udC1zaXplOiAxMnB0OyBjb2xvcjogcmdiKDAsIDAsIDApOyI-DQpIZXJlIGFyZSBhIGZldyByZW1pbmRlcnMgZm9yIG91ciBnYW1lcyB0aGlzIFNhdHVyZGF5OjwvZGl2Pg0KPHVsIGRhdGEtZWRpdGluZy1pbmZvPSJ7JnF1b3Q7YXBwbHlMaXN0U3R5bGVGcm9tTGV2ZWwmcXVvdDs6ZmFsc2UsJnF1b3Q7dW5vcmRlcmVkU3R5bGVUeXBlJnF1b3Q7OjJ9IiBzdHlsZT0ibWFyZ2luLXRvcDogMHB4OyBtYXJnaW4tYm90dG9tOiAwcHg7Ij4NCjxsaSBzdHlsZT0iZm9udC1mYW1pbHk6IEFwdG9zLCBBcHRvc19FbWJlZGRlZEZvbnQsIEFwdG9zX01TRm9udFNlcnZpY2UsIENhbGlicmksIEhlbHZldGljYSwgc2Fucy1zZXJpZjsgZm9udC1zaXplOiAxMnB0OyBjb2xvcjogcmdiKDAsIDAsIDApOyBtYXJnaW4tdG9wOiAwcHg7IG1hcmdpbi1ib3R0b206IDBweDsgbGlzdC1zdHlsZS10eXBlOiAmcXVvdDstICZxdW90OzsiPg0KPGRpdiBjbGFzcz0iZWxlbWVudFRvUHJvb2YiIHJvbGU9InByZXNlbnRhdGlvbiI-VGhlIGdhbWVzIGFyZSBhdCBLZW50IE1lcmlkaWFuIEhpZ2ggU2Nob29sLiBUaGUgYWRkcmVzcyBpczoNCjxiPjEwMDIwIFNFIDI1NjwvYj48c3VwPjxiPnRoPC9iPjwvc3VwPjxiPiZuYnNwO1N0cmVldCwgS2VudCBXQTwvYj48L2Rpdj4NCjwvbGk-PGxpIHN0eWxlPSJmb250LWZhbWlseTogQXB0b3MsIEFwdG9zX0VtYmVkZGVkRm9udCwgQXB0b3NfTVNGb250U2VydmljZSwgQ2FsaWJyaSwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmOyBmb250LXNpemU6IDEycHQ7IGNvbG9yOiByZ2IoMCwgMCwgMCk7IG1hcmdpbi10b3A6IDBweDsgbWFyZ2luLWJvdHRvbTogMHB4OyBsaXN0LXN0eWxlLXR5cGU6ICZxdW90Oy0gJnF1b3Q7OyI-DQo8ZGl2IGNsYXNzPSJlbGVtZW50VG9Qcm9vZiIgcm9sZT0icHJlc2VudGF0aW9uIj5QbGVhc2UgYnJpbmcgc2hpbiBndWFyZHMgYW5kIGxvbmcgc29ja3M7IHRoZXkgYXJlIHJlcXVpcmVkIHRvIHBsYXkuPC9kaXY-DQo8L2xpPjxsaSBzdHlsZT0iZm9udC1mYW1pbHk6IEFwdG9zLCBBcHRvc19FbWJlZGRlZEZvbnQsIEFwdG9zX01TRm9udFNlcnZpY2UsIENhbGlicmksIEhlbHZldGljYSwgc2Fucy1zZXJpZjsgZm9udC1zaXplOiAxMnB0OyBjb2xvcjogcmdiKDAsIDAsIDApOyBtYXJnaW4tdG9wOiAwcHg7IG1hcmdpbi1ib3R0b206IDBweDsgbGlzdC1zdHlsZS10eXBlOiAmcXVvdDstICZxdW90OzsiPg0KPGRpdiBjbGFzcz0iZWxlbWVudFRvUHJvb2YiIHJvbGU9InByZXNlbnRhdGlvbiI-V2UgZG8gaGF2ZSBleHRyYSBzb2NrcyBhbmQgc2hpbiBndWFyZHMgaWYgbmVlZGVkLjwvZGl2Pg0KPC9saT48bGkgc3R5bGU9ImZvbnQtZmFtaWx5OiBBcHRvcywgQXB0b3NfRW1iZWRkZWRGb250LCBBcHRvc19NU0ZvbnRTZXJ2aWNlLCBDYWxpYnJpLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWY7IGZvbnQtc2l6ZTogMTJwdDsgY29sb3I6IHJnYigwLCAwLCAwKTsgbWFyZ2luLXRvcDogMHB4OyBtYXJnaW4tYm90dG9tOiAwcHg7IGxpc3Qtc3R5bGUtdHlwZTogJnF1b3Q7LSAmcXVvdDs7Ij4NCjxkaXYgcm9sZT0icHJlc2VudGF0aW9uIj5QbGVhc2UgcmVtb3ZlIGFsbCBqZXdlbHJ5IGJlZm9yZSZuYnNwO3lvdXIgZ2FtZS4mbmJzcDs8L2Rpdj4NCjwvbGk-PGxpIHN0eWxlPSJmb250LWZhbWlseTogQXB0b3MsIEFwdG9zX0VtYmVkZGVkRm9udCwgQXB0b3NfTVNGb250U2VydmljZSwgQ2FsaWJyaSwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmOyBmb250LXNpemU6IDEycHQ7IGNvbG9yOiByZ2IoMCwgMCwgMCk7IG1hcmdpbi10b3A6IDBweDsgbWFyZ2luLWJvdHRvbTogMHB4OyBsaXN0LXN0eWxlLXR5cGU6ICZxdW90Oy0gJnF1b3Q7OyI-DQo8ZGl2IGNsYXNzPSJlbGVtZW50VG9Qcm9vZiIgcm9sZT0icHJlc2VudGF0aW9uIj5QbGVhc2UgYmUgb24gdGltZSBmb3IgdGhlIGJ1cyEgVGhlIGJ1cyBsZWF2ZXMgYXQgNzo0NWFtLCBzbyBwbGVhc2UgYXJyaXZlIGJlZm9yZSB0aGVuISBZb3UgY2FuIHJlYWNoIG1lIGF0IDIwNi00MTktNDQ0MCBpZiB5b3UgYXJlIHJ1bm5pbmcgYSBmZXcgbWludXRlcyBsYXRlLiZuYnNwOzwvZGl2Pg0KPC9saT48bGkgc3R5bGU9ImZvbnQtZmFtaWx5OiBBcHRvcywgQXB0b3NfRW1iZWRkZWRGb250LCBBcHRvc19NU0ZvbnRTZXJ2aWNlLCBDYWxpYnJpLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWY7IGZvbnQtc2l6ZTogMTJwdDsgY29sb3I6IHJnYigwLCAwLCAwKTsgbWFyZ2luLXRvcDogMHB4OyBtYXJnaW4tYm90dG9tOiAwcHg7IGxpc3Qtc3R5bGUtdHlwZTogJnF1b3Q7LSAmcXVvdDs7Ij4NCjxkaXYgY2xhc3M9ImVsZW1lbnRUb1Byb29mIiByb2xlPSJwcmVzZW50YXRpb24iPkJyaW5nIGEgc25hY2svbHVuY2ggYW5kIGEgZnVsbCB3YXRlciBib3R0bGUhPC9kaXY-DQo8L2xpPjwvdWw-DQo8ZGl2IGNsYXNzPSJlbGVtZW50VG9Qcm9vZiIgc3R5bGU9ImZvbnQtZmFtaWx5OiBBcHRvcywgQXB0b3NfRW1iZWRkZWRGb250LCBBcHRvc19NU0ZvbnRTZXJ2aWNlLCBDYWxpYnJpLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWY7IGZvbnQtc2l6ZTogMTJwdDsgY29sb3I6IHJnYigwLCAwLCAwKTsiPg0KPGJyPg0KPC9kaXY-DQo8ZGl2IGNsYXNzPSJlbGVtZW50VG9Qcm9vZiIgc3R5bGU9ImZvbnQtZmFtaWx5OiBBcHRvcywgQXB0b3NfRW1iZWRkZWRGb250LCBBcHRvc19NU0ZvbnRTZXJ2aWNlLCBDYWxpYnJpLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWY7IGZvbnQtc2l6ZTogMTJwdDsgY29sb3I6IHJnYigwLCAwLCAwKTsiPg0KVGhlIHNjaGVkdWxlIGlzIGJlbG93OjwvZGl2Pg0KPGRpdiBjbGFzcz0iZWxlbWVudFRvUHJvb2YiIHN0eWxlPSJmb250LWZhbWlseTogQXB0b3MsIEFwdG9zX0VtYmVkZGVkRm9udCwgQXB0b3NfTVNGb250U2VydmljZSwgQ2FsaWJyaSwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmOyBmb250LXNpemU6IDEycHQ7IGNvbG9yOiByZ2IoMCwgMCwgMCk7Ij4NClNraWxsczogODozMGFtPC9kaXY-DQo8ZGl2IGNsYXNzPSJlbGVtZW50VG9Qcm9vZiIgc3R5bGU9ImZvbnQtZmFtaWx5OiBBcHRvcywgQXB0b3NfRW1iZWRkZWRGb250LCBBcHRvc19NU0ZvbnRTZXJ2aWNlLCBDYWxpYnJpLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWY7IGZvbnQtc2l6ZTogMTJwdDsgY29sb3I6IHJnYigwLCAwLCAwKTsiPg0KVmFyc2l0eTogOWFtIG9uIEZpZWxkIDEgdnMgQXVidXJuPC9kaXY-DQo8ZGl2IGNsYXNzPSJlbGVtZW50VG9Qcm9vZiIgc3R5bGU9ImZvbnQtZmFtaWx5OiBBcHRvcywgQXB0b3NfRW1iZWRkZWRGb250LCBBcHRvc19NU0ZvbnRTZXJ2aWNlLCBDYWxpYnJpLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWY7IGZvbnQtc2l6ZTogMTJwdDsgY29sb3I6IHJnYigwLCAwLCAwKTsiPg0KSlY6IDExYW0gb24gRmllbGQgMiB2cyBCYWxsYXJkPC9kaXY-DQo8ZGl2IGNsYXNzPSJlbGVtZW50VG9Qcm9vZiIgc3R5bGU9ImZvbnQtZmFtaWx5OiBBcHRvcywgQXB0b3NfRW1iZWRkZWRGb250LCBBcHRvc19NU0ZvbnRTZXJ2aWNlLCBDYWxpYnJpLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWY7IGZvbnQtc2l6ZTogMTJwdDsgY29sb3I6IHJnYigwLCAwLCAwKTsiPg0KSlZDOiAxMGFtIG9uIEZpZWxkIDMgdnMgUm9vc2V2ZWx0PC9kaXY-DQo8ZGl2IGNsYXNzPSJlbGVtZW50VG9Qcm9vZiIgc3R5bGU9ImZvbnQtZmFtaWx5OiBBcHRvcywgQXB0b3NfRW1iZWRkZWRGb250LCBBcHRvc19NU0ZvbnRTZXJ2aWNlLCBDYWxpYnJpLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWY7IGZvbnQtc2l6ZTogMTJwdDsgY29sb3I6IHJnYigwLCAwLCAwKTsiPg0KPGJyPg0KPC9kaXY-DQo8ZGl2IGNsYXNzPSJlbGVtZW50VG9Qcm9vZiIgc3R5bGU9ImZvbnQtZmFtaWx5OiBBcHRvcywgQXB0b3NfRW1iZWRkZWRGb250LCBBcHRvc19NU0ZvbnRTZXJ2aWNlLCBDYWxpYnJpLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWY7IGZvbnQtc2l6ZTogMTJwdDsgY29sb3I6IHJnYigwLCAwLCAwKTsiPg0KTG9va2luZyBmb3J3YXJkIHRvIHNlZWluZyB5b3UgYWxsIHNvb24hPC9kaXY-DQo8ZGl2IGNsYXNzPSJlbGVtZW50VG9Qcm9vZiIgc3R5bGU9ImZvbnQtZmFtaWx5OiBBcHRvcywgQXB0b3NfRW1iZWRkZWRGb250LCBBcHRvc19NU0ZvbnRTZXJ2aWNlLCBDYWxpYnJpLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWY7IGZvbnQtc2l6ZTogMTJwdDsgY29sb3I6IHJnYigwLCAwLCAwKTsiPg0KPGJyPg0KPC9kaXY-DQo8ZGl2IGNsYXNzPSJlbGVtZW50VG9Qcm9vZiIgc3R5bGU9ImZvbnQtZmFtaWx5OiBBcHRvcywgQXB0b3NfRW1iZWRkZWRGb250LCBBcHRvc19NU0ZvbnRTZXJ2aWNlLCBDYWxpYnJpLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWY7IGZvbnQtc2l6ZTogMTJwdDsgY29sb3I6IHJnYigwLCAwLCAwKTsiPg0KQmVzdCw8L2Rpdj4NCjxkaXYgY2xhc3M9ImVsZW1lbnRUb1Byb29mIiBzdHlsZT0iZm9udC1mYW1pbHk6IEFwdG9zLCBBcHRvc19FbWJlZGRlZEZvbnQsIEFwdG9zX01TRm9udFNlcnZpY2UsIENhbGlicmksIEhlbHZldGljYSwgc2Fucy1zZXJpZjsgZm9udC1zaXplOiAxMnB0OyBjb2xvcjogcmdiKDAsIDAsIDApOyI-DQpNaXlhIEJ1c2hvcmUmbmJzcDs8L2Rpdj4NCjxkaXYgY2xhc3M9ImVsZW1lbnRUb1Byb29mIiBzdHlsZT0iZm9udC1mYW1pbHk6IEFwdG9zLCBBcHRvc19FbWJlZGRlZEZvbnQsIEFwdG9zX01TRm9udFNlcnZpY2UsIENhbGlicmksIEhlbHZldGljYSwgc2Fucy1zZXJpZjsgZm9udC1zaXplOiAxMnB0OyBjb2xvcjogcmdiKDAsIDAsIDApOyI-DQo8YnI-DQo8L2Rpdj4NCjxkaXYgaWQ9IlNpZ25hdHVyZSIgY2xhc3M9ImVsZW1lbnRUb1Byb29mIj4NCjxkaXYgY2xhc3M9ImVsZW1lbnRUb1Byb29mIiBzdHlsZT0iZm9udC1mYW1pbHk6IEFwdG9zLCBBcHRvc19FbWJlZGRlZEZvbnQsIEFwdG9zX01TRm9udFNlcnZpY2UsIENhbGlicmksIEhlbHZldGljYSwgc2Fucy1zZXJpZjsgZm9udC1zaXplOiAxMnB0OyBjb2xvcjogcmdiKDAsIDAsIDApOyI-DQo8YnI-DQo8L2Rpdj4NCjxwIGNsYXNzPSJlbGVtZW50VG9Qcm9vZiIgc3R5bGU9Im1hcmdpbjogMGluOyBmb250LWZhbWlseTogQ2FsaWJyaSwgc2Fucy1zZXJpZjsgZm9udC1zaXplOiAxMXB0OyI-DQpNaXlhIEJ1c2hvcmUgKHNoZS9oZXIvaGVycyk8L3A-DQo8cCBjbGFzcz0iZWxlbWVudFRvUHJvb2YiIHN0eWxlPSJtYXJnaW46IDBpbjsgZm9udC1mYW1pbHk6IENhbGlicmksIHNhbnMtc2VyaWY7IGZvbnQtc2l6ZTogMTFwdDsiPg0KPGJyPg0KPC9wPg0KPHAgY2xhc3M9ImVsZW1lbnRUb1Byb29mIiBzdHlsZT0ibWFyZ2luOiAwaW47IGZvbnQtZmFtaWx5OiBDYWxpYnJpLCBzYW5zLXNlcmlmOyBmb250LXNpemU6IDExcHQ7Ij4NCjxicj4NCjwvcD4NCjwvZGl2Pg0KPC9ib2R5Pg0KPC9odG1sPg0K"
+            }
+          }
+        ]
+      },
+      "sizeEstimate": 29175,
+      "historyId": "16884331",
+      "internalDate": "1776384718000"
+    }
+  ]
+}

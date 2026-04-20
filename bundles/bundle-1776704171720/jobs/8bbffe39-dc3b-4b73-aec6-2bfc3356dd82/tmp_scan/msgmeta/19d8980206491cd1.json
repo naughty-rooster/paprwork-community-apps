@@ -1,0 +1,37 @@
+{
+  "id": "19d8980206491cd1",
+  "threadId": "19d8980206491cd1",
+  "labelIds": [
+    "CATEGORY_UPDATES",
+    "INBOX"
+  ],
+  "snippet": "This is an automated message. Please do not reply to this email. Carin Weinrich from Weinrich Immigration Law has sent you a new message via Clio for Clients. Click the button below to view and respond",
+  "payload": {
+    "mimeType": "multipart/related",
+    "headers": [
+      {
+        "name": "Date",
+        "value": "Tue, 14 Apr 2026 00:59:28 +0000"
+      },
+      {
+        "name": "From",
+        "value": "\"Carin Weinrich (via Clio for Clients)\" \u003cdonotreply@clio.com\u003e"
+      },
+      {
+        "name": "To",
+        "value": "Corey Badcock \u003ccbadcock@gmail.com\u003e"
+      },
+      {
+        "name": "Message-ID",
+        "value": "\u003c0100019d89801ec6-1b910b86-6926-4df9-afbc-40a3aeda0fb6-000000@email.amazonses.com\u003e"
+      },
+      {
+        "name": "Subject",
+        "value": "1 New Message from Weinrich Immigration Law"
+      }
+    ]
+  },
+  "sizeEstimate": 60172,
+  "historyId": "16853583",
+  "internalDate": "1776128368000"
+}

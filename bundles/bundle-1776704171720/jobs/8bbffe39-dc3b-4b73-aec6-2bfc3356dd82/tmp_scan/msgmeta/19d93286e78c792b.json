@@ -1,0 +1,38 @@
+{
+  "id": "19d93286e78c792b",
+  "threadId": "19d93286e78c792b",
+  "labelIds": [
+    "UNREAD",
+    "CATEGORY_UPDATES",
+    "INBOX"
+  ],
+  "snippet": "City of Seattle Utility Payment Transaction Hello, Thank you for your recent City of Seattle utility bill payment. The status of your payment follows. Account Number: 6365815635 Payment Amount: $",
+  "payload": {
+    "mimeType": "text/html",
+    "headers": [
+      {
+        "name": "Date",
+        "value": "Wed, 15 Apr 2026 21:59:53 +0000 (UTC)"
+      },
+      {
+        "name": "Message-ID",
+        "value": "\u003c84-73203609@USE1IDXPRDW12.PRODUCTION.KUBRA.com\u003e"
+      },
+      {
+        "name": "From",
+        "value": "no-reply@seattle.gov"
+      },
+      {
+        "name": "Subject",
+        "value": "City of Seattle Utilities - Payment Confirmation"
+      },
+      {
+        "name": "To",
+        "value": "cbadcock@gmail.com"
+      }
+    ]
+  },
+  "sizeEstimate": 11876,
+  "historyId": "16870142",
+  "internalDate": "1776290393000"
+}

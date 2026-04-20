@@ -1,0 +1,38 @@
+{
+  "id": "19d932c9bb2c953d",
+  "threadId": "19d932c59500669c",
+  "labelIds": [
+    "UNREAD",
+    "CATEGORY_PERSONAL",
+    "INBOX"
+  ],
+  "snippet": "Payment scheduled Thank you for scheduling your credit card payment Here are the details of your payment: Account Chase Freedom Unlimited Visa(...9915) Amount $10872.56 Payment authorized on Apr 15,",
+  "payload": {
+    "mimeType": "text/html",
+    "headers": [
+      {
+        "name": "Date",
+        "value": "Wed, 15 Apr 2026 22:04:25 +0000 (UTC)"
+      },
+      {
+        "name": "From",
+        "value": "Chase \u003cno.reply.alerts@chase.com\u003e"
+      },
+      {
+        "name": "To",
+        "value": "cbadcock@gmail.com"
+      },
+      {
+        "name": "Message-ID",
+        "value": "\u003c699336529.15656903.1776290665906.JavaMail.webuser@iaasn00692069\u003e"
+      },
+      {
+        "name": "Subject",
+        "value": "Your credit card payment is scheduled"
+      }
+    ]
+  },
+  "sizeEstimate": 37621,
+  "historyId": "16870144",
+  "internalDate": "1776290665000"
+}

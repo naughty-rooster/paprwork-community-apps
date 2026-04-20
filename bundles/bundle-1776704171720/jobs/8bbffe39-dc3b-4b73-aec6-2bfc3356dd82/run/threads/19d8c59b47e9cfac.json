@@ -1,0 +1,182 @@
+{
+  "id": "19d8c59b47e9cfac",
+  "historyId": "16870219",
+  "messages": [
+    {
+      "id": "19d8c59b47e9cfac",
+      "threadId": "19d8c59b47e9cfac",
+      "labelIds": [
+        "UNREAD",
+        "IMPORTANT",
+        "CATEGORY_PERSONAL",
+        "INBOX"
+      ],
+      "snippet": "Hi, Happy Tuesday! Thank y&#39;all so much for being part of the launch team. We are less than a month away. I have a few updates below: Launch Date: Moved to May 12th Posting Party: Moved to May 12th",
+      "payload": {
+        "partId": "",
+        "mimeType": "multipart/alternative",
+        "filename": "",
+        "headers": [
+          {
+            "name": "Delivered-To",
+            "value": "cbadcock@gmail.com"
+          },
+          {
+            "name": "Received",
+            "value": "by 2002:a05:6200:370f:b0:644:6618:a070 with SMTP id y15csp99521qnx;        Tue, 14 Apr 2026 07:16:22 -0700 (PDT)"
+          },
+          {
+            "name": "X-Forwarded-Encrypted",
+            "value": "i=3; AFNElJ9uQ3kI4KpEJnAydwtkJqxvnpbHUwMJDQV8rj0OzAIBSPleg6eDV2Og7Te32rdfCILWBVcKzja2JQ==@gmail.com"
+          },
+          {
+            "name": "X-Received",
+            "value": "by 2002:a05:7301:1296:b0:2c0:da6f:55e0 with SMTP id 5a478bee46e88-2d589174873mr10019717eec.27.1776176182419;        Tue, 14 Apr 2026 07:16:22 -0700 (PDT)"
+          },
+          {
+            "name": "ARC-Seal",
+            "value": "i=2; a=rsa-sha256; t=1776176182; cv=pass;        d=google.com; s=arc-20240605;        b=DWL3snm09kvWW+rh75wPBAtV2L5Z/VE/dBPLW8jtqUned+uy3CdtLE4gO0mwsCJtUc         IBIocG5tQVLIHYLYkCHHdwIG4gqWIjMnSBYU+dyTzcbEa6U52S5dmkOG7rQ9bWN/WHKb         uVzCa1+IZBa3woCojcNdARHgUBLaWy2AONSmtp0rjkGagAv1S22vGaLH3Pgcoz5/4l3J         1DxE5/uQY6fvTZLC4V7Rpi/jhtzsiyUYTQAXD+y02SCv8smlUzRrTBd66ZkOi66ohxcW         lpspMYBPwbn9uT8JvV2IkdXWQ7D+mdzqzMvO5eCkSTRk1XcG6q2A1FTCxCud0qEafR7m         3Vkw=="
+          },
+          {
+            "name": "ARC-Message-Signature",
+            "value": "i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;        h=to:subject:message-id:date:from:mime-version:dkim-signature;        bh=sU3mdyljoaR6OH5jdVbeb/FJAvdsuT4UivsixQroJTo=;        fh=xo6cbMcldu13y91NyLf4snb8pVZJu99edMjoeSI0VEE=;        b=Cu8W/fMIWQpT07upHoIBsCXL/LsD4kQxPF0OmCbHqI1m78g9Hns1EtpRM8kFkb7zMu         NEgOKBQB5hk/puO74TdtzDZ6lQbpnliHoFfos9n6DHm4pYgqHHPu4zAxmKRJfwXdyi3V         eagV2zIGwFe7BfpD4yDFjfJs12Y7z0WnBdEDKsgYXsBlPSU8ha32L0bVxgJkN2LqG/Dk         4ialhjnAa8p8k9hctw2ZdC23KGJBkk/qqLf0ebbj0oa71+lRu1j+0yi6ispHGO921MS0         QmImc4eV+LjoXR5ZTrLkgJNG7Y255ZWFHUQ8SdibGABtXhiutDlb/rHzXNrJqjbWZia1         TBpA==;        dara=google.com"
+          },
+          {
+            "name": "ARC-Authentication-Results",
+            "value": "i=2; mx.google.com;       dkim=pass header.i=@thunderwolf-co.20251104.gappssmtp.com header.s=20251104 header.b=ASmlSb2q;       arc=pass (i=1);       spf=pass (google.com: domain of josh@thunderwolf.co designates 209.85.220.41 as permitted sender) smtp.mailfrom=josh@thunderwolf.co;       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=thunderwolf.co;       dara=pass header.i=@gmail.com"
+          },
+          {
+            "name": "Return-Path",
+            "value": "\u003cjosh@thunderwolf.co\u003e"
+          },
+          {
+            "name": "Received",
+            "value": "from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])        by mx.google.com with SMTPS id 5a478bee46e88-2d55e015f07sor5225111eec.1.2026.04.14.07.16.21        for \u003ccbadcock@gmail.com\u003e        (Google Transport Security);        Tue, 14 Apr 2026 07:16:22 -0700 (PDT)"
+          },
+          {
+            "name": "Received-SPF",
+            "value": "pass (google.com: domain of josh@thunderwolf.co designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;"
+          },
+          {
+            "name": "Authentication-Results",
+            "value": "mx.google.com;       dkim=pass header.i=@thunderwolf-co.20251104.gappssmtp.com header.s=20251104 header.b=ASmlSb2q;       arc=pass (i=1);       spf=pass (google.com: domain of josh@thunderwolf.co designates 209.85.220.41 as permitted sender) smtp.mailfrom=josh@thunderwolf.co;       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=thunderwolf.co;       dara=pass header.i=@gmail.com"
+          },
+          {
+            "name": "ARC-Seal",
+            "value": "i=1; a=rsa-sha256; t=1776176181; cv=none;        d=google.com; s=arc-20240605;        b=gkcKLKKHKkbbEtzuI5hDDQCJzy4HrdXWab1cGr+wQL1fKoHWY6BvpINeHjfx+NPfOm         a+/pIyyyEQfmrB7thQritC7lXZdhFHXc0+JwRgJsBus29hz0PQoR2bZMYwaz+hJ/8dyE         iBqJ7cautbTkK+K8UXnXE6s2kFCQxLYGKEpSByaTJaRYjQeCaMro9X4NqXe7xxDQDXdO         RSfFzXQdNxYdJKIn3o2ViqKlZsgPiC/ab9VO0WAdFshDfZ3b0gjq0lJ8jjzU9L72fvFG         kVtzxrfNzRSwPqEd3+dT3F0ZUn2lY7xxQFHdmFiiSVuZL1YSvoU1SMfQe4gRIQdYIfbS         YLCA=="
+          },
+          {
+            "name": "ARC-Message-Signature",
+            "value": "i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;        h=to:subject:message-id:date:from:mime-version:dkim-signature;        bh=sU3mdyljoaR6OH5jdVbeb/FJAvdsuT4UivsixQroJTo=;        fh=xo6cbMcldu13y91NyLf4snb8pVZJu99edMjoeSI0VEE=;        b=irdZh1+/jQ8wl/vrFh/2Xs6VCqiVrc8k1iFFjwcx55QqGk5HEnSQBcMNRNuVUTd/hT         DTWHmoWlSTjuuQqyQKuJHJHWv5hYo3Qk2AY8+ihMWt2ay26KrjOqqVvHH1Hzmjse3TKS         2sCNq1+nHAEbMb1Sai/+yqF6mIcpet/yl44A+zpHbjhk7s5snh3/e/pMZQ4nRvJ7t/GI         Je93kYfoDGPunCBwRgIG50joPWY/duEDIrckuPzsJMYcT7TZ8N+Vp45KZWWMa9rDutJy         vCQGLRPv0nM8KtdNbt4kS4epzHrA/J7BWM6ZC/sEs5f7X9i7KMajFABYl+v/XKuT0wNN         WK+A==;        dara=google.com"
+          },
+          {
+            "name": "ARC-Authentication-Results",
+            "value": "i=1; mx.google.com; arc=none"
+          },
+          {
+            "name": "DKIM-Signature",
+            "value": "v=1; a=rsa-sha256; c=relaxed/relaxed;        d=thunderwolf-co.20251104.gappssmtp.com; s=20251104; t=1776176181; x=1776780981; dara=google.com;        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject         :date:message-id:reply-to;        bh=sU3mdyljoaR6OH5jdVbeb/FJAvdsuT4UivsixQroJTo=;        b=ASmlSb2qR+dH/DIKuFpWX2K4DkUOabB5gVfUSChkefh4oY+73CKgiSbuT05luPnUxV         XSMvX4Dt9hVtpqZtGsOcbuJIydhaR9lIQrlu6/oQkCDOAi8e9pvIuqP8QVjdzwjvXQGM         mdwk6UezOmzQLzoSca4cgeC6Kf+GAPTb7gtAh2XKzktG84agfehHxRqhC5K6CGS7O8fk         JPCVX/MgtgBFmqTzJZKzs195AId75S5fg70Nt+xZbaoWgiRSvwdKtps5pHLtZ72IK+tH         ULAMrFpi7J6hLvENpWg8OxLzhfmep0EByjudrNJe/ybkAqSBQ+EECMBllrtGvtwH+gUB         Lkdg=="
+          },
+          {
+            "name": "X-Google-DKIM-Signature",
+            "value": "v=1; a=rsa-sha256; c=relaxed/relaxed;        d=1e100.net; s=20251104; t=1776176181; x=1776780981;        h=to:subject:message-id:date:from:mime-version:x-gm-gg         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;        bh=sU3mdyljoaR6OH5jdVbeb/FJAvdsuT4UivsixQroJTo=;        b=TARzQSp9NZB6xsGaelK985I8cJv0r2LvAXiXISujEYjmfrWbp4zoVTqYBERHjTFVaD         +pDN0dnrJRj8VrS9WZwuLJmfREcdHKfgLg78oCY9uxg8oh1NsJ9hpzp158ECPzFVnpdj         aXWqurZdyRBVQ2FqoBy4FS4QiEVHa/99DFKq2+QY0wi7wzeUe8P3bt6Sfz9V3ZQJPpWf         TKldI6t+F0JPxGVNMtgnpoPCYuPuPf/BD8DfllPTuDbB8RbfPJOaV+//gfWw0Yd9CObv         6posqubBJRelRVXOkWUXqCTfzYIO0V7B3eQ0utvk75wdm0XhVZunBJDZH+0190R/ZyKB         utqg=="
+          },
+          {
+            "name": "X-Forwarded-Encrypted",
+            "value": "i=1; AFNElJ9v3ZSCcrV5brT9W93C8iThnxZkf23pddCtZ+9OYUn7FDT3mxz2VuqAqOF4tD2Dj3Wl3clTlX4zAg==@gmail.com"
+          },
+          {
+            "name": "X-Gm-Message-State",
+            "value": "AOJu0YztwSYF7glx+lnuwuZKW25IIEFy3KPgUjlxl73FrztLcWXO3v3Y 49hUS6l/jUX7Z5Mdhmj6TMQqz1KHB3Qx3l4Vz0Y9AQXrhnUG74mvo57aAHHkqdvliuRtq4hx9M6 kFWV+7auiR90Nv3oePCAhhvVJ+K9wUdaN+hfdZQY4UVM="
+          },
+          {
+            "name": "X-Gm-Gg",
+            "value": "AeBDiev0oLmjrk7Eb124LXxXtZFlC5qfmlq2B6TWnOmxGojry9276JwEbaYDgyagc/U 5nnf2mcILU09WS7/XKTFbIOOUhjTvbEMW7MTh7t5kC51czZPYGNV0keQmpgfKZCdOP81+Rskz1c 70Eo7VRLVsGoyOQH3hgM0NauuwJRuXnOkNqTIpeUIKKKXAadPCMM4jodPPBx/90FoBNgCPAcp/C VFMmzBFwtDZi770ij7YVr+CbtWDf2n8ipkMqZ7glEJweq1WkxIAx4bMjefUdS2mjSqJIfkPyQDB hfaQc9iyAxzUO9GUmbsM7IefiljBq453mqLSuKrWJgrF9/fk5pVInb9Y5M++H3Ld0Q=="
+          },
+          {
+            "name": "X-Received",
+            "value": "by 2002:a05:7300:e82b:b0:2d2:129a:1682 with SMTP id 5a478bee46e88-2d5881ad24emr9754993eec.16.1776176180968; Tue, 14 Apr 2026 07:16:20 -0700 (PDT)"
+          },
+          {
+            "name": "MIME-Version",
+            "value": "1.0"
+          },
+          {
+            "name": "From",
+            "value": "Josh Porter \u003cjosh@thunderwolf.co\u003e"
+          },
+          {
+            "name": "Date",
+            "value": "Tue, 14 Apr 2026 10:16:08 -0400"
+          },
+          {
+            "name": "X-Gm-Features",
+            "value": "AQROBzDrebVRdOBF0ffR3hwKA2IHgVYzPuiTjea7i_rXN645_eBEyUKkZYXOVfE"
+          },
+          {
+            "name": "Message-ID",
+            "value": "\u003cCA+qGXE8n=44vRW2X4V=j7Hqd+=J85gQ=wsmasyvrQ3uh8KZR5w@mail.gmail.com\u003e"
+          },
+          {
+            "name": "Subject",
+            "value": "The Last Human Marketer Updates"
+          },
+          {
+            "name": "To",
+            "value": "Josh Porter \u003cjosh@thunderwolf.co\u003e"
+          },
+          {
+            "name": "Content-Type",
+            "value": "multipart/alternative; boundary=\"00000000000053506b064f6c3e95\""
+          },
+          {
+            "name": "Bcc",
+            "value": "cbadcock@gmail.com"
+          }
+        ],
+        "body": {
+          "size": 0
+        },
+        "parts": [
+          {
+            "partId": "0",
+            "mimeType": "text/plain",
+            "filename": "",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "text/plain; charset=\"UTF-8\""
+              }
+            ],
+            "body": {
+              "size": 826,
+              "data": "SGksDQoNCkhhcHB5IFR1ZXNkYXkhIFRoYW5rIHknYWxsIHNvIG11Y2ggZm9yIGJlaW5nIHBhcnQgb2YgdGhlIGxhdW5jaCB0ZWFtLiBXZQ0KYXJlIGxlc3MgdGhhbiBhIG1vbnRoIGF3YXkuIEkgaGF2ZSBhIGZldyB1cGRhdGVzIGJlbG93Og0KDQogICAxLiAqTGF1bmNoIERhdGU6KiBNb3ZlZCB0byBNYXkgMTJ0aA0KICAgMi4gKlBvc3RpbmcgUGFydHk6KiBNb3ZlZCB0byBNYXkgMTJ0aCBhdCAxMnBtIEVEVA0KICAgMy4gKkxhdW5jaCBQYXJ0eToqIENvbmZpcm1lZCBmb3IgTWF5IDE4dGggKFNlZSBpbnZpdGUNCiAgIDxodHRwczovL2x1bWEuY29tL3o3eXUzdGRkPi4gSWYgeW91J3JlIGluIE5ZQywgcGxlYXNlIGNvbWUhKQ0KICAgNC4gKkZyYW1ld29yayBOYW1lOiAqSSBvZmZpY2lhbGx5IG5hbWVkIG15IGZyYW1ld29yayBpbiB0aGUgYm9vayB0byB0aGUNCiAgIEN1c3RvbWVyIENvbm5lY3QgQ29kZS4gSXQgY292ZXJzIHRoZSBDdXN0b21lcnMsIENoYW5uZWxzLCBDYXRlZ29yeSwNCiAgIENvbXBldGl0aW9uIGFuZCBDYXBhYmlsaXR5IChwcmV2aW91c2x5IFByb2R1Y3QpIHN5c3RlbSBkZXNjcmliZWQgaW4gdGhlDQogICBib29rLg0KDQpTZWUgbW9yZSBkZXRhaWxzIGluIHRoZSB1cGRhdGVkIExhdW5jaCBHdWlkZQ0KPGh0dHBzOi8vZG9jcy5nb29nbGUuY29tL2RvY3VtZW50L2QvMTkzVjBzQnJyVmx2WWozM3Z5aFM0TFQ4RUtDYjdMT0tLc09uYXFoWkNueEEvZWRpdD90YWI9dC4wPg0KLg0KDQpQbGVhc2UgbGV0IG1lIGtub3cgaWYgeW91IGhhdmUgYW55IHF1ZXN0aW9ucy4gSGF2ZSBhIGdyZWF0IHJlc3Qgb2YgeW91cg0Kd2Vlay4NCg0KLS0NCg=="
+            }
+          },
+          {
+            "partId": "1",
+            "mimeType": "text/html",
+            "filename": "",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "text/html; charset=\"UTF-8\""
+              },
+              {
+                "name": "Content-Transfer-Encoding",
+                "value": "quoted-printable"
+              }
+            ],
+            "body": {
+              "size": 1752,
+              "data": "PGRpdiBkaXI9Imx0ciI-PGRpdj48ZGl2IGNsYXNzPSJnbWFpbF9kZWZhdWx0IiBzdHlsZT0iZm9udC1mYW1pbHk6YXJpYWwsc2Fucy1zZXJpZiI-SGksPC9kaXY-PGRpdiBjbGFzcz0iZ21haWxfZGVmYXVsdCIgc3R5bGU9ImZvbnQtZmFtaWx5OmFyaWFsLHNhbnMtc2VyaWYiPjxicj48L2Rpdj48ZGl2IGNsYXNzPSJnbWFpbF9kZWZhdWx0IiBzdHlsZT0iZm9udC1mYW1pbHk6YXJpYWwsc2Fucy1zZXJpZiI-SGFwcHkgVHVlc2RheSEgVGhhbmvCoHkmIzM5O2FsbCBzbyBtdWNoIGZvciBiZWluZyBwYXJ0IG9mIHRoZSBsYXVuY2ggdGVhbS4gV2UgYXJlIGxlc3MgdGhhbiBhIG1vbnRoIGF3YXkuIEkgaGF2ZSBhIGZldyB1cGRhdGVzIGJlbG93OjwvZGl2PjxkaXYgY2xhc3M9ImdtYWlsX2RlZmF1bHQiIHN0eWxlPSJmb250LWZhbWlseTphcmlhbCxzYW5zLXNlcmlmIj48b2w-PGxpPjxiPkxhdW5jaCBEYXRlOjwvYj4gTW92ZWQgdG8gTWF5IDEydGg8L2xpPjxsaT48Yj5Qb3N0aW5nwqBQYXJ0eTo8L2I-IE1vdmVkIHRvIE1heSAxMnRoIGF0IDEycG0gRURUPC9saT48bGk-PGI-TGF1bmNoIFBhcnR5OjwvYj4gQ29uZmlybWVkIGZvciBNYXkgMTh0aCAoU2VlIDxhIGhyZWY9Imh0dHBzOi8vbHVtYS5jb20vejd5dTN0ZGQiPmludml0ZTwvYT4uIElmIHlvdSYjMzk7cmUgaW4gTllDLCBwbGVhc2UgY29tZSEpPC9saT48bGk-PGI-RnJhbWV3b3JrIE5hbWU6IDwvYj5JIG9mZmljaWFsbHkgbmFtZWQgbXkgZnJhbWV3b3JrIGluIHRoZSBib29rIHRvIHRoZSBDdXN0b21lciBDb25uZWN0IENvZGUuIEl0IGNvdmVycyB0aGUgQ3VzdG9tZXJzLCBDaGFubmVscywgQ2F0ZWdvcnksIENvbXBldGl0aW9uIGFuZCBDYXBhYmlsaXR5IChwcmV2aW91c2x5IFByb2R1Y3QpIHN5c3RlbSBkZXNjcmliZWTCoGluIHRoZSBib29rLjwvbGk-PC9vbD48ZGl2PlNlZSBtb3JlIGRldGFpbHMgaW4gdGhlIHVwZGF0ZWQgPGEgaHJlZj0iaHR0cHM6Ly9kb2NzLmdvb2dsZS5jb20vZG9jdW1lbnQvZC8xOTNWMHNCcnJWbHZZajMzdnloUzRMVDhFS0NiN0xPS0tzT25hcWhaQ254QS9lZGl0P3RhYj10LjAiPkxhdW5jaCBHdWlkZTwvYT4uwqA8L2Rpdj48ZGl2Pjxicj48L2Rpdj48ZGl2PlBsZWFzZSBsZXQgbWUga25vdyBpZiB5b3UgaGF2ZSBhbnkgcXVlc3Rpb25zLiBIYXZlIGEgZ3JlYXQgcmVzdCBvZiB5b3VyIHdlZWsuPC9kaXY-PC9kaXY-PC9kaXY-PGRpdj48YnI-PC9kaXY-PHNwYW4gY2xhc3M9ImdtYWlsX3NpZ25hdHVyZV9wcmVmaXgiPi0tIDwvc3Bhbj48YnI-PGRpdiBkaXI9Imx0ciIgY2xhc3M9ImdtYWlsX3NpZ25hdHVyZSIgZGF0YS1zbWFydG1haWw9ImdtYWlsX3NpZ25hdHVyZSI-PGRpdiBkaXI9Imx0ciI-PGltZyBzcmM9Imh0dHBzOi8vY2kzLmdvb2dsZXVzZXJjb250ZW50LmNvbS9tYWlsLXNpZy9BSW9ySzR4TnpzQjhkbnpXT09qOGlFVUlKc0pCbjl3S1lkM2s1TFYyRGtPa3RtdzRwaTB2aHYtYnNxN01hd05sWUJCMEpYd1hpZVBqU0lPb3l2VnYiPjxicj48L2Rpdj48L2Rpdj48aW1nIHNyYz0iaHR0cHM6Ly9keFJwcVgwNC5uYTIuaHMtc2FsZXNjcm0tZW5nYWdlLmNvbS9DdG8vRFMrMjMyODQvZHhScHFYMDQvUjVSOGI0OXNoTjhLdkttYzJmREQyVzFRNDRXczIxaE03bVcyMll0VEoxWHAxZGpXMUd6UDZRM0dHeEhsVzFONTZSWDFYMVZ0Z1cyM2ZwcjIyMFpyWUZuMjJZcF9qNFcxIiBhbHQ9IiIgaGVpZ2h0PSIxIiB3aWR0aD0iMSIgc3R5bGU9ImRpc3BsYXk6IG5vbmUgIWltcG9ydGFudDsiPjwvZGl2Pg0K"
+            }
+          }
+        ]
+      },
+      "sizeEstimate": 10041,
+      "historyId": "16870219",
+      "internalDate": "1776176168000"
+    }
+  ]
+}

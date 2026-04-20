@@ -1,0 +1,89 @@
+{
+  "id": "19d8df4d865b7167",
+  "historyId": "16858660",
+  "messages": [
+    {
+      "id": "19d8df50a170c797",
+      "threadId": "19d8df4d865b7167",
+      "labelIds": [
+        "IMPORTANT",
+        "SENT",
+        "INBOX"
+      ],
+      "snippet": "",
+      "payload": {
+        "partId": "",
+        "mimeType": "multipart/alternative",
+        "filename": "",
+        "headers": [
+          {
+            "name": "MIME-Version",
+            "value": "1.0"
+          },
+          {
+            "name": "Date",
+            "value": "Tue, 14 Apr 2026 14:45:39 -0700"
+          },
+          {
+            "name": "Message-ID",
+            "value": "\u003cCAN_sR641eBhMdj5DT304CyR4tS_xB_PHzaR34SQo57zTRu6L3A@mail.gmail.com\u003e"
+          },
+          {
+            "name": "Subject",
+            "value": "Task: Talk to Lisa about filing for reconsideration"
+          },
+          {
+            "name": "From",
+            "value": "Corey Badcock \u003ccbadcock@gmail.com\u003e"
+          },
+          {
+            "name": "To",
+            "value": "Corey Badcock \u003ccbadcock@gmail.com\u003e"
+          },
+          {
+            "name": "Content-Type",
+            "value": "multipart/alternative; boundary=\"0000000000002fe8df064f72853a\""
+          }
+        ],
+        "body": {
+          "size": 0
+        },
+        "parts": [
+          {
+            "partId": "0",
+            "mimeType": "text/plain",
+            "filename": "",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "text/plain; charset=\"UTF-8\""
+              }
+            ],
+            "body": {
+              "size": 2,
+              "data": "DQo="
+            }
+          },
+          {
+            "partId": "1",
+            "mimeType": "text/html",
+            "filename": "",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "text/html; charset=\"UTF-8\""
+              }
+            ],
+            "body": {
+              "size": 2,
+              "data": "DQo="
+            }
+          }
+        ]
+      },
+      "sizeEstimate": 558,
+      "historyId": "16858660",
+      "internalDate": "1776203139000"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "id": "19d8d61f95135833",
+  "threadId": "19d8d61f95135833",
+  "labelIds": [
+    "UNREAD",
+    "CATEGORY_UPDATES",
+    "INBOX"
+  ],
+  "snippet": "Greetings Corey, We hope you&#39;re doing well. Your expertise and achievements in marketing leadership suggest you could be a strong fit for the Director of Marketing role at Coca-Cola. Your ability",
+  "payload": {
+    "mimeType": "multipart/alternative",
+    "headers": [
+      {
+        "name": "Date",
+        "value": "Tue, 14 Apr 2026 12:05:01 -0700"
+      },
+      {
+        "name": "Reply-To",
+        "value": "hiring@chooseyourfuturecola.com"
+      },
+      {
+        "name": "Message-ID",
+        "value": "\u003cAPy0SJpBNSUkvx23gpIe0A@notifications.google.com\u003e"
+      },
+      {
+        "name": "Subject",
+        "value": "Corey, Structural Optimization — Strategic Briefing"
+      },
+      {
+        "name": "From",
+        "value": "\"Соса-Соlа | Ніrіng Таlеnt\" \u003cnoreply@appsheet.com\u003e"
+      },
+      {
+        "name": "To",
+        "value": "cbadcock@gmail.com"
+      }
+    ]
+  },
+  "sizeEstimate": 14616,
+  "historyId": "16870242",
+  "internalDate": "1776193501000"
+}

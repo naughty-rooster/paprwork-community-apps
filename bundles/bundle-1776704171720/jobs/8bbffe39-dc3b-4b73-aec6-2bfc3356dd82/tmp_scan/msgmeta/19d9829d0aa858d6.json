@@ -1,0 +1,42 @@
+{
+  "id": "19d9829d0aa858d6",
+  "threadId": "19d9829d0aa858d6",
+  "labelIds": [
+    "UNREAD",
+    "CATEGORY_UPDATES",
+    "INBOX"
+  ],
+  "snippet": "Hi Corey, This email serves as confirmation that we have cancelled your Unlimited Beary Clean Monthly Wash Club Membership for license number BQF8117. There will be no further charges. In order to",
+  "payload": {
+    "mimeType": "text/html",
+    "headers": [
+      {
+        "name": "Date",
+        "value": "Thu, 16 Apr 2026 21:19:28 +0000 (UTC)"
+      },
+      {
+        "name": "From",
+        "value": "Brown Bear Car Wash \u003cclub@brownbear.com\u003e"
+      },
+      {
+        "name": "Message-ID",
+        "value": "\u003cL5hTEgxrQnyavRbUfUHT6w@geopod-ismtpd-98\u003e"
+      },
+      {
+        "name": "Subject",
+        "value": "We're sorry to see you go!  Your Membership has been cancelled."
+      },
+      {
+        "name": "Reply-To",
+        "value": "Brown Bear Car Wash \u003cclub@brownbear.com\u003e"
+      },
+      {
+        "name": "To",
+        "value": "Corey Badcock \u003ccbadcock@gmail.com\u003e"
+      }
+    ]
+  },
+  "sizeEstimate": 23774,
+  "historyId": "16880938",
+  "internalDate": "1776374368000"
+}

@@ -1,0 +1,38 @@
+{
+  "id": "19d888561704b322",
+  "threadId": "19d8218c23fc468b",
+  "labelIds": [
+    "IMPORTANT",
+    "CATEGORY_PERSONAL",
+    "INBOX"
+  ],
+  "snippet": "Hi Corey, I can meet with you this Thursday to discuss. 8:30 or 10am—please let me know what works. We can go through medication options that may help. I want to discuss either working to lower his",
+  "payload": {
+    "mimeType": "multipart/alternative",
+    "headers": [
+      {
+        "name": "From",
+        "value": "Andrea Valdez \u003candreavaldez@mindfultherapygroup.com\u003e"
+      },
+      {
+        "name": "Subject",
+        "value": "Re: Dane"
+      },
+      {
+        "name": "Date",
+        "value": "Mon, 13 Apr 2026 13:25:23 -0700"
+      },
+      {
+        "name": "To",
+        "value": "Corey Badcock \u003ccbadcock@gmail.com\u003e"
+      },
+      {
+        "name": "Message-Id",
+        "value": "\u003c7DCB07B4-6081-4776-90DB-543BBD70BFA3@mindfultherapygroup.com\u003e"
+      }
+    ]
+  },
+  "sizeEstimate": 18946,
+  "historyId": "16878168",
+  "internalDate": "1776111923000"
+}

@@ -1,0 +1,38 @@
+{
+  "id": "19d97bd1ba0cc460",
+  "threadId": "19d97bd1ba0cc460",
+  "labelIds": [
+    "UNREAD",
+    "CATEGORY_UPDATES",
+    "INBOX"
+  ],
+  "snippet": "Connected Banking You agreed to share data with Quicken Quicken will access your account information securely, so you&#39;ll never need to share your Chase username and password. You chose to share",
+  "payload": {
+    "mimeType": "text/html",
+    "headers": [
+      {
+        "name": "Date",
+        "value": "Thu, 16 Apr 2026 19:20:44 +0000 (UTC)"
+      },
+      {
+        "name": "From",
+        "value": "Chase \u003cno.reply.alerts@chase.com\u003e"
+      },
+      {
+        "name": "To",
+        "value": "cbadcock@gmail.com"
+      },
+      {
+        "name": "Message-ID",
+        "value": "\u003c45396577.8054470.1776367244809.JavaMail.webuser@iaasn00692073\u003e"
+      },
+      {
+        "name": "Subject",
+        "value": "You're now sharing data with Quicken"
+      }
+    ]
+  },
+  "sizeEstimate": 34315,
+  "historyId": "16880916",
+  "internalDate": "1776367244000"
+}

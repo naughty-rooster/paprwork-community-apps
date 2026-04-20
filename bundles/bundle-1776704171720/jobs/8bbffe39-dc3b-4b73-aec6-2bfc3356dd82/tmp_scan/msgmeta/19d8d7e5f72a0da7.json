@@ -1,0 +1,37 @@
+{
+  "id": "19d8d7e5f72a0da7",
+  "threadId": "19d8d7e5f72a0da7",
+  "labelIds": [
+    "CATEGORY_PERSONAL",
+    "INBOX"
+  ],
+  "snippet": "Hello AIM Families, We wanted to pass along an invitation from Seattle Chamber Music Society for their Azure Family Concert on Thursday, April 23 at 4:00pm. This is an event that AIM families often",
+  "payload": {
+    "mimeType": "multipart/alternative",
+    "headers": [
+      {
+        "name": "From",
+        "value": "AIM Seattle \u003cinfo@aim-seattle.org\u003e"
+      },
+      {
+        "name": "Date",
+        "value": "Tue, 14 Apr 2026 12:35:50 -0700"
+      },
+      {
+        "name": "Message-ID",
+        "value": "\u003cCAMnTQXamm3j-GOojKyGUAH6BJXAewcaqF7KLvsiN0_2m43+0Dg@mail.gmail.com\u003e"
+      },
+      {
+        "name": "Subject",
+        "value": "Azure Family Concert - Thursday, April 23 at 4:00pm!"
+      },
+      {
+        "name": "To",
+        "value": "undisclosed-recipients:;"
+      }
+    ]
+  },
+  "sizeEstimate": 14120,
+  "historyId": "16870247",
+  "internalDate": "1776195350000"
+}

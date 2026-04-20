@@ -1,0 +1,191 @@
+import json, os, re, sqlite3
+from datetime import datetime, timedelta
+
+ADMIN_DB = "/Users/coreybadcock/Papr/Jobs/a23a3ba6-2002-4437-8c61-a82c51f05340/data/data.db"
+MSG_DB = os.path.expanduser("~/Library/Messages/chat.db")
+PREFIX_RE = re.compile(r'^\s*(task|todo|reminder|add task)\b\s*[:\-]?\s*', re.I)
+ACTION_RE = re.compile(r"\b(can you|could you|please|don't forget|dont forget|need to|needs to|follow up|check on|check in|pay|submit|review|call|schedule|book|send|reply|respond|confirm|sign|complete|fill out|due|deadline|by\s+(mon|tue|wed|thu|fri|sat|sun|tomorrow|today|tonight|\d{1,2}/\d{1,2}))\b", re.I)
+IGNORE_RE = re.compile(r'^(liked|loved|laughed at|emphasized|questioned|disliked)\s+["“]', re.I)
+SPAM_RE = re.compile(r"(recruitment department|remote collaboration|final notice|department of licensing|confirm you're sending|gift card|bitcoin|kindly|enforcement will begin)", re.I)
+SHORT_ACK = {"ok", "okay", "k", "thanks", "thank you", "sounds good", "yes", "no", "done", "got it"}
+DAY_MAP = {"monday":0,"mon":0,"tuesday":1,"tue":1,"tues":1,"wednesday":2,"wed":2,"thursday":3,"thu":3,"thurs":3,"friday":4,"fri":4,"saturday":5,"sat":5,"sunday":6,"sun":6}
+BAD_PARTS = {
+    'streamtyped','NSMutableAttributedString','NSAttributedString','NSObject','NSMutableString','NSString',
+    'NSDictionary','NSNumber','NSValue','NSData','NSKeyedArchiver','__kIMMessagePartAttributeName'
+}
+
+
+def ensure_schema(conn):
+    conn.executescript("""
+    CREATE TABLE IF NOT EXISTS message_candidates (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      message_guid TEXT NOT NULL UNIQUE,
+      chat_identifier TEXT,
+      contact TEXT,
+      message_text TEXT NOT NULL,
+      message_date TEXT,
+      score REAL DEFAULT 0,
+      status TEXT DEFAULT 'new',
+      source_details TEXT,
+      created_at TEXT DEFAULT (datetime('now')),
+      updated_at TEXT DEFAULT (datetime('now'))
+    );
+    CREATE INDEX IF NOT EXISTS idx_message_candidates_status ON message_candidates(status);
+    CREATE INDEX IF NOT EXISTS idx_message_candidates_date ON message_candidates(message_date);
+    """)
+
+
+def next_weekday(today, day_num, force_next=False):
+    days_ahead = (day_num - today.weekday()) % 7
+    if force_next or days_ahead == 0:
+        days_ahead = days_ahead or 7
+    return today + timedelta(days=days_ahead)
+
+
+def parse_due_date(text):
+    if not text:
+        return None
+    lower, today = text.lower(), datetime.now().date()
+    if any(x in lower for x in ["today", "tonight", "this evening"]):
+        return today.isoformat()
+    if "tomorrow" in lower:
+        return (today + timedelta(days=1)).isoformat()
+    m = re.search(r'\b(?:(next)\s+)?(monday|mon|tuesday|tue|tues|wednesday|wed|thursday|thu|thurs|friday|fri|saturday|sat|sunday|sun)\b', lower)
+    if m:
+        return next_weekday(today, DAY_MAP[m.group(2)], m.group(1) == "next").isoformat()
+    m = re.search(r'\b(\d{1,2})/(\d{1,2})(?:/(\d{2,4}))?\b', lower)
+    if not m:
+        return None
+    month, day = int(m.group(1)), int(m.group(2))
+    year = int(m.group(3)) if m.group(3) else today.year
+    if year < 100:
+        year += 2000
+    try:
+        d = datetime(year, month, day).date()
+        if not m.group(3) and d < today:
+            d = datetime(today.year + 1, month, day).date()
+        return d.isoformat()
+    except ValueError:
+        return None
+
+
+def extract_body(blob):
+    if not blob:
+        return ''
+    try:
+        s = blob.decode('utf-8', 'ignore') if isinstance(blob, (bytes, bytearray)) else str(blob)
+        parts = [p.strip(" +\n\t\r\x00") for p in re.findall(r'[ -~]{8,}', s)]
+        parts = [p for p in parts if p not in BAD_PARTS and '__kIM' not in p and not p.startswith(('bplist00', '$', '['))]
+        return max(parts, key=len)[:2000] if parts else ''
+    except Exception:
+        return ''
+
+
+def clean_text(text):
+    return re.sub(r'\s+', ' ', (text or '').replace('\uFFFC', ' ')).strip()
+
+
+def task_title(text):
+    cleaned = clean_text(PREFIX_RE.sub('', text or ''))
+    return cleaned[:120] if cleaned else 'Task from Messages'
+
+
+def priority_for(text, due_date=None):
+    lower = (text or '').lower()
+    if any(x in lower for x in ["urgent", "asap", "immediately"]) or lower.count('!') >= 2:
+        return 1
+    if due_date == datetime.now().date().isoformat():
+        return 1
+    if any(x in lower for x in ["tomorrow", "this week", "soon", "important"]):
+        return 2
+    return 3
+
+
+def candidate_score(text):
+    lower = (text or '').lower().strip()
+    if not lower or lower in SHORT_ACK or IGNORE_RE.search(lower) or SPAM_RE.search(lower):
+        return 0.0
+    if lower.startswith('http') and ' ' not in lower:
+        return 0.0
+    score = 0.0
+    if ACTION_RE.search(lower):
+        score += 0.75
+    if '?' in lower and any(x in lower for x in ['can you', 'could you', 'will you']):
+        score += 0.2
+    if any(x in lower for x in ['tomorrow', 'today', 'tonight', 'friday', 'monday', 'deadline', 'due']):
+        score += 0.2
+    if len(lower) > 180:
+        score += 0.1
+    return min(score, 0.99)
+
+
+def msg_rows(conn):
+    q = """
+    SELECT m.guid, COALESCE(c.chat_identifier, h.id, '') AS chat_identifier,
+           COALESCE(h.id, c.display_name, c.chat_identifier, '') AS contact,
+           m.text, m.subject, m.attributedBody,
+           datetime((m.date/1000000000)+978307200,'unixepoch','localtime') AS local_time,
+           m.is_from_me
+    FROM message m
+    LEFT JOIN handle h ON h.ROWID = m.handle_id
+    LEFT JOIN chat_message_join cmj ON cmj.message_id = m.ROWID
+    LEFT JOIN chat c ON c.ROWID = cmj.chat_id
+    WHERE datetime((m.date/1000000000)+978307200,'unixepoch','localtime') >= datetime('now','-120 days','localtime')
+    ORDER BY m.date DESC LIMIT 500
+    """
+    return conn.execute(q).fetchall()
+
+
+def main():
+    admin = sqlite3.connect(ADMIN_DB)
+    admin.row_factory = sqlite3.Row
+    admin.execute('PRAGMA journal_mode=WAL')
+    admin.execute('PRAGMA busy_timeout=30000')
+    ensure_schema(admin)
+    msgs = sqlite3.connect(f'file:{MSG_DB}?mode=ro', uri=True)
+    msgs.row_factory = sqlite3.Row
+    rows = msg_rows(msgs)
+    inserted_candidates = inserted_tasks = skipped = 0
+    for row in rows:
+        raw_text = row['text'] or row['subject'] or extract_body(row['attributedBody'])
+        guid, text = row['guid'], clean_text(raw_text)
+        if not text or text.lower() in SHORT_ACK or IGNORE_RE.search(text):
+            skipped += 1
+            continue
+        is_from_me = int(row['is_from_me']) == 1
+        contact, chat_id, local_time = row['contact'], row['chat_identifier'], row['local_time']
+        base = {"contact": contact, "chat_identifier": chat_id, "message_date": local_time, "capture_mode": "messages", "message_guid": guid}
+        if is_from_me and PREFIX_RE.match(text):
+            exists = admin.execute("SELECT 1 FROM tasks WHERE source='text_in' AND json_extract(source_details,'$.message_guid')=?", (guid,)).fetchone()
+            if exists:
+                skipped += 1
+                continue
+            due_date = parse_due_date(text)
+            admin.execute("INSERT INTO tasks (title,description,due_date,priority,status,source,source_details) VALUES (?,?,?,?, 'open', 'text_in', ?)",
+                          (task_title(text), text[:500], due_date, priority_for(text, due_date), json.dumps(base)))
+            inserted_tasks += 1
+            continue
+        if is_from_me:
+            continue
+        score = candidate_score(text)
+        if score < 0.75:
+            skipped += 1
+            continue
+        admin.execute("""INSERT INTO message_candidates (message_guid,chat_identifier,contact,message_text,message_date,score,status,source_details)
+                         VALUES (?,?,?,?,?,?, 'new', ?)
+                         ON CONFLICT(message_guid) DO UPDATE SET
+                           message_text=excluded.message_text,
+                           message_date=excluded.message_date,
+                           score=excluded.score,
+                           source_details=excluded.source_details,
+                           updated_at=datetime('now')""",
+                      (guid, chat_id, contact, text[:1000], local_time, score, json.dumps(base)))
+        inserted_candidates += 1
+    admin.commit()
+    msgs.close()
+    admin.close()
+    print(f"messages scanned={len(rows)} candidates_upserted={inserted_candidates} self_tasks_added={inserted_tasks} skipped={skipped}")
+
+
+if __name__ == '__main__':
+    main()

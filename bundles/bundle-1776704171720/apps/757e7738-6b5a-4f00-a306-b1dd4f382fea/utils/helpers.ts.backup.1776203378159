@@ -1,0 +1,21 @@
+import type { Task, CalendarItem } from '../types.ts';
+export const APP_ID='757e7738-6b5a-4f00-a306-b1dd4f382fea';
+export const esc=(s='')=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+export const parseJson=(s:string|null)=>{try{return s?JSON.parse(s):{};}catch{return {};}};
+export function formatDue(d:string|null){ if(!d) return {text:'',cls:''};
+  const t=new Date(); t.setHours(0,0,0,0); const x=new Date(d+'T00:00:00'); const diff=Math.round((x.getTime()-t.getTime())/86400000);
+  if(diff<0) return {text:`${Math.abs(diff)}d overdue`,cls:'overdue'}; if(!diff) return {text:'Due today',cls:'due-today'};
+  if(diff===1) return {text:'Due tomorrow',cls:''}; if(diff<=7) return {text:`Due ${x.toLocaleDateString('en',{weekday:'short'})}`,cls:''};
+  return {text:`Due ${x.toLocaleDateString('en',{month:'short',day:'numeric'})}`,cls:''}; }
+export const pLabel=(p:number)=>['','Urgent','High','Medium','Low'][p]||'Medium';
+export const srcBadge=(s:string)=>s==='gmail'?'<span class="task-badge badge-gmail">✉ Gmail</span>':s==='email_in'?'<span class="task-badge badge-email">📱 Email-in</span>':'<span class="task-badge badge-manual">Manual</span>';
+export function emailStamp(t:Task){ const d=parseJson(t.source_details).email_date||t.created_at; if(!d||t.source!=='gmail') return ''; return new Date(d).toLocaleDateString('en',{month:'short',day:'numeric'}); }
+export function tagLabel(t:Task){ const m=(t.tags||'').match(/project:([^,]+)/); return m?m[1]:''; }
+export async function dbQuery(sql:string){ const r=await fetch('/api/db/query',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({appId:APP_ID,sql})}); const d=await r.json(); return d.rows||[]; }
+export async function dbWrite(sql:string,params:any[]=[]){ const r=await fetch('/api/db/write',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({appId:APP_ID,sql,params})}); return r.json(); }
+export async function triggerJob(jobId:string){ await fetch('/api/jobs/run',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({jobId})}); }
+export function getFocusTasks(tasks:Task[]){ const t=new Date(); t.setHours(0,0,0,0); const in7=new Date(t); in7.setDate(in7.getDate()+7);
+  return tasks.filter(x=>x.status==='open'&&(x.priority<=2||(x.due_date&&new Date(x.due_date+'T00:00:00')<=in7)))
+    .sort((a,b)=>a.priority-b.priority||(a.due_date||'z').localeCompare(b.due_date||'z')); }
+export function fmtEvent(i:CalendarItem){ const day=i.event_date?new Date(i.event_date+'T00:00:00').toLocaleDateString('en',{weekday:'short',month:'short',day:'numeric'}):'No date'; return i.starts_at?`${day} · ${i.starts_at}`:day; }
+export const parsePlan=(s:string|null)=>{try{return JSON.parse(s||'[]') as string[];}catch{return [];}};

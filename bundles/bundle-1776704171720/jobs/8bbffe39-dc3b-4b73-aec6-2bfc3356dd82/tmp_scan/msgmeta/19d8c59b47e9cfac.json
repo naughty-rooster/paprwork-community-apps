@@ -1,0 +1,39 @@
+{
+  "id": "19d8c59b47e9cfac",
+  "threadId": "19d8c59b47e9cfac",
+  "labelIds": [
+    "UNREAD",
+    "IMPORTANT",
+    "CATEGORY_PERSONAL",
+    "INBOX"
+  ],
+  "snippet": "Hi, Happy Tuesday! Thank y&#39;all so much for being part of the launch team. We are less than a month away. I have a few updates below: Launch Date: Moved to May 12th Posting Party: Moved to May 12th",
+  "payload": {
+    "mimeType": "multipart/alternative",
+    "headers": [
+      {
+        "name": "From",
+        "value": "Josh Porter \u003cjosh@thunderwolf.co\u003e"
+      },
+      {
+        "name": "Date",
+        "value": "Tue, 14 Apr 2026 10:16:08 -0400"
+      },
+      {
+        "name": "Message-ID",
+        "value": "\u003cCA+qGXE8n=44vRW2X4V=j7Hqd+=J85gQ=wsmasyvrQ3uh8KZR5w@mail.gmail.com\u003e"
+      },
+      {
+        "name": "Subject",
+        "value": "The Last Human Marketer Updates"
+      },
+      {
+        "name": "To",
+        "value": "Josh Porter \u003cjosh@thunderwolf.co\u003e"
+      }
+    ]
+  },
+  "sizeEstimate": 10041,
+  "historyId": "16870219",
+  "internalDate": "1776176168000"
+}

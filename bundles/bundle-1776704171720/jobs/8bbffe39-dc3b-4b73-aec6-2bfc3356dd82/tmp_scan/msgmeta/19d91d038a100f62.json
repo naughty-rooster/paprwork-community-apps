@@ -1,0 +1,38 @@
+{
+  "id": "19d91d038a100f62",
+  "threadId": "19d40c7d323d3565",
+  "labelIds": [
+    "IMPORTANT",
+    "CATEGORY_PERSONAL",
+    "INBOX"
+  ],
+  "snippet": "Hi Corey, We weren&#39;t able to locate the hat today but will keep an eye out for it! Best, Britt Farrell Program Manager- Day Camps Outdoors for All Foundation 1800 Richards Road, Bellevue, WA 98005",
+  "payload": {
+    "mimeType": "multipart/related",
+    "headers": [
+      {
+        "name": "From",
+        "value": "Brittany Farrell \u003cbrittanyf@outdoorsforall.org\u003e"
+      },
+      {
+        "name": "To",
+        "value": "Corey Badcock \u003ccbadcock@gmail.com\u003e"
+      },
+      {
+        "name": "Subject",
+        "value": "RE: 2026 Final Confirmation: Spring Day Camps"
+      },
+      {
+        "name": "Date",
+        "value": "Wed, 15 Apr 2026 15:43:47 +0000"
+      },
+      {
+        "name": "Message-ID",
+        "value": "\u003cSN7PR20MB3645321B7D1B3311374B3D8CD6222@SN7PR20MB3645.namprd20.prod.outlook.com\u003e"
+      }
+    ]
+  },
+  "sizeEstimate": 140979,
+  "historyId": "16877041",
+  "internalDate": "1776267827000"
+}

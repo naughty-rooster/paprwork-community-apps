@@ -1,0 +1,38 @@
+{
+  "id": "19d88b4e46238f1e",
+  "threadId": "19d88b4e46238f1e",
+  "labelIds": [
+    "IMPORTANT",
+    "CATEGORY_UPDATES",
+    "INBOX"
+  ],
+  "snippet": "You&#39;re almost there! Click the button below to open Clio for Clients with your secure password-free sign in link. This link will expire in 1 hour. You can get a new one by signing in from the",
+  "payload": {
+    "mimeType": "multipart/related",
+    "headers": [
+      {
+        "name": "Date",
+        "value": "Mon, 13 Apr 2026 21:17:29 +0000"
+      },
+      {
+        "name": "From",
+        "value": "Clio \u003cdonotreply@clio.com\u003e"
+      },
+      {
+        "name": "To",
+        "value": "cbadcock@gmail.com"
+      },
+      {
+        "name": "Message-ID",
+        "value": "\u003c0100019d88b4e3bf-3c9e266c-1ee2-4757-96fb-0e3f3acf4a91-000000@email.amazonses.com\u003e"
+      },
+      {
+        "name": "Subject",
+        "value": "Your one-time sign in link for Clio for Clients (2:17:29 PM PDT)"
+      }
+    ]
+  },
+  "sizeEstimate": 36198,
+  "historyId": "16852635",
+  "internalDate": "1776115049000"
+}

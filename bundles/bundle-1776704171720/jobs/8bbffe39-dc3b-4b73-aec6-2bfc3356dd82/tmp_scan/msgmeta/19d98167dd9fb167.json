@@ -1,0 +1,38 @@
+{
+  "id": "19d98167dd9fb167",
+  "threadId": "19d98167dd9fb167",
+  "labelIds": [
+    "UNREAD",
+    "CATEGORY_UPDATES",
+    "INBOX"
+  ],
+  "snippet": "Money Language Academy Subscription canceled Hey Corey, Your subscription for Money Language Academy has been canceled. You will not be charged again. You will be removed from the group at the end of",
+  "payload": {
+    "mimeType": "multipart/alternative",
+    "headers": [
+      {
+        "name": "Date",
+        "value": "Thu, 16 Apr 2026 20:58:23 +0000 (UTC)"
+      },
+      {
+        "name": "From",
+        "value": "Skool \u003cnoreply@skool.com\u003e"
+      },
+      {
+        "name": "Message-ID",
+        "value": "\u003c5tNHXtYyTMWRD4XTgTCH1A@geopod-ismtpd-13\u003e"
+      },
+      {
+        "name": "Subject",
+        "value": "Subscription canceled"
+      },
+      {
+        "name": "To",
+        "value": "Corey Badcock \u003ccbadcock@gmail.com\u003e"
+      }
+    ]
+  },
+  "sizeEstimate": 26320,
+  "historyId": "16880930",
+  "internalDate": "1776373103000"
+}

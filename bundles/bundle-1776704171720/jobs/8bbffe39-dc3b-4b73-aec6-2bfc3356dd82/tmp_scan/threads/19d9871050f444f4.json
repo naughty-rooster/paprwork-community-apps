@@ -1,0 +1,72 @@
+{
+  "id": "19d9871050f444f4",
+  "historyId": "16883866",
+  "messages": [
+    {
+      "id": "19d9871050f444f4",
+      "threadId": "19d9871050f444f4",
+      "labelIds": [
+        "IMPORTANT",
+        "CATEGORY_PERSONAL",
+        "INBOX"
+      ],
+      "snippet": "WeWork Your support request 11783192 has been updated. Please see below. Simply reply to this email to update the support request. Hi Corey, Thank you for contacting WeWork. My name is Simerte, from",
+      "payload": {
+        "mimeType": "multipart/alternative",
+        "headers": [
+          {
+            "name": "Date",
+            "value": "Thu, 16 Apr 2026 22:37:16 +0000 (GMT)"
+          },
+          {
+            "name": "From",
+            "value": "WeWork Support \u003csupportrequests@wework.com\u003e"
+          },
+          {
+            "name": "To",
+            "value": "\"cbadcock@gmail.com\" \u003ccbadcock@gmail.com\u003e"
+          },
+          {
+            "name": "Subject",
+            "value": "Request# 11783192 Membership & Billing - Cancel membership    [ ref:!00D2E013KTm.!500Uz011nYCL:ref ]"
+          }
+        ]
+      },
+      "sizeEstimate": 10449,
+      "historyId": "16883866",
+      "internalDate": "1776379036000"
+    },
+    {
+      "id": "19d98c52739b81a8",
+      "threadId": "19d9871050f444f4",
+      "labelIds": [
+        "DRAFT"
+      ],
+      "snippet": "Whatever is $39.99 a month My membership WeWork On Demand Choose from over 320+ locations in 70+ major cities Book shared workspace for the day Book meeting rooms by the hour Book private offices by",
+      "payload": {
+        "mimeType": "multipart/alternative",
+        "headers": [
+          {
+            "name": "Date",
+            "value": "Thu, 16 Apr 2026 17:09:09 -0700"
+          },
+          {
+            "name": "Subject",
+            "value": "Re: Request# 11783192 Membership & Billing - Cancel membership    [ ref:!00D2E013KTm.!500Uz011nYCL:ref ]"
+          },
+          {
+            "name": "From",
+            "value": "Corey Badcock \u003ccbadcock@gmail.com\u003e"
+          },
+          {
+            "name": "To",
+            "value": "WeWork Support \u003csupportrequests@wework.com\u003e"
+          }
+        ]
+      },
+      "sizeEstimate": 9058,
+      "historyId": "16883865",
+      "internalDate": "1776384549000"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "id": "19d91b8325a23f36",
+  "threadId": "19d8dec384727961",
+  "labelIds": [
+    "IMPORTANT",
+    "CATEGORY_PERSONAL",
+    "INBOX"
+  ],
+  "snippet": "Forgive my last email after further review of the order I now see that Respondent&#39;s counsel is directed to prepare a final order for support and final order and findings and send those to the Court",
+  "payload": {
+    "mimeType": "multipart/related",
+    "headers": [
+      {
+        "name": "From",
+        "value": "April Beck \u003capril@demaarlaw.com\u003e"
+      },
+      {
+        "name": "To",
+        "value": "\"familylawstaffseattle@kingcounty.gov\" \u003cfamilylawstaffseattle@kingcounty.gov\u003e"
+      },
+      {
+        "name": "Subject",
+        "value": "RE: New Orders Filed to Case 18-3-73995-4"
+      },
+      {
+        "name": "Date",
+        "value": "Wed, 15 Apr 2026 15:17:36 +0000"
+      },
+      {
+        "name": "Message-ID",
+        "value": "\u003cSA1PR14MB47877B451EF2E970578441FBB7222@SA1PR14MB4787.namprd14.prod.outlook.com\u003e"
+      }
+    ]
+  },
+  "sizeEstimate": 28635,
+  "historyId": "16884464",
+  "internalDate": "1776266256000"
+}

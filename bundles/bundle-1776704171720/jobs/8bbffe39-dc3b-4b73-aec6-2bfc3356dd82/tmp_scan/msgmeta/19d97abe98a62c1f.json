@@ -1,0 +1,38 @@
+{
+  "id": "19d97abe98a62c1f",
+  "threadId": "19d97abe98a62c1f",
+  "labelIds": [
+    "UNREAD",
+    "CATEGORY_PERSONAL",
+    "INBOX"
+  ],
+  "snippet": "Security alert You signed in with a new device You successfully validated your device and signed in. Here are the details: Device: OS X - Chrome When: Apr 16, 2026 at 03:01 PM ET Possible reasons you",
+  "payload": {
+    "mimeType": "text/html",
+    "headers": [
+      {
+        "name": "Date",
+        "value": "Thu, 16 Apr 2026 19:01:57 +0000 (UTC)"
+      },
+      {
+        "name": "From",
+        "value": "Chase \u003cno.reply.alerts@chase.com\u003e"
+      },
+      {
+        "name": "To",
+        "value": "cbadcock@gmail.com"
+      },
+      {
+        "name": "Message-ID",
+        "value": "\u003c2006481355.16418389.1776366117641.JavaMail.webuser@iaasn00692058\u003e"
+      },
+      {
+        "name": "Subject",
+        "value": "Chase security alert: You signed in with a new device"
+      }
+    ]
+  },
+  "sizeEstimate": 62786,
+  "historyId": "16880912",
+  "internalDate": "1776366117000"
+}

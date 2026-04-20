@@ -1,0 +1,38 @@
+{
+  "id": "19d8cfdeaada8ee2",
+  "threadId": "19d8cfdeaada8ee2",
+  "labelIds": [
+    "UNREAD",
+    "CATEGORY_UPDATES",
+    "INBOX"
+  ],
+  "snippet": "This is a copy of a security alert sent to corey@pivotvia.com. cbadcock@gmail.com is the recovery email for this account. If you don&#39;t recognize this account, remove it. A new sign-in on Mac corey@",
+  "payload": {
+    "mimeType": "multipart/alternative",
+    "headers": [
+      {
+        "name": "Date",
+        "value": "Tue, 14 Apr 2026 17:15:43 GMT"
+      },
+      {
+        "name": "Message-ID",
+        "value": "\u003cHue66fwl1J_Rk4x8xBOMZw@notifications.google.com\u003e"
+      },
+      {
+        "name": "Subject",
+        "value": "Security alert for corey@pivotvia.com"
+      },
+      {
+        "name": "From",
+        "value": "Google \u003cno-reply@accounts.google.com\u003e"
+      },
+      {
+        "name": "To",
+        "value": "cbadcock@gmail.com"
+      }
+    ]
+  },
+  "sizeEstimate": 15408,
+  "historyId": "16870237",
+  "internalDate": "1776186943000"
+}

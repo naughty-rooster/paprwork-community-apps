@@ -1,0 +1,38 @@
+{
+  "id": "19d93664d2f25309",
+  "threadId": "19d93664d2f25309",
+  "labelIds": [
+    "UNREAD",
+    "CATEGORY_PERSONAL",
+    "INBOX"
+  ],
+  "snippet": "Hello, Thank you for reaching out. I am on leave 4/15-4/17. For immediate concerns, please reach out to your case resource manager. If you need escalation, they can refer you to a covering supervisor.",
+  "payload": {
+    "mimeType": "multipart/alternative",
+    "headers": [
+      {
+        "name": "From",
+        "value": "\"Peterson, Aaron N (DSHS/HCLA/DDCS)\" \u003caaron.peterson@dshs.wa.gov\u003e"
+      },
+      {
+        "name": "To",
+        "value": "Corey Badcock \u003ccbadcock@gmail.com\u003e"
+      },
+      {
+        "name": "Subject",
+        "value": "Automatic reply: Dane"
+      },
+      {
+        "name": "Date",
+        "value": "Wed, 15 Apr 2026 23:07:26 +0000"
+      },
+      {
+        "name": "Message-ID",
+        "value": "\u003c7c8fe88168f44a5185edd03ab42985bd@SA0PR09MB7337.namprd09.prod.outlook.com\u003e"
+      }
+    ]
+  },
+  "sizeEstimate": 13604,
+  "historyId": "16870152",
+  "internalDate": "1776294446000"
+}

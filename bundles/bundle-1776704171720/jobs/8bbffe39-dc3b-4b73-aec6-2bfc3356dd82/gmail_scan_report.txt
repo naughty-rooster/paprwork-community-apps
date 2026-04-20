@@ -1,0 +1,9 @@
+scanned=60
+inserted=0
+skipped_duplicate=30
+skipped_informational=25
+skipped_resolved=3
+skipped_existing_open=0
+skipped_no_explicit_action=1
+skipped_marketing=1
+skipped_other=0

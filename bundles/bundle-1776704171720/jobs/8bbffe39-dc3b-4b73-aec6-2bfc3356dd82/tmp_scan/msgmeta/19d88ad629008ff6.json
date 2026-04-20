@@ -1,0 +1,34 @@
+{
+  "id": "19d88ad629008ff6",
+  "threadId": "19d88ad629008ff6",
+  "labelIds": [
+    "IMPORTANT",
+    "CATEGORY_PERSONAL",
+    "INBOX"
+  ],
+  "snippet": "Good Afternoon! With rain forecasted for tomorrow we are going to pivot to bowling at Spin Alley in Shoreline as our main activity in the afternoon. If it is clear in the morning, we will plan on doing",
+  "payload": {
+    "mimeType": "multipart/related",
+    "headers": [
+      {
+        "name": "From",
+        "value": "Brittany Farrell \u003cbrittanyf@outdoorsforall.org\u003e"
+      },
+      {
+        "name": "Subject",
+        "value": "OFA Spring Break Camp Schedule Change"
+      },
+      {
+        "name": "Date",
+        "value": "Mon, 13 Apr 2026 21:09:14 +0000"
+      },
+      {
+        "name": "Message-ID",
+        "value": "\u003cSN7PR20MB3645A77DD3839D49368510F6D6242@SN7PR20MB3645.namprd20.prod.outlook.com\u003e"
+      }
+    ]
+  },
+  "sizeEstimate": 55892,
+  "historyId": "16859964",
+  "internalDate": "1776114554000"
+}

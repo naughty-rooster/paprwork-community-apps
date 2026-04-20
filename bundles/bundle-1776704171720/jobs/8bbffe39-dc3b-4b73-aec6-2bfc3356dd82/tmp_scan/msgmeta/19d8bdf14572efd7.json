@@ -1,0 +1,38 @@
+{
+  "id": "19d8bdf14572efd7",
+  "threadId": "19d8bdf14572efd7",
+  "labelIds": [
+    "UNREAD",
+    "CATEGORY_UPDATES",
+    "INBOX"
+  ],
+  "snippet": "Balance alert Your account&#39;s available balance is below your $50.00 limit Here are the details: Account ending in (…9822) Date Apr 14, 2026 at 8:02 AM ET Available balance $-68.73 We want to let",
+  "payload": {
+    "mimeType": "text/html",
+    "headers": [
+      {
+        "name": "Date",
+        "value": "Tue, 14 Apr 2026 12:02:23 +0000 (UTC)"
+      },
+      {
+        "name": "From",
+        "value": "Chase \u003cno.reply.alerts@chase.com\u003e"
+      },
+      {
+        "name": "To",
+        "value": "cbadcock@gmail.com"
+      },
+      {
+        "name": "Message-ID",
+        "value": "\u003c1378547891.11359559.1776168143986.JavaMail.webuser@iaasn00692071\u003e"
+      },
+      {
+        "name": "Subject",
+        "value": " Your account’s available balance is below your $50.00 limit for account ending in (…9822)"
+      }
+    ]
+  },
+  "sizeEstimate": 39613,
+  "historyId": "16870209",
+  "internalDate": "1776168143000"
+}

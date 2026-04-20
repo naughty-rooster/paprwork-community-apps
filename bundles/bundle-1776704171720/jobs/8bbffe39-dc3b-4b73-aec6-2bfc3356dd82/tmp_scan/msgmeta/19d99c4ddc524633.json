@@ -1,0 +1,38 @@
+{
+  "id": "19d99c4ddc524633",
+  "threadId": "19d99c4ddc524633",
+  "labelIds": [
+    "UNREAD",
+    "CATEGORY_UPDATES",
+    "INBOX"
+  ],
+  "snippet": "You&#39;re all set, but you can always check out your bills &amp; subscriptions in Quicken Simplifi Quicken Simplifi Hi Corey, You paid $2.20 to Google Storage. Google Storage $2.20 CREDIT CARD Date:",
+  "payload": {
+    "mimeType": "multipart/alternative",
+    "headers": [
+      {
+        "name": "Date",
+        "value": "Fri, 17 Apr 2026 04:48:27 +0000 (UTC)"
+      },
+      {
+        "name": "From",
+        "value": "Quicken Simplifi \u003cnoreply@quicken.com\u003e"
+      },
+      {
+        "name": "Message-ID",
+        "value": "\u003chtZ8_A4MQUS_gH1_ftxajQ@geopod-ismtpd-5\u003e"
+      },
+      {
+        "name": "Subject",
+        "value": "Success! Your bill was paid 🙌"
+      },
+      {
+        "name": "To",
+        "value": "cbadcock@gmail.com"
+      }
+    ]
+  },
+  "sizeEstimate": 45640,
+  "historyId": "16885377",
+  "internalDate": "1776401307000"
+}

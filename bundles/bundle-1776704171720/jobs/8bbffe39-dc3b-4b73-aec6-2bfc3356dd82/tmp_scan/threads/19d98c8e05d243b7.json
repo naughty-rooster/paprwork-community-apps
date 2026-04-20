@@ -1,0 +1,39 @@
+{
+  "id": "19d98c8e05d243b7",
+  "historyId": "16884331",
+  "messages": [
+    {
+      "id": "19d98c8e05d243b7",
+      "threadId": "19d98c8e05d243b7",
+      "labelIds": [
+        "CATEGORY_PERSONAL",
+        "INBOX"
+      ],
+      "snippet": "Happy Thursday! Reminder: NO practice tomorrow, 4/17. Here are a few reminders for our games this Saturday: The games are at Kent Meridian High School. The address is: 10020 SE 256 th Street, Kent WA",
+      "payload": {
+        "mimeType": "multipart/alternative",
+        "headers": [
+          {
+            "name": "From",
+            "value": "\"Bushore, Miya E\" \u003cmebushore@seattleschools.org\u003e"
+          },
+          {
+            "name": "To",
+            "value": "\"Leyton, Heidi\" \u003chjleyton@seattleschools.org\u003e"
+          },
+          {
+            "name": "Subject",
+            "value": "Games this Saturday (4/18)"
+          },
+          {
+            "name": "Date",
+            "value": "Fri, 17 Apr 2026 00:11:58 +0000"
+          }
+        ]
+      },
+      "sizeEstimate": 29175,
+      "historyId": "16884331",
+      "internalDate": "1776384718000"
+    }
+  ]
+}

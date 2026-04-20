@@ -1,0 +1,156 @@
+import json, os, re, sqlite3
+from datetime import datetime, timedelta, timezone
+
+import requests
+
+GOOGLE_DB = "/Users/coreybadcock/Papr/jobs/29ae68fd-7ad8-441f-80a9-bde03b7a8d75/data/data.db"
+ADMIN_DB = "/Users/coreybadcock/Papr/Jobs/a23a3ba6-2002-4437-8c61-a82c51f05340/data/data.db"
+CLIENT_SECRET = os.environ.get("GOOGLE_CLIENT_SECRET", "").strip()
+TOKEN_URL = "https://oauth2.googleapis.com/token"
+EVENTS_URL = "https://www.googleapis.com/calendar/v3/calendars/primary/events"
+SKIP_RE = re.compile(r"(birthday|holiday|focus time|out of office|ooo|hold|blocked)", re.I)
+
+
+def get_access_token():
+    conn = sqlite3.connect(GOOGLE_DB)
+    conn.row_factory = sqlite3.Row
+    row = conn.execute(
+        "SELECT c.email, c.metadata_json, t.access_token, t.refresh_token, t.expires_at "
+        "FROM connections c JOIN oauth_tokens t ON t.connection_id=c.id WHERE c.id='google:personal'"
+    ).fetchone()
+    if not row:
+        raise RuntimeError("No personal Google connection found.")
+    meta = json.loads(row["metadata_json"] or "{}")
+    access_token = (row["access_token"] or "").strip()
+    refresh_token = (row["refresh_token"] or "").strip()
+    expires_at = (row["expires_at"] or "").strip()
+    needs_refresh = True
+    if access_token and expires_at:
+        try:
+            exp = datetime.fromisoformat(expires_at.replace("Z", "+00:00"))
+            needs_refresh = exp <= datetime.now(timezone.utc) + timedelta(minutes=5)
+        except Exception:
+            pass
+    if needs_refresh and refresh_token:
+        token = requests.post(TOKEN_URL, data={
+            "client_id": meta.get("client_id", "").strip(),
+            "client_secret": CLIENT_SECRET,
+            "refresh_token": refresh_token,
+            "grant_type": "refresh_token",
+        }, timeout=30)
+        token.raise_for_status()
+        payload = token.json()
+        access_token = payload["access_token"]
+        exp = datetime.now(timezone.utc) + timedelta(seconds=payload.get("expires_in", 3600))
+        conn.execute(
+            "UPDATE oauth_tokens SET access_token=?, expires_at=?, updated_at=CURRENT_TIMESTAMP WHERE connection_id='google:personal'",
+            (access_token, exp.isoformat()),
+        )
+        conn.commit()
+    conn.close()
+    return access_token, row["email"]
+
+
+def get_events(token):
+    now = datetime.now(timezone.utc)
+    end = now + timedelta(days=10)
+    res = requests.get(EVENTS_URL, headers={"Authorization": f"Bearer {token}"}, params={
+        "singleEvents": "true",
+        "orderBy": "startTime",
+        "timeMin": now.isoformat(),
+        "timeMax": end.isoformat(),
+        "maxResults": 50,
+    }, timeout=30)
+    res.raise_for_status()
+    return res.json().get("items") or []
+
+
+def parse_start(event):
+    start = (event.get("start") or {}).get("dateTime") or (event.get("start") or {}).get("date")
+    if not start:
+        return None, True
+    if "T" not in start:
+        return datetime.fromisoformat(start + "T09:00:00+00:00"), True
+    return datetime.fromisoformat(start.replace("Z", "+00:00")), False
+
+
+def should_track(event):
+    if event.get("status") == "cancelled":
+        return False
+    summary = (event.get("summary") or "Untitled event").strip()
+    if SKIP_RE.search(summary):
+        return False
+    attendees = event.get("attendees") or []
+    return bool(summary) and (attendees or event.get("description") or event.get("location"))
+
+
+def build_task(event):
+    summary = (event.get("summary") or "Untitled event").strip()
+    start_dt, all_day = parse_start(event)
+    event_day = start_dt.date()
+    today = datetime.now(timezone.utc).date()
+    due_day = event_day if event_day <= today else event_day - timedelta(days=1)
+    priority = 1 if event_day == today else 2 if (event_day - today).days <= 1 else 3
+    attendees = [a.get("email") for a in (event.get("attendees") or []) if a.get("email")]
+    when = start_dt.astimezone().strftime("%a %b %d %I:%M %p") if not all_day else event_day.strftime("%a %b %d")
+    desc_bits = [f"Upcoming event: {summary}", f"When: {when}"]
+    if event.get("location"):
+        desc_bits.append(f"Location: {event['location']}")
+    if attendees:
+        desc_bits.append("Attendees: " + ", ".join(attendees[:5]))
+    if event.get("htmlLink"):
+        desc_bits.append(f"Open event: {event['htmlLink']}")
+    details = json.dumps({
+        "event_id": event.get("id"),
+        "summary": summary,
+        "start": when,
+        "htmlLink": event.get("htmlLink"),
+    }, separators=(",", ":"))
+    return {
+        "title": f"Prep for: {summary}"[:120],
+        "description": "\n".join(desc_bits)[:800],
+        "due_date": due_day.isoformat(),
+        "priority": priority,
+        "source": "calendar",
+        "source_details": details,
+    }
+
+
+def save_tasks(tasks):
+    conn = sqlite3.connect(ADMIN_DB)
+    inserted = 0
+    updated = 0
+    for t in tasks:
+        key = json.loads(t["source_details"])["event_id"]
+        like = f'%"event_id":"{key}"%'
+        row = conn.execute(
+            "SELECT id,status FROM tasks WHERE source='calendar' AND source_details LIKE ? ORDER BY id DESC LIMIT 1",
+            (like,),
+        ).fetchone()
+        if row:
+            conn.execute(
+                "UPDATE tasks SET title=?, description=?, due_date=?, priority=?, updated_at=datetime('now') WHERE id=? AND status='open'",
+                (t["title"], t["description"], t["due_date"], t["priority"], row[0]),
+            )
+            updated += 1
+        else:
+            conn.execute(
+                "INSERT INTO tasks (title,description,due_date,priority,status,source,source_details) VALUES (?,?,?,?, 'open', ?, ?)",
+                (t["title"], t["description"], t["due_date"], t["priority"], t["source"], t["source_details"]),
+            )
+            inserted += 1
+    conn.commit()
+    conn.close()
+    return inserted, updated
+
+
+def main():
+    token, email = get_access_token()
+    raw_events = get_events(token)
+    tasks = [build_task(e) for e in raw_events if should_track(e)]
+    inserted, updated = save_tasks(tasks)
+    print(f"Calendar sync for {email}: scanned {len(raw_events)} events, inserted {inserted}, updated {updated}")
+
+
+if __name__ == "__main__":
+    main()

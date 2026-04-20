@@ -1,0 +1,22 @@
+{
+  "id": "1833eaea-ea37-427d-bf45-b02c063f00cd",
+  "name": "admin_messages_scanner",
+  "type": "python",
+  "folder": "personal-admin",
+  "command": "python3 code/main.py",
+  "dependsOn": [],
+  "retries": {
+    "maxAttempts": 2,
+    "backoffMs": 3000
+  },
+  "retentionDays": 14,
+  "schedule": {
+    "enabled": true,
+    "cron": "10 * * * *"
+  },
+  "outputMode": "natural",
+  "memoryPolicy": "none",
+  "status": "pending",
+  "createdAt": "2026-04-20T16:56:13.032Z",
+  "updatedAt": "2026-04-20T16:56:13.032Z"
+}

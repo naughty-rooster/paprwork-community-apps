@@ -1,0 +1,104 @@
+{
+  "id": "19d985c9cecde2ca",
+  "historyId": "16884465",
+  "messages": [
+    {
+      "id": "19d985c9cecde2ca",
+      "threadId": "19d985c9cecde2ca",
+      "labelIds": [
+        "IMPORTANT",
+        "CATEGORY_PERSONAL",
+        "INBOX"
+      ],
+      "snippet": "Hi Corey, I wanted to check in with you about Reid and how we can best support him for camp this summer. We&#39;ve noticed this week that he&#39;s been walking away from the group more often and going",
+      "payload": {
+        "mimeType": "multipart/related",
+        "headers": [
+          {
+            "name": "From",
+            "value": "Brittany Farrell \u003cbrittanyf@outdoorsforall.org\u003e"
+          },
+          {
+            "name": "To",
+            "value": "Corey Badcock \u003ccbadcock@gmail.com\u003e"
+          },
+          {
+            "name": "Subject",
+            "value": "Summer Camp Planning for Reid"
+          },
+          {
+            "name": "Date",
+            "value": "Thu, 16 Apr 2026 22:14:55 +0000"
+          }
+        ]
+      },
+      "sizeEstimate": 57773,
+      "historyId": "16884465",
+      "internalDate": "1776377695000"
+    },
+    {
+      "id": "19d986744ff4f689",
+      "threadId": "19d985c9cecde2ca",
+      "labelIds": [
+        "SENT"
+      ],
+      "snippet": "Interesting anecdote below. Reid is at camp this week. Outdoors for All is a special needs camp, but doesn&#39;t have 1:1 support like he has at school. It appears that he is eloping and they are",
+      "payload": {
+        "mimeType": "multipart/mixed",
+        "headers": [
+          {
+            "name": "Date",
+            "value": "Thu, 16 Apr 2026 15:26:37 -0700"
+          },
+          {
+            "name": "Subject",
+            "value": "Fwd: Summer Camp Planning for Reid"
+          },
+          {
+            "name": "From",
+            "value": "Corey Badcock \u003ccbadcock@gmail.com\u003e"
+          },
+          {
+            "name": "To",
+            "value": "\"Jones, Bethany C\" \u003cbcjones@seattleschools.org\u003e, Rena Giannoulakis \u003crgiannoul@gmail.com\u003e, \"Silverman, Emily N\" \u003censilverman@seattleschools.org\u003e"
+          }
+        ]
+      },
+      "sizeEstimate": 45674,
+      "historyId": "16884465",
+      "internalDate": "1776378397000"
+    },
+    {
+      "id": "19d98bd1a32bd336",
+      "threadId": "19d985c9cecde2ca",
+      "labelIds": [
+        "DRAFT"
+      ],
+      "snippet": "Hi Britt, Thanks for reaching out. This is an interesting anecdote, because at school we&#39;re discussing the opposite: reducing his support. He&#39;s been doing well there, and we have a meeting with",
+      "payload": {
+        "mimeType": "multipart/related",
+        "headers": [
+          {
+            "name": "Date",
+            "value": "Thu, 16 Apr 2026 17:00:22 -0700"
+          },
+          {
+            "name": "Subject",
+            "value": "Re: Summer Camp Planning for Reid"
+          },
+          {
+            "name": "From",
+            "value": "Corey Badcock \u003ccbadcock@gmail.com\u003e"
+          },
+          {
+            "name": "To",
+            "value": "Brittany Farrell \u003cbrittanyf@outdoorsforall.org\u003e"
+          }
+        ]
+      },
+      "sizeEstimate": 33754,
+      "historyId": "16884465",
+      "internalDate": "1776384022000"
+    }
+  ]
+}

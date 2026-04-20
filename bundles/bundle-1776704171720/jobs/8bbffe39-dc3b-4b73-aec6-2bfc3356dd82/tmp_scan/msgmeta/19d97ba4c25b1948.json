@@ -1,0 +1,38 @@
+{
+  "id": "19d97ba4c25b1948",
+  "threadId": "19d97ba4c25b1948",
+  "labelIds": [
+    "IMPORTANT",
+    "CATEGORY_UPDATES",
+    "INBOX"
+  ],
+  "snippet": "Here&#39;s the verification code you requested Quicken Classic Verify your Quicken account Here&#39;s the verification code you requested — use this code to sign in or verify changes to your account.",
+  "payload": {
+    "mimeType": "multipart/alternative",
+    "headers": [
+      {
+        "name": "Date",
+        "value": "Thu, 16 Apr 2026 19:17:40 +0000 (UTC)"
+      },
+      {
+        "name": "From",
+        "value": "Quicken \u003cnoreply@quicken.com\u003e"
+      },
+      {
+        "name": "Message-ID",
+        "value": "\u003cHO4epsMqREmqkRAZyMM5VQ@geopod-ismtpd-10\u003e"
+      },
+      {
+        "name": "Subject",
+        "value": "Verify your Quicken account"
+      },
+      {
+        "name": "To",
+        "value": "Quicken User \u003ccbadcock@gmail.com\u003e"
+      }
+    ]
+  },
+  "sizeEstimate": 34263,
+  "historyId": "16879497",
+  "internalDate": "1776367060000"
+}

@@ -1,0 +1,42 @@
+{
+  "id": "19d917e4e04988d5",
+  "threadId": "19d917e4e04988d5",
+  "labelIds": [
+    "UNREAD",
+    "CATEGORY_UPDATES",
+    "INBOX"
+  ],
+  "snippet": "You have automatic access to this feature with no fees, application or credit check. ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏",
+  "payload": {
+    "mimeType": "multipart/alternative",
+    "headers": [
+      {
+        "name": "From",
+        "value": "Chase \u003cno_reply@mcmap.chase.com\u003e"
+      },
+      {
+        "name": "To",
+        "value": "\u003cCBADCOCK@gmail.com\u003e"
+      },
+      {
+        "name": "Subject",
+        "value": "Corey, you're eligible to move your available credit line between Chase cards"
+      },
+      {
+        "name": "Date",
+        "value": "Wed, 15 Apr 2026 08:14:24 -0600"
+      },
+      {
+        "name": "Reply-To",
+        "value": "Chase \u003creply-LTYQO6VGBKGE3FM3LKC4GOB33Y.110054@mcmap.chase.com\u003e"
+      },
+      {
+        "name": "Message-ID",
+        "value": "\u003c2b0173ea-8605-462a-9c90-79d26b113ba6@atl1s11mta1140.xt.local\u003e"
+      }
+    ]
+  },
+  "sizeEstimate": 97897,
+  "historyId": "16870095",
+  "internalDate": "1776262464000"
+}

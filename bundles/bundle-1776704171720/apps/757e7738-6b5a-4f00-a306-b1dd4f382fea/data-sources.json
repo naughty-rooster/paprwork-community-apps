@@ -1,0 +1,92 @@
+[
+  {
+    "id": "dc77cca2-aa90-46c6-be55-72e3fe21379b:auto-discovered",
+    "type": "sqlite",
+    "jobId": "dc77cca2-aa90-46c6-be55-72e3fe21379b",
+    "alias": "admin_project_planner",
+    "dbPath": "",
+    "tables": [],
+    "linkedAt": "2026-04-15T21:30:17.820Z"
+  },
+  {
+    "id": "78ab4413-f867-4979-bbd8-2dda3376c9c2:auto-discovered",
+    "type": "sqlite",
+    "jobId": "78ab4413-f867-4979-bbd8-2dda3376c9c2",
+    "alias": "admin_sms_scanner",
+    "dbPath": "",
+    "tables": [],
+    "linkedAt": "2026-04-15T00:53:04.401Z"
+  },
+  {
+    "id": "9119a317-00c7-499a-8d94-f16c67327d66:auto-discovered",
+    "type": "sqlite",
+    "jobId": "9119a317-00c7-499a-8d94-f16c67327d66",
+    "alias": "admin_messages_calendar_writer",
+    "dbPath": "",
+    "tables": [],
+    "linkedAt": "2026-04-15T00:45:29.421Z"
+  },
+  {
+    "id": "4ef2431d-2fb3-4d93-9456-374eaceffbee:auto-discovered",
+    "type": "sqlite",
+    "jobId": "4ef2431d-2fb3-4d93-9456-374eaceffbee",
+    "alias": "admin_recurring_tasks",
+    "dbPath": "",
+    "tables": [],
+    "linkedAt": "2026-04-15T00:45:29.419Z"
+  },
+  {
+    "id": "1833eaea-ea37-427d-bf45-b02c063f00cd:auto-discovered",
+    "type": "sqlite",
+    "jobId": "1833eaea-ea37-427d-bf45-b02c063f00cd",
+    "alias": "admin_messages_scanner",
+    "dbPath": "",
+    "tables": [],
+    "linkedAt": "2026-04-15T00:01:13.352Z"
+  },
+  {
+    "id": "737c7fef-1c21-4522-85f1-9d4388a080f2:auto-discovered",
+    "type": "sqlite",
+    "jobId": "737c7fef-1c21-4522-85f1-9d4388a080f2",
+    "alias": "admin_email_to_task",
+    "dbPath": "",
+    "tables": [],
+    "linkedAt": "2026-04-14T22:14:07.280Z"
+  },
+  {
+    "id": "bb9064f6-b300-4866-b3c7-a9b47dcbdf4c:auto-discovered",
+    "type": "sqlite",
+    "jobId": "bb9064f6-b300-4866-b3c7-a9b47dcbdf4c",
+    "alias": "admin_calendar_sync",
+    "dbPath": "",
+    "tables": [],
+    "linkedAt": "2026-04-14T21:20:15.178Z"
+  },
+  {
+    "id": "32f85cf2-cb18-4bf9-aa27-0b704f4230cf:auto-discovered",
+    "type": "sqlite",
+    "jobId": "32f85cf2-cb18-4bf9-aa27-0b704f4230cf",
+    "alias": "admin_daily_digest",
+    "dbPath": "",
+    "tables": [],
+    "linkedAt": "2026-04-14T20:40:05.480Z"
+  },
+  {
+    "id": "8bbffe39-dc3b-4b73-aec6-2bfc3356dd82:auto-discovered",
+    "type": "sqlite",
+    "jobId": "8bbffe39-dc3b-4b73-aec6-2bfc3356dd82",
+    "alias": "admin_gmail_scanner",
+    "dbPath": "",
+    "tables": [],
+    "linkedAt": "2026-04-14T20:40:05.478Z"
+  },
+  {
+    "id": "a23a3ba6-2002-4437-8c61-a82c51f05340:admin_db_setup (a23a3ba6)",
+    "type": "sqlite",
+    "jobId": "a23a3ba6-2002-4437-8c61-a82c51f05340",
+    "alias": "admin_db_setup (a23a3ba6)",
+    "dbPath": "",
+    "tables": [],
+    "linkedAt": "2026-04-14T20:28:46.505Z"
+  }
+]

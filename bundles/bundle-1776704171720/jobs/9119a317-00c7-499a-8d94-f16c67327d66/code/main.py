@@ -1,0 +1,103 @@
+import json, os, re, sqlite3
+from datetime import datetime, timedelta, timezone
+import requests
+
+GOOGLE_DB = "/Users/coreybadcock/Papr/jobs/29ae68fd-7ad8-441f-80a9-bde03b7a8d75/data/data.db"
+ADMIN_DB = "/Users/coreybadcock/Papr/Jobs/a23a3ba6-2002-4437-8c61-a82c51f05340/data/data.db"
+TOKEN_URL = "https://oauth2.googleapis.com/token"
+EVENTS_URL = "https://www.googleapis.com/calendar/v3/calendars/primary/events"
+CLIENT_SECRET = os.environ.get('GOOGLE_CLIENT_SECRET', '').strip()
+
+def norm(s): return re.sub(r'[^a-z0-9]+', ' ', (s or '').lower()).strip()
+def meta(row): return json.loads(row['source_details'] or '{}')
+def event_url(event_id=''): return f"{EVENTS_URL}/{event_id}" if event_id else EVENTS_URL
+
+def token():
+    c = sqlite3.connect(GOOGLE_DB); c.row_factory = sqlite3.Row
+    r = c.execute("SELECT c.metadata_json,t.access_token,t.refresh_token,t.expires_at FROM connections c JOIN oauth_tokens t ON t.connection_id=c.id WHERE c.id='google:personal'").fetchone()
+    if not r: raise RuntimeError('No personal Google connection found.')
+    m = json.loads(r['metadata_json'] or '{}'); at, rt, ex = (r['access_token'] or '').strip(), (r['refresh_token'] or '').strip(), (r['expires_at'] or '').strip()
+    try: stale = datetime.fromisoformat(ex.replace('Z', '+00:00')) <= datetime.now(timezone.utc) + timedelta(minutes=5)
+    except: stale = True
+    if stale and rt:
+        x = requests.post(TOKEN_URL, data={'client_id': m.get('client_id', '').strip(), 'client_secret': CLIENT_SECRET, 'refresh_token': rt, 'grant_type': 'refresh_token'}, timeout=30); x.raise_for_status()
+        at = x.json()['access_token']; exp = datetime.now(timezone.utc) + timedelta(seconds=x.json().get('expires_in', 3600)); c.execute("UPDATE oauth_tokens SET access_token=?,expires_at=?,updated_at=CURRENT_TIMESTAMP WHERE connection_id='google:personal'", (at, exp.isoformat())); c.commit()
+    c.close(); return at
+
+def event_window(row):
+    m = meta(row); mins = max(15, min(180, int(m.get('duration_minutes') or 60)))
+    if not row['starts_at']:
+        start = datetime.strptime(row['event_date'], '%Y-%m-%d').date()
+        return start, start + timedelta(days=1), m
+    start = datetime.strptime(f"{row['event_date']} {row['starts_at']}", '%Y-%m-%d %I:%M %p').astimezone()
+    return start, start + timedelta(minutes=mins), m
+
+def same_event(row, m, event):
+    hay = ' '.join([event.get('summary',''), event.get('location',''), event.get('description','')]); hay = norm(hay)
+    needles = [row['title'], row['location'] or '', m.get('provider',''), m.get('clinician',''), m.get('patient',''), m.get('contact','')]
+    return any(norm(x) and norm(x) in hay for x in needles)
+
+def body_lines(m):
+    fields = [f"Captured from: {m.get('capture_mode','messages')}", f"Contact: {m.get('contact','unknown contact')}"]
+    if m.get('patient'): fields.append(f"Patient: {m['patient']}")
+    if m.get('provider'): fields.append(f"Provider: {m['provider']}")
+    if m.get('clinician'): fields.append(f"Clinician: {m['clinician']}")
+    if m.get('mode'): fields.append(f"Visit type: {m['mode']}")
+    if m.get('topic'): fields.append(f"Topic: {m['topic']}")
+    body = ['Created by Personal Admin Assistant', '', *fields]
+    if m.get('thread_preview'): body.extend(['', 'Thread context:', m['thread_preview']])
+    if m.get('notes'): body.extend(['', 'Original message:', m['notes']])
+    return body
+
+def payload(row, start, end, m):
+    base = {'summary': row['title'], 'description': '\n'.join(body_lines(m)), 'location': row['location'] or m.get('location') or ''}
+    if row['starts_at']:
+        return {**base, 'start': {'dateTime': start.isoformat()}, 'end': {'dateTime': end.isoformat()}}
+    return {**base, 'start': {'date': start.isoformat()}, 'end': {'date': end.isoformat()}}
+
+def upsert_local(conn, row, event):
+    m = meta(row); m.update({'event_id': event['id'], 'htmlLink': event.get('htmlLink'), 'google_created': True}); m.pop('manual_edit_pending', None); m.pop('manual_edit_at', None)
+    other = conn.execute("SELECT id FROM calendar_items WHERE id<>? AND json_extract(source_details,'$.event_id')=?", (row['id'], event['id'])).fetchone()
+    if other: conn.execute("DELETE FROM calendar_items WHERE id=?", (row['id'],)); return 'merged'
+    conn.execute("UPDATE calendar_items SET title=?,html_link=?,location=?,source_details=?,updated_at=datetime('now') WHERE id=?", (event.get('summary') or row['title'], event.get('htmlLink'), event.get('location') or row['location'], json.dumps(m), row['id'])); return 'updated'
+
+def main():
+    at = token(); conn = sqlite3.connect(ADMIN_DB); conn.row_factory = sqlite3.Row
+    deletes = conn.execute("SELECT * FROM calendar_items WHERE COALESCE(CAST(json_extract(source_details,'$.delete_pending') AS INTEGER),0)=1 ORDER BY updated_at DESC LIMIT 25").fetchall()
+    deleted = 0
+    for row in deletes:
+        m = meta(row)
+        if m.get('event_id'):
+            gone = requests.delete(event_url(m['event_id']), headers={'Authorization': f'Bearer {at}'}, timeout=30)
+            if gone.status_code not in (204, 404): gone.raise_for_status()
+        conn.execute("DELETE FROM calendar_items WHERE id=?", (row['id'],))
+        deleted += 1
+    rows = conn.execute("SELECT * FROM calendar_items WHERE json_extract(source_details,'$.classification')='calendar' AND date(event_date) >= date('now','-1 day') AND ((COALESCE(json_extract(source_details,'$.event_id'),'')='' AND COALESCE(CAST(json_extract(source_details,'$.calendar_confidence') AS REAL),0) >= 0.74) OR COALESCE(CAST(json_extract(source_details,'$.manual_edit_pending') AS INTEGER),0)=1) ORDER BY COALESCE(json_extract(source_details,'$.manual_edit_at'),updated_at) DESC, event_date ASC, starts_at ASC LIMIT 25").fetchall()
+    made = matched = merged = skipped = edited = 0; now = datetime.now().astimezone()
+    for row in rows:
+        if not row['event_date']: skipped += 1; continue
+        start, end, m = event_window(row); edit_pending = int(m.get('manual_edit_pending') or 0) == 1; body = payload(row, start, end, m)
+        if row['starts_at'] and end < now - timedelta(hours=12): skipped += 1; continue
+        if not row['starts_at'] and end <= now.date(): skipped += 1; continue
+        if m.get('event_id') and edit_pending:
+            updated = requests.patch(event_url(m['event_id']), headers={'Authorization': f'Bearer {at}', 'Content-Type': 'application/json'}, json=body, timeout=30)
+            if updated.status_code != 404: updated.raise_for_status(); upsert_local(conn, row, updated.json()); edited += 1; continue
+            m.pop('event_id', None)
+        if not edit_pending and float(m.get('calendar_confidence') or 0) < 0.74: skipped += 1; continue
+        window = {'singleEvents': 'true', 'orderBy': 'startTime', 'maxResults': 10}
+        if row['starts_at']:
+            window.update({'timeMin': (start - timedelta(minutes=90)).isoformat(), 'timeMax': (end + timedelta(minutes=90)).isoformat()})
+        else:
+            window.update({'timeMin': datetime.combine(start, datetime.min.time()).astimezone().isoformat(), 'timeMax': datetime.combine(end, datetime.min.time()).astimezone().isoformat()})
+        resp = requests.get(EVENTS_URL, headers={'Authorization': f'Bearer {at}'}, params=window, timeout=30)
+        resp.raise_for_status(); events = [e for e in (resp.json().get('items') or []) if e.get('status') != 'cancelled']
+        existing = next((e for e in events if same_event(row, m, e)), None)
+        if existing and edit_pending:
+            updated = requests.patch(event_url(existing['id']), headers={'Authorization': f'Bearer {at}', 'Content-Type': 'application/json'}, json=body, timeout=30)
+            updated.raise_for_status(); merged += upsert_local(conn, row, updated.json()) == 'merged'; edited += 1; continue
+        if existing: merged += upsert_local(conn, row, existing) == 'merged'; matched += 1; continue
+        created = requests.post(EVENTS_URL, headers={'Authorization': f'Bearer {at}', 'Content-Type': 'application/json'}, json=body, timeout=30)
+        created.raise_for_status(); upsert_local(conn, row, created.json()); made += 1
+    conn.commit(); conn.close(); print(f'messages_calendar pending={len(rows)} deleted={deleted} created={made} updated={edited} matched_existing={matched} merged={merged} skipped={skipped}')
+
+if __name__ == '__main__': main()

@@ -1,0 +1,41 @@
+{
+  "id": "19d91c81a9f83c05",
+  "threadId": "19d91c81a9f83c05",
+  "labelIds": [
+    "CATEGORY_UPDATES",
+    "INBOX"
+  ],
+  "snippet": "Hello Dane Badcock , This is an invitation for your Telehealth appointment with Valdez,Andrea. When: Thursday, April 16, 2026 8:30 AM PT (Pacific Time). To join the appointment click this link: Join",
+  "payload": {
+    "mimeType": "multipart/alternative",
+    "headers": [
+      {
+        "name": "Date",
+        "value": "Wed, 15 Apr 2026 15:35:02 +0000 (UTC)"
+      },
+      {
+        "name": "From",
+        "value": "Mindful Support Services \u003cnoreply@advancedmd.com\u003e"
+      },
+      {
+        "name": "Message-ID",
+        "value": "\u003ce7MTH_hDRqGZX8wd89JLtw@geopod-ismtpd-15\u003e"
+      },
+      {
+        "name": "Subject",
+        "value": "Invitation for Telehealth Appointment with Valdez,Andrea on Thursday, April 16, 2026 8:30 AM."
+      },
+      {
+        "name": "Reply-To",
+        "value": "Mindful Support Services \u003cfrontdesk@mindfultherapygroup.com\u003e"
+      },
+      {
+        "name": "To",
+        "value": "\"Badcock,Dane\" \u003cCBADCOCK@gmail.com\u003e"
+      }
+    ]
+  },
+  "sizeEstimate": 15269,
+  "historyId": "16878024",
+  "internalDate": "1776267302000"
+}

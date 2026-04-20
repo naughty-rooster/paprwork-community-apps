@@ -1,0 +1,38 @@
+{
+  "id": "19d97be8a8ae0782",
+  "threadId": "19d97be8af6c557c",
+  "labelIds": [
+    "UNREAD",
+    "CATEGORY_UPDATES",
+    "INBOX"
+  ],
+  "snippet": "Quicken Simplifi spotted a large deposit in one of your accounts Quicken Simplifi Logo Hi Corey! Quicken Simplifi spotted a large deposit in one of your accounts. Orig Name Wa +$1037.00 SAPPHIRE",
+  "payload": {
+    "mimeType": "multipart/alternative",
+    "headers": [
+      {
+        "name": "Date",
+        "value": "Thu, 16 Apr 2026 19:22:18 +0000 (UTC)"
+      },
+      {
+        "name": "From",
+        "value": "Quicken Simplifi \u003cnoreply@quicken.com\u003e"
+      },
+      {
+        "name": "Message-ID",
+        "value": "\u003cSVCZBAC3TmmWUif_g9hIYQ@geopod-ismtpd-13\u003e"
+      },
+      {
+        "name": "Subject",
+        "value": "Big deposit incoming! 🤑🤑"
+      },
+      {
+        "name": "To",
+        "value": "cbadcock@gmail.com"
+      }
+    ]
+  },
+  "sizeEstimate": 46900,
+  "historyId": "16880920",
+  "internalDate": "1776367338000"
+}

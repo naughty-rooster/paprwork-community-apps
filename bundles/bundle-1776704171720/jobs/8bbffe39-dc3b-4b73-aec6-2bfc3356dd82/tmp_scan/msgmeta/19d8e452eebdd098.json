@@ -1,0 +1,38 @@
+{
+  "id": "19d8e452eebdd098",
+  "threadId": "19d8dec384727961",
+  "labelIds": [
+    "IMPORTANT",
+    "CATEGORY_PERSONAL",
+    "INBOX"
+  ],
+  "snippet": "Hi Corey, I need to digest this – it looks like his written findings made things worse. Sincerely, Lisa M. Gilmore PRINCIPAL FAMILY LAW PRACTICE GROUP Family law | collaborative law Skellenger Bender,",
+  "payload": {
+    "mimeType": "multipart/mixed",
+    "headers": [
+      {
+        "name": "From",
+        "value": "\"Lisa M. Gilmore\" \u003cLGilmore@skellengerbender.com\u003e"
+      },
+      {
+        "name": "To",
+        "value": "Corey Badcock \u003ccbadcock@gmail.com\u003e"
+      },
+      {
+        "name": "Subject",
+        "value": "FW: New Orders Filed to Case 18-3-73995-4"
+      },
+      {
+        "name": "Date",
+        "value": "Tue, 14 Apr 2026 23:12:46 +0000"
+      },
+      {
+        "name": "Message-ID",
+        "value": "\u003cBYAPR13MB2903F323B67FABF7AA22430DB2252@BYAPR13MB2903.namprd13.prod.outlook.com\u003e"
+      }
+    ]
+  },
+  "sizeEstimate": 964877,
+  "historyId": "16884464",
+  "internalDate": "1776208366000"
+}

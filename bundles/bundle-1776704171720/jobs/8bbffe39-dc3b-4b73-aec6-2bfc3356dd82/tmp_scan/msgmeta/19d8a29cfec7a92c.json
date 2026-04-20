@@ -1,0 +1,37 @@
+{
+  "id": "19d8a29cfec7a92c",
+  "threadId": "19d8a29cfec7a92c",
+  "labelIds": [
+    "CATEGORY_UPDATES",
+    "INBOX"
+  ],
+  "snippet": "Seattle City Light Bill Past Due Dear COREY C BADCOCK, Your Seattle City Light bill is past due. Account Type: Residential SCL Account Number: 6365815635 Past Due Amount: 449.32 Due Date: 2026-04-11 To",
+  "payload": {
+    "mimeType": "text/html",
+    "headers": [
+      {
+        "name": "Date",
+        "value": "Mon, 13 Apr 2026 21:04:36 -0700"
+      },
+      {
+        "name": "From",
+        "value": "\u003cnoreplyscl@seattle.gov\u003e"
+      },
+      {
+        "name": "To",
+        "value": "\u003ccbadcock@gmail.com\u003e"
+      },
+      {
+        "name": "Message-ID",
+        "value": "\u003c1351113148.1212.1776139481017@sclzentosb101\u003e"
+      },
+      {
+        "name": "Subject",
+        "value": "Your Seattle City Light Bill is Past Due"
+      }
+    ]
+  },
+  "sizeEstimate": 19021,
+  "historyId": "16870201",
+  "internalDate": "1776139476000"
+}

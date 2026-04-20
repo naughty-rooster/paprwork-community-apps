@@ -1,0 +1,38 @@
+{
+  "id": "19d97bee2e82ad9d",
+  "threadId": "19d97be86f2b2be3",
+  "labelIds": [
+    "UNREAD",
+    "CATEGORY_UPDATES",
+    "INBOX"
+  ],
+  "snippet": "Quicken Simplifi spotted a large transaction in one of your accounts. Quicken Simplifi Logo Hi Corey!! Quicken Simplifi spotted a large transaction in one of your accounts. In *ls Training $513.39",
+  "payload": {
+    "mimeType": "multipart/alternative",
+    "headers": [
+      {
+        "name": "Date",
+        "value": "Thu, 16 Apr 2026 19:22:41 +0000 (UTC)"
+      },
+      {
+        "name": "From",
+        "value": "Quicken Simplifi \u003cnoreply@quicken.com\u003e"
+      },
+      {
+        "name": "Message-ID",
+        "value": "\u003cpFw94F-jRZmPTGVrvRfjGw@geopod-ismtpd-canary-0\u003e"
+      },
+      {
+        "name": "Subject",
+        "value": "Large transaction notice 🚨🚨"
+      },
+      {
+        "name": "To",
+        "value": "cbadcock@gmail.com"
+      }
+    ]
+  },
+  "sizeEstimate": 52658,
+  "historyId": "16880918",
+  "internalDate": "1776367361000"
+}

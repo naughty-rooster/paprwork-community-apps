@@ -1,0 +1,38 @@
+{
+  "id": "19d876c87879c4e0",
+  "threadId": "19d40c7d323d3565",
+  "labelIds": [
+    "IMPORTANT",
+    "CATEGORY_PERSONAL",
+    "INBOX"
+  ],
+  "snippet": "Thanks Corey, we will be looking out for the access bus to get them this week! Get Outlook for iOS From: Corey Badcock &lt;cbadcock@gmail.com&gt; Sent: Sunday, April 12, 2026 6:59:33 PM To: Brittany",
+  "payload": {
+    "mimeType": "multipart/related",
+    "headers": [
+      {
+        "name": "From",
+        "value": "Brittany Farrell \u003cbrittanyf@outdoorsforall.org\u003e"
+      },
+      {
+        "name": "To",
+        "value": "Corey Badcock \u003ccbadcock@gmail.com\u003e"
+      },
+      {
+        "name": "Subject",
+        "value": "Re: 2026 Final Confirmation: Spring Day Camps"
+      },
+      {
+        "name": "Date",
+        "value": "Mon, 13 Apr 2026 15:18:46 +0000"
+      },
+      {
+        "name": "Message-ID",
+        "value": "\u003cSN7PR20MB36458D04A819AAAE41405934D6242@SN7PR20MB3645.namprd20.prod.outlook.com\u003e"
+      }
+    ]
+  },
+  "sizeEstimate": 88640,
+  "historyId": "16877041",
+  "internalDate": "1776093526000"
+}

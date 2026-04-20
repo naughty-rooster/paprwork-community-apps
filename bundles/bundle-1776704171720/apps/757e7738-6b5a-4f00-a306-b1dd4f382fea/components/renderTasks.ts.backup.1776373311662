@@ -1,0 +1,36 @@
+import type { Task, RecurringTemplate } from '../types.ts';
+import { esc, formatDue, pLabel, srcBadge, emailStamp, tagLabel, getFocusTasks, isSomeday, sortTasks, smartTaskTitle } from '../utils/helpers.ts';
+import { renderRecurring } from './renderRecurring.ts';
+
+const desc = (t: Task) => t.description ? `<div class="task-description">${esc(t.description.slice(0,110))}</div>` : '';
+const extra = (t: Task) => `${emailStamp(t)?`<span class="task-date">✉ ${emailStamp(t)}</span>`:''}${tagLabel(t)?`<span class="task-date">📁 ${esc(tagLabel(t))}</span>`:''}`;
+const section = (label: string, rows: Task[]) => rows.length ? `<div class="section"><div class="section-header"><div class="section-title">${label}<span class="section-count">${rows.length}</span></div></div><div class="task-list">${rows.map(renderCard).join('')}</div></div>` : '';
+const isOverdue = (d?: string|null) => !!d && new Date(`${d}T12:00:00`).getTime() < new Date(new Date().toDateString()).getTime();
+
+export function renderCard(t: Task){
+  const due = formatDue(t.due_date), done = t.status === 'done';
+  return `<div class="task-card ${done?'done':''}"><button class="check-btn ${done?'checked':''}" onclick="event.stopPropagation();toggleDone(${t.id})">${done?'✓':''}</button><div class="task-content" onclick="viewTask(${t.id})"><div class="task-title">${esc(smartTaskTitle(t))}</div>${desc(t)}<div class="task-meta">${srcBadge(t.source)}${due.text?`<span class="task-due ${due.cls}">📅 ${due.text}</span>`:''}<span class="task-date">${pLabel(t.priority)}</span>${extra(t)}</div></div><div class="task-actions"><button class="icon-btn" onclick="event.stopPropagation();editTask(${t.id})">✏️</button><button class="icon-btn" onclick="event.stopPropagation();deleteTask(${t.id})">🗑️</button></div></div>`;
+}
+
+export function renderToday(tasks: Task[]){
+  const rows = getFocusTasks(tasks), critical = sortTasks(rows.filter(t => t.priority === 1)), high = sortTasks(rows.filter(t => t.priority === 2)), week = sortTasks(rows.filter(t => t.priority >= 3)), overdue = rows.filter(t => isOverdue(t.due_date));
+  const stats = `<div class="stats-row"><div class="stat-card"><div class="stat-num" style="color:var(--urgent)">${critical.length}</div><div class="stat-label">Critical</div></div><div class="stat-card"><div class="stat-num" style="color:var(--high)">${high.length}</div><div class="stat-label">High</div></div><div class="stat-card"><div class="stat-num" style="color:var(--medium)">${week.length}</div><div class="stat-label">This week</div></div><div class="stat-card"><div class="stat-num" style="color:var(--low)">${overdue.length}</div><div class="stat-label">Overdue</div></div></div>`;
+  return stats + (rows.length ? section('🔴 Critical', critical) + section('🟠 High Priority', high) + section('🗓 This Week', week) : '<div class="empty-state"><div class="empty-icon">✅</div><div class="empty-title">Nothing due this week</div></div>');
+}
+
+export function renderAll(tasks: Task[], rec: RecurringTemplate[], filter: string, search: string){
+  let rows = tasks;
+  if (filter === 'active') rows = rows.filter(t => t.status === 'open' && !isSomeday(t));
+  else if (filter === 'someday') rows = rows.filter(t => t.status === 'open' && isSomeday(t));
+  else if (filter === 'messages') rows = rows.filter(t => ['messages','text_in','sms','sms_in'].includes(t.source));
+  else if (filter === 'gmail') rows = rows.filter(t => t.source === 'gmail');
+  else if (filter === 'email_in') rows = rows.filter(t => t.source === 'email_in');
+  else if (filter === 'recurring') rows = rows.filter(t => t.source === 'recurring');
+  else if (filter !== 'all') rows = rows.filter(t => t.status === filter);
+  if (search) {
+    const q = search.toLowerCase();
+    rows = rows.filter(t => [smartTaskTitle(t), t.description || '', t.tags || ''].some(x => x.toLowerCase().includes(q)));
+  }
+  const b = (v: string, l: string) => `<button class="filter-btn ${filter===v?'active':''}" onclick="setFilter('${v}')">${l}</button>`;
+  return `<div class="search-box"><span class="search-icon">🔍</span><input class="search-input" placeholder="Search tasks..." value="${esc(search)}" oninput="onSearch(this.value)"></div><div class="filter-row">${b('active','Active')}${b('messages','Messages')}${b('gmail','Gmail')}${b('email_in','Email-in')}${b('recurring','Recurring')}${b('someday','Someday')}${b('done','Done')}${b('all','All')}</div>${renderRecurring(rec)}<div class="task-list">${sortTasks(rows).map(renderCard).join('')||'<div class="empty-state"><div class="empty-title">No matching tasks</div></div>'}</div>`;
+}

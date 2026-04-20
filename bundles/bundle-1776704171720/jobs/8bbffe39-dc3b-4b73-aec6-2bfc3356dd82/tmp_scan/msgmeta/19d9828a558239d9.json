@@ -1,0 +1,42 @@
+{
+  "id": "19d9828a558239d9",
+  "threadId": "19d9828a558239d9",
+  "labelIds": [
+    "UNREAD",
+    "CATEGORY_UPDATES",
+    "INBOX"
+  ],
+  "snippet": "Open to see your refund request details. Experian Logo Membership ID# 10105455967061593 Sign In This is your refund confirmation Good news—we&#39;re processing your refund, which will be credited back",
+  "payload": {
+    "mimeType": "multipart/alternative",
+    "headers": [
+      {
+        "name": "From",
+        "value": "Experian \u003csupport@s.usa.experian.com\u003e"
+      },
+      {
+        "name": "To",
+        "value": "\u003ccbadcock@gmail.com\u003e"
+      },
+      {
+        "name": "Subject",
+        "value": "Corey, your refund is confirmed…"
+      },
+      {
+        "name": "Date",
+        "value": "Thu, 16 Apr 2026 15:18:13 -0600"
+      },
+      {
+        "name": "Reply-To",
+        "value": "Experian \u003creply-H74CMSQKOLUEVA6XAKET3EWLO4.70253@e.usa.experian.com\u003e"
+      },
+      {
+        "name": "Message-ID",
+        "value": "\u003ce01bfa77-8d17-4384-be99-e0d64f1c07b0@atl1s07mta3206.xt.local\u003e"
+      }
+    ]
+  },
+  "sizeEstimate": 42861,
+  "historyId": "16880936",
+  "internalDate": "1776374293000"
+}

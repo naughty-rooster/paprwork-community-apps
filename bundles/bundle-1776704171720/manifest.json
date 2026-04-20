@@ -1,0 +1,265 @@
+{
+  "schemaVersion": "1.0.0",
+  "bundleId": "bundle-1776704171720",
+  "name": "Chief of Staff",
+  "version": "1.0.0",
+  "createdAt": "2026-04-20T16:56:17.435Z",
+  "minPaprworkVersion": "2.0.0",
+  "icon": "\ud83d\udccb",
+  "requirements": [
+    "ANTHROPIC_API_KEY",
+    "GOOGLE_CLIENT_SECRET",
+    "TWILIO_AUTH_TOKEN"
+  ],
+  "platform": [
+    "macos"
+  ],
+  "app": {
+    "id": "757e7738-6b5a-4f00-a306-b1dd4f382fea",
+    "name": "Chief of Staff",
+    "version": "1.0.0",
+    "entryFile": "index.html",
+    "appPath": "apps/757e7738-6b5a-4f00-a306-b1dd4f382fea",
+    "description": "Your AI chief of staff \u2014 triages email, texts, and calendar, surfaces daily priorities, and briefs you each morning on what matters most."
+  },
+  "jobs": [
+    {
+      "id": "a23a3ba6-2002-4437-8c61-a82c51f05340",
+      "name": "admin_db_setup",
+      "type": "python",
+      "command": "python3 code/main.py",
+      "dependsOn": [],
+      "env": {},
+      "outputTables": [],
+      "requirements": [],
+      "folder": "personal-admin",
+      "retries": {
+        "maxAttempts": 1,
+        "backoffMs": 1000
+      },
+      "outputMode": "natural",
+      "memoryPolicy": "none",
+      "runtimeCalls": []
+    },
+    {
+      "id": "8bbffe39-dc3b-4b73-aec6-2bfc3356dd82",
+      "name": "admin_gmail_scanner",
+      "type": "agent",
+      "command": "You are a Personal Admin Assistant scanning Gmail for real personal-admin action items.\n\nUse bash only.\n\nDatabases:\n- Google OAuth DB: /Users/coreybadcock/Papr/jobs/29ae68fd-7ad8-441f-80a9-bde03b7a8d75/data/data.db\n- Admin DB: /Users/coreybadcock/Papr/Jobs/a23a3ba6-2002-4437-8c61-a82c51f05340/data/data.db\n\nGoal: create tasks only for emails that still require real action from Corey in his personal-admin life. Accuracy matters more than recall. When in doubt, skip it.\n\nProcess:\n1. Search recent inbox mail from the last 4 days, excluding promotions/social.\n2. Fetch the full thread for each candidate.\n3. Create a task only if there is an explicit unresolved ask, obligation, or next step for Corey personally.\n4. Save source='gmail' with title, description, due_date, priority, gmail_message_id, and source_details JSON including subject, from, email_date, thread_id.\n5. Before insert, check gmail_message_id and also check for an open similar task from the same sender created recently.\n\nAbsolute skip rules \u2014 do NOT create tasks for any of these:\n- receipts, payment confirmations, payment received notices, transaction confirmations, statements available, balance alerts, autopay notices, parking session notices\n- verification codes, OTPs, sign-in alerts, device validation, security notices, password/account verification emails\n- marketing, newsletters, blog posts, product updates, retail announcements, policy/terms/privacy updates, shipping/delivery updates, travel confirmations, booking confirmations\n- appointment reminders, appointment starts-in-X-hours notices, final confirmations, telehealth reminders, or calendar invites that do not require an unresolved action\n- no-reply / noreply senders unless the message contains a concrete user action beyond reading\n- stale or already-past items, including reminders for earlier this week or confirmations for appointments that have already happened\n- work/internal/project emails that are not personal-admin, including papr.ai/internal business coordination unless the ask is clearly personal admin\n- subscription cancellations, subscription updates, account updates, terms/conditions changes\n- any email where the strongest interpretation is FYI, confirmation, acknowledgement, or system notification\n\nCritical interpretation rules:\n- If the strongest interpretation is FYI, confirmation, acknowledgement, marketing, or system message: skip it.\n- If there is any doubt: skip it.\n- \"Please contact us if you have questions\" is NOT an action item. Do not create tasks from generic footer language.\n- Do not match the word \"form\" inside longer words like \"information\", \"perform\", \"platform\", \"reform\". Only match standalone form.\n- Do not create \"Send information: [Person]\" unless the email explicitly asks Corey to send specific named documents or data to a specific person by a specific deadline.\n- Do not create \"Review document: [Company]\" for blog posts, newsletters, content marketing, or policy updates \u2014 only for actual documents Corey personally needs to review and act on.\n- Do not create a task just because the subject contains Re:, Fw:, cancellation, confirmation, update, policy, newsletter, blog, order, subscription, reminder, or terms.\n- Do not create \"Confirm appointment\" unless the email explicitly contains an unresolved confirmation action that Corey has not yet taken.\n- Do not create \"Respond to message\" for automated system emails, transaction confirmations, or emails from noreply/no-reply senders.\n- Do not create \"Make a payment\" for payment confirmations \u2014 only for invoices or bills requiring an upcoming payment not yet made.\n\nVerification before every insert:\n- Quote the exact sentence that proves the task is still required.\n- Confirm it is personal-admin rather than work/admin for Papr or another business.\n- Confirm it is not a confirmation, reminder, marketing email, or stale item.\n- Confirm the task title pattern is appropriate (see rules above).\n- If you cannot prove all four points, skip it.\n\nTitle rules:\n- Never use raw subject lines.\n- Use short action-first titles only when a real user action exists.\n- Good patterns:\n  * Make a payment: {organization} \u2014 only for unpaid bills/invoices\n  * Review document: {organization} \u2014 only for actual documents requiring action\n  * Respond to message: {person or organization} \u2014 only for real human-to-human replies needed\n  * Submit form: {organization} \u2014 only when a specific standalone form must be submitted\n  * Upload document: {organization}\n  * Send information: {organization or person} \u2014 only when specific info must be sent\n  * Follow up with: {person or organization}\n- Never emit \"Confirm appointment\" unless a live pending confirmation action exists.\n- Never emit \"Respond to message\" for system/automated/noreply emails.\n\nPrint only a short factual summary: scanned count, inserted count, skipped reasons.",
+      "schedule": {
+        "enabled": true,
+        "cron": "0 7 * * *",
+        "catchUpMissed": true
+      },
+      "dependsOn": [],
+      "env": {},
+      "outputTables": [],
+      "requirements": [],
+      "folder": "personal-admin",
+      "retries": {
+        "maxAttempts": 1,
+        "backoffMs": 1000
+      },
+      "outputMode": "natural",
+      "memoryPolicy": "none",
+      "runtimeCalls": []
+    },
+    {
+      "id": "32f85cf2-cb18-4bf9-aa27-0b704f4230cf",
+      "name": "admin_daily_digest",
+      "type": "agent",
+      "command": "You are a Personal Admin Assistant. Generate a daily priority digest from the task database.\n\n## Your Task\nRead open tasks from the database, prioritize them intelligently, and save a daily digest.\n\n## Step 1: Read Open Tasks\n```bash\npython3 -c \"\nimport sqlite3, json\nfrom datetime import datetime, date, timedelta\nADMIN_DB = '/Users/coreybadcock/Papr/Jobs/a23a3ba6-2002-4437-8c61-a82c51f05340/data/data.db'\nconn = sqlite3.connect(ADMIN_DB)\nconn.row_factory = sqlite3.Row\nrows = conn.execute('''\n  SELECT id, title, description, due_date, priority, status, source, created_at, tags\n  FROM tasks WHERE status = 'open'\n  ORDER BY priority ASC, due_date ASC NULLS LAST, created_at ASC\n''').fetchall()\ntasks = [dict(r) for r in rows]\nprint(json.dumps(tasks, default=str))\nconn.close()\n\"\n```\n\n## Step 2: Prioritize and Rank\nAnalyze all open tasks and create a priority ordering based on:\n1. **Urgency**: Tasks due today or overdue come first\n2. **Priority field**: Lower number = higher priority (1=urgent, 2=high, 3=medium, 4=low)\n3. **Age**: Older tasks that haven't been done may need attention\n4. **Source**: Gmail-sourced tasks that require replies have implicit urgency\n\nCreate a summary with:\n- **Today's Critical Tasks** (must do today): overdue + priority 1\n- **High Priority** (should do today/tomorrow): priority 2 + due this week\n- **This Week** (get to this week): priority 3 + due within 7 days\n- **Backlog** (everything else): priority 4 + no due date\n\nWrite a brief (2-3 sentence) daily briefing message summarizing what needs attention.\n\n## Step 3: Save Digest\n```bash\npython3 << 'PYEOF'\nimport sqlite3, json\nfrom datetime import date\n\nADMIN_DB = '/Users/coreybadcock/Papr/Jobs/a23a3ba6-2002-4437-8c61-a82c51f05340/data/data.db'\ntoday = date.today().isoformat()\n\n# REPLACE with actual prioritized task IDs and summary\nprioritized_ids = TASK_IDS_JSON  # e.g. [1, 3, 2, 5, 4]\nsummary = \"SUMMARY_TEXT_HERE\"\n\nconn = sqlite3.connect(ADMIN_DB)\nconn.execute(\"\"\"INSERT INTO daily_digests (date, summary, task_ids)\n    VALUES (?,?,?) ON CONFLICT(date) DO UPDATE SET summary=excluded.summary, task_ids=excluded.task_ids\"\"\",\n    (today, summary, json.dumps(prioritized_ids)))\nconn.commit()\nconn.close()\nprint(f\"Daily digest saved for {today}\")\nPYEOF\n```\n\n## Output Format\nEnd your run with a clean summary like:\n```\n\ud83d\udccb Daily Digest for [DATE]\n\u2705 X tasks done this week\n\ud83d\udd34 X critical (due today/overdue)  \n\ud83d\udfe0 X high priority (this week)\n\ud83d\udfe1 X medium (upcoming)\n\u26aa X backlog\n```",
+      "schedule": {
+        "enabled": true,
+        "cron": "0 8 * * *",
+        "catchUpMissed": true
+      },
+      "dependsOn": [],
+      "env": {},
+      "outputTables": [],
+      "requirements": [],
+      "folder": "personal-admin",
+      "retries": {
+        "maxAttempts": 1,
+        "backoffMs": 1000
+      },
+      "outputMode": "natural",
+      "memoryPolicy": "none",
+      "runtimeCalls": []
+    },
+    {
+      "id": "bb9064f6-b300-4866-b3c7-a9b47dcbdf4c",
+      "name": "admin_calendar_sync",
+      "type": "python",
+      "command": "GOOGLE_CLIENT_SECRET=${GOOGLE_CLIENT_SECRET} python3 code/main.py",
+      "schedule": {
+        "enabled": true,
+        "cron": "30 6 * * *"
+      },
+      "dependsOn": [],
+      "env": {},
+      "outputTables": [],
+      "requirements": [
+        "requests"
+      ],
+      "folder": "personal-admin",
+      "retries": {
+        "maxAttempts": 1,
+        "backoffMs": 1000
+      },
+      "outputMode": "natural",
+      "memoryPolicy": "none",
+      "runtimeCalls": []
+    },
+    {
+      "id": "737c7fef-1c21-4522-85f1-9d4388a080f2",
+      "name": "admin_email_to_task",
+      "type": "python",
+      "command": "GOOGLE_CLIENT_SECRET=${GOOGLE_CLIENT_SECRET} python3 code/main.py",
+      "schedule": {
+        "enabled": true,
+        "cron": "*/15 * * * *"
+      },
+      "dependsOn": [],
+      "env": {},
+      "outputTables": [],
+      "requirements": [
+        "requests"
+      ],
+      "folder": "personal-admin",
+      "retries": {
+        "maxAttempts": 2,
+        "backoffMs": 3000
+      },
+      "outputMode": "natural",
+      "memoryPolicy": "none",
+      "runtimeCalls": []
+    },
+    {
+      "id": "1833eaea-ea37-427d-bf45-b02c063f00cd",
+      "name": "admin_messages_scanner",
+      "type": "python",
+      "command": "python3 code/main.py",
+      "schedule": {
+        "enabled": true,
+        "cron": "10 * * * *"
+      },
+      "dependsOn": [],
+      "env": {},
+      "outputTables": [],
+      "requirements": [],
+      "folder": "personal-admin",
+      "retries": {
+        "maxAttempts": 2,
+        "backoffMs": 3000
+      },
+      "outputMode": "natural",
+      "memoryPolicy": "none",
+      "runtimeCalls": []
+    },
+    {
+      "id": "4ef2431d-2fb3-4d93-9456-374eaceffbee",
+      "name": "admin_recurring_tasks",
+      "type": "python",
+      "command": "python3 code/main.py",
+      "schedule": {
+        "enabled": true,
+        "cron": "5 6 * * *"
+      },
+      "dependsOn": [],
+      "env": {},
+      "outputTables": [],
+      "requirements": [],
+      "folder": "personal-admin",
+      "retries": {
+        "maxAttempts": 2,
+        "backoffMs": 3000
+      },
+      "outputMode": "natural",
+      "memoryPolicy": "none",
+      "runtimeCalls": []
+    },
+    {
+      "id": "9119a317-00c7-499a-8d94-f16c67327d66",
+      "name": "admin_messages_calendar_writer",
+      "type": "python",
+      "command": "GOOGLE_CLIENT_SECRET=${GOOGLE_CLIENT_SECRET} python3 code/main.py",
+      "schedule": {
+        "enabled": true,
+        "cron": "15 * * * *"
+      },
+      "dependsOn": [],
+      "env": {},
+      "outputTables": [],
+      "requirements": [
+        "requests"
+      ],
+      "folder": "personal-admin",
+      "retries": {
+        "maxAttempts": 2,
+        "backoffMs": 3000
+      },
+      "outputMode": "natural",
+      "memoryPolicy": "none",
+      "runtimeCalls": []
+    },
+    {
+      "id": "78ab4413-f867-4979-bbd8-2dda3376c9c2",
+      "name": "admin_sms_scanner",
+      "type": "python",
+      "command": "TWILIO_ACCOUNT_SID=${TWILIO_ACCOUNT_SID} TWILIO_AUTH_TOKEN=${TWILIO_AUTH_TOKEN} TWILIO_PHONE_NUMBER=${TWILIO_PHONE_NUMBER} python3 code/main.py",
+      "schedule": {
+        "enabled": false
+      },
+      "dependsOn": [],
+      "env": {},
+      "outputTables": [],
+      "requirements": [
+        "requests"
+      ],
+      "folder": "personal-admin",
+      "retries": {
+        "maxAttempts": 2,
+        "backoffMs": 3000
+      },
+      "outputMode": "natural",
+      "memoryPolicy": "none",
+      "runtimeCalls": []
+    },
+    {
+      "id": "dc77cca2-aa90-46c6-be55-72e3fe21379b",
+      "name": "admin_project_planner",
+      "type": "agent",
+      "command": "You are the project planner for the Personal Admin Assistant.\n\nUse tools when needed. Prefer web_search for factual/vendor/context research if the project objective or notes clearly suggest something external to look up. Use bash/sqlite3 to read and update the admin database.\n\nDatabase path:\n/Users/coreybadcock/Papr/jobs/a23a3ba6-2002-4437-8c61-a82c51f05340/data/data.db\n\nTask:\n1. Find exactly one project row where planning_status='queued', choosing the oldest planning_requested_at.\n2. Read its name, objective, notes, and existing plan_json.\n3. Draft a practical project brief and 4-8 concrete next steps.\n   - Be opinionated and actionable.\n   - Prefer verbs at the start of each step.\n   - Avoid filler like 'consider' or 'think about' unless uncertainty is real.\n   - If research is useful, do a quick focused web search and include only what materially improves the plan.\n4. Write results back to that same project row:\n   - plan_json: JSON array of next-step strings\n   - notes: append a short section starting with '---\\nPen plan update (' + current date + ')\\n' that includes:\n     * Brief\n     * Assumptions / risks\n     * Suggested next steps\n   - planning_status='done'\n   - planning_summary: one short sentence summarizing the plan\n   - updated_at=datetime('now')\n5. If something fails, set planning_status='error' and planning_summary to a short factual error.\n\nRules:\n- Update only the queued project you selected.\n- Preserve the user's original notes; append, don't replace.\n- Keep the project brief concise and useful.\n- Do not create tasks; the user stages tasks separately.\n- Output only a short factual summary: project planned, whether web research was used, and how many steps were written.",
+      "schedule": {
+        "enabled": false
+      },
+      "dependsOn": [],
+      "env": {},
+      "outputTables": [],
+      "requirements": [],
+      "folder": "personal-admin",
+      "retries": {
+        "maxAttempts": 1,
+        "backoffMs": 1000
+      },
+      "outputMode": "natural",
+      "memoryPolicy": "none",
+      "runtimeCalls": []
+    }
+  ],
+  "sqlite": [],
+  "deploymentProfiles": [
+    {
+      "id": "local-default",
+      "name": "Local Default",
+      "runtimeTarget": "local",
+      "environment": {}
+    }
+  ],
+  "sync": {
+    "preferredRoot": "~/Papr",
+    "bundleSubpath": "bundles",
+    "cloudReady": true
+  }
+}
